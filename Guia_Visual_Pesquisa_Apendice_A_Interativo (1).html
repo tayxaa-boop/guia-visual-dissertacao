@@ -1,0 +1,942 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apêndice A — Guia Visual da Pesquisa, versão 11</title>
+<style>
+:root { color-scheme:light; --ink:#142437; --sub:#405368; --focus:#1462ab; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:Arial, sans-serif; color:var(--ink); background:#f4f6f8; line-height:1.55; }
+a { color:#124e83; text-underline-offset:3px; }
+button,summary { font:inherit; }
+button { cursor:pointer; background:#fff; border:1px solid #66788c; border-radius:10px; padding:.55rem .8rem; color:var(--ink); }
+button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.skip { position:absolute; left:-999px; top:auto; } .skip:focus { left:1rem; top:1rem; z-index:9; background:#fff; padding:.8rem; }
+header.site { background:#19283b; color:white; padding:2.3rem max(1rem,calc((100vw - 1100px)/2)); }
+header.site h1 { font-size:clamp(1.55rem,3vw,2.2rem); margin:.3rem 0; }
+header.site p { max-width:85ch; margin:.35rem 0; }
+.tools { position:sticky; top:0; background:#fff; border-bottom:2px solid #d6dde5; z-index:3; padding:.55rem max(1rem,calc((100vw - 1100px)/2)); display:flex;gap:.5rem;flex-wrap:wrap;align-items:center; }
+nav[aria-label] { display:flex;flex-wrap:wrap;gap:.35rem;margin:.55rem 0 1rem; }
+nav a { display:inline-block; border-left:6px solid var(--tag); padding:.42rem .65rem; border-radius:5px; background:#fff; font-weight:bold; text-decoration:none; }
+main { max-width:1120px; padding:1.2rem 1rem 5rem; margin:auto; }
+.intro { background:white; border-radius:15px; padding:1.2rem; margin-bottom:2rem; }
+.rules { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; }
+.rules>div { padding:.8rem; background:#f3f6fa; border-radius:9px; }
+.chapter>h2 { border-left:12px solid var(--tone); padding:.6rem 1rem; background:white; border-radius:8px; margin:2.3rem 0 1rem; font-size:1.5rem; }
+.plate { background:white; border:1px solid #d5dce4; border-radius:14px; padding:1.4rem; margin:1.2rem 0; box-shadow:0 4px 16px #19283b0a; break-inside:avoid; }
+.plate h3 { color:var(--tone); margin:.15rem 0 .4rem; font-size:1.35rem; }
+.ref { font-size:.9rem; color:#344960; margin:.2rem 0 .7rem; }
+.lead { font-weight:500; max-width:95ch; }
+.diagram { margin:1rem 0 .7rem; }
+.diagram svg { display:block; width:100%; height:auto; max-height:340px; }
+.diagram figcaption { font-size:.92rem; background:#f2f5f8; padding:.65rem .9rem; border-left:4px solid var(--tone); }
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0; }
+.card { border-radius:10px; padding:1rem; border:1px solid #c9d3dd; border-top:5px solid var(--tone); }
+.card h4 { margin:0 .1rem .5rem; color:var(--tone); }
+.card ul { margin:.1rem 0 .1rem; padding-left:1.25rem; }
+.card li { margin-bottom:.38rem; }
+.warning { background:var(--pale); border-left:5px solid var(--tone); padding:.8rem 1rem; border-radius:6px; }
+.warning strong { display:block; }
+details { margin-top:.7rem; border:1px solid #aab8c5; border-radius:8px; background:#fff; padding:.45rem .8rem; }
+summary { cursor:pointer; font-weight:bold; padding:.4rem; }
+details p { margin:.5rem; }
+.description { border-top:1px dashed #bec8d1; margin-top:1rem; padding-top:.85rem; }
+.description h4 { margin:.25rem 0; font-size:1rem; }
+footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
+.linear .diagram { display:none; }
+.linear .cards { grid-template-columns:1fr; }
+.linear .plate { max-width:860px; }
+.linear .description { border-top:2px solid #8d9cab; }
+@media(max-width:750px) { .rules,.cards {grid-template-columns:1fr;} .plate{padding:1rem;} nav a{font-size:.88rem;} }
+@media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto;} }
+@media print { body{background:#fff;} .tools,nav,button,.skip{display:none!important;} main{max-width:none;} .plate{break-after:page;box-shadow:none;border:0;} details {display:block;} details:not([open]) > *:not(summary){display:block;} .diagram svg {height:auto;} .site {background:white!important;color:black!important;} }
+</style></head><body>
+<a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
+<header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
+<h1>Apêndice A — Guia Visual da Pesquisa</h1>
+<p>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026): mediações históricas, sociais e escolares da Psicologia e da Educação.</p>
+<p>21 pranchas com esquemas relacionais, descrições independentes e avisos de leitura. Fonte-base: dissertação de qualificação, versão 11 (2026).</p></header>
+<div class="tools" aria-label="Ferramentas de leitura"><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><span>As notas podem ser abertas com Enter ou Espaço.</span></div>
+<main id="conteudo">
+<section class="intro" aria-labelledby="objetivos"><h2 id="objetivos">Como ler este guia</h2>
+<div class="rules"><div><strong>Rastreabilidade</strong><p>Problema, teoria, corpus e matriz articulados, com remissões às seções da dissertação.</p></div>
+<div><strong>Acessibilidade cognitiva</strong><p>Cores acompanhadas de títulos e formas; sínteses sem substituir a fundamentação.</p></div>
+<div><strong>Acessibilidade digital</strong><p>Texto selecionável, leitura linear, descrições textuais, avisos expansíveis e navegação por teclado.</p></div></div>
+<p><strong>Nota de integridade:</strong> o roteiro original foi atualizado a partir da versão 11: matriz em três dimensões, cinco movimentos analíticos, números do levantamento original e do subconjunto temporal diferenciados, resultados exploratórios não generalizáveis.</p></section>
+<nav aria-label="Navegação por etapa">
+<a href="#cap0" style="--tag:#856008">Introdução</a>
+<a href="#cap1" style="--tag:#9A4B12">Capítulo 1</a>
+<a href="#cap2" style="--tag:#912D37">Capítulo 2</a>
+<a href="#cap3" style="--tag:#62418C">Capítulo 3</a>
+<a href="#cap4" style="--tag:#15527F">Capítulo 4</a>
+<a href="#cap5" style="--tag:#176746">Capítulo 5</a>
+<a href="#cap6" style="--tag:#495565">Capítulo 6</a>
+</nav>
+<section class="chapter" id="cap0" style="--tone:#856008;--pale:#FFF0BD" aria-labelledby="cap0titulo"><h2 id="cap0titulo">INTRODUÇÃO — três pranchas</h2>
+<article class="plate" id="prancha1" aria-labelledby="titulo1">
+<p class="ref">Prancha 1/3 • Guia 1/21 • Remissão: Introdução: formulação do objeto, pp. 20–26</p><h3 id="titulo1">Inquietação originária e delimitação do objeto</h3>
+<p class="lead">A investigação distingue os processos concretos de desenvolvimento das explicações científicas que deles se produzem.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t1 d1">
+<title id="t1">Inquietação originária e delimitação do objeto</title>
+<desc id="d1">Quatro relações envolvem o núcleo das concepções científicas: corporeidade, organização histórica das idades, produção de conhecimento e escolarização. A pesquisa examina como tais relações são explicadas, e não a experiência adolescente diretamente.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFF0BD" stroke-width="3"/>
+<defs><marker id="arr1" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#856008"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr1)" marker-end="url(#arr1)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#856008" stroke="#856008" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">CONCEPÇÕES CIENTÍFICAS DE</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ADOLESCÊNCIA E</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DESENVOLVIMENTO</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Transformações orgânicas</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Organização social das</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">idades</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Conhecimento científico</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Escolarização e formação</text>
+</svg><figcaption>Quatro relações envolvem o núcleo das concepções científicas: corporeidade, organização histórica das idades, produção de conhecimento e escolarização. A pesquisa examina como tais relações são explicadas, e não a experiência adolescente diretamente.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Reconstrução do argumento</h4><ul>
+<li>O crescimento biológico existe, mas não fixa universalmente o conteúdo social da adolescência.</li>
+<li>As formas de nomear e explicar a adolescência são historicamente constituídas.</li>
+<li>O objeto específico são as relações explicativas presentes nas produções acadêmicas.</li>
+</ul></section><section class="card"><h4>Distinção indispensável</h4><ul>
+<li>Fenômeno real não é idêntico às concepções formuladas sobre ele.</li>
+<li>A historicidade não elimina a materialidade corporal.</li>
+<li>A investigação não acompanha diretamente a vida de adolescentes nem avalia práticas escolares.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não converter adolescência em etapa natural e invariável; tampouco reduzi-la a um discurso desligado das condições materiais.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A literatura utilizada na abertura oferece indícios historicamente situados, não comprovação de uma adolescência universal em outras épocas.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Quatro relações envolvem o núcleo das concepções científicas: corporeidade, organização histórica das idades, produção de conhecimento e escolarização. A pesquisa examina como tais relações são explicadas, e não a experiência adolescente diretamente.</p></div>
+</article>
+<article class="plate" id="prancha2" aria-labelledby="titulo2">
+<p class="ref">Prancha 2/3 • Guia 2/21 • Remissão: Introdução: problema, objetivos e recorte, pp. 26–31</p><h3 id="titulo2">Conjuntura brasileira, problema e pertinência da escola</h3>
+<p class="lead">O recorte delimita a produção científica; a conjuntura orienta perguntas, sem determinar antecipadamente as explicações dos autores.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t2 d2">
+<title id="t2">Conjuntura brasileira, problema e pertinência da escola</title>
+<desc id="d2">O problema conecta o período de 2018 a 2026 às relações explicativas sobre adolescência, desenvolvimento e escola. A conjuntura e as políticas delimitam perguntas possíveis; sua presença efetiva nas produções exige demonstração documental.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFF0BD" stroke-width="3"/>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#856008"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#856008" stroke="#856008" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">PROBLEMA DA PESQUISA: COMO</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">AS PRODUÇÕES EXPLICAM O</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DESENVOLVIMENTO?</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Recorte 2018–2026</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Mediações</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">histórico-sociais</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Políticas educacionais</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho educativo</text>
+</svg><figcaption>O problema conecta o período de 2018 a 2026 às relações explicativas sobre adolescência, desenvolvimento e escola. A conjuntura e as políticas delimitam perguntas possíveis; sua presença efetiva nas produções exige demonstração documental.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Problema investigativo</h4><ul>
+<li>Identificar as concepções de adolescência e desenvolvimento humano na produção brasileira.</li>
+<li>Examinar como são articuladas — ou não — mediações históricas, sociais, escolares e político-educacionais.</li>
+<li>Considerar artigos, dissertações e teses dos campos da Educação, Psicologia e áreas pertinentes.</li>
+</ul></section><section class="card"><h4>Hipótese aberta ao exame</h4><ul>
+<li>A concepção não se esgota numa definição ou filiação teórica declarada.</li>
+<li>Interessa reconstruir vínculos entre corpo, atividade, condições sociais e escolarização.</li>
+<li>O contexto 2018–2026 não pode ser tratado como causa uniforme dos textos examinados.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>O volume de registros bibliográficos, isoladamente, não demonstra lacunas teóricas nem permite comparações diretas entre bases.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A defesa da escola pública é um fundamento pedagógico do trabalho, não uma presunção de que todas as produções partilhem a mesma orientação.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>O problema conecta o período de 2018 a 2026 às relações explicativas sobre adolescência, desenvolvimento e escola. A conjuntura e as políticas delimitam perguntas possíveis; sua presença efetiva nas produções exige demonstração documental.</p></div>
+</article>
+<article class="plate" id="prancha3" aria-labelledby="titulo3">
+<p class="ref">Prancha 3/3 • Guia 3/21 • Remissão: Introdução: organização dos capítulos, pp. 31–35</p><h3 id="titulo3">Arquitetura geral e abertura ao confronto documental</h3>
+<p class="lead">A sequência expositiva não transforma a teoria em gabarito: a investigação documental pode tensionar e reformular suas perguntas.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t3 d3">
+<title id="t3">Arquitetura geral e abertura ao confronto documental</title>
+<desc id="d3">A arquitetura relaciona método e história, fundamentos do desenvolvimento e da escola, constituição do corpus e exercício exploratório. As setas são recíprocas: o material documental pode exigir retorno às categorias e hipóteses iniciais.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFF0BD" stroke-width="3"/>
+<defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#856008"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#856008" stroke-width="2.7" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#856008" stroke="#856008" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">UNIDADE ABERTA ENTRE</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">PROBLEMA, TEORIA, CORPUS E</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ANÁLISE</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Capítulos 1–2: método e</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">história</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Capítulo 3:</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">desenvolvimento e escola</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Capítulo 4: corpus e</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">matriz</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Capítulos 5–6: exercício e</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">horizonte</text>
+</svg><figcaption>A arquitetura relaciona método e história, fundamentos do desenvolvimento e da escola, constituição do corpus e exercício exploratório. As setas são recíprocas: o material documental pode exigir retorno às categorias e hipóteses iniciais.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Função dos capítulos</h4><ul>
+<li>Cap. 1: explicita método, objeto, fontes e recorte.</li>
+<li>Caps. 2–3: formulam determinações históricas, psicológicas e pedagógicas.</li>
+<li>Caps. 4–5: sistematizam as fontes e ensaiam a aplicação analítica.</li>
+</ul></section><section class="card"><h4>Relação lógico-dialética</h4><ul>
+<li>A produção documental integra o processo desde a formulação do objeto.</li>
+<li>O confronto pode confirmar, limitar ou exigir reformulação das interrogações teóricas.</li>
+<li>O Cap. 6 reconhece as condições atuais e os horizontes de aprofundamento.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não ler a organização dos capítulos como uma sequência rígida de tese, antítese e síntese, nem como resultados já demonstrados.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>O Guia Visual é apoio à leitura da dissertação, não novo método, pesquisa paralela ou substituto da fundamentação dos capítulos.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>A arquitetura relaciona método e história, fundamentos do desenvolvimento e da escola, constituição do corpus e exercício exploratório. As setas são recíprocas: o material documental pode exigir retorno às categorias e hipóteses iniciais.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap1" style="--tone:#9A4B12;--pale:#FFE7D3" aria-labelledby="cap1titulo"><h2 id="cap1titulo">CAPÍTULO 1 — três pranchas</h2>
+<article class="plate" id="prancha4" aria-labelledby="titulo4">
+<p class="ref">Prancha 1/3 • Guia 4/21 • Remissão: Cap. 1: seção 1.1</p><h3 id="titulo4">Fundamentos do método histórico-dialético</h3>
+<p class="lead">O objeto não é obtido pela soma de características: exige a reconstrução de relações, contradições e mediações concretas.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t4 d4">
+<title id="t4">Fundamentos do método histórico-dialético</title>
+<desc id="d4">A investigação parte do objeto documental situado em contextos particulares, pergunta pelas mediações constitutivas e reconstrói relações entre universal, particular e singular, sempre sob o controle das fontes.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFE7D3" stroke-width="3"/>
+<defs><marker id="arr4" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#9A4B12"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr4)" marker-end="url(#arr4)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr4)" marker-end="url(#arr4)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr4)" marker-end="url(#arr4)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr4)" marker-end="url(#arr4)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#9A4B12" stroke="#9A4B12" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">RECONSTRUÇÃO DO OBJETO COMO</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">TOTALIDADE HISTÓRICA</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Singularidade dos estudos</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Particularidade brasileira</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Relações sociais</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">históricas</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Mediações e contradições</text>
+</svg><figcaption>A investigação parte do objeto documental situado em contextos particulares, pergunta pelas mediações constitutivas e reconstrói relações entre universal, particular e singular, sempre sob o controle das fontes.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Orientação teórico-metodológica</h4><ul>
+<li>O método orienta a passagem da aparência imediata à reconstrução das determinações.</li>
+<li>Universal, particular e singular devem ser diferenciados sem isolamento.</li>
+<li>As relações científicas são históricas e podem conter contradições.</li>
+</ul></section><section class="card"><h4>Implicação para a pesquisa</h4><ul>
+<li>Não deduzir concepções da presença isolada de termos e autores.</li>
+<li>Interrogar o modo pelo qual cada documento constrói seu objeto.</li>
+<li>Produzir interpretações justificadas por argumentos e evidências.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>A totalidade não é automaticamente alcançada pelo preenchimento da matriz nem corresponde a um conjunto fechado de categorias.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>O esquema distingue orientação filosófica e operações empíricas: os instrumentos de triagem não equivalem ao método histórico-dialético.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>A investigação parte do objeto documental situado em contextos particulares, pergunta pelas mediações constitutivas e reconstrói relações entre universal, particular e singular, sempre sob o controle das fontes.</p></div>
+</article>
+<article class="plate" id="prancha5" aria-labelledby="titulo5">
+<p class="ref">Prancha 2/3 • Guia 5/21 • Remissão: Cap. 1: seções 1.2–1.3</p><h3 id="titulo5">Natureza bibliográfico-documental e unidade de análise</h3>
+<p class="lead">O documento é tomado em sua lógica argumentativa; metadados e palavras-chave são úteis, mas não dizem por si o que se explica.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t5 d5">
+<title id="t5">Natureza bibliográfico-documental e unidade de análise</title>
+<desc id="d5">Os tipos documentais conectam-se à lógica interna de cada produção. A análise passa pelos argumentos, pelos procedimentos e pelas evidências, preservando a diferença entre descrição de uma população e explicação do desenvolvimento.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFE7D3" stroke-width="3"/>
+<defs><marker id="arr5" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#9A4B12"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr5)" marker-end="url(#arr5)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr5)" marker-end="url(#arr5)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr5)" marker-end="url(#arr5)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr5)" marker-end="url(#arr5)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#9A4B12" stroke="#9A4B12" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">PRODUÇÕES ACADÊMICAS COMO</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DOCUMENTOS A SEREM</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">RECONSTRUÍDOS</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Artigos em periódicos</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">brasileiros</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Teses e dissertações</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">brasileiras</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Problema e objetivos do</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">autor</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Relações entre evidências</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">e conclusões</text>
+</svg><figcaption>Os tipos documentais conectam-se à lógica interna de cada produção. A análise passa pelos argumentos, pelos procedimentos e pelas evidências, preservando a diferença entre descrição de uma população e explicação do desenvolvimento.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Delimitação das fontes</h4><ul>
+<li>Produção brasileira é definida pelo âmbito institucional de publicação ou defesa.</li>
+<li>O objeto empírico do estudo analisado não precisa estar situado no Brasil.</li>
+<li>O recorte do levantamento é 2018–2026; sua historicização não se limita a esses anos.</li>
+</ul></section><section class="card"><h4>Unidade de interrogação</h4><ul>
+<li>Reconstruir problema, fundamentos, procedimentos e inferências de cada trabalho.</li>
+<li>Distinguir o que o autor demonstra do que a pesquisadora infere.</li>
+<li>Explicitar a pertinência das perguntas para o objeto particular de cada fonte.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não confundir a categoria “adolescente” empregada para identificar participantes com uma concepção de adolescência efetivamente explicada.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A pesquisa é teórico-bibliográfica e documental, de abordagem qualitativa; o quantitativo caracteriza o levantamento, mas não substitui a análise das relações.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Os tipos documentais conectam-se à lógica interna de cada produção. A análise passa pelos argumentos, pelos procedimentos e pelas evidências, preservando a diferença entre descrição de uma população e explicação do desenvolvimento.</p></div>
+</article>
+<article class="plate" id="prancha6" aria-labelledby="titulo6">
+<p class="ref">Prancha 3/3 • Guia 6/21 • Remissão: Cap. 1: seções 1.3–1.4; ver Cap. 4, seção 4.6</p><h3 id="titulo6">Delimitação temporal, conjuntura e rastreabilidade</h3>
+<p class="lead">Os acontecimentos situam o período do corpus; sua função explicativa exige ser reconstruída em cada produção.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t6 d6">
+<title id="t6">Delimitação temporal, conjuntura e rastreabilidade</title>
+<desc id="d6">Quatro campos da conjuntura brasileira se relacionam à delimitação temporal: currículo, pandemia, permanência e proteção. A pesquisa pode perguntar como essas relações aparecem nos documentos, sem atribuí-las previamente a todos eles.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FFE7D3" stroke-width="3"/>
+<defs><marker id="arr6" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#9A4B12"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr6)" marker-end="url(#arr6)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr6)" marker-end="url(#arr6)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr6)" marker-end="url(#arr6)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#9A4B12" stroke-width="2.7" marker-start="url(#arr6)" marker-end="url(#arr6)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#9A4B12" stroke="#9A4B12" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">RECORTE 2018–2026 E</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">PARTICULARIDADE DA</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">CONJUNTURA</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Currículo e disputas</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">educacionais</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Pandemia e escolarização</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Políticas de permanência</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Violência, proteção e</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">direitos</text>
+</svg><figcaption>Quatro campos da conjuntura brasileira se relacionam à delimitação temporal: currículo, pandemia, permanência e proteção. A pesquisa pode perguntar como essas relações aparecem nos documentos, sem atribuí-las previamente a todos eles.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Mediações conjunturais</h4><ul>
+<li>A reforma curricular de 2017 antecede e atravessa parte do intervalo estudado.</li>
+<li>A pandemia alterou condições de escolarização e participação.</li>
+<li>Permanência, direitos e segurança escolar compõem a conjuntura recente.</li>
+</ul></section><section class="card"><h4>Controle metodológico</h4><ul>
+<li>Separar acontecimento histórico de mediação demonstrada pelo estudo.</li>
+<li>Registrar fontes, critérios e decisões para possibilitar verificação.</li>
+<li>Reprocessar o recorte documental sem apagar o histórico das buscas anteriores.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>O recorte 2018–2026 não supõe que todos os trabalhos respondam do mesmo modo à conjuntura política e educacional.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A rastreabilidade operacional é detalhada no Capítulo 4; aqui aparece como exigência antecipada da delimitação do objeto.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Quatro campos da conjuntura brasileira se relacionam à delimitação temporal: currículo, pandemia, permanência e proteção. A pesquisa pode perguntar como essas relações aparecem nos documentos, sem atribuí-las previamente a todos eles.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap2" style="--tone:#912D37;--pale:#FDE4E7" aria-labelledby="cap2titulo"><h2 id="cap2titulo">CAPÍTULO 2 — três pranchas</h2>
+<article class="plate" id="prancha7" aria-labelledby="titulo7">
+<p class="ref">Prancha 1/3 • Guia 7/21 • Remissão: Cap. 2: seção 2.1</p><h3 id="titulo7">Historicidade das idades da vida e trabalho</h3>
+<p class="lead">As idades são vividas em corpos reais e organizadas em posições sociais historicamente produzidas.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t7 d7">
+<title id="t7">Historicidade das idades da vida e trabalho</title>
+<desc id="d7">A representação aproxima idade contada, transformações do organismo, lugar nas relações sociais e trabalho. Nenhuma dimensão, isoladamente, define uma adolescência universal e invariável.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FDE4E7" stroke-width="3"/>
+<defs><marker id="arr7" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#912D37"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr7)" marker-end="url(#arr7)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr7)" marker-end="url(#arr7)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr7)" marker-end="url(#arr7)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr7)" marker-end="url(#arr7)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#912D37" stroke="#912D37" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">IDADES DA VIDA COMO RELAÇÕES</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">HISTÓRICO-SOCIAIS</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Idade cronológica</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Maturação orgânica</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Posição social</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho e reprodução da</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">vida</text>
+</svg><figcaption>A representação aproxima idade contada, transformações do organismo, lugar nas relações sociais e trabalho. Nenhuma dimensão, isoladamente, define uma adolescência universal e invariável.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Reconstrução histórica</h4><ul>
+<li>Diferentes formações sociais organizam transições e responsabilidades de modos distintos.</li>
+<li>O trabalho integra a produção da vida social e as formas de formação humana.</li>
+<li>Organização familiar, aprendizagem e autoridade variam historicamente.</li>
+</ul></section><section class="card"><h4>Distinções analíticas</h4><ul>
+<li>Idade cronológica não explica sozinha a posição social ocupada.</li>
+<li>Maturação orgânica não equivale à determinação histórica das idades.</li>
+<li>Evitar projetar o conceito contemporâneo de adolescência sobre outros tempos.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não afirmar que “não existiam adolescentes” em todas as sociedades anteriores à modernidade; a questão é a historicidade da categoria e de suas formas de organização.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Historicizar o desenvolvimento é investigar condições e formas sociais, não negar processos orgânicos.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>A representação aproxima idade contada, transformações do organismo, lugar nas relações sociais e trabalho. Nenhuma dimensão, isoladamente, define uma adolescência universal e invariável.</p></div>
+</article>
+<article class="plate" id="prancha8" aria-labelledby="titulo8">
+<p class="ref">Prancha 2/3 • Guia 8/21 • Remissão: Cap. 2: seção 2.2 e subseções 2.2.1–2.2.5</p><h3 id="titulo8">Constituição da adolescência na modernidade</h3>
+<p class="lead">A adolescência moderna se configura nas transformações do trabalho, da escolarização e da regulação social das idades.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t8 d8">
+<title id="t8">Constituição da adolescência na modernidade</title>
+<desc id="d8">O conceito de adolescência se constitui em relações entre transformações produtivas, escola, família e instituições. Esses nexos são contraditórios e historicamente desiguais, não uma cadeia causal simples.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FDE4E7" stroke-width="3"/>
+<defs><marker id="arr8" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#912D37"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr8)" marker-end="url(#arr8)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr8)" marker-end="url(#arr8)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr8)" marker-end="url(#arr8)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr8)" marker-end="url(#arr8)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#912D37" stroke="#912D37" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">CONSTITUIÇÃO HISTÓRICA DA</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ADOLESCÊNCIA MODERNA</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho e</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">industrialização</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Família, ciência e</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">instituições</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Escolarização diferenciada</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Proteção, disciplina e</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">controle</text>
+</svg><figcaption>O conceito de adolescência se constitui em relações entre transformações produtivas, escola, família e instituições. Esses nexos são contraditórios e historicamente desiguais, não uma cadeia causal simples.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Nexos históricos</h4><ul>
+<li>As transformações produtivas redefinem tempos e possibilidades de formação.</li>
+<li>Escola, família e Estado participam da diferenciação das idades.</li>
+<li>Ciências, direitos e instituições produzem interpretações e intervenções.</li>
+</ul></section><section class="card"><h4>Contradições a preservar</h4><ul>
+<li>Ampliação de escolarização não elimina exploração e desigualdades.</li>
+<li>Proteção, classificação e controle podem coexistir nas instituições.</li>
+<li>A emergência histórica não possui cronologia homogênea nem causa única.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Industrialização europeia não deve ser isolada das relações coloniais e da escravidão atlântica que integraram a formação do capitalismo.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>As obras literárias e científicas examinadas são registros situados; não constituem prova de uma etapa invariável do desenvolvimento.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>O conceito de adolescência se constitui em relações entre transformações produtivas, escola, família e instituições. Esses nexos são contraditórios e historicamente desiguais, não uma cadeia causal simples.</p></div>
+</article>
+<article class="plate" id="prancha9" aria-labelledby="titulo9">
+<p class="ref">Prancha 3/3 • Guia 9/21 • Remissão: Cap. 2: seção 2.3 e subseções 2.3.1–2.3.5</p><h3 id="titulo9">Particularidade brasileira: escolarização e desigualdade</h3>
+<p class="lead">A formação social brasileira não é uma versão tardia de uma história europeia; tem determinações e contradições próprias.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t9 d9">
+<title id="t9">Particularidade brasileira: escolarização e desigualdade</title>
+<desc id="d9">Colonização, classes, trabalho, direitos e escolarização articulam-se na produção desigual das condições de adolescência no Brasil. A escola aparece como mediação contraditória da formação humana.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#FDE4E7" stroke-width="3"/>
+<defs><marker id="arr9" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#912D37"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr9)" marker-end="url(#arr9)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr9)" marker-end="url(#arr9)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr9)" marker-end="url(#arr9)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#912D37" stroke-width="2.7" marker-start="url(#arr9)" marker-end="url(#arr9)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#912D37" stroke="#912D37" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ADOLESCÊNCIAS NA</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">PARTICULARIDADE DA FORMAÇÃO</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">BRASILEIRA</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Colonização e escravidão</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Classes, raça e gênero</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho e desigualdade</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Direitos e acesso à escola</text>
+</svg><figcaption>Colonização, classes, trabalho, direitos e escolarização articulam-se na produção desigual das condições de adolescência no Brasil. A escola aparece como mediação contraditória da formação humana.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Determinações articuladas</h4><ul>
+<li>Formação colonial, escravização e desenvolvimento capitalista participam da configuração brasileira.</li>
+<li>A posição de classe e as desigualdades raciais e de gênero diferenciam experiências juvenis.</li>
+<li>O acesso aos conhecimentos escolares foi historicamente desigual.</li>
+</ul></section><section class="card"><h4>Contradição histórico-social</h4><ul>
+<li>Reconhecimento jurídico de direitos não garante condições materiais equivalentes.</li>
+<li>A escola pode ampliar possibilidades formativas e reproduzir desigualdades.</li>
+<li>Políticas educacionais exigem exame de sua efetivação concreta.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>A particularidade brasileira não é dedutível de uma narrativa linear da “modernização” europeia; indígenas, população negra e classes trabalhadoras não podem desaparecer da explicação.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Indicadores quantitativos situam desigualdades; sua interpretação exige as relações históricas que os produzem.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Colonização, classes, trabalho, direitos e escolarização articulam-se na produção desigual das condições de adolescência no Brasil. A escola aparece como mediação contraditória da formação humana.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap3" style="--tone:#62418C;--pale:#EEE5F8" aria-labelledby="cap3titulo"><h2 id="cap3titulo">CAPÍTULO 3 — três pranchas</h2>
+<article class="plate" id="prancha10" aria-labelledby="titulo10">
+<p class="ref">Prancha 1/3 • Guia 10/21 • Remissão: Cap. 3: seções 3.1–3.2</p><h3 id="titulo10">Gênese social do psiquismo e apropriação cultural</h3>
+<p class="lead">As funções psíquicas superiores são investigadas em sua formação histórica e social, mediada pela atividade e pela cultura.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t10 d10">
+<title id="t10">Gênese social do psiquismo e apropriação cultural</title>
+<desc id="d10">Relações entre sujeitos, signos, apropriação e funções psíquicas superiores convergem para a compreensão do desenvolvimento como processo histórico-social mediado, sem negar sua materialidade orgânica.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#EEE5F8" stroke-width="3"/>
+<defs><marker id="arr10" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#62418C"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr10)" marker-end="url(#arr10)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr10)" marker-end="url(#arr10)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr10)" marker-end="url(#arr10)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr10)" marker-end="url(#arr10)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#62418C" stroke="#62418C" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DESENVOLVIMENTO HUMANO NA</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">UNIDADE ENTRE SUJEITO E</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">RELAÇÕES SOCIAIS</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Relações interpsíquicas</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Signos e mediações</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">culturais</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Apropriação cultural</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Funções psíquicas</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">superiores</text>
+</svg><figcaption>Relações entre sujeitos, signos, apropriação e funções psíquicas superiores convergem para a compreensão do desenvolvimento como processo histórico-social mediado, sem negar sua materialidade orgânica.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Psicologia Histórico-Cultural</h4><ul>
+<li>A gênese social do psiquismo confronta reduções biologicistas.</li>
+<li>As relações mediadas por signos participam da reorganização das funções psicológicas.</li>
+<li>A apropriação da cultura integra a constituição de capacidades humanas.</li>
+</ul></section><section class="card"><h4>Exigência epistemológica</h4><ul>
+<li>Os processos psíquicos não são efeitos automáticos do ambiente.</li>
+<li>A maturação orgânica integra o desenvolvimento, sem explicar isoladamente suas formas históricas.</li>
+<li>A unidade entre sujeito e sociedade não apaga a atividade singular.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>A presença de relações sociais nos documentos não demonstra por si a gênese de funções psíquicas específicas.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A Psicologia Histórico-Cultural oferece fundamentos para formular perguntas, não um modelo a impor aos textos do corpus.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Relações entre sujeitos, signos, apropriação e funções psíquicas superiores convergem para a compreensão do desenvolvimento como processo histórico-social mediado, sem negar sua materialidade orgânica.</p></div>
+</article>
+<article class="plate" id="prancha11" aria-labelledby="titulo11">
+<p class="ref">Prancha 2/3 • Guia 11/21 • Remissão: Cap. 3: seções 3.3–3.6</p><h3 id="titulo11">Atividade, adolescência e trabalho educativo</h3>
+<p class="lead">O desenvolvimento adolescente é examinado em suas atividades e nas possibilidades formativas da educação escolar.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t11 d11">
+<title id="t11">Atividade, adolescência e trabalho educativo</title>
+<desc id="d11">Motivos, pensamento conceitual e autoconsciência se relacionam à apropriação cultural e às condições de ensino. O trabalho educativo constitui uma mediação própria, não mera aplicação de princípios psicológicos.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#EEE5F8" stroke-width="3"/>
+<defs><marker id="arr11" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#62418C"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr11)" marker-end="url(#arr11)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr11)" marker-end="url(#arr11)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr11)" marker-end="url(#arr11)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr11)" marker-end="url(#arr11)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#62418C" stroke="#62418C" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ATIVIDADE, CONCEITOS E</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">EDUCAÇÃO ESCOLAR</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Motivos e atividade</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Pensamento conceitual</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Autoconsciência e</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">personalidade</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ensino e apropriação</text>
+</svg><figcaption>Motivos, pensamento conceitual e autoconsciência se relacionam à apropriação cultural e às condições de ensino. O trabalho educativo constitui uma mediação própria, não mera aplicação de princípios psicológicos.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Relações psicológicas</h4><ul>
+<li>Atividade, motivos e apropriação participam da organização da consciência.</li>
+<li>O pensamento conceitual altera relações com o conhecimento e consigo mesmo.</li>
+<li>Autoconsciência e personalidade se constituem em condições sociais concretas.</li>
+</ul></section><section class="card"><h4>Relações pedagógicas</h4><ul>
+<li>O trabalho educativo possui finalidades, conteúdos e formas específicas.</li>
+<li>A escola pode participar da formação de capacidades ainda não desenvolvidas.</li>
+<li>Psicologia e Pedagogia Histórico-Crítica não possuem objetos idênticos.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Conhecer processos psicológicos não responde automaticamente às questões pedagógicas “o que ensinar”, “para que ensinar” e “como organizar o ensino”.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Usar as denominações completas Psicologia Histórico-Cultural e Pedagogia Histórico-Crítica quando necessário diferenciá-las.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Motivos, pensamento conceitual e autoconsciência se relacionam à apropriação cultural e às condições de ensino. O trabalho educativo constitui uma mediação própria, não mera aplicação de princípios psicológicos.</p></div>
+</article>
+<article class="plate" id="prancha12" aria-labelledby="titulo12">
+<p class="ref">Prancha 3/3 • Guia 12/21 • Remissão: Cap. 3: seção 3.7; articulação com 4.5</p><h3 id="titulo12">Síntese 3.7: fundamentos convertidos em questões</h3>
+<p class="lead">Os capítulos teóricos preparam perguntas analíticas, mas a reconstrução interna das fontes continua sendo indispensável.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t12 d12">
+<title id="t12">Síntese 3.7: fundamentos convertidos em questões</title>
+<desc id="d12">Historicidade, psicologia, educação escolar e evidências convergem em perguntas sobre cada produção. O confronto com a lógica interna do estudo retroage sobre as categorias teóricas do próprio instrumento.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#EEE5F8" stroke-width="3"/>
+<defs><marker id="arr12" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#62418C"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr12)" marker-end="url(#arr12)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr12)" marker-end="url(#arr12)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr12)" marker-end="url(#arr12)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#62418C" stroke-width="2.7" marker-start="url(#arr12)" marker-end="url(#arr12)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#62418C" stroke="#62418C" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DA RECONSTRUÇÃO TEÓRICA À</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">INTERROGAÇÃO DOCUMENTAL</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Historicidade e condição</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">social</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Concepção de</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">desenvolvimento</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Lugar do trabalho</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">educativo</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Limites das evidências</text>
+</svg><figcaption>Historicidade, psicologia, educação escolar e evidências convergem em perguntas sobre cada produção. O confronto com a lógica interna do estudo retroage sobre as categorias teóricas do próprio instrumento.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Articulação necessária</h4><ul>
+<li>O Cap. 2 historiciza a adolescência e as condições sociais de formação.</li>
+<li>O Cap. 3 investiga processos psíquicos e a função da educação escolar.</li>
+<li>Ambos fundamentam perguntas sobre concepções presentes nas fontes.</li>
+</ul></section><section class="card"><h4>Passagem à investigação</h4><ul>
+<li>O Cap. 4 explicita como registrar documentos, questões e evidências.</li>
+<li>A pertinência de cada pergunta depende do objeto investigado no estudo.</li>
+<li>As respostas documentais podem exigir revisar categorias anteriores.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>A síntese teórica não antecipa resultados empíricos nem estabelece obrigação de concordância dos autores com o referencial da pesquisadora.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Não confundir a articulação de diferentes fundamentos com uma classificação prévia das pesquisas alheias.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Historicidade, psicologia, educação escolar e evidências convergem em perguntas sobre cada produção. O confronto com a lógica interna do estudo retroage sobre as categorias teóricas do próprio instrumento.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap4" style="--tone:#15527F;--pale:#DFEEFA" aria-labelledby="cap4titulo"><h2 id="cap4titulo">CAPÍTULO 4 — três pranchas</h2>
+<article class="plate" id="prancha13" aria-labelledby="titulo13">
+<p class="ref">Prancha 1/3 • Guia 13/21 • Remissão: Cap. 4: seções 4.1–4.4; Tabelas 1–2</p><h3 id="titulo13">Busca, deduplicação e recorte efetivamente documentado</h3>
+<p class="lead">A contagem distingue ocorrências de consultas, documentos únicos e registros encaminhados à avaliação integral.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t13 d13">
+<title id="t13">Busca, deduplicação e recorte efetivamente documentado</title>
+<desc id="d13">Quatro componentes se relacionam: buscas, deduplicação, recorte temporal e atualização documental. O levantamento original de 2017 a 2025 e o subconjunto de 2018 a 2025 possuem totais distintos e não equivalem ao corpus final elegível.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFEEFA" stroke-width="3"/>
+<defs><marker id="arr13" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#15527F"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr13)" marker-end="url(#arr13)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr13)" marker-end="url(#arr13)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr13)" marker-end="url(#arr13)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr13)" marker-end="url(#arr13)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#15527F" stroke="#15527F" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">CONSTITUIÇÃO AUDITÁVEL DO</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">UNIVERSO DOCUMENTAL</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Busca BDTD: seis</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">estratégias</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Deduplicação e</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">identificadores</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Subconjunto 2018–2025</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Busca complementar de 2026</text>
+</svg><figcaption>Quatro componentes se relacionam: buscas, deduplicação, recorte temporal e atualização documental. O levantamento original de 2017 a 2025 e o subconjunto de 2018 a 2025 possuem totais distintos e não equivalem ao corpus final elegível.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Levantamento original 2017–2025</h4><ul>
+<li>1.543 ocorrências atribuídas nas estratégias da BDTD.</li>
+<li>992 documentos únicos: 609 dissertações e 383 teses.</li>
+<li>633 encaminhados à avaliação integral, sem elegibilidade integral confirmada.</li>
+</ul></section><section class="card"><h4>Subconjunto 2018–2025</h4><ul>
+<li>1.352 ocorrências atribuídas; 875 documentos únicos.</li>
+<li>533 dissertações e 342 teses; 563 encaminhados à avaliação integral.</li>
+<li>A incorporação de 2026 e a avaliação integral ainda são pendências.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não apresentar “633” como corpus definitivo de 2018–2026. A coluna original é 2017–2025 e os quantitativos não incluem artigos científicos.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Tabela 2: “encaminhados à avaliação integral” não equivale a confirmação de elegibilidade. A rastreabilidade preserva decisões e versões do levantamento.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Quatro componentes se relacionam: buscas, deduplicação, recorte temporal e atualização documental. O levantamento original de 2017 a 2025 e o subconjunto de 2018 a 2025 possuem totais distintos e não equivalem ao corpus final elegível.</p></div>
+</article>
+<article class="plate" id="prancha14" aria-labelledby="titulo14">
+<p class="ref">Prancha 2/3 • Guia 14/21 • Remissão: Cap. 4: seções 4.5.1–4.5.4; Quadros 5–6</p><h3 id="titulo14">Matriz Analítica Tripartida e estados de mediação</h3>
+<p class="lead">A matriz interroga a função explicativa das relações em cada produção, sem atribuir uma nota de qualidade aos pesquisadores.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t14 d14">
+<title id="t14">Matriz Analítica Tripartida e estados de mediação</title>
+<desc id="d14">As três dimensões interrogam reciprocamente a lógica interna de cada produção. Evidências e justificativas sustentam estados qualitativos E, M, I, NI e A, com T como marcador transversal, sem pontuação ou hierarquia automática.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFEEFA" stroke-width="3"/>
+<defs><marker id="arr14" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#15527F"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr14)" marker-end="url(#arr14)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr14)" marker-end="url(#arr14)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr14)" marker-end="url(#arr14)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr14)" marker-end="url(#arr14)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#15527F" stroke="#15527F" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">LÓGICA INTERNA DO DOCUMENTO</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">COMO CENTRO DA MATRIZ</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Epistemológico-metodológica</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ontológico-psicológica</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Pedagógico-político-educacional</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Evidência e decisão</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">interpretativa</text>
+</svg><figcaption>As três dimensões interrogam reciprocamente a lógica interna de cada produção. Evidências e justificativas sustentam estados qualitativos E, M, I, NI e A, com T como marcador transversal, sem pontuação ou hierarquia automática.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Três dimensões reais</h4><ul>
+<li>Como o autor constrói e fundamenta seu objeto?</li>
+<li>Como concebe adolescência, psiquismo e desenvolvimento humano?</li>
+<li>Que função atribui à escola, ao ensino e às condições político-educacionais?</li>
+</ul></section><section class="card"><h4>Estados qualitativos (Quadro 6)</h4><ul>
+<li>E: explicitação; M: menção; I: inferência fundamentada.</li>
+<li>NI: não identificável; A: ausência verificada.</li>
+<li>T: tensão interna documentada, marcador transversal, não escala ordinal.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>A não pertinência de uma pergunta deve ser justificada separadamente; ausência não é sinônimo de insuficiência científica.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Registrar a passagem textual e sua localização, distinguindo proposições atribuídas ao autor das inferências produzidas pela pesquisadora.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>As três dimensões interrogam reciprocamente a lógica interna de cada produção. Evidências e justificativas sustentam estados qualitativos E, M, I, NI e A, com T como marcador transversal, sem pontuação ou hierarquia automática.</p></div>
+</article>
+<article class="plate" id="prancha15" aria-labelledby="titulo15">
+<p class="ref">Prancha 3/3 • Guia 15/21 • Remissão: Cap. 4: seções 4.5.2–4.6; Quadros 3–10</p><h3 id="titulo15">Cinco movimentos e limites da interpretação</h3>
+<p class="lead">Os movimentos são diferenciáveis para fins de controle, mas podem ser retomados quando o exame documental revela novas relações.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t15 d15">
+<title id="t15">Cinco movimentos e limites da interpretação</title>
+<desc id="d15">O esquema associa reconstrução, interrogação, registro, confronto e síntese em movimento reversível. O retorno às fontes e às perguntas constitui parte da análise, não falha procedimental.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFEEFA" stroke-width="3"/>
+<defs><marker id="arr15" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#15527F"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr15)" marker-end="url(#arr15)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr15)" marker-end="url(#arr15)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr15)" marker-end="url(#arr15)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#15527F" stroke-width="2.7" marker-start="url(#arr15)" marker-end="url(#arr15)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#15527F" stroke="#15527F" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">RECONSTRUÇÃO ↔ INTERROGAÇÃO</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">↔ REGISTRO ↔ CONFRONTO ↔</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">SÍNTESE</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Reconstrução interna</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Interrogação analítica</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Registro das mediações</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Confronto e síntese</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">provisória</text>
+</svg><figcaption>O esquema associa reconstrução, interrogação, registro, confronto e síntese em movimento reversível. O retorno às fontes e às perguntas constitui parte da análise, não falha procedimental.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Operações articuladas</h4><ul>
+<li>I. Reconstruir objeto, fundamentos, procedimentos e conclusões do texto.</li>
+<li>II. Formular perguntas pertinentes às três dimensões da matriz.</li>
+<li>III. Vincular mediações e estados a excertos, páginas e justificativas.</li>
+</ul></section><section class="card"><h4>Controle crítico</h4><ul>
+<li>IV. Confrontar coerência e alcance de argumentos e evidências.</li>
+<li>V. Produzir síntese interpretativa individualizada e revisável.</li>
+<li>Preservar dúvidas, não aplicação, decisões e eventuais reformulações.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>O protocolo não são seis passos; as seis operações anteriores foram reorganizadas em cinco movimentos sem ordem rígida e sem resultado automático.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>A matriz deve poder ser aperfeiçoada diante de produções heterogêneas, sem enquadrar toda pesquisa em categorias impostas.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>O esquema associa reconstrução, interrogação, registro, confronto e síntese em movimento reversível. O retorno às fontes e às perguntas constitui parte da análise, não falha procedimental.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap5" style="--tone:#176746;--pale:#DFF2E7" aria-labelledby="cap5titulo"><h2 id="cap5titulo">CAPÍTULO 5 — três pranchas</h2>
+<article class="plate" id="prancha16" aria-labelledby="titulo16">
+<p class="ref">Prancha 1/3 • Guia 16/21 • Remissão: Cap. 5: seções 5.1–5.2; Quadro 11</p><h3 id="titulo16">Soares e Bueno: duas reconstruções exploratórias</h3>
+<p class="lead">Duas dissertações de 2018 com objetos distintos permitem testar perguntas comuns, preservando a singularidade de cada argumento.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t16 d16">
+<title id="t16">Soares e Bueno: duas reconstruções exploratórias</title>
+<desc id="d16">Duas dissertações se conectam a perguntas sobre concepções e mediações: uma investiga a escolha profissional, outra a constituição institucional de uma prática pedagógica. A comparação parte de suas singularidades.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFF2E7" stroke-width="3"/>
+<defs><marker id="arr16" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#176746"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr16)" marker-end="url(#arr16)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr16)" marker-end="url(#arr16)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr16)" marker-end="url(#arr16)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr16)" marker-end="url(#arr16)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#176746" stroke="#176746" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">EXERCÍCIO EXPLORATÓRIO COM</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DUAS PRODUÇÕES</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Soares: escolha</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">profissional</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Preferências e condições</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">sociais</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Bueno: educação sexual</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">escolar</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Organização e finalidade</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">pedagógica</text>
+</svg><figcaption>Duas dissertações se conectam a perguntas sobre concepções e mediações: uma investiga a escolha profissional, outra a constituição institucional de uma prática pedagógica. A comparação parte de suas singularidades.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Estudo de Soares (2018)</h4><ul>
+<li>Investiga escolhas profissionais e experiências de estudantes no IFPA.</li>
+<li>Interroga a relação entre identificação subjetiva, alternativas ofertadas e apoio institucional.</li>
+<li>Distingue respostas hipotéticas de escolhas realmente efetuadas.</li>
+</ul></section><section class="card"><h4>Estudo de Bueno (2018)</h4><ul>
+<li>Reconstrói a trajetória do projeto de educação sexual Papo Jovem.</li>
+<li>Examina decisões curriculares, materiais e condições de continuidade.</li>
+<li>Distingue finalidades educativas declaradas de efeitos psicológicos demonstrados.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Duas produções não permitem inferir tendências nacionais, tipologias consolidadas ou validade geral do instrumento.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>O estatuto da análise é exploratório: demonstra aplicações localizadas, não representatividade do corpus total.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Duas dissertações se conectam a perguntas sobre concepções e mediações: uma investiga a escolha profissional, outra a constituição institucional de uma prática pedagógica. A comparação parte de suas singularidades.</p></div>
+</article>
+<article class="plate" id="prancha17" aria-labelledby="titulo17">
+<p class="ref">Prancha 2/3 • Guia 17/21 • Remissão: Cap. 5: seções 5.3–5.4; Quadros 12–14</p><h3 id="titulo17">Evidências, estados e limites das inferências</h3>
+<p class="lead">Uma mediação interessa pelo papel que cumpre no argumento, não apenas por constar como palavra ou informação contextual.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t17 d17">
+<title id="t17">Evidências, estados e limites das inferências</title>
+<desc id="d17">Os registros contrapõem dados, suas funções argumentativas e os limites de inferência: uma condição escolar pode ser contexto, alternativa concreta ou mediação explicativa, a depender da fonte.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFF2E7" stroke-width="3"/>
+<defs><marker id="arr17" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#176746"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr17)" marker-end="url(#arr17)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr17)" marker-end="url(#arr17)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr17)" marker-end="url(#arr17)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr17)" marker-end="url(#arr17)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#176746" stroke="#176746" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">DADO DOCUMENTAL ↔ FUNÇÃO</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">EXPLICATIVA ↔ LIMITE</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Perfil socioeconômico:</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">contexto</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Oferta de curso: hipótese</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">de escolha</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Currículo: organização</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">concreta</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Resultados formativos:</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">evidências</text>
+</svg><figcaption>Os registros contrapõem dados, suas funções argumentativas e os limites de inferência: uma condição escolar pode ser contexto, alternativa concreta ou mediação explicativa, a depender da fonte.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Soares (2018)</h4><ul>
+<li>O perfil caracteriza condições sociais, sem explicar isoladamente escolhas.</li>
+<li>A alternativa de novos cursos é uma preferência hipotética; não comprova mudança efetiva.</li>
+<li>A assistência pode ser percebida como importante, mas efeito causal geral não foi demonstrado.</li>
+</ul></section><section class="card"><h4>Bueno (2018)</h4><ul>
+<li>A história do projeto e a organização do tempo escolar integram a explicação.</li>
+<li>Sala própria e alterações de carga horária modificam condições de realização.</li>
+<li>Objetivos de autonomia e diálogo não provam transformações psíquicas individuais.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não converter uma formulação de objetivo pedagógico em evidência de desenvolvimento psicológico efetivamente medido.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>O Quadro 14 rastreia movimentos analíticos de evidências particulares; não oferece nota de classificação das duas pesquisas.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Os registros contrapõem dados, suas funções argumentativas e os limites de inferência: uma condição escolar pode ser contexto, alternativa concreta ou mediação explicativa, a depender da fonte.</p></div>
+</article>
+<article class="plate" id="prancha18" aria-labelledby="titulo18">
+<p class="ref">Prancha 3/3 • Guia 18/21 • Remissão: Cap. 5: seção 5.5</p><h3 id="titulo18">Síntese exploratória e horizonte de comparação</h3>
+<p class="lead">O confronto inicial mostra possibilidades e limites da matriz; sua aplicação ampla dependerá de mais documentos e revisões fundamentadas.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t18 d18">
+<title id="t18">Síntese exploratória e horizonte de comparação</title>
+<desc id="d18">O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#DFF2E7" stroke-width="3"/>
+<defs><marker id="arr18" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#176746"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr18)" marker-end="url(#arr18)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr18)" marker-end="url(#arr18)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr18)" marker-end="url(#arr18)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#176746" stroke-width="2.7" marker-start="url(#arr18)" marker-end="url(#arr18)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#176746" stroke="#176746" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">SÍNTESE PROVISÓRIA SEM</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">GENERALIZAÇÃO AO CAMPO</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Questões comparáveis</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Singularidade dos estudos</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Revisão da matriz</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ampliação do corpus</text>
+</svg><figcaption>O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</figcaption></figure>
+<div class="cards"><section class="card"><h4>O que foi demonstrado</h4><ul>
+<li>A matriz orienta perguntas pertinentes a dois objetos distintos.</li>
+<li>Permite diferenciar contexto, explicitação, inferência e indeterminação.</li>
+<li>Evidências registradas sustentam uma primeira reconstrução comparativa.</li>
+</ul></section><section class="card"><h4>O que permanece aberto</h4><ul>
+<li>Análise integral de elegibilidade e atualização do recorte até 2026.</li>
+<li>Exame de novas produções com diversidade documental e teórica.</li>
+<li>Avaliação de consistência, carga de trabalho e eventuais agrupamentos.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Não afirmar que a matriz esteja definitivamente validada nem que possa ser aplicada automaticamente a todas as produções encaminhadas à leitura integral.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Agrupamentos futuros dependem das relações explicativas reconstruídas; não podem decorrer da contagem de termos ou da soma dos estados de mediação.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</p></div>
+</article>
+</section>
+<section class="chapter" id="cap6" style="--tone:#495565;--pale:#E9EDF1" aria-labelledby="cap6titulo"><h2 id="cap6titulo">CAPÍTULO 6 — três pranchas</h2>
+<article class="plate" id="prancha19" aria-labelledby="titulo19">
+<p class="ref">Prancha 1/3 • Guia 19/21 • Remissão: Cap. 6: considerações finais, abertura</p><h3 id="titulo19">Balanço reflexivo da etapa de qualificação</h3>
+<p class="lead">A dissertação reconhece resultados parciais, operações inconclusas e o caráter formativo de sua própria elaboração.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t19 d19">
+<title id="t19">Balanço reflexivo da etapa de qualificação</title>
+<desc id="d19">Quatro elementos da pesquisa — fundamentos históricos, psicológicos, corpus e matriz — possuem graus distintos de elaboração. Sua unidade é processual e permanece aberta à qualificação e à revisão.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#E9EDF1" stroke-width="3"/>
+<defs><marker id="arr19" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#495565"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr19)" marker-end="url(#arr19)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr19)" marker-end="url(#arr19)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr19)" marker-end="url(#arr19)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr19)" marker-end="url(#arr19)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#495565" stroke="#495565" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">O QUE FOI PRODUZIDO E O QUE</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">AINDA EXIGE DEMONSTRAÇÃO</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Fundamentos</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">histórico-sociais</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Psicologia e educação</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">escolar</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Corpus em constituição</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Matriz em aperfeiçoamento</text>
+</svg><figcaption>Quatro elementos da pesquisa — fundamentos históricos, psicológicos, corpus e matriz — possuem graus distintos de elaboração. Sua unidade é processual e permanece aberta à qualificação e à revisão.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Avanços situados</h4><ul>
+<li>Reconstrução teórica da adolescência e do desenvolvimento humano.</li>
+<li>Explicitação de fundamentos e procedimentos documentais.</li>
+<li>Primeiras aplicações da matriz a dois trabalhos selecionados.</li>
+</ul></section><section class="card"><h4>Limites reconhecidos</h4><ul>
+<li>A elegibilidade integral do corpus ainda não está consolidada.</li>
+<li>Faltam buscas complementares e ampliação da análise.</li>
+<li>As considerações finais da qualificação não são conclusões da dissertação final.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Evitar apresentar como objetivos definitivamente cumpridos resultados que dependem de análise documental futura.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Este capítulo é reflexivo e provisório, não contém uma síntese conclusiva nacional sobre as concepções de adolescência.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>Quatro elementos da pesquisa — fundamentos históricos, psicológicos, corpus e matriz — possuem graus distintos de elaboração. Sua unidade é processual e permanece aberta à qualificação e à revisão.</p></div>
+</article>
+<article class="plate" id="prancha20" aria-labelledby="titulo20">
+<p class="ref">Prancha 2/3 • Guia 20/21 • Remissão: Cap. 6; articulação com seções 4.5–4.6 e 5.5</p><h3 id="titulo20">Interrogação não dogmática e responsabilidade intelectual</h3>
+<p class="lead">O rigor exige ouvir os documentos em seus próprios termos, justificar interpretações e reconhecer limites da própria pesquisa.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t20 d20">
+<title id="t20">Interrogação não dogmática e responsabilidade intelectual</title>
+<desc id="d20">No centro está a responsabilidade do confronto: escuta do objeto particular, evidência verificável, distinção de autoria e possibilidade de revisão das questões. As quatro dimensões limitam reciprocamente a interpretação.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#E9EDF1" stroke-width="3"/>
+<defs><marker id="arr20" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#495565"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr20)" marker-end="url(#arr20)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr20)" marker-end="url(#arr20)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr20)" marker-end="url(#arr20)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr20)" marker-end="url(#arr20)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#495565" stroke="#495565" stroke-width="2"/>
+<text x="600.0" y="180.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">ÉTICA DO CONFRONTO CRÍTICO</text>
+<text x="600.0" y="202.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">COM AS PRODUÇÕES</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Autonomia dos objetos</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">investigados</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Evidência textual</text>
+<text x="184.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">localizada</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Diferença entre autor e</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">análise</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Revisão fundamentada das</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">questões</text>
+</svg><figcaption>No centro está a responsabilidade do confronto: escuta do objeto particular, evidência verificável, distinção de autoria e possibilidade de revisão das questões. As quatro dimensões limitam reciprocamente a interpretação.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Compromissos epistemológicos</h4><ul>
+<li>O referencial da pesquisadora fundamenta perguntas, não juízos antecipados.</li>
+<li>A heterogeneidade das produções demanda pertinência diferenciada.</li>
+<li>Críticas precisam apoiar-se em passagens e relações efetivamente demonstradas.</li>
+</ul></section><section class="card"><h4>Compromissos éticos</h4><ul>
+<li>Distinguir limitações do objeto do estudo de insuficiências argumentativas.</li>
+<li>Registrar decisões, dúvidas e revisões metodológicas.</li>
+<li>Preservar a autoria intelectual de pesquisas realizadas em condições concretas próprias.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>Diferença teórica não constitui, por si só, contradição interna; ausência de dado que não cabia ao estudo investigar não autoriza desqualificá-lo.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>O confronto crítico não é um julgamento moral dos pares nem um teste de fidelidade à Psicologia Histórico-Cultural.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>No centro está a responsabilidade do confronto: escuta do objeto particular, evidência verificável, distinção de autoria e possibilidade de revisão das questões. As quatro dimensões limitam reciprocamente a interpretação.</p></div>
+</article>
+<article class="plate" id="prancha21" aria-labelledby="titulo21">
+<p class="ref">Prancha 3/3 • Guia 21/21 • Remissão: Cap. 6: continuidade e horizontes investigativos</p><h3 id="titulo21">Horizontes de aprofundamento após a qualificação</h3>
+<p class="lead">A continuidade investigativa depende de aprofundar simultaneamente o corpus, os registros e a força explicativa das análises.</p>
+<figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t21 d21">
+<title id="t21">Horizontes de aprofundamento após a qualificação</title>
+<desc id="d21">O percurso continua em duas direções articuladas: constituição do corpus e aprofundamento do procedimento analítico. A ampliação documental deve produzir novas perguntas e justificar revisões, não apenas aumentar contagens.</desc>
+<rect width="1200" height="370" fill="white"/>
+<ellipse cx="600" cy="185" rx="375" ry="160" fill="none" stroke="#E9EDF1" stroke-width="3"/>
+<defs><marker id="arr21" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#495565"/></marker></defs>
+<path d="M331 104 L446 145" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr21)" marker-end="url(#arr21)"/>
+<path d="M331 277 L446 226" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr21)" marker-end="url(#arr21)"/>
+<path d="M754 145 L869 104" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr21)" marker-end="url(#arr21)"/>
+<path d="M754 226 L869 277" fill="none" stroke="#495565" stroke-width="2.7" marker-start="url(#arr21)" marker-end="url(#arr21)"/>
+<rect x="448" y="140" width="304" height="92" rx="14" fill="#495565" stroke="#495565" stroke-width="2"/>
+<text x="600.0" y="169.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">AMPLIAÇÃO DOCUMENTAL ↔</text>
+<text x="600.0" y="191.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">APROFUNDAMENTO</text>
+<text x="600.0" y="213.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFF">INTERPRETATIVO</text>
+<rect x="34" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Completar o recorte até</text>
+<text x="184.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">2026</text>
+<rect x="34" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="184.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Consolidar elegibilidade</text>
+<rect x="866" y="52" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="98.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Testar diversidade de</text>
+<text x="1016.0" y="119.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">fontes</text>
+<rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
+<text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Reelaborar sínteses</text>
+<text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">provisórias</text>
+</svg><figcaption>O percurso continua em duas direções articuladas: constituição do corpus e aprofundamento do procedimento analítico. A ampliação documental deve produzir novas perguntas e justificar revisões, não apenas aumentar contagens.</figcaption></figure>
+<div class="cards"><section class="card"><h4>Tarefas de continuidade</h4><ul>
+<li>Concluir recuperação, triagem e avaliação integral das fontes.</li>
+<li>Ampliar a aplicação controlada da matriz e documentar seu custo de execução.</li>
+<li>Confrontar novos objetos, métodos e evidências sem fixar grupos antecipados.</li>
+</ul></section><section class="card"><h4>Horizonte de pesquisa</h4><ul>
+<li>Aprofundar como as concepções científicas articulam desenvolvimento e escola.</li>
+<li>Reexaminar categorias e perguntas diante de achados não previstos.</li>
+<li>Produzir sínteses mais determinadas somente após análise suficiente.</li>
+</ul></section></div>
+<aside class="warning" aria-label="Limite interpretativo"><strong>Atenção: limite interpretativo</strong>O Apêndice A permanece recurso de apresentação acessível; não acrescenta nova fonte, novo objeto ou etapa autônoma à investigação.</aside>
+<details><summary>Abrir aviso explicativo complementar</summary><p>Não confundir horizonte investigativo com resultados garantidos nem prometer aplicação automática a todo o levantamento.</p></details>
+<div class="description"><h4>Descrição textual independente</h4><p>O percurso continua em duas direções articuladas: constituição do corpus e aprofundamento do procedimento analítico. A ampliação documental deve produzir novas perguntas e justificar revisões, não apenas aumentar contagens.</p></div>
+</article>
+</section>
+</main><footer>Guia produzido a partir da dissertação da autora, versão 11, e do roteiro do Apêndice A. Os esquemas representam relações de investigação, não resultados gerais do corpus.<p>A versão HTML possui recursos semânticos e de navegação, mas requer testes com tecnologias assistivas para avaliação definitiva de conformidade.</p></footer><script>
+const btn = document.querySelector('#linear');
+btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'); btn.setAttribute('aria-pressed',String(on)); btn.textContent = on ? 'Retomar diagramas relacionais' : 'Ativar leitura linear'; });
+</script></body></html>
