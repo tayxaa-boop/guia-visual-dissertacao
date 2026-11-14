@@ -164,13 +164,62 @@ html{scroll-padding-top:9rem}
 footer .rights-notice{max-width:1020px;margin:1rem auto;color:#293e50;text-align:left}
 @media(max-width:630px){.tools{padding:.4rem .65rem}.tools>span{display:none}.tools nav.quick-nav{padding:.2rem 0}}
 @media print{.tools{display:none!important}.rights-notice{break-inside:avoid}html{scroll-padding-top:0}}
+
+/* Percurso dialético — seção interativa complementar, sem alterar as 21 pranchas */
+#dialetica {--dial-ink:#223946;--dial-muted:#4a5f6b;--dial-line:#536972; scroll-margin-top:9rem; border-top:4px solid #516d72;}
+#dialetica .dial-lead {max-width:86ch}
+.dial-actionbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1rem 0}
+.dial-actionbar button{min-height:44px;font-weight:600}
+.dial-actionbar button[aria-pressed="true"]{background:#253f4b;color:#fff}
+.dial-graphic{margin:1rem 0 .3rem;overflow-x:auto;border:1px solid #d6dce0;border-radius:14px;background:#fcfbf8;scrollbar-width:thin}
+.dial-graphic svg{display:block;width:100%;min-width:740px;height:auto;aspect-ratio:1150/790}
+.dial-path{fill:none;stroke:var(--dial-line);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#dial-arrow)}
+.dial-flow-arc{opacity:.68;transition:opacity .2s,stroke .2s,stroke-width .2s}
+.dial-flow-arc.is-current{opacity:1;stroke:#183e4c;stroke-width:7}
+.dial-return{fill:none;stroke:#7a5e5e;stroke-width:3.5;stroke-dasharray:10 11;stroke-linecap:round;marker-end:url(#dial-arrow-return)}
+.dial-motion{fill:none;stroke:#f8f7f1;stroke-width:2.5;stroke-dasharray:4 24;pointer-events:none}
+.dial-node{color:var(--dial-ink);text-decoration:none;cursor:pointer;outline:none}
+.dial-node-disc{fill:var(--node-fill);stroke:#4b646a;stroke-width:2.2;transition:stroke-width .2s,stroke .2s}
+.dial-node:is(:focus-visible,:hover,.is-current) .dial-node-disc{stroke:#143f56;stroke-width:5.5}
+.dial-node:focus-visible .dial-node-disc{stroke-dasharray:10 5}
+.dial-node text{font-family:Arial,sans-serif;fill:#172d38;text-anchor:middle;pointer-events:none}
+.dial-node-kicker{font-size:15px;font-weight:700;letter-spacing:1px}
+.dial-node-name{font-size:20px;font-weight:700}
+.dial-central{fill:#f7f6ee;stroke:#668681;stroke-width:3;stroke-dasharray:11 7}
+.dial-central-label{font:700 29px Arial,sans-serif;fill:#233e46;text-anchor:middle}
+.dial-central-sub{font:19px Arial,sans-serif;fill:#293e48;text-anchor:middle}
+.dial-central-small{font:italic 17px Arial,sans-serif;fill:#3c5862;text-anchor:middle}
+.dial-caption{font-size:.94rem;line-height:1.65;color:#385061;margin:.6rem .15rem 1rem}
+.dial-stepnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin:1rem 0}
+.dial-step{line-height:1.4;text-align:left;border:1px solid #bdcad1;border-left:5px solid #7c9297;border-radius:9px;background:#fafcfd;min-height:64px;color:#203d4a}
+.dial-step.is-current{border-left-color:#193f50;background:#e6f0f2;box-shadow:inset 0 0 0 1px #73929b}
+.dial-detail{border:1px solid #c4d5d5;border-left:5px solid #416f70;background:#f5f9f8;border-radius:9px;padding:1rem 1.15rem;min-height:154px}
+.dial-detail h3{font-size:1.15rem!important;color:#244650!important;margin:0 0 .45rem!important}
+.dial-detail p{margin:.4rem 0 .75rem}
+.dial-detail a{font-weight:700}
+.dial-linear{background:#f7f9fa;border:1px solid #c7d4da;border-radius:10px;padding:1rem 1.1rem;margin:1rem 0}
+.dial-linear ol{padding-left:1.3rem;margin:.5rem 0}
+.dial-linear li{margin:.7rem 0;line-height:1.55}
+.dial-explanation{font-size:.94rem;line-height:1.6;color:#334e60;margin:.75rem 0}
+.dial-section .dial-linear{display:none}
+.dial-section.is-linear .dial-graphic,.linear .dial-section .dial-graphic{display:none}
+.dial-section.is-linear .dial-linear,.linear .dial-section .dial-linear{display:block}
+@media(prefers-reduced-motion:no-preference){
+ .dial-section:not(.is-paused) .dial-motion{animation:dial-moving-stroke 15s linear infinite}
+ .dial-section:not(.is-paused) .dial-return{animation:dial-moving-stroke 20s linear infinite}
+}
+@keyframes dial-moving-stroke{to{stroke-dashoffset:-280}}
+@media(max-width:820px){.dial-stepnav{grid-template-columns:repeat(2,minmax(0,1fr))}.dial-graphic svg{min-width:850px}}
+@media(max-width:470px){.dial-stepnav{grid-template-columns:1fr}.dial-graphic svg{min-width:820px}}
+@media print{.dial-actionbar,.dial-stepnav{display:none!important}.dial-graphic{overflow:visible}.dial-graphic svg{min-width:0}.dial-linear{display:block!important}.dial-section{break-before:page}.dial-section .dial-detail{break-inside:avoid}}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
 <h1>Apêndice A — Guia Visual da Pesquisa</h1>
 <p>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026): mediações históricas, sociais e escolares da Psicologia e da Educação.</p>
 <p>21 pranchas com esquemas relacionais, descrições independentes e avisos de leitura. Fonte-base: dissertação de qualificação, versão 11 (2026).</p></header>
-<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#roteiro">Banca</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Fontes</a></nav></div>
+<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Fontes</a></nav></div>
 <main id="conteudo">
 
 <nav class="extra-menu" id="explorar" aria-labelledby="explorar-titulo">
@@ -178,6 +227,7 @@ footer .rights-notice{max-width:1020px;margin:1rem auto;color:#293e50;text-align
  <p data-tx="menuLead">O percurso original da pesquisa está preservado. As seções complementares oferecem outros caminhos de encontro com a dissertação.</p>
  <div class="extra-menu-list">
   <a href="#roteiro" data-tx="menuBanca">Percurso para a banca</a>
+  <a href="#dialetica" data-tx="dialMenu">Movimento dialético</a>
   <a href="#autora" data-tx="menuAuthor">Sobre a autora</a>
   <a href="#cap0" data-tx="menuChapters">Percurso da dissertação · Capítulos 1–5</a>
   <a href="#galeria" data-tx="menuGallery">Galeria de autores e ideias</a>
@@ -220,6 +270,81 @@ footer .rights-notice{max-width:1020px;margin:1rem auto;color:#293e50;text-align
   <button id="banca-toggle" type="button" aria-pressed="false" data-tx="bancaButton">Ampliar pranchas para apresentação</button>
  </div>
  <p class="side-note" data-tx="bancaNote">Este roteiro é um apoio à interlocução com a banca. A sequência pode ser interrompida e retomada conforme as questões dos examinadores. Recomenda-se manter também uma cópia local para eventual falha de conexão.</p>
+</section>
+
+
+<section class="extra-panel dial-section" id="dialetica" aria-labelledby="dial-titulo">
+  <p class="eyebrow" data-tx="dialEyebrow">Percurso complementar · método e objeto</p>
+  <h2 id="dial-titulo" data-tx="dialTitle">Movimento dialético da investigação</h2>
+  <p class="panel-lead dial-lead" data-tx="dialLead">Não é uma sequência de caixas: as perguntas se transformam, os capítulos acrescentam determinações e o retorno ao problema não conduz ao mesmo ponto de partida. O esquema representa o movimento interpretativo da pesquisa, sem antecipar uma síntese geral do corpus.</p>
+  <div class="dial-actionbar" role="group" aria-label="Controles de exploração do diagrama">
+    <button id="dial-play" type="button" data-tx="dialPlay">Percorrer o movimento</button>
+    <button id="dial-pause" type="button" aria-pressed="false" data-tx="dialPause">Pausar a animação</button>
+    <button id="dial-linear-toggle" type="button" aria-pressed="false" aria-controls="dial-linear" data-tx="dialLinearButton">Ativar leitura linear</button>
+  </div>
+  <figure class="dial-graphic" id="dial-figura">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 790" role="group" aria-labelledby="dial-svg-title dial-svg-desc">
+      <title id="dial-svg-title" data-tx="dialSvgTitle">Uma investigação em movimento: do problema à síntese provisória</title>
+      <desc id="dial-svg-desc" data-tx="dialSvgDesc">Percurso curvo entre o problema inicial, os capítulos 1 a 6 e o retorno aberto ao problema. No centro estão as mediações históricas, sociais, escolares e psicológicas. Setas contínuas mostram a direção de reconstrução; seta tracejada representa um retorno transformado, não um círculo fechado.</desc>
+      <defs>
+        <marker id="dial-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#536972"/></marker>
+        <marker id="dial-arrow-return" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7a5e5e"/></marker>
+      </defs>
+      <path class="dial-path dial-flow-arc is-current" data-dial-edge="0" d="M 158 444 C 165 399 176 364 208 325"/>
+<path class="dial-path dial-flow-arc" data-dial-edge="1" d="M 313 202 C 363 155 407 137 429 133"/>
+<path class="dial-path dial-flow-arc" data-dial-edge="2" d="M 612 115 C 672 92 747 101 779 120"/>
+<path class="dial-path dial-flow-arc" data-dial-edge="3" d="M 932 218 C 966 257 993 308 1000 337"/>
+<path class="dial-path dial-flow-arc" data-dial-edge="4" d="M 982 520 C 961 570 928 612 900 637"/>
+<path class="dial-path dial-flow-arc" data-dial-edge="5" d="M 741 695 C 674 725 607 733 566 703"/>
+      <path class="dial-return" d="M 398 710 C 286 776 150 717 123 622"/>
+      <path class="dial-motion" d="M 158 444 C 165 399 176 364 208 325 M 313 202 C 363 155 407 137 429 133 M 612 115 C 672 92 747 101 779 120 M 932 218 C 966 257 993 308 1000 337 M 982 520 C 961 570 928 612 900 637 M 741 695 C 674 725 607 733 566 703"/>
+      <rect class="dial-central" x="344" y="329" width="492" height="231" rx="25"/>
+      <text class="dial-central-label" x="590" y="377" data-tx="dialCentralTitle">MEDIAÇÕES</text>
+      <text class="dial-central-sub" x="590" y="413" data-tx="dialCentralPhen">Fenômeno: adolescência e desenvolvimento reais</text>
+      <text class="dial-central-sub" x="590" y="444" data-tx="dialCentralObj">Objeto: concepções acadêmicas produzidas</text>
+      <text class="dial-central-sub" x="590" y="478" data-tx="dialCentralRelations">Trabalho · escolarização · direitos · atividade</text>
+      <text class="dial-central-small" x="590" y="524" data-tx="dialCentralHorizon">Do abstrato ao concreto pensado: horizonte, não resultado pronto</text>
+      <rect x="22" y="360" width="160" height="45" fill="#fff" stroke="#8799a2" rx="23"/>
+      <text x="102" y="388" fill="#213c49" text-anchor="middle" font-size="19" font-weight="700" font-family="Arial" data-tx="dialAbstract">ABSTRATO</text>
+      <a href="#dial-detalhe" class="dial-node is-current" data-dial-node="0" aria-label="Problema científico"><g transform="translate(128 530)"><circle class="dial-node-disc" r="91" style="--node-fill:#eedfe7"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode0a">PONTO DE PARTIDA</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode0b">Problema</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="1" aria-label="Capítulo 1 — Método"><g transform="translate(248 251)"><circle class="dial-node-disc" r="87" style="--node-fill:#e8ece4"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode1a">CAPÍTULO 1</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode1b">Método</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="2" aria-label="Capítulo 2 — Historicidade"><g transform="translate(521 128)"><circle class="dial-node-disc" r="91" style="--node-fill:#f1e4c9"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode2a">CAPÍTULO 2</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode2b">Historicidade</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="3" aria-label="Capítulo 3 — Desenvolvimento"><g transform="translate(870 151)"><circle class="dial-node-disc" r="91" style="--node-fill:#e4e9f2"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode3a">CAPÍTULO 3</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode3b">Desenvolvimento</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="4" aria-label="Capítulo 4 — Corpus e matriz"><g transform="translate(1004 429)"><circle class="dial-node-disc" r="93" style="--node-fill:#dfedef"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode4a">CAPÍTULO 4</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode4b">Corpus e matriz</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="5" aria-label="Capítulo 5 — Exercícios exploratórios"><g transform="translate(830 674)"><circle class="dial-node-disc" r="89" style="--node-fill:#e1eddf"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode5a">CAPÍTULO 5</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode5b">Exercícios</text></g></a>
+<a href="#dial-detalhe" class="dial-node" data-dial-node="6" aria-label="Capítulo 6 — Síntese provisória"><g transform="translate(475 680)"><circle class="dial-node-disc" r="91" style="--node-fill:#ede5df"/><text class="dial-node-kicker" x="0" y="-10" data-tx="dialNode6a">CAPÍTULO 6</text><text class="dial-node-name" x="0" y="20" data-tx="dialNode6b">Síntese provisória</text></g></a>
+      <text x="1077" y="747" text-anchor="end" font-size="17" fill="#52646e" font-family="Arial" data-tx="dialNotClosed">Retorno ≠ repetição</text>
+    </svg>
+  </figure>
+  <figcaption class="dial-caption" data-tx="dialCaption">A trajetória espiralada diferencia avanço analítico e retornos críticos. Os elementos centrais não são etapas independentes: são relações que atravessam o fenômeno real e as concepções que a pesquisa examina. O concreto pensado permanece um horizonte de reconstrução, limitado pelo estágio atual da investigação.</figcaption>
+  <div class="dial-stepnav" id="dial-etapas" role="group" aria-label="Escolha uma etapa do percurso">
+    <button class="dial-step is-current" type="button" data-dial-step="0" aria-pressed="true" data-tx="dialStep0">Problema científico</button>
+<button class="dial-step" type="button" data-dial-step="1" aria-pressed="false" data-tx="dialStep1">Capítulo 1 — Método</button>
+<button class="dial-step" type="button" data-dial-step="2" aria-pressed="false" data-tx="dialStep2">Capítulo 2 — Historicidade</button>
+<button class="dial-step" type="button" data-dial-step="3" aria-pressed="false" data-tx="dialStep3">Capítulo 3 — Desenvolvimento</button>
+<button class="dial-step" type="button" data-dial-step="4" aria-pressed="false" data-tx="dialStep4">Capítulo 4 — Corpus e matriz</button>
+<button class="dial-step" type="button" data-dial-step="5" aria-pressed="false" data-tx="dialStep5">Capítulo 5 — Exercícios exploratórios</button>
+<button class="dial-step" type="button" data-dial-step="6" aria-pressed="false" data-tx="dialStep6">Capítulo 6 — Síntese provisória</button>
+  </div>
+  <article class="dial-detail" id="dial-detalhe" aria-live="polite" aria-atomic="true">
+    <h3 id="dial-detail-title">Problema científico</h3>
+    <p id="dial-detail-copy">A questão inicial procura compreender como a produção acadêmica concebe a adolescência e o desenvolvimento humano, distinguindo a realidade desses processos dos discursos que os interpretam.</p>
+    <a id="dial-detail-link" href="#prancha1">Ver prancha relacionada no Guia</a>
+  </article>
+  <div class="dial-linear" id="dial-linear">
+    <h3 data-tx="dialLinearTitle">Leitura linear e descrição do movimento</h3>
+    <ol>
+      <li data-tx="dialLinear0"><strong>Problema:</strong> parte-se da pergunta sobre como as concepções acadêmicas explicam adolescência e desenvolvimento; o fenômeno de referência não se confunde com o objeto documental.</li>
+      <li data-tx="dialLinear1"><strong>Capítulo 1 — Método:</strong> explicitam-se as escolhas histórico-dialéticas e o modo de interrogar criticamente as produções.</li>
+      <li data-tx="dialLinear2"><strong>Capítulo 2 — Historicidade:</strong> examinam-se trabalho, classes, escolarização, direitos e desigualdades na constituição histórica da adolescência.</li>
+      <li data-tx="dialLinear3"><strong>Capítulo 3 — Desenvolvimento:</strong> investigam-se atividade, apropriação cultural, formação psíquica e mediações da educação escolar.</li>
+      <li data-tx="dialLinear4"><strong>Capítulo 4 — Corpus e matriz:</strong> reconstrução e análise das concepções acadêmicas com a Matriz Analítica Tripartida.</li>
+      <li data-tx="dialLinear5"><strong>Capítulo 5 — Exercícios:</strong> aplicação exploratória a estudos distintos, sem generalização para o corpus.</li>
+      <li data-tx="dialLinear6"><strong>Capítulo 6 — Síntese:</strong> retorna-se ao problema com determinações possíveis, limites, contradições e questões em aberto. Esse retorno não é circular: o ponto de chegada não é idêntico ao de partida.</li>
+    </ol>
+  </div>
+  <p class="dial-explanation" data-tx="dialMethodNote"><strong>Precisão teórico-metodológica.</strong> A diferença entre uma leitura classificatória e uma reconstrução dialética não equivale à rejeição da lógica formal. O movimento representado é heurístico: não prova, por si só, a apreensão do concreto pensado.</p>
+  <p class="dial-explanation" data-tx="dialSourceNote">Remissões: Introdução (pranchas 1–3), Capítulo 1 (4–6), Capítulo 2 (7–9), Capítulo 3 (10–12), Capítulo 4 (13–15), Capítulo 5 (16–18) e Capítulo 6 (19–21). Este esquema é complementar às 21 pranchas originais.</p>
 </section>
 
 <section class="extra-panel" id="autora" aria-labelledby="autora-titulo">
@@ -1649,4 +1774,88 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
   });
   localize();
 })();
-</script></body></html>
+</script>
+
+<script>
+/* Complemento: diagrama dialético interativo, autônomo e sem dependências externas. */
+(function(){
+ 'use strict';
+ const root=document.getElementById('dialetica');
+ if(!root)return;
+ const sel=document.getElementById('guide-lang');
+ const i18n={"pt":{"dialMenu":"Movimento dialético","dialQuick":"Dialética","dialEyebrow":"Percurso complementar · método e objeto","dialTitle":"Movimento dialético da investigação","dialLead":"Não é uma sequência de caixas: as perguntas se transformam, os capítulos acrescentam determinações e o retorno ao problema não conduz ao mesmo ponto de partida. O esquema representa o movimento interpretativo da pesquisa, sem antecipar uma síntese geral do corpus.","dialPlay":"Percorrer o movimento","dialPause":"Pausar a animação","dialResume":"Retomar a animação","dialStop":"Interromper percurso","dialLinearButton":"Ativar leitura linear","dialVisualButton":"Retomar diagrama visual","dialSvgTitle":"Uma investigação em movimento: do problema à síntese provisória","dialSvgDesc":"Percurso curvo entre o problema inicial, os capítulos 1 a 6 e o retorno aberto ao problema. No centro estão as mediações históricas, sociais, escolares e psicológicas. Setas contínuas mostram a direção de reconstrução; seta tracejada representa um retorno transformado, não um círculo fechado.","dialCentralTitle":"MEDIAÇÕES","dialCentralPhen":"Fenômeno: adolescência e desenvolvimento reais","dialCentralObj":"Objeto: concepções acadêmicas produzidas","dialCentralRelations":"Trabalho · escolarização · direitos · atividade","dialCentralHorizon":"Do abstrato ao concreto pensado: horizonte, não resultado pronto","dialAbstract":"ABSTRATO","dialNotClosed":"Retorno ≠ repetição","dialCaption":"A trajetória espiralada diferencia avanço analítico e retornos críticos. Os elementos centrais não são etapas independentes: são relações que atravessam o fenômeno real e as concepções que a pesquisa examina. O concreto pensado permanece um horizonte de reconstrução, limitado pelo estágio atual da investigação.","dialLinearTitle":"Leitura linear e descrição do movimento","dialLinear0":"Problema: parte-se da pergunta sobre como as concepções acadêmicas explicam adolescência e desenvolvimento; o fenômeno de referência não se confunde com o objeto documental.","dialLinear1":"Capítulo 1 — Método: explicitam-se as escolhas histórico-dialéticas e o modo de interrogar criticamente as produções.","dialLinear2":"Capítulo 2 — Historicidade: examinam-se trabalho, classes, escolarização, direitos e desigualdades na constituição histórica da adolescência.","dialLinear3":"Capítulo 3 — Desenvolvimento: investigam-se atividade, apropriação cultural, formação psíquica e mediações da educação escolar.","dialLinear4":"Capítulo 4 — Corpus e matriz: reconstrução e análise das concepções acadêmicas com a Matriz Analítica Tripartida.","dialLinear5":"Capítulo 5 — Exercícios: aplicação exploratória a estudos distintos, sem generalização para o corpus.","dialLinear6":"Capítulo 6 — Síntese: retorna-se ao problema com determinações possíveis, limites, contradições e questões em aberto. Esse retorno não é circular: o ponto de chegada não é idêntico ao de partida.","dialMethodNote":"Precisão teórico-metodológica. A diferença entre uma leitura classificatória e uma reconstrução dialética não equivale à rejeição da lógica formal. O movimento representado é heurístico: não prova, por si só, a apreensão do concreto pensado.","dialSourceNote":"Remissões: Introdução (pranchas 1–3), Capítulo 1 (4–6), Capítulo 2 (7–9), Capítulo 3 (10–12), Capítulo 4 (13–15), Capítulo 5 (16–18) e Capítulo 6 (19–21). Este esquema é complementar às 21 pranchas originais.","dialDetailLink":"Ver prancha relacionada no Guia","dialNode0a":"PONTO DE PARTIDA","dialNode0b":"Problema","dialNode1a":"CAPÍTULO 1","dialNode1b":"Método","dialNode2a":"CAPÍTULO 2","dialNode2b":"Historicidade","dialNode3a":"CAPÍTULO 3","dialNode3b":"Desenvolvimento","dialNode4a":"CAPÍTULO 4","dialNode4b":"Corpus e matriz","dialNode5a":"CAPÍTULO 5","dialNode5b":"Exercícios","dialNode6a":"CAPÍTULO 6","dialNode6b":"Síntese provisória","dialStep0":"Problema científico","dialStep1":"Capítulo 1 — Método","dialStep2":"Capítulo 2 — Historicidade","dialStep3":"Capítulo 3 — Desenvolvimento","dialStep4":"Capítulo 4 — Corpus e matriz","dialStep5":"Capítulo 5 — Exercícios exploratórios","dialStep6":"Capítulo 6 — Síntese provisória"},"en":{"dialMenu":"Dialectical movement","dialQuick":"Dialectics","dialEyebrow":"Supplementary route · method and object","dialTitle":"Dialectical movement of the investigation","dialLead":"This is not a sequence of boxes: questions change, each chapter adds determinations, and returning to the problem does not mean returning to the same starting point. The diagram depicts the interpretative movement without presuming a general synthesis of the corpus.","dialPlay":"Follow the movement","dialPause":"Pause animation","dialResume":"Resume animation","dialStop":"Stop sequence","dialLinearButton":"Switch to linear reading","dialVisualButton":"Return to visual diagram","dialSvgTitle":"Research in movement: from the problem to a provisional synthesis","dialSvgDesc":"Curving route from the initial problem through chapters 1–6 and an open return. Historical, social, educational and psychological mediations lie at its centre. Solid arrows mark the reconstruction's direction; a dashed arrow marks a transformed return, not a closed circle.","dialCentralTitle":"MEDIATIONS","dialCentralPhen":"Phenomenon: real adolescence and development","dialCentralObj":"Object: academic conceptions produced","dialCentralRelations":"Labour · schooling · rights · activity","dialCentralHorizon":"From abstract to concrete in thought: a horizon, not a ready result","dialAbstract":"ABSTRACT","dialNotClosed":"Return ≠ repetition","dialCaption":"The spiral trajectory distinguishes analytical advances from critical returns. The central elements are not independent steps but relations that cross the real phenomenon and the conceptions examined. Concrete in thought remains a horizon of reconstruction, limited by the investigation's current stage.","dialLinearTitle":"Linear reading and description of the movement","dialLinear0":"Problem: the question concerns how academic conceptions explain adolescence and development. The real phenomenon must be distinguished from the documentary research object.","dialLinear1":"Chapter 1 — Method: historical-dialectical choices and critical inquiry into academic works.","dialLinear2":"Chapter 2 — Historicity: labour, classes, schooling, rights and inequalities in the historical formation of adolescence.","dialLinear3":"Chapter 3 — Development: activity, cultural appropriation, psychic formation and educational mediations.","dialLinear4":"Chapter 4 — Corpus and matrix: reconstruction and analysis of academic conceptions with the Tripartite Analytical Matrix.","dialLinear5":"Chapter 5 — Exercises: exploratory application to different studies, without generalising to the corpus.","dialLinear6":"Chapter 6 — Synthesis: return to the problem with possible determinations, limits, contradictions and open questions. The arrival point is not identical to the starting point.","dialMethodNote":"Methodological precision. The distinction between classification and dialectical reconstruction does not imply rejecting formal logic. This movement is heuristic: it does not by itself establish concrete-in-thought understanding.","dialSourceNote":"Cross-references: Introduction (panels 1–3), Chapter 1 (4–6), Chapter 2 (7–9), Chapter 3 (10–12), Chapter 4 (13–15), Chapter 5 (16–18), Chapter 6 (19–21). This diagram supplements the original 21 panels.","dialDetailLink":"See related panel in the Guide","dialNode0a":"STARTING POINT","dialNode0b":"Problem","dialNode1a":"CHAPTER 1","dialNode1b":"Method","dialNode2a":"CHAPTER 2","dialNode2b":"Historicity","dialNode3a":"CHAPTER 3","dialNode3b":"Development","dialNode4a":"CHAPTER 4","dialNode4b":"Corpus and matrix","dialNode5a":"CHAPTER 5","dialNode5b":"Exercises","dialNode6a":"CHAPTER 6","dialNode6b":"Provisional synthesis","dialStep0":"Research problem","dialStep1":"Chapter 1 — Method","dialStep2":"Chapter 2 — Historicity","dialStep3":"Chapter 3 — Development","dialStep4":"Chapter 4 — Corpus and matrix","dialStep5":"Chapter 5 — Exploratory exercises","dialStep6":"Chapter 6 — Provisional synthesis"},"es":{"dialMenu":"Movimiento dialéctico","dialQuick":"Dialéctica","dialEyebrow":"Recorrido complementario · método y objeto","dialTitle":"Movimiento dialéctico de la investigación","dialLead":"No es una secuencia de casillas: las preguntas se transforman, cada capítulo aporta determinaciones y regresar al problema no significa volver al mismo punto de partida. El esquema representa el movimiento interpretativo sin anticipar una síntesis general del corpus.","dialPlay":"Recorrer el movimiento","dialPause":"Pausar animación","dialResume":"Reanudar animación","dialStop":"Detener recorrido","dialLinearButton":"Activar lectura lineal","dialVisualButton":"Volver al diagrama visual","dialSvgTitle":"Investigación en movimiento: del problema a la síntesis provisional","dialSvgDesc":"Recorrido curvo desde el problema inicial por los capítulos 1–6 y retorno abierto. En el centro están las mediaciones históricas, sociales, educativas y psicológicas. Flechas continuas indican la reconstrucción; la flecha discontinua indica un retorno transformado, no un círculo cerrado.","dialCentralTitle":"MEDIACIONES","dialCentralPhen":"Fenómeno: adolescencia y desarrollo reales","dialCentralObj":"Objeto: concepciones académicas producidas","dialCentralRelations":"Trabajo · escolarización · derechos · actividad","dialCentralHorizon":"De lo abstracto a lo concreto pensado: horizonte, no resultado","dialAbstract":"ABSTRACTO","dialNotClosed":"Retorno ≠ repetición","dialCaption":"La trayectoria espiralada distingue avances analíticos y retornos críticos. Los elementos centrales no son etapas independientes, sino relaciones que atraviesan el fenómeno real y las concepciones examinadas. Lo concreto pensado sigue siendo un horizonte de reconstrucción, limitado por el estado actual del estudio.","dialLinearTitle":"Lectura lineal y descripción del movimiento","dialLinear0":"Problema: se pregunta cómo las concepciones académicas explican adolescencia y desarrollo; el fenómeno real difiere del objeto documental.","dialLinear1":"Capítulo 1 — Método: decisiones histórico-dialécticas y examen crítico de las producciones.","dialLinear2":"Capítulo 2 — Historicidad: trabajo, clases, escolarización, derechos y desigualdades en la formación histórica de la adolescencia.","dialLinear3":"Capítulo 3 — Desarrollo: actividad, apropiación cultural, formación psíquica y mediaciones educativas.","dialLinear4":"Capítulo 4 — Corpus y matriz: reconstrucción y análisis de concepciones con la Matriz Analítica Tripartita.","dialLinear5":"Capítulo 5 — Ejercicios: aplicación exploratoria a estudios diferentes, sin generalizar al corpus.","dialLinear6":"Capítulo 6 — Síntesis: retorno al problema con determinaciones posibles, límites, contradicciones y preguntas abiertas. La llegada no es idéntica a la partida.","dialMethodNote":"Precisión metodológica. Diferenciar clasificación y reconstrucción dialéctica no significa rechazar la lógica formal. El movimiento es heurístico: no demuestra por sí mismo la aprehensión de lo concreto pensado.","dialSourceNote":"Remisiones: Introducción (láminas 1–3), Capítulo 1 (4–6), Capítulo 2 (7–9), Capítulo 3 (10–12), Capítulo 4 (13–15), Capítulo 5 (16–18), Capítulo 6 (19–21). Este esquema complementa las 21 láminas originales.","dialDetailLink":"Ver lámina relacionada en la Guía","dialNode0a":"PUNTO DE PARTIDA","dialNode0b":"Problema","dialNode1a":"CAPÍTULO 1","dialNode1b":"Método","dialNode2a":"CAPÍTULO 2","dialNode2b":"Historicidad","dialNode3a":"CAPÍTULO 3","dialNode3b":"Desarrollo","dialNode4a":"CAPÍTULO 4","dialNode4b":"Corpus y matriz","dialNode5a":"CAPÍTULO 5","dialNode5b":"Ejercicios","dialNode6a":"CAPÍTULO 6","dialNode6b":"Síntesis provisional","dialStep0":"Problema científico","dialStep1":"Capítulo 1 — Método","dialStep2":"Capítulo 2 — Historicidad","dialStep3":"Capítulo 3 — Desarrollo","dialStep4":"Capítulo 4 — Corpus y matriz","dialStep5":"Capítulo 5 — Ejercicios exploratorios","dialStep6":"Capítulo 6 — Síntesis provisional"}};
+ const explanations={"pt":["A pergunta inicial investiga como a produção acadêmica concebe adolescência e desenvolvimento humano. O fenômeno real e as formulações científicas sobre ele não são a mesma coisa.","O materialismo histórico-dialético orienta o modo de construir e interrogar o objeto. O método não opera como sequência automática de procedimentos.","Historicizar exige examinar formação social, trabalho, classes, escolarização, direitos e desigualdades, sem converter uma experiência histórica particular em universal.","A Psicologia Histórico-Cultural e a Pedagogia Histórico-Crítica permitem examinar atividade, apropriação, escolarização e formação psíquica como relações socialmente mediadas.","O corpus é reconstruído e interrogado em seus próprios termos, com registro das mediações e confronto crítico pela Matriz Analítica Tripartida.","Os exercícios exploratórios testam a sensibilidade da matriz em dois estudos distintos. Ainda não autorizam inferir tendências gerais das teses e dissertações brasileiras.","As considerações retomam o problema com relações mais determinadas, mas reconhecem limites documentais, resultados exploratórios, contradições e tarefas de continuidade."],"en":["The starting question asks how academic literature understands adolescence and human development. Real processes and their scholarly explanations are distinct.","Historical-dialectical materialism guides how the object is constructed and critically examined. Method is not an automatic sequence of procedures.","Historicity requires examination of social formation, labour, class, schooling, rights and inequality without making any particular historical experience universal.","Cultural-Historical Psychology and Historical-Critical Pedagogy examine activity, appropriation, schooling and psychic formation as socially mediated relations.","The corpus is reconstructed on its own terms, recording mediations and applying critical comparison through the Tripartite Analytical Matrix.","Exploratory exercises test the sensitivity of the matrix on two different studies; they do not justify generalising to Brazilian dissertations and theses.","The final considerations return to the problem with more determined relations while acknowledging documentary limits, exploratory findings, contradictions and future work."],"es":["La pregunta inicial examina cómo la producción académica concibe adolescencia y desarrollo humano. El fenómeno real no se confunde con las explicaciones científicas.","El materialismo histórico-dialéctico orienta la construcción e interrogación crítica del objeto. El método no es una secuencia automática.","Historizar exige examinar formación social, trabajo, clases, escolarización, derechos y desigualdades sin universalizar una experiencia histórica particular.","La Psicología Histórico-Cultural y la Pedagogía Histórico-Crítica examinan actividad, apropiación, escolarización y formación psíquica como relaciones socialmente mediadas.","El corpus se reconstruye en sus propios términos, registrando mediaciones y realizando confrontación crítica mediante la Matriz Analítica Tripartita.","Los ejercicios exploratorios prueban la sensibilidad de la matriz en dos estudios distintos y no permiten generalizar al conjunto de tesis y disertaciones.","Las consideraciones finales vuelven al problema con relaciones más determinadas, reconociendo límites documentales, resultados exploratorios, contradicciones y tareas pendientes."]};
+ const paths=["#prancha1","#prancha4","#prancha7","#prancha10","#prancha13","#prancha16","#prancha19"];
+ const nodes=[...root.querySelectorAll('[data-dial-node]')];
+ const buttons=[...root.querySelectorAll('[data-dial-step]')];
+ const arcs=[...root.querySelectorAll('[data-dial-edge]')];
+ const play=document.getElementById('dial-play'), pause=document.getElementById('dial-pause');
+ const linear=document.getElementById('dial-linear-toggle');
+ const currentTitle=document.getElementById('dial-detail-title');
+ const currentText=document.getElementById('dial-detail-copy');
+ const currentLink=document.getElementById('dial-detail-link');
+ let step=0, timer=null, paused=false;
+ const language=()=>sel && (sel.value==='en'||sel.value==='es')?sel.value:'pt';
+ function paint(){
+   const lang=language(), t=i18n[lang];
+   nodes.forEach((n,i)=>{n.classList.toggle('is-current',i===step);n.setAttribute('aria-current',i===step?'step':'false')});
+   buttons.forEach((b,i)=>{b.classList.toggle('is-current',i===step);b.setAttribute('aria-pressed',String(i===step))});
+   arcs.forEach((p,i)=>p.classList.toggle('is-current',i===Math.min(step,5)));
+   currentTitle.textContent=t['dialStep'+step];
+   currentText.textContent=explanations[lang][step];
+   currentLink.href=paths[step];
+   currentLink.textContent=t.dialDetailLink;
+ }
+ function stopSequence(){
+   if(timer!==null){clearInterval(timer);timer=null}
+   play.textContent=i18n[language()].dialPlay;
+ }
+ function selectStep(i){
+   step=Math.max(0,Math.min(6,i));paint();
+ }
+ buttons.forEach(b=>b.addEventListener('click',()=>{stopSequence();selectStep(Number(b.dataset.dialStep))}));
+ nodes.forEach(n=>n.addEventListener('click',e=>{e.preventDefault();stopSequence();selectStep(Number(n.dataset.dialNode));document.getElementById('dial-detalhe').scrollIntoView({behavior:'auto',block:'nearest'});}));
+ play.addEventListener('click',()=>{
+   if(timer!==null){stopSequence();return}
+   const prefersReduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   if(prefersReduced){selectStep((step+1)%7);return}
+   selectStep(0);
+   play.textContent=i18n[language()].dialStop;
+   timer=setInterval(()=>{if(step>=6){stopSequence();return}selectStep(step+1)},3200);
+ });
+ pause.addEventListener('click',()=>{
+   paused=!paused;root.classList.toggle('is-paused',paused);pause.setAttribute('aria-pressed',String(paused));
+   pause.textContent=i18n[language()][paused?'dialResume':'dialPause'];
+   if(paused)stopSequence();
+ });
+ linear.addEventListener('click',()=>{
+   const enabled=root.classList.toggle('is-linear');
+   linear.setAttribute('aria-pressed',String(enabled));
+   linear.textContent=i18n[language()][enabled?'dialVisualButton':'dialLinearButton'];
+ });
+ if(document.getElementById('linear'))document.getElementById('linear').addEventListener('click',()=>stopSequence());
+ function localize(){
+   const t=i18n[language()],lang=language()==='pt'?'pt-BR':language();
+   root.querySelectorAll('[data-tx]').forEach(el=>{
+     const v=t[el.dataset.tx];
+     if(v!==undefined){el.textContent=v;el.setAttribute('lang',lang)}
+   });
+   root.querySelectorAll('[data-dial-node]').forEach((node,i)=>node.setAttribute('aria-label',t['dialStep'+i]));
+   root.querySelectorAll('[data-dial-step]').forEach((b,i)=>b.setAttribute('aria-label',t['dialStep'+i]));
+   const nav=document.querySelector('[data-tx="dialMenu"]');
+   if(nav){nav.textContent=t.dialMenu;nav.setAttribute('lang',lang)}
+   const quick=document.querySelector('[data-tx="dialQuick"]');
+   if(quick){quick.textContent=t.dialQuick;quick.setAttribute('lang',lang)}
+   play.textContent=t[timer===null?'dialPlay':'dialStop'];
+   pause.textContent=t[paused?'dialResume':'dialPause'];
+   linear.textContent=t[root.classList.contains('is-linear')?'dialVisualButton':'dialLinearButton'];
+   root.querySelector('.dial-actionbar').setAttribute('aria-label',lang==='en'?'Diagram controls':lang==='es'?'Controles del diagrama':'Controles de exploração do diagrama');
+   root.querySelector('.dial-stepnav').setAttribute('aria-label',lang==='en'?'Choose a stage':lang==='es'?'Elija una etapa':'Escolha uma etapa do percurso');
+   paint();
+ }
+ if(sel)sel.addEventListener('change',localize);
+ window.addEventListener('pagehide',stopSequence);
+ localize();
+})();
+</script>
+</body></html>
