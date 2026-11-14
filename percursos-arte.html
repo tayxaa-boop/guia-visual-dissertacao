@@ -1,4 +1,5 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Dois percursos curatoriais com fontes verificáveis: representações históricas da juventude e obras criadas por adolescentes."><title>Adolescências, arte e autoria · Guia Visual da Pesquisa</title><style>
+<!doctype html><html lang="pt-BR"><head>
+<meta name="author" content="Taynara Xavier Telles"><meta name="copyright" content="© 2026 Taynara Xavier Telles. Direitos reservados, ressalvados direitos de terceiros e limitações legais."><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Dois percursos curatoriais com fontes verificáveis: representações históricas da juventude e obras criadas por adolescentes."><title>Adolescências, arte e autoria · Guia Visual da Pesquisa</title><style>
 :root{--ink:#19283b;--mute:#46566a;--paper:#f4f4f0;--white:#fff;--line:#cdd4d8;--accent:#744b4a;--blue:#32586a}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:5rem}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Arial, sans-serif}
@@ -49,6 +50,11 @@ footer{padding:1.5rem;color:#4d5f71;text-align:center;font-size:.9rem}
 @media(max-width:810px){.art-timeline{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.path-head{align-items:flex-start}.path-no{width:3rem;height:3rem}}
 @media print{nav.floating,.filters{display:none!important}.art-timeline{grid-template-columns:1fr}.art-item{break-inside:avoid}.section{border:0;padding:.3rem 0}.intro,.closing{break-inside:avoid}}
+
+/* Aviso transversal de autoria, preservando leitura e acessibilidade */
+.rights-extended{display:block;max-width:1000px;margin:1.25rem auto;padding:.9rem 1rem;text-align:left;background:#f3f6f7;border:1px solid #bfcbd4;border-left:5px solid #4b6877;border-radius:8px;color:#263c4b;font:normal .91rem/1.55 Arial,sans-serif}
+.rights-extended strong{font-weight:700}
+@media print{.rights-extended{break-inside:avoid;border:1px solid #7a8591;background:white}}
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo</a>
 <header><p class="eyebrow">Guia Visual · Pesquisa em Educação · Curadoria em expansão</p><h1>Quem pôde representar a adolescência?<br>E quem pôde representar o mundo?</h1>
@@ -254,7 +260,7 @@ footer{padding:1.5rem;color:#4d5f71;text-align:center;font-size:.9rem}
 <p>Esta seção é complementar ao objeto documental da dissertação. Não amplia o corpus de teses e dissertações, nem transforma obras artísticas em evidência direta de transformações do psiquismo.</p>
 <div class="rights-box"><strong>Direitos autorais e reprodução.</strong> © 2026 Taynara Xavier Telles. Todos os direitos reservados sobre o texto curatorial original do Guia. Proibida a divulgação ou reprodução total ou parcial deste Guia sem autorização prévia e expressa, ressalvadas as exceções legais e os direitos de terceiros. As obras e conteúdos das instituições consultadas conservam seus próprios regimes de direitos; consulte cada fonte.</div>
 <p><a href="index.html#arte">Voltar à seção Arte do Guia</a> · <a href="index.html#cap2">Ver o capítulo sobre historicidade</a></p></section>
-</main><footer>Curadoria de pesquisa em expansão · Guia Visual da dissertação de Taynara Xavier Telles · 2026</footer>
+</main><footer><aside class="rights-extended" role="note" aria-label="Autoria e direitos de reutilização"><strong>© 2026 Taynara Xavier Telles — direitos autorais reservados.</strong> Os textos autorais, a organização, os esquemas e os recursos originais deste Guia destinam-se à consulta. A republicação, adaptação ou distribuição dependem de autorização da autora, ressalvadas as exceções previstas em lei. Obras, imagens, citações e outros materiais de terceiros mantêm seus próprios direitos.</aside>Curadoria de pesquisa em expansão · Guia Visual da dissertação de Taynara Xavier Telles · 2026</footer>
 <script>
 (function(){document.querySelectorAll('.filters[data-group]').forEach(function(g){var group=g.dataset.group,target=document.getElementById(group==='representada'?'obras-representadas':'obras-autorais');g.addEventListener('click',function(e){var btn=e.target.closest('button[data-filter]');if(!btn||!g.contains(btn))return;var tag=btn.dataset.filter;g.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b===btn));});target.querySelectorAll('.art-item').forEach(function(card){card.hidden=tag!=='all'&&!card.dataset.tags.split(' ').includes(tag);});});});})();
 </script></body></html>
