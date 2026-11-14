@@ -1,7 +1,7 @@
 # Curadoria de imagens: Galeria de autores do Guia Visual
 
 **Data da revisão:** 14 de novembro de 2026  
-**Situação:** 15 fichas com imagens vinculadas, identificadas por natureza de documento; 48 sem imagem incorporada. Duas dessas 48 fichas possuem agora referências externas para consulta.  
+**Situação:** 15 fichas com imagens vinculadas, identificadas por natureza de documento; 48 sem imagem incorporada. Cinco dessas 48 fichas possuem agora referências externas para consulta.  
 **Uso:** suplemento de proveniência do Guia Visual da dissertação de qualificação de Taynara Xavier Telles (UDESC).
 
 ## Critérios
@@ -119,6 +119,9 @@
 
 - **Aleksei Nikolaevitch Leontiev:** [fotografia em artigo biográfico, Federação de Atletismo do Uzbequistão](https://uzathletics.uz/stati/article_post/pochemu-cheloveku-tyazhelo-daetsya-proyavlenie-voli-ob-yasnyaet-velikij-sovetskij-psiholog-aleksej-leontev). Identidade contextual identificada; fotógrafo, procedência original e permissão de republicação não confirmados. Mantido link externo, sem copiar a imagem.
 - **Daniil Borissovitch Elkonin:** [representação gráfica no acervo da Universidade Pedagógica Estatal Herzen](https://ru.hspu.org/about/about_uni/history/outstanding-names/elkonin-daniil-borisovich/) e [fotografia em artigo histórico de Vladimir Kudryavtsev publicado em 2024](https://vogazeta.ru/articles/2024/2/29/psychology/24666-el_greko_psihologii). Nenhuma das páginas apresenta, na consulta realizada, permissão inequívoca para republicação da imagem. Mantidos links externos.
+- **Evald Vasilievich Ilyenkov:** [galeria fotográfica em arquivo especializado](https://www.marxists.org/archive/ilyenkov/images/index.htm). A coleção ilustra diferentes períodos da vida do filósofo, mas não oferece autorização geral suficientemente confirmada para republicação das fotografias. Mantido apenas o link na ficha.
+- **Karel Kosík:** [fotografia publicada em matéria do Página/12](https://www.pagina12.com.ar/421973-la-estetica-dialectica-de-karel-kosik/). Referência visual externa; direitos da fotografia não confirmados para reprodução neste Guia.
+- **Gaudêncio Frigotto:** [registro fotográfico em notícia da CUT-SC](https://sc.cut.org.br/noticias/professor-gaudencio-frigotto-dara-palestra-sobre-trabalho-e-educacao-em-floriano-a95e). A fotografia foi localizada, mas a publicação jornalística não autoriza automaticamente sua reutilização.
 - **Alexander Romanovich Luria:** [fotografia no Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Alexander_Luria.jpg), identificada como retrato de Alexander Luria e sinalizada como domínio público; o arquivo aponta a página da UCSD como origem e autor desconhecido. **Não consta entre as 63 fichas existentes**, portanto não foi anexado a outro autor nem adicionada nova ficha sem revisão da estrutura.
 - **Lidiya Bozhovich:** referências biográficas e fotografias circulam em fontes de pesquisa, mas não foi identificado arquivo reutilizável e verificável nesta ampliação.
 
