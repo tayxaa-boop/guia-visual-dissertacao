@@ -218,6 +218,63 @@ footer .rights-notice{max-width:1020px;margin:1rem auto;color:#293e50;text-align
 @media(max-width:470px){.dial-stepnav{grid-template-columns:1fr}.dial-graphic svg{min-width:820px}}
 @media print{.dial-actionbar,.dial-stepnav{display:none!important}.dial-graphic{overflow:visible}.dial-graphic svg{min-width:0}.dial-linear{display:block!important}.dial-section{break-before:page}.dial-section .dial-detail{break-inside:avoid}}
 
+
+/* Controles de leitura acessível, compartilhados entre as páginas do Guia */
+.accessibility-controls{display:none;align-items:center;flex-wrap:wrap;gap:.3rem;padding:.3rem .45rem;border-radius:12px;background:#eef3f8;border:1px solid #afc0cf}
+html.gv-a11y-ready .accessibility-controls{display:inline-flex}
+.accessibility-controls .a11y-label{font-weight:700;font-size:.88rem;color:#19354e;padding:0 .25rem}
+.accessibility-controls button{font:inherit;font-weight:700;min-height:44px;min-width:44px;padding:.45rem .62rem;white-space:nowrap;background:#fff;color:#1a3349;border:1px solid #536e82;border-radius:8px}
+.accessibility-controls button[aria-pressed="true"]{background:#19283b;color:#fff;border-color:#19283b}
+.accessibility-controls button:disabled{opacity:.5;cursor:not-allowed}
+.accessibility-controls button:focus-visible{outline:3px solid #ce7400;outline-offset:2px}
+.a11y-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.a11y-standalone{display:flex;justify-content:flex-end;max-width:1040px;margin:.8rem auto;padding:0 1rem}
+html.gv-large-type .tools,html.gv-large-type .floating,html.gv-large-type .ma-floating{position:relative;top:auto}
+@media(max-width:650px){.accessibility-controls{max-width:100%}.accessibility-controls .a11y-label{flex:1 0 100%}.tools .accessibility-controls{flex:1 0 auto}}
+@media print{.accessibility-controls,.a11y-standalone{display:none!important}}
+@media screen{
+html.gv-high-contrast{--ink:#000;--sub:#000;--focus:#bf1600}
+html.gv-high-contrast body{background:#fff!important;color:#000!important}
+html.gv-high-contrast header{background:#000!important;color:#fff!important}
+html.gv-high-contrast header :is(h1,h2,p,span,strong,a,small){color:#fff!important}
+html.gv-high-contrast header a{text-decoration:underline!important}
+html.gv-high-contrast header.site .thesis-source{background:#101010!important;color:#fff!important;border-color:#fff!important}
+html.gv-high-contrast .tools,html.gv-high-contrast .accessibility-controls,html.gv-high-contrast .a11y-standalone{background:#fff!important;color:#000!important;border-color:#000!important;box-shadow:none!important}
+html.gv-high-contrast .accessibility-controls .a11y-label{color:#000!important}
+html.gv-high-contrast .accessibility-controls button{color:#000!important;background:#fff!important;border:2px solid #000!important}
+html.gv-high-contrast .accessibility-controls button[aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast main *:not(svg):not(svg *){color:#000!important;background-color:#fff!important;border-color:#111!important;box-shadow:none!important;text-shadow:none!important}
+html.gv-high-contrast main a{color:#002bba!important;text-decoration:underline!important}
+html.gv-high-contrast main :is(button,input,textarea,select){border:2px solid #000!important}
+html.gv-high-contrast main [aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast .tools nav.quick-nav a,html.gv-high-contrast .floating a,html.gv-high-contrast .ma-floating a{background:#fff!important;color:#000!important;border:2px solid #000!important;text-decoration:underline!important}
+html.gv-high-contrast :is(a,button,input,select,summary,textarea):focus-visible{outline:4px solid #d10000!important;outline-offset:3px}
+html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
+}
+
+/* Identidade cromática discreta para cada aba, mantendo o texto legível */
+.tools nav.quick-nav a[href="#explorar"],.extra-menu-list a[href="#explorar"]{--gv-tab-accent:#325b72;--gv-tab-bg:#eaf1f5}
+.tools nav.quick-nav a[href="#roteiro"],.extra-menu-list a[href="#roteiro"]{--gv-tab-accent:#a34a23;--gv-tab-bg:#fff1e6}
+.tools nav.quick-nav a[href="#dialetica"],.extra-menu-list a[href="#dialetica"]{--gv-tab-accent:#6f438f;--gv-tab-bg:#f4edfa}
+.tools nav.quick-nav a[href="#autora"],.extra-menu-list a[href="#autora"]{--gv-tab-accent:#9c3561;--gv-tab-bg:#fbedf3}
+.tools nav.quick-nav a[href="#leitor"],.extra-menu-list a[href="#leitor"]{--gv-tab-accent:#136b79;--gv-tab-bg:#eaf7f8}
+.tools nav.quick-nav a[href="#cap0"],.extra-menu-list a[href="#cap0"]{--gv-tab-accent:#856008;--gv-tab-bg:#fff4d9}
+.tools nav.quick-nav a[href="#cap1"],.extra-menu-list a[href="#cap1"]{--gv-tab-accent:#9a4b12;--gv-tab-bg:#fff1e6}
+.tools nav.quick-nav a[href="#cap2"],.extra-menu-list a[href="#cap2"]{--gv-tab-accent:#912d37;--gv-tab-bg:#fcecee}
+.tools nav.quick-nav a[href="#cap3"],.extra-menu-list a[href="#cap3"]{--gv-tab-accent:#62418c;--gv-tab-bg:#f1ebfb}
+.tools nav.quick-nav a[href="#cap4"],.extra-menu-list a[href="#cap4"]{--gv-tab-accent:#15527f;--gv-tab-bg:#e9f3fc}
+.tools nav.quick-nav a[href="#cap5"],.extra-menu-list a[href="#cap5"]{--gv-tab-accent:#18694f;--gv-tab-bg:#e9f7ef}
+.tools nav.quick-nav a[href="#cap6"],.extra-menu-list a[href="#cap6"]{--gv-tab-accent:#76533d;--gv-tab-bg:#f6eee9}
+.tools nav.quick-nav a[href="#galeria"],.extra-menu-list a[href="#galeria"]{--gv-tab-accent:#3b5b39;--gv-tab-bg:#eef5e9}
+.tools nav.quick-nav a[href="#arte"],.extra-menu-list a[href="#arte"]{--gv-tab-accent:#9c427c;--gv-tab-bg:#f9edf6}
+.tools nav.quick-nav a[href="percursos-arte.html"],.extra-menu-list a[href="percursos-arte.html"]{--gv-tab-accent:#725716;--gv-tab-bg:#fbf4e1}
+.tools nav.quick-nav a[href="matriz-aberta.html"],.extra-menu-list a[href="matriz-aberta.html"]{--gv-tab-accent:#5147a2;--gv-tab-bg:#eeedfa}
+.tools nav.quick-nav a[href="#fontes"],.extra-menu-list a[href="#fontes"]{--gv-tab-accent:#326673;--gv-tab-bg:#e9f6f7}
+
+.tools nav.quick-nav a,.extra-menu-list a{border:1px solid var(--gv-tab-accent,#58778a);border-left:5px solid var(--gv-tab-accent,#58778a);background:var(--gv-tab-bg,#f4f7fa);color:#172c3c}
+.tools nav.quick-nav a:hover,.extra-menu-list a:hover{background:var(--gv-tab-bg,#e7eef3);filter:brightness(.96);text-decoration:underline}
+.tools nav.quick-nav a:focus-visible,.extra-menu-list a:focus-visible{outline:3px solid #1462ab;outline-offset:2px}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
@@ -229,7 +286,7 @@ footer .rights-notice{max-width:1020px;margin:1rem auto;color:#293e50;text-align
 <p>TELLES, Taynara Xavier. <strong>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026)</strong>: mediações históricas, sociais e escolares da Psicologia e da Educação. 2026. Dissertação (Mestrado em Educação) – Centro de Ciências Humanas e da Educação, Universidade do Estado de Santa Catarina, Florianópolis, 2026.</p>
 <p class="thesis-source-note">(Versão apresentada para o exame de qualificação. A publicação integral da versão definitiva ocorrerá após a defesa e os procedimentos institucionais de depósito e validação no Repositório Institucional da UDESC.)</p>
 </div></header>
-<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
+<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
 <main id="conteudo">
 
 <nav class="extra-menu" id="explorar" aria-labelledby="explorar-titulo">
@@ -1866,6 +1923,38 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
  if(sel)sel.addEventListener('change',localize);
  window.addEventListener('pagehide',stopSequence);
  localize();
+})();
+</script>
+
+<script>
+/* Preferências de acessibilidade do Guia: sem bibliotecas, compartilhadas entre páginas */
+(function(){
+"use strict";
+var levels=[80,90,100,110,125,150,175,200], key="gv-a11y-preferences-v1";
+var minus=document.getElementById("gv-font-minus"),plus=document.getElementById("gv-font-plus"),contrast=document.getElementById("gv-contrast"),reset=document.getElementById("gv-reset"),status=document.getElementById("gv-a11y-status");
+if(!minus||!plus||!contrast||!reset||!status)return;
+var state={level:2,contrast:false};
+try{var stored=JSON.parse(localStorage.getItem(key)||"null");if(stored&&Number.isInteger(stored.level)&&stored.level>=0&&stored.level<levels.length)state.level=stored.level;if(stored&&typeof stored.contrast==="boolean")state.contrast=stored.contrast;}catch(e){}
+function render(save){
+ var root=document.documentElement;
+ root.style.fontSize=levels[state.level]+"%";
+ root.classList.toggle("gv-high-contrast",state.contrast);
+ root.classList.toggle("gv-large-type",levels[state.level]>=175);
+ minus.disabled=state.level===0;plus.disabled=state.level===levels.length-1;
+ contrast.setAttribute("aria-pressed",String(state.contrast));
+ contrast.setAttribute("aria-label",state.contrast?"Desativar alto contraste":"Ativar alto contraste");
+ contrast.textContent=state.contrast?"Contraste: ligado":"Alto contraste";
+ if(save){
+   status.textContent="Tamanho do texto: "+levels[state.level]+"%. Alto contraste "+(state.contrast?"ativado.":"desativado.");
+   try{localStorage.setItem(key,JSON.stringify(state));}catch(e){}
+ }
+}
+minus.addEventListener("click",function(){if(state.level>0){state.level--;render(true);}});
+plus.addEventListener("click",function(){if(state.level<levels.length-1){state.level++;render(true);}});
+contrast.addEventListener("click",function(){state.contrast=!state.contrast;render(true);});
+reset.addEventListener("click",function(){state={level:2,contrast:false};render(true);});
+render(false);
+document.documentElement.classList.add("gv-a11y-ready");
 })();
 </script>
 </body></html>
