@@ -87,6 +87,50 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 .reader-rate output {min-width:2.6rem;font-variant-numeric:tabular-nums;}
 @media(max-width:800px){.reader-grid{grid-template-columns:1fr 1fr;}.reader-grid>label:first-child{grid-column:1/-1}.reader-voice{grid-template-columns:1fr}.reader-modes{display:grid;grid-template-columns:1fr}.reader-modes label{width:100%;}}
 @media print {.reader-voice,.reader-toolbar,.reader-modes,.reader-grid,.reader-help{display:none!important;}.reader-text{border:0;padding:0}.reader-shell{box-shadow:none}.reader-hidden{display:block!important}}
+
+/* gv-expansao-141126: novos percursos, sem alterar a estrutura das pranchas originais */
+#explorar,#roteiro,#autora,#galeria,#arte,#fontes{scroll-margin-top:5.5rem}
+.extra-menu,.extra-panel{background:#fff;border:1px solid #d3dce5;border-radius:15px;padding:clamp(1rem,2.3vw,1.5rem);margin:1.1rem 0 1.7rem;box-shadow:0 4px 18px #19283b08}
+.extra-menu h2,.extra-panel h2{font-size:clamp(1.35rem,2.4vw,1.7rem);margin:.15rem 0 .55rem;color:#233b50}
+.extra-menu p,.extra-panel p{max-width:88ch}
+.extra-menu-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:.75rem 0 1rem}
+.extra-menu-list a{padding:.7rem .85rem;border:1px solid #b6c7d5;border-radius:9px;color:#183c56;background:#f7fafc;text-decoration:none;display:block;font-weight:700}
+.extra-menu-list a:focus-visible,.extra-menu-list a:hover{background:#e8f0f6;text-decoration:underline}
+.extra-menu .language-tool{border-top:1px solid #d9e1e8;padding-top:.9rem;margin-top:1.1rem;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.language-tool label{font-weight:bold}
+.language-tool select{font:inherit;padding:.6rem .75rem;min-height:44px;border:1px solid #536c80;border-radius:9px;background:white;color:#152d43}
+.language-scope{font-size:.9rem;color:#4a5d6c;max-width:80ch}
+.panel-lead{color:#475d6f;font-size:1.06rem}
+.author-layout{display:grid;grid-template-columns:minmax(165px,1fr) minmax(0,3.2fr);gap:1.35rem;align-items:start}
+.author-portrait{min-height:240px;border:1px dashed #8da6b6;background:linear-gradient(140deg,#f5f1ec,#f1f5f7);border-radius:10px;padding:1.2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#4b6170}
+.author-portrait strong{display:block;font-size:1.05rem;margin:.3rem 0}
+.extra-panel .eyebrow{font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:#5d6776;font-weight:700}
+.author-layout h3,.extra-panel h3{font-size:1.12rem;color:#25435e}
+.extra-panel .action-strip{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+.extra-panel .action-strip button{min-height:44px}
+.extra-panel .action-strip .status{color:#40566e;font-size:.86rem;min-height:1.3em}
+.crosslinks{display:flex;gap:.55rem;flex-wrap:wrap;margin:1rem 0}
+.crosslinks a{display:inline-block;border:1px solid #c0cfda;border-radius:9px;padding:.5rem .7rem;background:#f6f9fc;font-weight:600}
+.focus-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin:.9rem 0}
+.focus-card{border:1px solid #d3dce5;border-radius:10px;padding:1rem;background:#fcfdfe}
+.focus-card h3{margin:.05rem 0 .35rem}
+.focus-card p{margin:.3rem 0}
+.focus-card .note{font-size:.87rem;color:#586b7b}
+.focus-card a{overflow-wrap:anywhere}
+.route-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;list-style:none;padding:0;margin:1rem 0}
+.route-list li{margin:0}
+.route-list a{display:block;background:#f5f8fb;border:1px solid #cbd8e2;border-radius:9px;padding:.7rem .8rem;text-decoration:none;font-weight:600;color:#24415b}
+.route-list a:hover,.route-list a:focus-visible{background:#eaf1f7;text-decoration:underline}
+.side-note{background:#f2f5f8;padding:.75rem .9rem;border-left:4px solid #516b81;border-radius:5px}
+#banca-toggle[aria-pressed="true"]{background:#213c58;color:#fff}
+.banca-mode .chapter .plate{font-size:1.12em}
+.banca-mode .chapter .diagram svg{max-height:65vh}
+.banca-mode .chapter .ref{font-size:.98rem}
+[hidden]{display:none!important}
+@media(max-width:790px){.extra-menu-list{grid-template-columns:repeat(2,1fr)}.author-layout{grid-template-columns:1fr}.author-portrait{min-height:150px}.focus-cards,.route-list{grid-template-columns:1fr}}
+@media(max-width:480px){.extra-menu-list{grid-template-columns:1fr}}
+@media print{.extra-menu,.extra-panel{box-shadow:none;break-inside:auto}.extra-menu-list,.language-tool,.action-strip,#roteiro{display:none!important}}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
@@ -95,12 +139,85 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 <p>21 pranchas com esquemas relacionais, descrições independentes e avisos de leitura. Fonte-base: dissertação de qualificação, versão 11 (2026).</p></header>
 <div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><span>As notas podem ser abertas com Enter ou Espaço.</span></div>
 <main id="conteudo">
+
+<nav class="extra-menu" id="explorar" aria-labelledby="explorar-titulo">
+ <h2 id="explorar-titulo" data-tx="menuTitle">Explore o Guia Visual</h2>
+ <p data-tx="menuLead">O percurso original da pesquisa está preservado. As seções complementares oferecem outros caminhos de encontro com a dissertação.</p>
+ <div class="extra-menu-list">
+  <a href="#roteiro" data-tx="menuBanca">Percurso para a banca</a>
+  <a href="#autora" data-tx="menuAuthor">Sobre a autora</a>
+  <a href="#cap0" data-tx="menuChapters">Percurso da dissertação · Capítulos 1–5</a>
+  <a href="#galeria" data-tx="menuGallery">Galeria de autores e ideias</a>
+  <a href="#arte" data-tx="menuArt">Adolescência, arte e experiência humana</a>
+  <a href="#leitor" data-tx="menuAccess">Leitura acessível da dissertação</a>
+  <a href="#fontes" data-tx="menuRefs">Referências e acervos</a>
+ </div>
+ <div class="language-tool">
+  <label for="guide-lang" data-tx="languageLabel">Idioma dos conteúdos complementares</label>
+  <select id="guide-lang" aria-describedby="language-scope">
+   <option value="pt" lang="pt-BR">Português</option><option value="en" lang="en">English</option><option value="es" lang="es">Español</option>
+  </select>
+ </div>
+ <p class="language-scope" id="language-scope" data-tx="languageScope">O seletor traduz os textos complementares deste Guia. As 21 pranchas e a dissertação integral permanecem no idioma original, português; não há tradução automática de conteúdo acadêmico.</p>
+</nav>
 <section class="intro" aria-labelledby="objetivos"><h2 id="objetivos">Como ler este guia</h2>
 <div class="rules"><div><strong>Rastreabilidade</strong><p>Problema, teoria, corpus e matriz articulados, com remissões às seções da dissertação.</p></div>
 <div><strong>Acessibilidade cognitiva</strong><p>Cores acompanhadas de títulos e formas; sínteses sem substituir a fundamentação.</p></div>
 <div><strong>Acessibilidade digital</strong><p>Texto selecionável, leitura linear, descrições textuais, avisos expansíveis e navegação por teclado.</p></div></div>
 <p><strong>Nota de integridade:</strong> o roteiro original foi atualizado a partir da versão 11: matriz em três dimensões, cinco movimentos analíticos, números do levantamento original e do subconjunto temporal diferenciados, resultados exploratórios não generalizáveis.</p></section>
 
+
+<section class="extra-panel" id="roteiro" aria-labelledby="roteiro-titulo">
+ <p class="eyebrow" data-tx="bancaEyebrow">Para a qualificação · roteiro de navegação</p>
+ <h2 id="roteiro-titulo" data-tx="bancaTitle">Defender a proposta, não repetir uma aula</h2>
+ <p class="panel-lead" data-tx="bancaLead">Um percurso breve pelas decisões teórico-metodológicas, pela construção da Matriz Analítica Tripartida e pelos limites do exercício exploratório. Cada ponto abre uma prancha do Guia original.</p>
+ <ol class="route-list">
+  <li><a href="#prancha1" data-tx="route1">1. O problema e o objeto</a></li>
+  <li><a href="#prancha4" data-tx="route2">2. A escolha do método</a></li>
+  <li><a href="#prancha7" data-tx="route3">3. A historicidade da adolescência</a></li>
+  <li><a href="#prancha10" data-tx="route4">4. O desenvolvimento humano</a></li>
+  <li><a href="#prancha13" data-tx="route5">5. O corpus e seus limites</a></li>
+  <li><a href="#prancha14" data-tx="route6">6. A Matriz Analítica Tripartida</a></li>
+  <li><a href="#prancha16" data-tx="route7">7. Os exercícios com Soares e Bueno</a></li>
+  <li><a href="#prancha18" data-tx="route8">8. Síntese provisória e próximos passos</a></li>
+ </ol>
+ <div class="action-strip">
+  <button id="banca-toggle" type="button" aria-pressed="false" data-tx="bancaButton">Ampliar pranchas para apresentação</button>
+ </div>
+ <p class="side-note" data-tx="bancaNote">Este roteiro é um apoio à interlocução com a banca. A sequência pode ser interrompida e retomada conforme as questões dos examinadores. Recomenda-se manter também uma cópia local para eventual falha de conexão.</p>
+</section>
+
+<section class="extra-panel" id="autora" aria-labelledby="autora-titulo">
+ <p class="eyebrow" data-tx="authorEyebrow">A pesquisadora e os caminhos da pesquisa</p>
+ <h2 id="autora-titulo" data-tx="authorTitle">Sobre a autora</h2>
+ <div class="author-layout">
+  <aside class="author-portrait">
+   <strong data-tx="photoPlaceholder">Fotografia da autora</strong>
+   <span data-tx="photoMissing">Imagem ainda não selecionada. A descrição acessível será produzida a partir da fotografia escolhida.</span>
+  </aside>
+  <div>
+   <h3>Taynara Xavier Telles</h3>
+   <p class="eyebrow" data-tx="authorRole">Pedagoga · Professora dos Anos Iniciais · Mestranda em Educação na UDESC</p>
+   <p class="panel-lead" data-tx="authorIntro" data-about-read>Antes de investigar a adolescência, percorri os caminhos da escola como estudante e professora. As perguntas que hoje orientam minha pesquisa começaram muito antes de receberem um nome acadêmico.</p>
+   <h3 data-tx="authorFromTitle">De onde venho</h3>
+   <p data-tx="authorFrom" data-about-read>Cresci em Capinzal, no interior de Santa Catarina. No jardim da casa de minha avó, via crianças seguirem para a escola levando flores às professoras; ali comecei a imaginar a docência. Na escola pública, encontrei uma biblioteca que ainda recordo como minúscula e imensa: suas estantes abriram caminhos entre poemas, palavras e perguntas.</p>
+   <h3 data-tx="authorEducationTitle">Os caminhos da formação</h3>
+   <p data-tx="authorEducation" data-about-read>Estudei na escola pública e iniciei uma graduação em Psicologia com bolsa integral do ProUni, percurso posteriormente interrompido. Em Florianópolis, graduei-me em Pedagogia pela Universidade do Estado de Santa Catarina enquanto trabalhava como professora dos quartos e quintos anos do Ensino Fundamental. Hoje curso o mestrado em Educação no PPGE/FAED da UDESC. A experiência docente e a formação universitária, atravessadas por encontros e oportunidades, deram forma a inquietações que se tornaram problemas de pesquisa.</p>
+   <h3 data-tx="authorQuestionsTitle">As perguntas que me movem</h3>
+   <p data-tx="authorQuestions" data-about-read>Investigo como a produção acadêmica brasileira compreende a adolescência e o desenvolvimento humano, interrogando suas mediações históricas, sociais e escolares. Nessa trajetória, procuro aprofundar meu diálogo com o materialismo histórico-dialético, a Psicologia Histórico-Cultural e a Pedagogia Histórico-Crítica, sem perder de vista as desigualdades que atravessam a escola e as possibilidades de formação humana.</p>
+   <h3 data-tx="authorMemoryTitle">Entre palavras, imagens e memórias</h3>
+   <p data-tx="authorMemory" data-about-read>Carrego comigo a lembrança da biblioteca da Escola Municipal Dr. Vilson Pedro Kleinubing e de leituras que me acompanharam desde a infância: Roseana Murray, Pedro Bandeira, Manoel de Barros e Drummond. As memórias do jardim, das professoras e dos livros não explicam sozinhas minha trajetória, mas ajudam a reconhecer as relações e condições que a tornaram possível.</p>
+   <p><strong data-tx="authorQuestion">Como nos tornamos quem somos?</strong> <span data-tx="authorAnswer" data-about-read>É uma pergunta que atravessa minha história e que esta pesquisa procura investigar, no plano das concepções científicas, sem oferecer respostas simples ou definitivas.</span></p>
+   <div class="action-strip">
+    <button id="author-speech" type="button" data-tx="listenBio">Ouvir a apresentação por voz sintética</button>
+    <button id="author-stop" type="button" data-tx="stopBio">Parar leitura</button>
+    <span class="status" id="author-speech-status" role="status" aria-live="polite"></span>
+   </div>
+   <p class="side-note" data-tx="authorProvenance">Texto em primeira pessoa adaptado do prólogo e dos agradecimentos da dissertação de qualificação; não é transcrição literal nem autobiografia independente. Fotografia e gravação com voz da autora dependem de material escolhido ou produzido por ela.</p>
+   <div class="crosslinks"><a href="#leitor" data-tx="readPrologue">Ler o prólogo no leitor da dissertação</a></div>
+  </div>
+ </div>
+</section>
 <section class="reader-shell" id="leitor" aria-labelledby="leitor-titulo">
   <h2 id="leitor-titulo">Leitura acessível da dissertação</h2>
   <p class="reader-lead">Acesse o texto integral da <strong>versão de qualificação de 17/11/2026</strong> por capítulo e página, com opção de leitura em voz sintética e descrições textuais dos esquemas presentes no Guia Visual.</p>
@@ -1017,6 +1134,42 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 <div class="description"><h4>Descrição textual independente</h4><p>O percurso continua em duas direções articuladas: constituição do corpus e aprofundamento do procedimento analítico. A ampliação documental deve produzir novas perguntas e justificar revisões, não apenas aumentar contagens.</p></div>
 </article>
 </section>
+
+<section class="extra-panel" id="galeria" aria-labelledby="galeria-titulo">
+ <p class="eyebrow" data-tx="galleryEyebrow">Acervo em formação</p>
+ <h2 id="galeria-titulo" data-tx="galleryTitle">Galeria de autores e ideias</h2>
+ <p class="panel-lead" data-tx="galleryLead">Perfis de autores mobilizados na investigação, reunindo trajetória, conceitos e relações com a dissertação. O banco bibliográfico já reúne 62 fichas; aqui começamos pela estrutura de consulta. Retratos, legendas e audiodescrições serão inseridos somente após seleção e verificação.</p>
+ <div class="focus-cards">
+  <article class="focus-card"><h3>Lev Semionovitch Vigotski</h3><p data-tx="vigCard">Mediação semiótica, formação de conceitos e desenvolvimento das funções psicológicas superiores.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
+  <article class="focus-card"><h3>Alexei Nikolaevitch Leontiev</h3><p data-tx="leonCard">Atividade, motivos, apropriação cultural e formação da consciência.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
+  <article class="focus-card"><h3>Dermeval Saviani</h3><p data-tx="savCard">Pedagogia Histórico-Crítica, trabalho educativo e função social da escola.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
+  <article class="focus-card"><h3>Lígia Márcia Martins</h3><p data-tx="martCard">Desenvolvimento do psiquismo, escolarização e articulações entre Psicologia Histórico-Cultural e Pedagogia Histórico-Crítica.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
+ </div>
+ <p><a href="https://docs.google.com/spreadsheets/d/1kPz5_k6gmNsqjKDvh6jFEjRzGtKVFQi08FD2Pxd6GY8/edit#gid=1511664242" target="_blank" rel="noopener noreferrer" data-tx="gallerySheet">Consultar as 62 fichas biográficas na planilha</a></p>
+ <p class="language-scope" data-tx="galleryCaveat">A planilha contém dados biográficos em diferentes estágios de verificação; lacunas e divergências estão sinalizadas. Os perfis não substituem a leitura das obras.</p>
+</section>
+<section class="extra-panel" id="arte" aria-labelledby="arte-titulo">
+ <p class="eyebrow" data-tx="artEyebrow">Curadoria em desenvolvimento</p>
+ <h2 id="arte-titulo" data-tx="artTitle">Adolescência, arte e experiência humana</h2>
+ <p class="panel-lead" data-tx="artLead">Um percurso para conhecer formas pelas quais adolescentes criaram, foram representados e se apropriaram de produções artísticas. Esta seção complementa a reflexão histórica: as obras não integram automaticamente o corpus de teses e dissertações analisado pela pesquisa.</p>
+ <div class="focus-cards">
+  <article class="focus-card"><h3>O Ateneu — Raul Pompeia (1888)</h3><p data-tx="art1">Romance que permite interrogar a experiência escolar, a disciplina e as relações de poder na formação de um jovem.</p><p class="note" data-tx="artLabel">Imagem e reprodução dependem de verificação de direitos e procedência.</p></article>
+  <article class="focus-card"><h3>Capitães da Areia — Jorge Amado (1937)</h3><p data-tx="art2">Narrativa que coloca em cena infâncias e juventudes marcadas por desigualdade, vida nas ruas e disputas por reconhecimento.</p><p class="note" data-tx="artLabel">Imagem e reprodução dependem de verificação de direitos e procedência.</p></article>
+  <article class="focus-card"><h3>O Diário de Anne Frank (1942–1944)</h3><p data-tx="art3">Escrita de uma adolescente em contexto de perseguição nazista; uma possibilidade de discutir autoria juvenil e mediações históricas extremas.</p><p class="note" data-tx="artLabel">Imagem e reprodução dependem de verificação de direitos e procedência.</p></article>
+  <article class="focus-card"><h3 data-tx="artOpenTitle">A voz dos próprios adolescentes</h3><p data-tx="artOpen">Espaço reservado para poemas, desenhos, fotografias, música e produções culturais criadas por adolescentes, com contextualização e autorização de uso.</p><p class="note" data-tx="artOpenNote">Acervo aberto à pesquisa e à curadoria, sem obras inventadas.</p></article>
+ </div>
+ <p class="side-note" data-tx="artQuestions">Questões de leitura: quem representa a adolescência? Quais experiências e desigualdades aparecem? Quando os adolescentes são autores de suas próprias narrativas?</p>
+</section>
+<section class="extra-panel" id="fontes" aria-labelledby="fontes-titulo">
+ <h2 id="fontes-titulo" data-tx="refsTitle">Referências e acervos</h2>
+ <p data-tx="refsLead">Acesse os registros que sustentam as seções complementares e o texto de qualificação. O leitor do Guia mantém a versão do PDF como referência textual; a planilha oferece um ponto de partida para localizar autores e obras.</p>
+ <div class="crosslinks">
+  <a href="#leitor" data-tx="refsReader">Ler a dissertação nesta página</a>
+  <a href="https://docs.google.com/spreadsheets/d/1kPz5_k6gmNsqjKDvh6jFEjRzGtKVFQi08FD2Pxd6GY8/edit#gid=1511664242" target="_blank" rel="noopener noreferrer" data-tx="refsAuthors">Consultar autores e referências</a>
+  <a href="https://docs.google.com/document/d/1UXbEtZc5sw4_EHzvuanW4gHlC--NjScZAsdg45C32xE/edit" target="_blank" rel="noopener noreferrer" data-tx="refsThesis">Abrir o documento da qualificação</a>
+ </div>
+ <p class="language-scope" data-tx="refsCaveat">Os links para o Google Drive respeitam as permissões definidas pela proprietária dos documentos. Traduções oficiais, retratos e audiodescrições completas ainda não estão publicados nesta seção.</p>
+</section>
 </main><footer>Guia produzido a partir da dissertação da autora, versão 11, e do roteiro do Apêndice A. Os esquemas representam relações de investigação, não resultados gerais do corpus.<p>A versão HTML possui recursos semânticos e de navegação, mas requer testes com tecnologias assistivas para avaliação definitiva de conformidade.</p></footer><script>
 const btn = document.querySelector('#linear');
 btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'); btn.setAttribute('aria-pressed',String(on)); btn.textContent = on ? 'Retomar diagramas relacionais' : 'Ativar leitura linear'; });
@@ -1184,5 +1337,150 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
   }));
   window.addEventListener('pagehide',()=>stopSpeaking());
   render();
+})();
+</script>
+<script>
+/* gv-expansao-141126: funcionamento das seções complementares */
+(function(){
+  'use strict';
+  const dictionary={
+    en:{
+      menuTitle:"Explore the Visual Guide",menuLead:"The original research pathway has been preserved. These supplementary sections offer other ways of engaging with the dissertation.",
+      menuBanca:"Qualification presentation route",menuAuthor:"About the author",menuChapters:"Dissertation pathway · Chapters 1–5",menuGallery:"Authors and ideas gallery",
+      menuArt:"Adolescence, art and human experience",menuAccess:"Accessible dissertation reader",menuRefs:"References and collections",
+      languageLabel:"Language of supplementary content",languageScope:"The selector translates only the supplementary text of this Guide. The original 21 panels and full dissertation remain in Portuguese; academic content is not automatically translated.",
+      bancaEyebrow:"For the qualification · navigation guide",bancaTitle:"Defend the research proposal, not deliver another lecture",
+      bancaLead:"A short pathway through theoretical and methodological decisions, the Tripartite Analytical Matrix and the limitations of the exploratory exercise. Each link leads to an original panel.",
+      route1:"1. Research question and object",route2:"2. Methodological choice",route3:"3. Historicity of adolescence",route4:"4. Human development",route5:"5. Corpus and its limits",route6:"6. Tripartite Analytical Matrix",route7:"7. The Soares and Bueno exercises",route8:"8. Provisional synthesis and next steps",
+      bancaButton:"Enlarge panels for presentation",bancaButtonOff:"Return to normal panel size",bancaNote:"This is a navigation aid for discussion with the committee, not a replacement for the dissertation. Keep a local copy in case the connection fails.",
+      authorEyebrow:"The researcher and the paths of research",authorTitle:"About the author",photoPlaceholder:"Portrait of the author",photoMissing:"No photograph has been chosen yet. An accessible description will be written from the selected image.",
+      authorRole:"Educator · Primary school teacher · Master's student in Education at UDESC",
+      authorIntro:"Before studying adolescence, I experienced school as both a student and a teacher. The questions guiding my research began long before they had academic names.",
+      authorFromTitle:"Where I come from",authorFrom:"I grew up in Capinzal, in the countryside of Santa Catarina, Brazil. In my grandmother's garden, I watched children going to school with flowers for their teachers; that was when I began imagining a life in teaching. In a public school, I encountered a library I still remember as both tiny and immense: its shelves opened paths through poems, words and questions.",
+      authorEducationTitle:"My educational journey",authorEducation:"I attended public schools and began a Psychology degree on a full ProUni scholarship, a course of study I later discontinued. In Florianópolis, I graduated in Education from the State University of Santa Catarina while teaching fourth- and fifth-grade pupils. I am now pursuing a master's degree in Education at UDESC's PPGE/FAED. Classroom experience and university study, shaped by encounters and opportunities, gradually turned my concerns into research questions.",
+      authorQuestionsTitle:"The questions that drive me",authorQuestions:"I investigate how Brazilian academic research understands adolescence and human development, examining their historical, social and educational mediations. Along the way, I deepen my dialogue with historical-dialectical materialism, Cultural-Historical Psychology and Historical-Critical Pedagogy, attentive to inequalities that shape schooling and possibilities for human development.",
+      authorMemoryTitle:"Among words, images and memories",authorMemory:"I carry the memory of the library at Escola Municipal Dr. Vilson Pedro Kleinubing and of childhood readings by Roseana Murray, Pedro Bandeira, Manoel de Barros and Drummond. Memories of the garden, teachers and books do not explain my journey by themselves, but help me recognize the relationships and conditions that made it possible.",
+      authorQuestion:"How do we become who we are?",authorAnswer:"This question runs through my life and, at the level of scientific conceptions, informs a study that offers no simple or final answers.",
+      listenBio:"Listen to the presentation (synthetic voice)",stopBio:"Stop reading",readPrologue:"Read the prologue in the dissertation reader",
+      authorProvenance:"First-person text adapted from the prologue and acknowledgements of the qualification dissertation; it is not a verbatim transcript or an independent autobiography. The photo and an author-recorded narration require materials chosen or produced by the author.",
+      galleryEyebrow:"An evolving collection",galleryTitle:"Authors and ideas gallery",
+      galleryLead:"Profiles of authors used in the research, bringing together their paths, concepts and connections with the dissertation. The bibliographic spreadsheet already contains 62 profiles; this section establishes the public-facing format. Portraits, captions and audio descriptions will be added after verification.",
+      vigCard:"Semiotic mediation, concept formation and the development of higher psychological functions.",
+      leonCard:"Activity, motives, cultural appropriation and the formation of consciousness.",
+      savCard:"Historical-Critical Pedagogy, educational work and the social role of schooling.",
+      martCard:"Psychological development, schooling, and connections between Cultural-Historical Psychology and Historical-Critical Pedagogy.",
+      imageNote:"Portrait, provenance and audio description: pending verification.",
+      gallerySheet:"View the 62 biographical profiles in the spreadsheet",
+      galleryCaveat:"The spreadsheet contains biographical information at different stages of verification; missing or conflicting data are flagged. These profiles do not replace reading the original works.",
+      artEyebrow:"Curatorial work in progress",artTitle:"Adolescence, art and human experience",
+      artLead:"A journey through ways in which adolescents have created art, been represented in it and appropriated cultural works. This section complements the historical discussion; these works are not automatically part of the dissertation's thesis-and-dissertation corpus.",
+      art1:"A novel inviting questions about schooling, discipline and power relations in the education of a young person.",
+      art2:"A narrative depicting childhoods and youths marked by inequality, street life and struggles for recognition.",
+      art3:"Writing by an adolescent under Nazi persecution; an opportunity to discuss youth authorship and extreme historical conditions.",
+      artLabel:"Reproductions require verification of provenance and rights.",artOpenTitle:"Adolescents' own voices",
+      artOpen:"A space for poems, drawings, photographs, music and cultural works created by adolescents, with contextualization and permission to use them.",
+      artOpenNote:"An evolving collection; no invented works.",artQuestions:"Questions for reading: who represents adolescence? Which experiences and inequalities appear? When do adolescents become the authors of their own narratives?",
+      refsTitle:"References and collections",refsLead:"Access records supporting the supplementary sections and the qualification text. The Guide reader retains the PDF version as its textual basis, while the spreadsheet helps locate authors and works.",
+      refsReader:"Read the dissertation here",refsAuthors:"Browse authors and references",refsThesis:"Open the qualification document",
+      refsCaveat:"Google Drive links follow the owner's sharing permissions. Official translations, portraits and complete audio descriptions have not yet been published here."
+    },
+    es:{
+      menuTitle:"Explorar la Guía Visual",menuLead:"Se conserva el recorrido original de la investigación. Las secciones complementarias ofrecen otras formas de acercarse a la disertación.",
+      menuBanca:"Recorrido para la defensa de cualificación",menuAuthor:"Sobre la autora",menuChapters:"Recorrido de la disertación · Capítulos 1–5",menuGallery:"Galería de autores e ideas",
+      menuArt:"Adolescencia, arte y experiencia humana",menuAccess:"Lectura accesible de la disertación",menuRefs:"Referencias y archivos",
+      languageLabel:"Idioma de los contenidos complementarios",languageScope:"El selector traduce únicamente los contenidos complementarios de esta Guía. Los 21 paneles y la disertación íntegra permanecen en portugués; no se utiliza traducción automática para el contenido académico.",
+      bancaEyebrow:"Para la cualificación · guía de navegación",bancaTitle:"Defender la propuesta, no repetir una clase",
+      bancaLead:"Un recorrido breve por las decisiones teóricas y metodológicas, la Matriz Analítica Tripartita y los límites del ejercicio exploratorio. Cada enlace conduce a un panel original.",
+      route1:"1. Problema y objeto",route2:"2. Elección del método",route3:"3. Historicidad de la adolescencia",route4:"4. Desarrollo humano",route5:"5. Corpus y límites",route6:"6. Matriz Analítica Tripartita",route7:"7. Ejercicios con Soares y Bueno",route8:"8. Síntesis provisional y próximos pasos",
+      bancaButton:"Ampliar los paneles para la presentación",bancaButtonOff:"Volver al tamaño normal",bancaNote:"Este recorrido es un apoyo para dialogar con el tribunal, no sustituye la disertación. Conviene disponer de una copia local por si falla la conexión.",
+      authorEyebrow:"La investigadora y los caminos de la investigación",authorTitle:"Sobre la autora",photoPlaceholder:"Fotografía de la autora",photoMissing:"Todavía no se ha seleccionado una fotografía. La descripción accesible se redactará a partir de la imagen elegida.",
+      authorRole:"Pedagoga · Profesora de primaria · Estudiante de maestría en Educación en la UDESC",
+      authorIntro:"Antes de investigar la adolescencia, recorrí la escuela como estudiante y profesora. Las preguntas que hoy orientan mi investigación surgieron mucho antes de tener nombre académico.",
+      authorFromTitle:"De dónde vengo",authorFrom:"Crecí en Capinzal, en el interior de Santa Catarina, Brasil. En el jardín de la casa de mi abuela veía a niños que iban a la escuela llevando flores a sus maestras; allí comencé a imaginar la docencia. En una escuela pública encontré una biblioteca que todavía recuerdo como diminuta e inmensa: sus estantes abrieron caminos entre poemas, palabras y preguntas.",
+      authorEducationTitle:"Los caminos de mi formación",authorEducation:"Estudié en escuelas públicas y comencé una carrera de Psicología con una beca integral del ProUni, estudios que más tarde interrumpí. En Florianópolis me gradué en Pedagogía por la Universidad del Estado de Santa Catarina mientras enseñaba a estudiantes de cuarto y quinto año de primaria. Actualmente curso la maestría en Educación en el PPGE/FAED de la UDESC. La experiencia docente y la formación universitaria, atravesadas por encuentros y oportunidades, transformaron mis inquietudes en problemas de investigación.",
+      authorQuestionsTitle:"Las preguntas que me mueven",authorQuestions:"Investigo cómo la producción académica brasileña comprende la adolescencia y el desarrollo humano, interrogando sus mediaciones históricas, sociales y escolares. En esta trayectoria profundizo el diálogo con el materialismo histórico-dialéctico, la Psicología Histórico-Cultural y la Pedagogía Histórico-Crítica, sin perder de vista las desigualdades escolares y las posibilidades de formación humana.",
+      authorMemoryTitle:"Entre palabras, imágenes y memorias",authorMemory:"Conservo el recuerdo de la biblioteca de la Escola Municipal Dr. Vilson Pedro Kleinubing y de lecturas que me acompañaron desde la infancia: Roseana Murray, Pedro Bandeira, Manoel de Barros y Drummond. Las memorias del jardín, de las maestras y de los libros no explican por sí solas mi trayectoria, pero ayudan a reconocer las relaciones y condiciones que la hicieron posible.",
+      authorQuestion:"¿Cómo llegamos a ser quienes somos?",authorAnswer:"Esta pregunta atraviesa mi historia y, en el plano de las concepciones científicas, orienta una investigación sin respuestas simples ni definitivas.",
+      listenBio:"Escuchar la presentación (voz sintética)",stopBio:"Detener lectura",readPrologue:"Leer el prólogo en el lector de la disertación",
+      authorProvenance:"Texto en primera persona adaptado del prólogo y de los agradecimientos de la disertación de cualificación; no es una transcripción literal ni una autobiografía independiente. La fotografía y una narración grabada por la autora requieren material elegido o producido por ella.",
+      galleryEyebrow:"Archivo en construcción",galleryTitle:"Galería de autores e ideas",
+      galleryLead:"Perfiles de autores utilizados en la investigación, con trayectorias, conceptos y vínculos con la disertación. La hoja bibliográfica ya contiene 62 fichas; esta sección establece el formato de consulta. Se añadirán retratos, leyendas y audiodescripciones tras su verificación.",
+      vigCard:"Mediación semiótica, formación de conceptos y desarrollo de las funciones psicológicas superiores.",
+      leonCard:"Actividad, motivos, apropiación cultural y formación de la conciencia.",
+      savCard:"Pedagogía Histórico-Crítica, trabajo educativo y función social de la escuela.",
+      martCard:"Desarrollo del psiquismo, escolarización y relaciones entre Psicología Histórico-Cultural y Pedagogía Histórico-Crítica.",
+      imageNote:"Retrato, procedencia y audiodescripción: pendientes de verificación.",
+      gallerySheet:"Consultar las 62 fichas biográficas en la hoja de cálculo",
+      galleryCaveat:"La hoja contiene datos biográficos en diferentes etapas de verificación; se señalan las lagunas y discrepancias. Los perfiles no sustituyen la lectura de las obras.",
+      artEyebrow:"Curaduría en preparación",artTitle:"Adolescencia, arte y experiencia humana",
+      artLead:"Un recorrido por maneras en que adolescentes crearon, fueron representados y se apropiaron de producciones artísticas. Esta sección complementa la reflexión histórica; las obras no pasan automáticamente a integrar el corpus de tesis y disertaciones investigado.",
+      art1:"Novela que permite interrogar la experiencia escolar, la disciplina y las relaciones de poder en la formación de un joven.",
+      art2:"Narración sobre infancias y juventudes atravesadas por desigualdad, vida en las calles y disputas por reconocimiento.",
+      art3:"Escritura de una adolescente bajo la persecución nazi; una oportunidad para discutir autoría juvenil y condiciones históricas extremas.",
+      artLabel:"Las reproducciones requieren verificar los derechos y la procedencia.",artOpenTitle:"La voz de los propios adolescentes",
+      artOpen:"Espacio destinado a poemas, dibujos, fotografías, música y producciones culturales creadas por adolescentes, con contexto y autorización de uso.",
+      artOpenNote:"Acervo en construcción; sin obras inventadas.",artQuestions:"Preguntas de lectura: ¿quién representa la adolescencia? ¿Qué experiencias y desigualdades aparecen? ¿Cuándo son los adolescentes autores de sus propias narraciones?",
+      refsTitle:"Referencias y archivos",refsLead:"Acceda a los registros que sustentan las secciones complementarias y el texto de cualificación. El lector mantiene como base la versión del PDF; la hoja bibliográfica permite localizar autores y obras.",
+      refsReader:"Leer la disertación aquí",refsAuthors:"Consultar autores y referencias",refsThesis:"Abrir el documento de cualificación",
+      refsCaveat:"Los enlaces de Google Drive respetan los permisos establecidos por su propietaria. Aún no se han publicado traducciones oficiales, retratos ni audiodescripciones completas."
+    }
+  };
+  const pt=new Map([...document.querySelectorAll('[data-tx]')].map(n=>[n.dataset.tx,n.textContent]));
+  const select=document.getElementById('guide-lang');
+  const bancaBtn=document.getElementById('banca-toggle');
+  let active='pt';
+  function updateLanguage(){
+    active=select.value;
+    const dict=dictionary[active]||{};
+    document.querySelectorAll('[data-tx]').forEach(el=>{
+      const k=el.dataset.tx;
+      const value=dict[k]??pt.get(k);
+      if(value!==undefined)el.textContent=value;
+      el.setAttribute('lang',active==='pt'?'pt-BR':active);
+    });
+    if(bancaBtn.getAttribute('aria-pressed')==='true')bancaBtn.textContent=(dict.bancaButtonOff || 'Voltar ao tamanho habitual das pranchas');
+    document.getElementById('author-speech-status').textContent='';
+    if('speechSynthesis' in window)window.speechSynthesis.cancel();
+  }
+  select.addEventListener('change',updateLanguage);
+  bancaBtn.addEventListener('click',()=>{
+    const on=document.body.classList.toggle('banca-mode');
+    bancaBtn.setAttribute('aria-pressed',String(on));
+    const dict=dictionary[active]||{};
+    bancaBtn.textContent=on?(dict.bancaButtonOff||'Voltar ao tamanho habitual das pranchas'):(dict.bancaButton||pt.get('bancaButton'));
+  });
+  const btn=document.getElementById('author-speech');
+  const stop=document.getElementById('author-stop');
+  const status=document.getElementById('author-speech-status');
+  if(!('speechSynthesis' in window)){btn.disabled=true;status.textContent='Voz sintética não disponível neste navegador.';}
+  function stopVoice(){if('speechSynthesis' in window)window.speechSynthesis.cancel();status.textContent='';}
+  stop.addEventListener('click',stopVoice);
+  btn.addEventListener('click',()=>{
+    if(!('speechSynthesis' in window))return;
+    stopVoice();
+    const el=[...document.querySelectorAll('#autora [data-about-read]')];
+    const paragraphs=el.map(x=>x.textContent).filter(Boolean);
+    const all=[];
+    paragraphs.forEach(par=>{
+      let remaining=par;
+      while(remaining.length){
+        if(remaining.length<=210){all.push(remaining);break;}
+        let cut=remaining.lastIndexOf(' ',210);
+        if(cut<95)cut=210;
+        all.push(remaining.slice(0,cut).trim());remaining=remaining.slice(cut).trim();
+      }
+    });
+    let i=0;
+    const voiceLang=active==='pt'?'pt-BR':active==='en'?'en-US':'es-ES';
+    const speakNext=()=>{
+      if(i>=all.length){status.textContent=active==='pt'?'Leitura concluída.':active==='en'?'Reading completed.':'Lectura finalizada.';return;}
+      const u=new SpeechSynthesisUtterance(all[i++]);u.lang=voiceLang;u.rate=1;
+      u.onend=speakNext;u.onerror=()=>{status.textContent=active==='pt'?'Não foi possível concluir a leitura.':'Speech unavailable.';};
+      window.speechSynthesis.speak(u);
+    };
+    status.textContent=active==='pt'?'Lendo a apresentação…':active==='en'?'Reading the presentation…':'Leyendo la presentación…';
+    speakNext();
+  });
+  window.addEventListener('pagehide',stopVoice);
 })();
 </script></body></html>
