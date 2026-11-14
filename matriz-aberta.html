@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matriz Aberta · Protótipo e laboratório | Guia Visual da Pesquisa</title>
+<style>
+:root{--ink:#142437;--blue:#1a506e;--border:#c6d5dd;--bg:#f3f6f8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,sans-serif}a{color:#144e7a;text-underline-offset:3px}
+header{background:#19283b;color:#fff;padding:2rem max(1rem,calc((100vw - 1040px)/2))}header h1{font-size:clamp(1.5rem,3.5vw,2.2rem);margin:.3rem 0}header a{color:#fff}
+main{max-width:1080px;margin:auto;padding:1.2rem 1rem 5rem}.panel{background:#fff;border:1px solid var(--border);padding:1rem 1.2rem;border-radius:14px;margin:1rem 0}
+.lead{border-left:5px solid var(--blue);padding:.8rem;background:#edf5f8}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.grid>div{background:#f8fafb;border:1px solid var(--border);border-radius:10px;padding:1rem;min-width:0}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;list-style:none;padding:0}.steps li{background:#edf3f6;border:1px solid var(--border);padding:.6rem;border-radius:8px}.steps strong{display:block}
+fieldset{border:1px solid var(--border);border-radius:10px;margin:1rem 0;padding:1rem}legend{font-weight:bold;font-size:1.12rem}
+label{display:block;font-weight:700;margin:.55rem 0 .2rem}
+input:not([type=checkbox]),select,textarea{display:block;width:100%;padding:.6rem;font:inherit;color:var(--ink);border:1px solid #768e9e;border-radius:7px;background:#fff}
+textarea{min-height:100px;resize:vertical}button{font:inherit;min-height:44px;cursor:pointer;padding:.55rem .8rem;margin:.65rem .4rem .25rem 0;border-radius:8px;background:var(--blue);color:#fff;border:2px solid var(--blue);font-weight:700}button.secondary{background:white;color:var(--blue)}
+:focus-visible{outline:3px solid #1462ab;outline-offset:3px}.help{color:#465b6b;font-size:.9rem}.status{border-left:3px solid #91a8b8;padding:.5rem;background:#f0f4f7;min-height:1.5rem}.warn{background:#fff5e5;border-left:5px solid #ad7c31;padding:.8rem}
+#results li,#saved li{border:1px solid var(--border);padding:.6rem;margin:.5rem 0;border-radius:8px;overflow-wrap:anywhere}
+.reserved{border:2px dashed #9ab0c2;background:#f8fbfc;border-radius:11px;padding:1rem}
+footer{text-align:center;padding:2rem;color:#405367}
+@media(max-width:780px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
+@media print{button,input,select,textarea,#lab{display:none!important}}
+</style></head>
+<body>
+<a href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Ir ao conteúdo</a>
+<header><p>PPGE / FAED · Apêndice A · Guia Visual da Pesquisa</p><h1>Matriz Aberta</h1><p>Protótipo de triagem documental e laboratório de experimentação acessível</p><p><a href="index.html#explorar">Retornar ao Guia Visual</a></p></header>
+<main id="main">
+<section class="panel" aria-labelledby="about"><h2 id="about">Do protocolo à ferramenta</h2>
+<p class="lead">A <strong>Matriz Aberta</strong> é uma proposta experimental baseada na Matriz Analítica Tripartida. Busca ampliar a rastreabilidade e as possibilidades quantitativas e qualitativas da triagem, respeitando a diversidade dos objetos e a acessibilidade digital. <strong>A ferramenta não substitui a análise humana.</strong> Recuperar uma palavra não é demonstrar uma mediação; uma classificação sugerida não é um resultado científico.</p>
+<div class="grid">
+<div><h3>Projeto fundamentado</h3><p>Objetivos, pressupostos, acessibilidade, ética, limites, arquitetura e validação.</p><a href="https://drive.google.com/file/d/1QM218Sp20F8HA_yLh2xh-Lj5L8eho-OO/view" target="_blank" rel="noopener noreferrer">Ler o projeto de pesquisa e desenvolvimento (Word)</a></div>
+<div><h3>Aplicativo local v0.1</h3><p>Importa PDF, DOCX e TXT; recupera trechos candidatos; permite registro humano e exporta Word/JSON. A opção de modelo de IA local ainda requer calibração.</p><a href="https://drive.google.com/file/d/1vBWMy1EJ8mx9nr9-2LU8vfPZ1Mo0cVSY/view" target="_blank" rel="noopener noreferrer">Obter o protótipo e o código-fonte (ZIP)</a></div>
+</div>
+<h3>Os cinco movimentos de referência</h3><ol class="steps"><li><strong>I · Reconstruir</strong> Lógica interna</li><li><strong>II · Interrogar</strong> Pertinência</li><li><strong>III · Registrar</strong> Evidências</li><li><strong>IV · Confrontar</strong> Sustentação</li><li><strong>V · Sintetizar</strong> Unidade e limites</li></ol>
+<p class="help">E/M/I/NI/A são estados documentais e não notas de qualidade. T exige tensão demonstrável. Não aplicação não equivale a ausência.</p>
+<div class="reserved"><h3>Espaço reservado para a versão integrada</h3><p>Futura conexão da interface completa com importação de PDF/DOCX, busca semântica, confirmação de páginas, histórico de revisões e relatórios. <strong>Não está implementada neste site.</strong> O laboratório abaixo é um teste lexical no navegador, não um modelo generativo.</p><a href="https://docs.google.com/document/d/12DKetBjQy3hF0n_ouWsyl4w3yE9TL7My/edit" target="_blank" rel="noopener noreferrer">Consultar relatório fictício de demonstração</a></div>
+</section>
+<section class="panel" id="lab" aria-labelledby="labtitle"><h2 id="labtitle">Experimente uma triagem no site</h2>
+<p>O teste usa apenas HTML e JavaScript, sem servidor ou envio dos documentos. Cole um trecho ou abra um TXT local, localize candidatos por expressões e registre <strong>sua própria apreciação</strong>. Para PDFs ou DOCX, utilize o aplicativo local.</p>
+<p class="warn"><strong>Privacidade e integridade:</strong> dados não são salvos nem enviados pela ferramenta. Exporte seu registro antes de sair. Não introduza textos sigilosos ou dados pessoais. O campo «bloco» identifica somente posição no trecho inserido, não página impressa.</p>
+<fieldset><legend>I · Reconstruir</legend>
+<label for="obra">Nome da obra ou do teste</label><input id="obra" placeholder="Identifique sua fonte">
+<label for="objeto">Objeto investigado</label><input id="objeto" placeholder="Registre a delimitação encontrada">
+<label for="texto">Texto para exame</label><textarea id="texto" rows="7" placeholder="Cole aqui parágrafos do trabalho acadêmico ou o exemplo fictício."></textarea>
+<label for="arquivo">Selecionar TXT local (opcional)</label><input id="arquivo" type="file" accept=".txt,text/plain">
+<button type="button" id="exemplo" class="secondary">Carregar exemplo fictício</button></fieldset>
+<fieldset><legend>II · Interrogar e localizar</legend>
+<label for="dim">Dimensão analítica</label><select id="dim"><option value="ep">Epistemológico-metodológica</option><option value="on">Ontológico-psicológica</option><option value="pe">Pedagógico-político-educacional</option></select>
+<label for="pergunta">Pergunta pertinente ao objeto</label><input id="pergunta" value="Como os argumentos e as evidências sustentam a explicação?">
+<label for="termos">Termos de busca (vírgula entre termos)</label><input id="termos" value="problema, método, evidência, conclusão">
+<button type="button" id="buscar">Localizar trechos candidatos</button>
+<p class="status" id="sbusca" role="status" aria-live="polite">Nenhuma busca realizada.</p><ol id="results" aria-label="Trechos candidatos"></ol></fieldset>
+<fieldset><legend>III · Registrar com revisão humana</legend>
+<label for="pert">A pergunta é pertinente?</label><select id="pert"><option value="">A avaliar</option><option value="sim">Sim</option><option value="na">Não aplicação</option></select>
+<label for="estado">Estado documental atribuído pela pessoa pesquisadora</label><select id="estado"><option value="">Não atribuído</option><option>E</option><option>M</option><option>I</option><option>NI</option><option>A</option></select>
+<label for="evid">Excerto selecionado ou conferido</label><textarea id="evid" rows="3"></textarea>
+<label for="local">Localização</label><input id="local" placeholder="Bloco de teste ou página previamente conferida">
+<label for="escopo">Escopo de leitura (obrigatório para A)</label><input id="escopo" placeholder="Descreva as partes efetivamente examinadas">
+<label for="just">Justificativa e limites do registro</label><textarea id="just" rows="3"></textarea>
+<label><input id="tensao" type="checkbox"> T — possível tensão interna (requer passagens contrastáveis)</label>
+<label for="contraste">Segunda passagem (para T)</label><textarea id="contraste" rows="2"></textarea>
+<button type="button" id="salvar">Adicionar registro humano</button>
+<p class="status" id="sregistro" role="status" aria-live="polite">Nenhum registro.</p><ol id="saved" aria-label="Registros da sessão"></ol></fieldset>
+<fieldset><legend>IV · Confrontar e V · Sintetizar</legend><p class="help">Esses campos são preenchidos por você: o sistema não produz conclusões automaticamente.</p>
+<label for="confronto">Confronto crítico</label><textarea id="confronto" rows="4"></textarea>
+<label for="sintese">Síntese provisória</label><textarea id="sintese" rows="4"></textarea>
+<button type="button" id="exportar">Exportar triagem em JSON</button><button type="button" id="limpar" class="secondary">Limpar sessão</button>
+<p class="status" id="sfinal" role="status" aria-live="polite">Registros temporários, apenas nesta página.</p></fieldset>
+</section><p><a href="index.html#prancha14">Rever a Matriz Tripartida no Guia Visual</a> · <a href="index.html#explorar">Voltar ao menu principal</a></p>
+</main><footer>Projeto experimental associado à dissertação de Taynara Xavier Telles. Sem IA generativa nesta página; o aplicativo local constitui outra implementação.</footer>
+<script>
+(function(){"use strict";
+var el=function(id){return document.getElementById(id)},regs=[];
+var dict={ep:["problema, método, evidência, conclusão","Como os argumentos e as evidências sustentam a explicação?"],on:["adolescência, desenvolvimento, atividade, personalidade","Que desenvolvimento é concebido e explicado?"],pe:["escola, ensino, currículo, formação","Qual função a escola assume na explicação?"]};
+function normal(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
+function notice(id,s){el(id).textContent=s;}
+el("dim").onchange=function(){var d=dict[this.value];el("pergunta").value=d[1];el("termos").value=d[0];el("results").replaceChildren();};
+el("exemplo").onclick=function(){el("obra").value="EXEMPLO FICTÍCIO — não é estudo real";el("objeto").value="Organização do ensino e desenvolvimento";el("texto").value="O estudo fictício registra relatos dos estudantes sobre mudanças na organização escolar. A escola aparece como cenário das entrevistas.\n\nOs autores hipotéticos afirmam que o ensino sistematizado pode favorecer a apropriação cultural, mas não demonstram transformações da personalidade dos participantes.\n\nA conclusão fictícia sugere aprofundar as relações entre atividade, currículo e desenvolvimento, sem demonstrar causalidade direta.";el("dim").value="pe";el("dim").onchange();notice("sbusca","Exemplo fictício carregado. Localize trechos.");};
+el("arquivo").onchange=async function(){var f=this.files&&this.files[0];if(!f)return;if(!(/\.txt$/i.test(f.name)||f.type==="text/plain")||f.size>450000){notice("sbusca","Selecione TXT de até 450 KB.");return;}try{el("texto").value=await f.text();if(!el("obra").value)el("obra").value=f.name;notice("sbusca","TXT aberto localmente.");}catch(_){notice("sbusca","Erro ao abrir TXT.");}};
+el("buscar").onclick=function(){var t=el("texto").value,terms=el("termos").value.split(/[,;\n]/).map(normal).filter(function(x){return x.length>2;}).slice(0,15);if(t.length<15||t.length>120000||!terms.length){notice("sbusca","Informe texto de 15 a 120 mil caracteres e termos de busca.");return;}
+var blocks=t.replace(/\r/g,"").split(/\n\s*\n/).filter(function(x){return x.trim();}).flatMap(function(x){return x.length<900?[x.trim()]:x.match(/[\s\S]{1,700}/g);});
+var ranked=blocks.map(function(x,i){var found=terms.filter(function(z){return normal(x).includes(z);}).length;return {text:x,index:i+1,score:found};}).filter(function(x){return x.score>0;}).sort(function(a,b){return b.score-a.score;}).slice(0,8);var out=el("results");out.replaceChildren();
+ranked.forEach(function(item){var li=document.createElement("li"),p=document.createElement("p"),b=document.createElement("button");p.textContent="Bloco "+item.index+": "+item.text.slice(0,680);b.textContent="Usar este excerto";b.type="button";b.onclick=function(){el("evid").value=item.text;el("local").value="Bloco "+item.index+" do trecho de teste; não corresponde a página editorial";el("pert").focus();notice("sregistro","Excerto recuperado. Verifique-o e faça o registro humano.");};li.append(p,b);out.append(li);});
+notice("sbusca",ranked.length?ranked.length+" candidatos lexicais encontrados em "+blocks.length+" blocos. Isso não equivale a uma interpretação.":"Nenhuma ocorrência localizada. Isso NÃO significa ausência verificada (A).");
+};
+function draw(){var out=el("saved");out.replaceChildren();regs.forEach(function(r,i){var li=document.createElement("li");li.textContent=(i+1)+". "+r.pergunta+" — "+(r.pertinencia==="na"?"Não aplicação":r.estado+(r.tensao?" + T":""))+" · "+r.justificativa.slice(0,200);out.append(li);});}
+el("salvar").onclick=function(){var pe=el("pert").value,st=el("estado").value,ev=el("evid").value.trim(),ju=el("just").value.trim(),ten=el("tensao").checked,second=el("contraste").value.trim();
+if(!pe||!ju){notice("sregistro","Registre pertinência e justificativa humana.");return;}if(pe==="sim"&&!st){notice("sregistro","Escolha um estado documental.");return;}if(pe==="sim"&&["E","M","I"].includes(st)&&!ev){notice("sregistro","E, M e I exigem evidência.");return;}if(pe==="sim"&&st==="A"&&!el("escopo").value.trim()){notice("sregistro","A exige justificar o exame suficiente; busca vazia não é ausência.");return;}if(ten&&(pe!=="sim"||!ev||!second)){notice("sregistro","T exige duas passagens contrastáveis e justificativa.");return;}
+regs.push({obra:el("obra").value,objeto:el("objeto").value,dimensao:el("dim").selectedOptions[0].textContent,pergunta:el("pergunta").value,pertinencia:pe,estado:pe==="na"?null:st,evidencia:pe==="na"?"":ev,local:el("local").value,escopo:el("escopo").value,justificativa:ju,tensao:ten,passagem_contrastavel:ten?second:"",revisao:"Registro humano"});draw();notice("sregistro",regs.length+" registro(s) nesta sessão. Exporte antes de sair.");};
+el("exportar").onclick=function(){var data={projeto:"Matriz Aberta — teste lexical",aviso:"Triagem humana; não constitui análise científica homologada",obra:el("obra").value,objeto:el("objeto").value,registros:regs,confronto_humano:el("confronto").value,sintese_humana:el("sintese").value,nota:"Blocos de teste não são páginas editoriais."};var blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="matriz-aberta-triagem.json";document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);notice("sfinal","JSON solicitado ao navegador. Confira os downloads.");};
+el("limpar").onclick=function(){if(!confirm("Apagar todos os registros locais desta sessão?"))return;["obra","objeto","texto","evid","local","escopo","just","contraste","confronto","sintese"].forEach(function(x){el(x).value="";});el("arquivo").value="";el("pert").value="";el("estado").value="";el("tensao").checked=false;regs.length=0;el("results").replaceChildren();draw();notice("sfinal","Sessão limpa.");notice("sregistro","Nenhum registro.");notice("sbusca","Nenhuma busca realizada.");};
+})();
+</script></body></html>
