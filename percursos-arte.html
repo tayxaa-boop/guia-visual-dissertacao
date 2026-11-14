@@ -1,0 +1,260 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Dois percursos curatoriais com fontes verificáveis: representações históricas da juventude e obras criadas por adolescentes."><title>Adolescências, arte e autoria · Guia Visual da Pesquisa</title><style>
+:root{--ink:#19283b;--mute:#46566a;--paper:#f4f4f0;--white:#fff;--line:#cdd4d8;--accent:#744b4a;--blue:#32586a}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Arial, sans-serif}
+a{color:#235374;text-underline-offset:3px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1065a9;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:10px;z-index:20;background:white;padding:.5rem}
+header{background:#22344b;color:white;padding:2.2rem max(1rem,calc((100vw - 1100px)/2))}
+header p{max-width:84ch}header h1{font-size:clamp(2rem,4.2vw,3.1rem);line-height:1.15;margin:.25rem 0 .8rem;font-family:Georgia,serif;font-weight:normal}
+header .eyebrow{font-size:.83rem;letter-spacing:.12em;text-transform:uppercase;opacity:.87}
+nav.floating{position:sticky;top:0;z-index:10;display:flex;gap:.35rem;align-items:center;padding:.5rem max(1rem,calc((100vw - 1100px)/2));background:#fff;border-bottom:1px solid #b9cbd5;box-shadow:0 4px 12px #19283b13;overflow-x:auto;white-space:nowrap}
+nav.floating a{flex:0 0 auto;text-decoration:none;font-size:.9rem;font-weight:700;color:#24465f;border:1px solid #bfced7;border-radius:30px;padding:.31rem .7rem;background:#f6f9fa;min-height:40px;display:inline-flex;align-items:center}
+nav.floating a:hover,nav.floating a:focus-visible{text-decoration:underline;background:#e8f0f5}
+main{max-width:1160px;margin:auto;padding:1.15rem 1rem 5rem}
+.intro,.section,.closing{background:white;border:1px solid #d3dadf;border-radius:15px;padding:clamp(1rem,2.3vw,1.75rem);margin:1rem 0}
+.intro h2,.section h2,.closing h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.23;margin:.2rem 0 1rem;font-family:Georgia,serif;font-weight:normal}
+.lead{font-size:1.08rem;max-width:85ch}
+.key-question{font-family:Georgia,serif;font-size:clamp(1.2rem,2.3vw,1.65rem);border-left:5px solid #985e57;padding:.7rem 1rem;background:#fcf5f2;max-width:85ch}
+.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.method-grid div{border:1px solid #cfdae1;padding:.9rem;border-radius:9px;background:#f9fbfc}
+.method-grid strong{display:block;margin-bottom:.25rem}
+.path-head{display:flex;align-items:center;gap:1rem;border-bottom:1px solid #d4dce1;padding-bottom:.6rem;margin-bottom:1rem}
+.path-no{display:inline-flex;border:2px solid #ad827b;border-radius:100%;width:3.8rem;height:3.8rem;justify-content:center;align-items:center;font:1.6rem Georgia,serif;flex:0 0 auto;color:#85423e}
+.path-head p{margin:.2rem 0;color:var(--mute)}
+.filters{display:flex;gap:.45rem;flex-wrap:wrap;margin:.8rem 0 1.3rem}
+.filters button{font:700 .85rem Arial,sans-serif;border:1px solid #8299a8;background:#fff;color:#24465f;padding:.48rem .75rem;border-radius:50px;min-height:42px;cursor:pointer}
+.filters button[aria-pressed=true]{background:#254e67;color:white;border-color:#254e67}
+.art-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.art-item{display:grid;grid-template-columns:3.1rem 1fr;border:1px solid #d7dde1;background:#fff;border-radius:12px;min-width:0;overflow:hidden}
+.item-index{background:#e9eff2;display:flex;flex-direction:column;align-items:center;padding:.65rem .25rem;gap:.65rem;border-right:1px solid #d5dde2}
+.item-number{font:1.5rem Georgia,serif;color:#4a536c}
+.item-medium{font-size:.72rem;line-height:1.2;writing-mode:vertical-rl;transform:rotate(180deg);max-height:8rem;color:#39596a;letter-spacing:.03em}
+.item-body{padding:1rem 1.05rem}
+.item-body h3{font:1.35rem/1.2 Georgia,serif;margin:.15rem 0}
+.item-era{font-size:.83rem;font-weight:bold;color:#965448;margin:.12rem 0}
+.item-maker{font-size:.9rem;color:#42596a;margin:.25rem 0}
+.item-body p{margin:.55rem 0}
+.item-body details{margin:.75rem 0;padding:.48rem .66rem;background:#f6f9fb;border:1px solid #cfdae0;border-radius:8px}
+.item-body details summary{font-weight:700;cursor:pointer}
+.item-body details p{font-size:.9rem}
+.item-foot{border-top:1px solid #e2e6e9;padding-top:.7rem;font-size:.88rem}
+.item-foot a{font-weight:700;overflow-wrap:anywhere}
+.item-foot .rights{display:block;margin-top:.34rem;font-size:.83rem;color:#546572}
+[hidden]{display:none!important}
+.alert{border-left:5px solid #b18a39;background:#fff9ea;padding:.9rem 1rem;border-radius:6px}
+.note{border-left:5px solid #557a8d;background:#edf5f7;padding:.85rem 1rem;border-radius:6px}
+.closing ul{padding-left:1.4rem}.closing li{margin:.4rem 0}
+.rights-box{border:1px solid #bccad5;border-left:5px solid #536d81;background:#f6f9fb;padding:.85rem 1rem}
+footer{padding:1.5rem;color:#4d5f71;text-align:center;font-size:.9rem}
+@media(max-width:810px){.art-timeline{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.path-head{align-items:flex-start}.path-no{width:3rem;height:3rem}}
+@media print{nav.floating,.filters{display:none!important}.art-timeline{grid-template-columns:1fr}.art-item{break-inside:avoid}.section{border:0;padding:.3rem 0}.intro,.closing{break-inside:avoid}}
+</style></head><body>
+<a class="skip" href="#conteudo">Ir diretamente ao conteúdo</a>
+<header><p class="eyebrow">Guia Visual · Pesquisa em Educação · Curadoria em expansão</p><h1>Quem pôde representar a adolescência?<br>E quem pôde representar o mundo?</h1>
+<p>Dois percursos de arte e história que investigam as formas pelas quais sujeitos jovens foram representados — e as condições nas quais jovens artistas passaram a produzir imagens, textos e linguagens próprias.</p></header>
+<nav class="floating" aria-label="Navegação permanente dos percursos"><a href="index.html#explorar">Guia principal</a><a href="#introducao">Proposta</a><a href="#representada">I · Representações</a><a href="#autoria">II · Autoria adolescente</a><a href="#metodo">Fontes e limites</a><a href="matriz-aberta.html">Matriz Aberta</a></nav>
+<main id="conteudo">
+<section class="intro" id="introducao"><h2>Uma cartografia, não uma história linear</h2>
+<p class="key-question">Ao longo da história, quem pôde representar a adolescência — e em quais condições os próprios adolescentes puderam representar o mundo?</p>
+<p class="lead">A seleção não parte da ideia de uma adolescência invariável, presente em todas as sociedades. Obras e objetos podem remeter a juventude, iniciação, aprendizagem, infância ou passagem entre posições sociais <em>sem</em> constituir prova de uma etapa universal do desenvolvimento. Ao mesmo tempo, a expressão artística produzida por adolescentes revela sujeitos ativos na criação cultural, em condições profundamente desiguais de acesso, circulação e reconhecimento.</p>
+<div class="method-grid"><div><strong>Representação não é experiência vivida</strong>Uma obra pode expressar ideais, temores e classificações de seu tempo sem documentar como todos os jovens viviam.</div><div><strong>Autoria não é tema</strong>Um adolescente pode produzir arte sem falar de adolescência. Consideramos também idade, formação e condições de circulação.</div><div><strong>Fonte aberta não é licença aberta</strong>Toda ficha aponta para acervo público verificável. A disponibilização on-line não autoriza automaticamente republicação de imagens ou textos.</div></div>
+<p class="note"><strong>Origem da curadoria:</strong> quatro PDFs exploratórios disponibilizados pela autora, ampliados por pesquisa em instituições culturais, museus, arquivos e organizações de memória. Os PDFs são ponto de partida e não substituem fontes primárias. A seleção inicial permanece em construção e não é representativa de toda a história da arte.</p>
+</section>
+<section class="section" id="representada" aria-labelledby="representada-titulo">
+<div class="path-head"><span class="path-no" aria-hidden="true">I</span><div><h2 id="representada-titulo">A adolescência representada</h2><p>Imagens de jovens, posições sociais e fronteiras históricas entre as idades da vida</p></div></div>
+<p>O percurso é aproximadamente cronológico, mas a ordem não implica evolução histórica única. Há obras que representam <strong>crianças</strong>, e não adolescentes comprovados: elas foram incluídas para interrogar as fronteiras sociais e a desigualdade do tempo destinado à formação.</p>
+<div class="filters" data-group="representada" role="group" aria-label="Filtrar obras por relações temáticas"><button type="button" data-filter="all" aria-pressed="true">Todas</button><button type="button" data-filter="trabalho" aria-pressed="false">Trabalho</button><button type="button" data-filter="genero" aria-pressed="false">Gênero</button><button type="button" data-filter="educacao" aria-pressed="false">Educação</button><button type="button" data-filter="poder" aria-pressed="false">Poder e direitos</button><button type="button" data-filter="ritual" aria-pressed="false">Rito e iniciação</button></div>
+<div class="art-timeline" id="obras-representadas"><article class="art-item" data-tags="classificacao poder ritual" aria-labelledby="r-1-title">
+<div class="item-index"><span class="item-number">01</span><span class="item-medium">Escultura</span></div>
+<div class="item-body">
+<p class="item-era">Antiguidade · c. 530 a.C. <span aria-hidden="true">·</span> Ática, Grécia</p>
+<h3 id="r-1-title">Kouros de Anavyssos (Kroisos)</h3>
+<p class="item-maker">Escultor não identificado · Escultura funerária em mármore</p>
+<p>O corpo idealizado de um jovem aparece associado à memória funerária de Kroisos. A escultura permite discutir prestígio, pertencimento e valores sociais, não documentar diretamente a efebia.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> O que a representação de um corpo jovem permite conhecer — e o que ela não revela — sobre posições sociais e experiências?</p><p><strong>Cuidado interpretativo:</strong> A obra antecede a efebia ateniense clássica tal como documentada em outras fontes. Não transformar o kouros em prova de um rito institucional específico.</p></details>
+<p class="item-foot"><a href="https://www.namuseum.gr/en/permanent_exhibition/syllogi-glypton/" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Kouros de Anavyssos (Kroisos)">Museu Arqueológico Nacional de Atenas — coleção de escultura</a><span class="rights">Página de acervo público; imagem não reproduzida aqui</span></p></div></article>
+<article class="art-item" data-tags="educacao genero" aria-labelledby="r-2-title">
+<div class="item-index"><span class="item-number">02</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">Século XVIII · após 1740 <span aria-hidden="true">·</span> França</p>
+<h3 id="r-2-title">The Little Schoolmistress (A pequena professora)</h3>
+<p class="item-maker">Jean Siméon Chardin · Pintura</p>
+<p>Uma menina mais velha acompanha a leitura de uma criança menor. A cena dá visibilidade a formas domésticas de ensino e às expectativas de gênero.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Quem é reconhecido como responsável pela educação e como a pintura organiza as relações entre as idades?</p><p><strong>Cuidado interpretativo:</strong> A idade exata da personagem mais velha não é estabelecida na ficha institucional: não apresentá-la como adolescente comprovada.</p></details>
+<p class="item-foot"><a href="https://www.nga.gov/artworks/98-little-schoolmistress" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para The Little Schoolmistress (A pequena professora)">National Gallery of Art — ficha da obra</a><span class="rights">Acervo de acesso aberto; conferir licença antes de incorporar imagem</span></p></div></article>
+<article class="art-item" data-tags="classificacao poder" aria-labelledby="r-3-title">
+<div class="item-index"><span class="item-number">03</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">Século XIX · 1842 <span aria-hidden="true">·</span> Estados Unidos</p>
+<h3 id="r-3-title">The Voyage of Life: Youth (A viagem da vida: juventude)</h3>
+<p class="item-maker">Thomas Cole · Pintura alegórica</p>
+<p>A juventude aparece como alegoria de um itinerário moral e religioso; interessa à história das representações, não como retrato de uma experiência adolescente universal.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Quais valores e expectativas de futuro são projetados sobre a juventude pelo artista?</p><p><strong>Cuidado interpretativo:</strong> A alegoria faz parte de uma sequência de idades idealizadas; não se confunde com periodização psicológico-científica.</p></details>
+<p class="item-foot"><a href="https://www.nga.gov/artworks/52451-voyage-life-youth" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para The Voyage of Life: Youth (A viagem da vida: juventude)">National Gallery of Art — ficha da obra</a><span class="rights">Consulta aberta no museu</span></p></div></article>
+<article class="art-item" data-tags="trabalho genero educacao" aria-labelledby="r-4-title">
+<div class="item-index"><span class="item-number">04</span><span class="item-medium">Escultura</span></div>
+<div class="item-body">
+<p class="item-era">Século XIX · 1878–1881 <span aria-hidden="true">·</span> Paris, França</p>
+<h3 id="r-4-title">Little Dancer Aged Fourteen (Pequena bailarina de 14 anos)</h3>
+<p class="item-maker">Edgar Degas · Escultura em cera e materiais têxteis</p>
+<p>Marie van Goethem, modelo de 14 anos proveniente de família trabalhadora, inscreve o corpo jovem nas relações entre formação artística, disciplina e condições materiais.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Em quais condições uma atividade cultural pode constituir simultaneamente formação, disciplina e trabalho?</p><p><strong>Cuidado interpretativo:</strong> Evitar atribuir sentimentos internos à modelo a partir da postura escultórica; confrontar com a documentação histórica.</p></details>
+<p class="item-foot"><a href="https://www.nga.gov/artworks/110292-little-dancer-aged-fourteen" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Little Dancer Aged Fourteen (Pequena bailarina de 14 anos)">National Gallery of Art — ficha e descrição acessível</a><span class="rights">Imagem classificada como domínio público pela NGA</span></p></div></article>
+<article class="art-item" data-tags="genero classificacao" aria-labelledby="r-5-title">
+<div class="item-index"><span class="item-number">05</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">Século XIX · 1888 <span aria-hidden="true">·</span> Arles, França</p>
+<h3 id="r-5-title">La Mousmé</h3>
+<p class="item-maker">Vincent van Gogh · Óleo sobre tela</p>
+<p>O artista denominou a figura a partir de uma expressão associada, em sua correspondência, a uma jovem de aproximadamente 12 a 14 anos. O retrato abre questões sobre olhar, gênero e exotização.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como o artista interpreta uma jovem a partir de categorias culturais que não são necessariamente as da própria retratada?</p><p><strong>Cuidado interpretativo:</strong> O termo usado por Van Gogh não comprova a idade exata nem a identidade da modelo.</p></details>
+<p class="item-foot"><a href="https://www.nga.gov/artworks/46626-la-mousme" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para La Mousmé">National Gallery of Art — ficha da obra</a><span class="rights">Imagem de domínio público disponibilizada pela NGA</span></p></div></article>
+<article class="art-item" data-tags="trabalho educacao" aria-labelledby="r-6-title">
+<div class="item-index"><span class="item-number">06</span><span class="item-medium">Desenho</span></div>
+<div class="item-body">
+<p class="item-era">Século XIX · 1893 <span aria-hidden="true">·</span> França / artista estadunidense</p>
+<h3 id="r-6-title">Study for the Young Sabot Maker (Estudo para o jovem fabricante de tamancos)</h3>
+<p class="item-maker">Henry Ossawa Tanner · Aquarela e guache</p>
+<p>O estudo permite investigar a representação artística das relações entre formação profissional, transmissão de saberes e juventude no universo do ofício.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> De que maneira aprender um ofício pode envolver formação, divisão do trabalho e posições sociais diferenciadas?</p><p><strong>Cuidado interpretativo:</strong> A ficha do museu não determina a idade do jovem: o tema não autoriza uma classificação etária precisa.</p></details>
+<p class="item-foot"><a href="https://www.metmuseum.org/art/collection/search/12774" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Study for the Young Sabot Maker (Estudo para o jovem fabricante de tamancos)">The Metropolitan Museum of Art — ficha da obra</a><span class="rights">Consultar direitos na ficha; acesso público ao acervo</span></p></div></article>
+<article class="art-item" data-tags="genero classificacao" aria-labelledby="r-7-title">
+<div class="item-index"><span class="item-number">07</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">Século XIX · 1894 <span aria-hidden="true">·</span> Noruega</p>
+<h3 id="r-7-title">Puberty (Pubertet / Puberdade)</h3>
+<p class="item-maker">Edvard Munch · Óleo sobre tela</p>
+<p>A representação do corpo jovem pode ser confrontada com discursos modernos sobre puberdade, sexualidade e interioridade, sem transformá-la em documento psicológico da modelo.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Quando uma representação artística da puberdade passa a ser interpretada como descrição universal da adolescência?</p><p><strong>Cuidado interpretativo:</strong> A associação entre sombra, angústia e interioridade é interpretativa, não um diagnóstico da personagem.</p></details>
+<p class="item-foot"><a href="https://www.munch.no/en/object/PE.M.00480" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Puberty (Pubertet / Puberdade)">MUNCH / catálogo de obras, com crédito ao Nasjonalmuseet</a><span class="rights">Link ao acervo; fotografia não incorporada</span></p></div></article>
+<article class="art-item" data-tags="ritual genero educacao" aria-labelledby="r-8-title">
+<div class="item-index"><span class="item-number">08</span><span class="item-medium">Máscara</span></div>
+<div class="item-body">
+<p class="item-era">Fim do XIX / início do XX <span aria-hidden="true">·</span> Libéria ocidental · povos Bassa</p>
+<h3 id="r-8-title">Máscara ndoli jowei (tradições Sande)</h3>
+<p class="item-maker">Artista Bassa não identificado · Máscara de madeira</p>
+<p>A peça integra tradições de performance e formação de jovens mulheres vinculadas a sociedades Sande, com significados religiosos e comunitários.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como determinadas coletividades organizam processos formativos e ritos sem reproduzir a classificação moderna de adolescência?</p><p><strong>Cuidado interpretativo:</strong> A peça específica catalogada pelo Met é Bassa, não deve ser atribuída automaticamente aos Mende; as práticas variam por povo e contexto.</p></details>
+<p class="item-foot"><a href="https://www.metmuseum.org/art/collection/search/824210" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Máscara ndoli jowei (tradições Sande)">The Metropolitan Museum of Art — ficha específica da peça</a><span class="rights">Consultar política de imagens e procedência do objeto</span></p></div></article>
+<article class="art-item" data-tags="classificacao educacao" aria-labelledby="r-9-title">
+<div class="item-index"><span class="item-number">09</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">Século XX · 1941 <span aria-hidden="true">·</span> Brasil</p>
+<h3 id="r-9-title">Meninos Soltando Pipas</h3>
+<p class="item-maker">Candido Portinari · Têmpera sobre papelão</p>
+<p>A obra inscreve brincadeiras infantis em um espaço culturalmente situado. Ajuda a examinar fronteiras entre infância, adolescência e responsabilidades sem pressupor que os meninos sejam adolescentes.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Que atividades aparecem como próprias de certas idades — e quais condições de classe ou território ficam fora do quadro?</p><p><strong>Cuidado interpretativo:</strong> O próprio catálogo identifica os personagens como crianças; a obra entra por sua pertinência às fronteiras sociais das idades.</p></details>
+<p class="item-foot"><a href="https://www.portinari.org.br/acervo/obras/19000/meninos-soltando-pipas" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Meninos Soltando Pipas">Projeto Portinari — ficha FCO-3788</a><span class="rights">Fonte aberta; reprodução da imagem depende de autorização</span></p></div></article>
+<article class="art-item" data-tags="trabalho poder classificacao" aria-labelledby="r-10-title">
+<div class="item-index"><span class="item-number">10</span><span class="item-medium">Montagem</span></div>
+<div class="item-body">
+<p class="item-era">Século XX · 1963 <span aria-hidden="true">·</span> Argentina</p>
+<h3 id="r-10-title">Juanito va a la ciudad</h3>
+<p class="item-maker">Antonio Berni · Montagem com materiais urbanos e industriais</p>
+<p>Juanito Laguna é descrito pelo museu como menino de periferia. A obra permite discutir o acesso desigual ao tempo de formação e a infância atravessada pela desigualdade social.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Para quem se tornam possíveis a escolarização prolongada e o afastamento do trabalho? Que experiências permanecem excluídas?</p><p><strong>Cuidado interpretativo:</strong> Juanito é apresentado como menino; não convertê-lo em adolescente sem evidência. A obra não prova sozinha as condições históricas investigadas.</p></details>
+<p class="item-foot"><a href="https://emuseum.mfah.org/objects/86306/juanito-va-a-la-ciudad?ctx=497111841383c3748140c48210ba31fbcccaaaaf&amp;idx=54" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Juanito va a la ciudad">Museum of Fine Arts, Houston — ficha institucional</a><span class="rights">Obra com restrições de reprodução; visualizar no MFAH</span></p></div></article></div>
+<p class="alert"><strong>Atenção aos anacronismos:</strong> o kouros não comprova a efebia; uma máscara Sande não representa todas as sociedades africanas; Juanito Laguna não deve ser classificado como adolescente sem evidência da idade. As fichas indicam os limites específicos.</p>
+</section>
+<section class="section" id="autoria" aria-labelledby="autoria-titulo">
+<div class="path-head"><span class="path-no" aria-hidden="true">II</span><div><h2 id="autoria-titulo">A adolescência que se expressa</h2><p>Obras, escritos e práticas artísticas documentadas durante a adolescência</p></div></div>
+<p>Este percurso desloca o olhar do artista adulto para quem cria. Investiga as mediações familiares, educativas, editoriais, comunitárias, raciais e políticas que participam da possibilidade de produzir e circular arte. A música aparece como ampliação deliberada da abordagem, ao lado das artes visuais e da literatura.</p>
+<div class="filters" data-group="autoria" role="group" aria-label="Filtrar produções por relações temáticas"><button type="button" data-filter="all" aria-pressed="true">Todas</button><button type="button" data-filter="autoria" aria-pressed="false">Autoria</button><button type="button" data-filter="educacao" aria-pressed="false">Formação</button><button type="button" data-filter="trabalho" aria-pressed="false">Trabalho e circulação</button><button type="button" data-filter="poder" aria-pressed="false">Direitos e resistência</button></div>
+<div class="art-timeline" id="obras-autorais"><article class="art-item" data-tags="autoria genero" aria-labelledby="a-1-title">
+<div class="item-index"><span class="item-number">01</span><span class="item-medium">Desenho</span></div>
+<div class="item-body">
+<p class="item-era">1484 · 13 anos <span aria-hidden="true">·</span> Sacro Império Romano-Germânico</p>
+<h3 id="a-1-title">Autorretrato aos treze anos</h3>
+<p class="item-maker">Albrecht Dürer · Desenho a ponta de prata</p>
+<p>O próprio jovem desenha sua imagem, com o auxílio de um espelho, numa produção preservada pela instituição. O adolescente deixa de ser somente objeto do olhar alheio.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como a autorrepresentação desloca a questão de quem é visto para quem tem meios de produzir uma imagem de si?</p><p><strong>Cuidado interpretativo:</strong> Trata-se de caso individual historicamente excepcional; não é exemplo típico do acesso juvenil à formação artística.</p></details>
+<p class="item-foot"><a href="https://sammlungenonline.albertina.at/objects/86745" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Autorretrato aos treze anos">ALBERTINA — coleção on-line</a><span class="rights">Obra histórica; verificar licença da reprodução digital</span></p></div></article>
+<article class="art-item" data-tags="autoria trabalho poder" aria-labelledby="a-2-title">
+<div class="item-index"><span class="item-number">02</span><span class="item-medium">Poesia</span></div>
+<div class="item-body">
+<p class="item-era">1767 · cerca de 14 anos <span aria-hidden="true">·</span> África ocidental / Boston colonial</p>
+<h3 id="a-2-title">Primeiros poemas publicados</h3>
+<p class="item-maker">Phillis Wheatley · Poesia impressa em jornal</p>
+<p>A jovem africana escravizada publicou poesia na adolescência. A circulação de seus textos foi atravessada pelas relações raciais e pelos limites impostos à autoria negra.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Que condições excepcionais e contradições tornaram possível publicar enquanto a liberdade da autora lhe era negada?</p><p><strong>Cuidado interpretativo:</strong> Não transformar a publicação em prova de igualdade de oportunidades entre jovens escravizados.</p></details>
+<p class="item-foot"><a href="https://www.folger.edu/explore/the-stuart-and-mimi-rose-collection/phillis-wheatley/" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Primeiros poemas publicados">Folger Shakespeare Library — acervo e contexto histórico</a><span class="rights">Fonte em acesso aberto; poemas antigos sujeitos a exame de edição</span></p></div></article>
+<article class="art-item" data-tags="autoria trabalho educacao" aria-labelledby="a-3-title">
+<div class="item-index"><span class="item-number">03</span><span class="item-medium">Poesia</span></div>
+<div class="item-body">
+<p class="item-era">1854 · 15 anos <span aria-hidden="true">·</span> Rio de Janeiro, Brasil</p>
+<h3 id="a-3-title">Soneto à Ilma. Sra. D. P. J. A.</h3>
+<p class="item-maker">Machado de Assis · Poesia em periódico</p>
+<p>A primeira publicação literária do escritor, ainda adolescente, permite examinar a entrada na cultura impressa e as mediações do trabalho editorial.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como a imprensa, o trabalho e as redes de sociabilidade tornam possível a circulação da escrita de um jovem?</p><p><strong>Cuidado interpretativo:</strong> Fontes institucionais divergem sobre qual poema é chamado de &#39;primeiro&#39;; a ABL documenta este soneto em 1854, enquanto outras cronologias destacam &#39;Ela&#39; em 1855.</p></details>
+<p class="item-foot"><a href="https://www.academia.org.br/academicos/machado-de-assis/biografia" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Soneto à Ilma. Sra. D. P. J. A.">Academia Brasileira de Letras — biografia</a><span class="rights">Biografia e obra em acesso aberto; texto não reproduzido</span></p></div></article>
+<article class="art-item" data-tags="autoria educacao poder" aria-labelledby="a-4-title">
+<div class="item-index"><span class="item-number">04</span><span class="item-medium">Poesia</span></div>
+<div class="item-body">
+<p class="item-era">1870–1871 · 15 a 17 anos <span aria-hidden="true">·</span> França</p>
+<h3 id="a-4-title">Primeiros poemas e experimentações</h3>
+<p class="item-maker">Arthur Rimbaud · Poesia</p>
+<p>Escreveu parte significativa da poesia inicial em sua adolescência, num contexto de guerra, deslocamentos e ruptura com a escolarização formal.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como a criação literária se relaciona com as instituições e os conflitos históricos que atravessam uma vida jovem?</p><p><strong>Cuidado interpretativo:</strong> As datas de composição e publicação variam por poema; evitar atribuir idade fixa a toda a obra de Rimbaud.</p></details>
+<p class="item-foot"><a href="https://www.poetryfoundation.org/poets/arthur-rimbaud" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Primeiros poemas e experimentações">Poetry Foundation — biografia crítica</a><span class="rights">Perfil gratuito; direitos de traduções variam</span></p></div></article>
+<article class="art-item" data-tags="autoria educacao ritual" aria-labelledby="a-5-title">
+<div class="item-index"><span class="item-number">05</span><span class="item-medium">Pintura</span></div>
+<div class="item-body">
+<p class="item-era">1896 · 14–15 anos <span aria-hidden="true">·</span> Barcelona, Espanha</p>
+<h3 id="a-5-title">First Communion (Primeira comunhão)</h3>
+<p class="item-maker">Pablo Picasso · Óleo sobre tela</p>
+<p>Picasso executou ainda adolescente uma obra de grande formato, produzida em ambiente de ensino artístico e orientada por expectativas de reconhecimento institucional.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Quais relações entre família, escola de arte e critérios de prestígio participam da formação do artista jovem?</p><p><strong>Cuidado interpretativo:</strong> O tema religioso não equivale a autobiografia adolescente; idade indicada como intervalo conforme a data anual da obra.</p></details>
+<p class="item-foot"><a href="https://museupicassobcn.cat/en/node/1024" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para First Communion (Primeira comunhão)">Museu Picasso Barcelona — ficha oficial</a><span class="rights">Acervo público; reutilização da imagem depende de direitos</span></p></div></article>
+<article class="art-item" data-tags="autoria trabalho educacao" aria-labelledby="a-6-title">
+<div class="item-index"><span class="item-number">06</span><span class="item-medium">Música</span></div>
+<div class="item-body">
+<p class="item-era">1911 · cerca de 14 anos <span aria-hidden="true">·</span> Rio de Janeiro, Brasil</p>
+<h3 id="a-6-title">Atuação musical no Choro Carioca</h3>
+<p class="item-maker">Pixinguinha · Música e performance</p>
+<p>Sua inserção precoce nos conjuntos e ambientes de apresentação documenta a formação musical nas relações familiares, comunitárias e profissionais.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Como o trabalho artístico e a transmissão de saberes se articulam na formação de um jovem?</p><p><strong>Cuidado interpretativo:</strong> Ampliação deliberada da curadoria para a música. A fonte comprova atuação adolescente, não atribui a ele a composição das peças gravadas pelo grupo naquele ano.</p></details>
+<p class="item-foot"><a href="https://ims.com.br/2019/03/29/pixinguinha-cronologia/" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Atuação musical no Choro Carioca">Instituto Moreira Salles — cronologia</a><span class="rights">Acervo/cronologia de acesso público; gravações não incorporadas</span></p></div></article>
+<article class="art-item" data-tags="autoria poder genero" aria-labelledby="a-7-title">
+<div class="item-index"><span class="item-number">07</span><span class="item-medium">Diário</span></div>
+<div class="item-body">
+<p class="item-era">1942–1944 · 13 a 15 anos <span aria-hidden="true">·</span> Amsterdã, Países Baixos</p>
+<h3 id="a-7-title">Diário e reescrita para publicação</h3>
+<p class="item-maker">Anne Frank · Diário e escrita autobiográfica</p>
+<p>Anne começou o diário aos 13 anos e posteriormente o reescreveu com intenção de publicação. A obra documenta agência autoral em condições extremas de perseguição nazista.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> O que se modifica quando reconhecemos a adolescente não só como testemunha, mas como autora que reelabora sua escrita?</p><p><strong>Cuidado interpretativo:</strong> A obra não representa todos os adolescentes sob a guerra; não confundir edições posteriores com o manuscrito original.</p></details>
+<p class="item-foot"><a href="https://www.annefrank.org/en/anne-frank/diary/complete-works-anne-frank/" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Diário e reescrita para publicação">Anne Frank House — organização e história dos escritos</a><span class="rights">Acesso à documentação histórica; reprodução integral do diário não autorizada</span></p></div></article>
+<article class="art-item" data-tags="autoria poder trabalho" aria-labelledby="a-8-title">
+<div class="item-index"><span class="item-number">08</span><span class="item-medium">Música/poesia</span></div>
+<div class="item-body">
+<p class="item-era">2017 · aproximadamente 16 anos <span aria-hidden="true">·</span> Aldeia Krukutu, São Paulo, Brasil</p>
+<h3 id="a-8-title">My Blood Is Red / Meu Sangue É Vermelho</h3>
+<p class="item-maker">Kunumi MC (Werá Jeguaka Mirim) · Rap, composição e poesia</p>
+<p>A produção musical do jovem guarani mobiliza a poesia e o rap como formas de participação cultural e afirmação de direitos territoriais.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Em que condições uma forma artística contemporânea se torna meio de enunciação política por jovens indígenas?</p><p><strong>Cuidado interpretativo:</strong> Linguagem musical inserida para ampliar o percurso; não reproduzimos letras nem faixas. A estimativa etária decorre de relato de imprensa da época.</p></details>
+<p class="item-foot"><a href="https://ims.com.br/convida/kunumi-mc/" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para My Blood Is Red / Meu Sangue É Vermelho">Instituto Moreira Salles — perfil do artista</a><span class="rights">Perfil aberto; gravações e letras têm direitos reservados</span></p></div></article>
+<article class="art-item" data-tags="autoria poder genero" aria-labelledby="a-9-title">
+<div class="item-index"><span class="item-number">09</span><span class="item-medium">Poesia</span></div>
+<div class="item-body">
+<p class="item-era">2022 · 16 anos <span aria-hidden="true">·</span> Território Truká, Pernambuco, Brasil</p>
+<h3 id="a-9-title">Poesia no álbum Guerreiras da Ancestralidade</h3>
+<p class="item-maker">Joana Truká · Poesia e escrita de testemunho</p>
+<p>A autora apresenta sua experiência de escrita e sua poesia no volume coletivo, relacionando criação literária, identidade indígena, memória e crítica à colonização.</p>
+<details><summary>Interrogar a obra e reconhecer limites</summary><p><strong>Pergunta:</strong> Que histórias e posições se tornam visíveis quando adolescentes escrevem em primeira pessoa sobre território e ancestralidade?</p><p><strong>Cuidado interpretativo:</strong> Poesia publicada com direitos editoriais e autorais: o Guia apenas indica a obra e suas páginas impressas (131–132), sem reproduzir o texto nem dados pessoais.</p></details>
+<p class="item-foot"><a href="https://www.gov.br/funai/pt-br/centrais-de-conteudo/publicacoes/obra-literaria-guerreiras-da-ancestralidade" target="_blank" rel="noopener noreferrer" aria-label="Consultar fonte verificável para Poesia no álbum Guerreiras da Ancestralidade">Mulherio das Letras Indígenas / Funai — publicação integral aberta (2022)</a><span class="rights">PDF gratuito com direitos reservados; texto não transcrito</span></p></div></article></div>
+<p class="note"><strong>Ampliações futuras:</strong> localizar produções de adolescentes indígenas, quilombolas, africanos, asiáticos e latino-americanos com autoria, data, idade e acesso documentados; ampliar fotografia, cinema, grafite, artesanato, música, poesia oral e arte digital. A ausência atual de certas experiências reflete limites desta etapa de busca, não inexistência de sua produção.</p>
+</section>
+<section class="closing" id="metodo"><h2>Critérios de pesquisa, atribuição e acessibilidade</h2>
+<ul><li><strong>Identidade da obra:</strong> título, autoria, técnica, data e proveniência conferidos sempre que possível em fonte institucional ou publicação primária.</li>
+<li><strong>Condição etária:</strong> quando a idade é desconhecida, aproximada ou não corresponde necessariamente à adolescência, a ficha informa isso. A idade da personagem é distinta da idade de quem produziu a obra.</li>
+<li><strong>Leitura crítica:</strong> interpretação e pergunta de pesquisa são propostas curatoriais, não enunciados atribuídos automaticamente aos artistas ou documentos.</li>
+<li><strong>Acesso e direitos:</strong> todos os links conduzem a páginas ou documentos de consulta gratuita verificados na etapa de seleção. <strong>Acesso aberto não significa domínio público.</strong> Nenhuma imagem ou texto protegido foi republicado nesta primeira edição.</li>
+<li><strong>Acessibilidade:</strong> texto selecionável, navegação por teclado, cabeçalhos semânticos, filtros com estados anunciáveis, legendas descritivas e perguntas textuais independentes da visualização da obra em sites externos.</li>
+<li><strong>Atualização:</strong> cada ficha deverá receber revisão de fonte, eventual correção de atribuição e, quando imagens forem incorporadas, autorização/licença e descrição acessível individualizada.</li></ul>
+<p>Esta seção é complementar ao objeto documental da dissertação. Não amplia o corpus de teses e dissertações, nem transforma obras artísticas em evidência direta de transformações do psiquismo.</p>
+<div class="rights-box"><strong>Direitos autorais e reprodução.</strong> © 2026 Taynara Xavier Telles. Todos os direitos reservados sobre o texto curatorial original do Guia. Proibida a divulgação ou reprodução total ou parcial deste Guia sem autorização prévia e expressa, ressalvadas as exceções legais e os direitos de terceiros. As obras e conteúdos das instituições consultadas conservam seus próprios regimes de direitos; consulte cada fonte.</div>
+<p><a href="index.html#arte">Voltar à seção Arte do Guia</a> · <a href="index.html#cap2">Ver o capítulo sobre historicidade</a></p></section>
+</main><footer>Curadoria de pesquisa em expansão · Guia Visual da dissertação de Taynara Xavier Telles · 2026</footer>
+<script>
+(function(){document.querySelectorAll('.filters[data-group]').forEach(function(g){var group=g.dataset.group,target=document.getElementById(group==='representada'?'obras-representadas':'obras-autorais');g.addEventListener('click',function(e){var btn=e.target.closest('button[data-filter]');if(!btn||!g.contains(btn))return;var tag=btn.dataset.filter;g.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b===btn));});target.querySelectorAll('.art-item').forEach(function(card){card.hidden=tag!=='all'&&!card.dataset.tags.split(' ').includes(tag);});});});})();
+</script></body></html>
