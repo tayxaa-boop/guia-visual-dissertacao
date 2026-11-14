@@ -1197,14 +1197,14 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 <section class="extra-panel" id="galeria" aria-labelledby="galeria-titulo">
  <p class="eyebrow" data-tx="galleryEyebrow">Acervo em formação</p>
  <h2 id="galeria-titulo" data-tx="galleryTitle">Galeria de autores e ideias</h2>
- <p class="panel-lead" data-tx="galleryLead">Perfis de autores mobilizados na investigação, reunindo trajetória, conceitos e relações com a dissertação. O banco bibliográfico já reúne 62 fichas; aqui começamos pela estrutura de consulta. Retratos, legendas e audiodescrições serão inseridos somente após seleção e verificação.</p>
+ <p class="panel-lead" data-tx="galleryLead">Perfis de autores mobilizados na investigação, reunindo trajetória, conceitos e relações com a dissertação. A consulta independente reúne 63 fichas em diferentes estágios de verificação, com fontes, notas críticas e alguns retratos documentados. O conteúdo textual pode ser consultado sem conexão.</p>
  <div class="focus-cards">
   <article class="focus-card"><h3>Lev Semionovitch Vigotski</h3><p data-tx="vigCard">Mediação semiótica, formação de conceitos e desenvolvimento das funções psicológicas superiores.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
   <article class="focus-card"><h3>Alexei Nikolaevitch Leontiev</h3><p data-tx="leonCard">Atividade, motivos, apropriação cultural e formação da consciência.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
   <article class="focus-card"><h3>Dermeval Saviani</h3><p data-tx="savCard">Pedagogia Histórico-Crítica, trabalho educativo e função social da escola.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
   <article class="focus-card"><h3>Lígia Márcia Martins</h3><p data-tx="martCard">Desenvolvimento do psiquismo, escolarização e articulações entre Psicologia Histórico-Cultural e Pedagogia Histórico-Crítica.</p><p class="note" data-tx="imageNote">Retrato, procedência e audiodescrição: a inserir após conferência.</p></article>
  </div>
- <p><a href="https://docs.google.com/spreadsheets/d/1kPz5_k6gmNsqjKDvh6jFEjRzGtKVFQi08FD2Pxd6GY8/edit#gid=1511664242" target="_blank" rel="noopener noreferrer" data-tx="gallerySheet">Consultar as 62 fichas biográficas na planilha</a></p>
+ <p><a href="biografias.html" data-tx="gallerySheet">Consultar as 63 fichas biográficas no Guia Visual</a></p>
  <p class="language-scope" data-tx="galleryCaveat">A planilha contém dados biográficos em diferentes estágios de verificação; lacunas e divergências estão sinalizadas. Os perfis não substituem a leitura das obras.</p>
 </section>
 <section class="extra-panel" id="arte" aria-labelledby="arte-titulo">
@@ -1221,13 +1221,13 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 </section>
 <section class="extra-panel" id="fontes" aria-labelledby="fontes-titulo">
  <h2 id="fontes-titulo" data-tx="refsTitle">Referências e acervos</h2>
- <p data-tx="refsLead">Acesse os registros que sustentam as seções complementares e o texto de qualificação. O leitor do Guia mantém a versão do PDF como referência textual; a planilha oferece um ponto de partida para localizar autores e obras.</p>
+ <p data-tx="refsLead">Consulte a dissertação no leitor incorporado e as fichas biográficas em uma página própria do Guia, sem depender de documentos do Google Drive.</p>
  <div class="crosslinks">
   <a href="#leitor" data-tx="refsReader">Ler a dissertação nesta página</a>
-  <a href="https://docs.google.com/spreadsheets/d/1kPz5_k6gmNsqjKDvh6jFEjRzGtKVFQi08FD2Pxd6GY8/edit#gid=1511664242" target="_blank" rel="noopener noreferrer" data-tx="refsAuthors">Consultar autores e referências</a>
-  <a href="https://docs.google.com/document/d/1UXbEtZc5sw4_EHzvuanW4gHlC--NjScZAsdg45C32xE/edit" target="_blank" rel="noopener noreferrer" data-tx="refsThesis">Abrir o documento da qualificação</a>
+  <a href="biografias.html" data-tx="refsAuthors">Consultar autores e referências</a>
+  <a href="#leitor" target="_blank" rel="noopener noreferrer" data-tx="refsThesis">Retomar a leitura da dissertação</a>
  </div>
- <p class="language-scope" data-tx="refsCaveat">Os links para o Google Drive respeitam as permissões definidas pela proprietária dos documentos. Traduções oficiais, retratos e audiodescrições completas ainda não estão publicados nesta seção.</p>
+ <p class="language-scope" data-tx="refsCaveat">O Guia e as fichas biográficas ficam publicados no mesmo site. As fontes externas e os retratos vinculados a acervos necessitam de internet; os textos das fichas permanecem acessíveis localmente.</p>
 </section>
 </main><footer>Guia produzido a partir da dissertação da autora, versão 11, e do roteiro do Apêndice A. Os esquemas representam relações de investigação, não resultados gerais do corpus.<p>A versão HTML possui recursos semânticos e de navegação, mas requer testes com tecnologias assistivas para avaliação definitiva de conformidade.</p></footer><script>
 const btn = document.querySelector('#linear');
@@ -1423,13 +1423,13 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
       listenBio:"Listen to the presentation (synthetic voice)",stopBio:"Stop reading",readPrologue:"Read the prologue in the dissertation reader",
       authorProvenance:"First-person text adapted from the prologue and acknowledgements of the qualification dissertation; it is not a verbatim transcript or an independent autobiography. The photo and an author-recorded narration require materials chosen or produced by the author.",
       galleryEyebrow:"An evolving collection",galleryTitle:"Authors and ideas gallery",
-      galleryLead:"Profiles of authors used in the research, bringing together their paths, concepts and connections with the dissertation. The bibliographic spreadsheet already contains 62 profiles; this section establishes the public-facing format. Portraits, captions and audio descriptions will be added after verification.",
+      galleryLead:"Profiles of authors used in the research, bringing together their paths, concepts and connections with the dissertation. The independent guide now contains 63 profiles with bibliographical sources, critical notes and a few documented portraits. The text is available without a network connection.",
       vigCard:"Semiotic mediation, concept formation and the development of higher psychological functions.",
       leonCard:"Activity, motives, cultural appropriation and the formation of consciousness.",
       savCard:"Historical-Critical Pedagogy, educational work and the social role of schooling.",
       martCard:"Psychological development, schooling, and connections between Cultural-Historical Psychology and Historical-Critical Pedagogy.",
       imageNote:"Portrait, provenance and audio description: pending verification.",
-      gallerySheet:"View the 62 biographical profiles in the spreadsheet",
+      gallerySheet:"View the 63 biographies within the Guide",
       galleryCaveat:"The spreadsheet contains biographical information at different stages of verification; missing or conflicting data are flagged. These profiles do not replace reading the original works.",
       artEyebrow:"Curatorial work in progress",artTitle:"Adolescence, art and human experience",
       artLead:"A journey through ways in which adolescents have created art, been represented in it and appropriated cultural works. This section complements the historical discussion; these works are not automatically part of the dissertation's thesis-and-dissertation corpus.",
@@ -1439,9 +1439,9 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
       artLabel:"Reproductions require verification of provenance and rights.",artOpenTitle:"Adolescents' own voices",
       artOpen:"A space for poems, drawings, photographs, music and cultural works created by adolescents, with contextualization and permission to use them.",
       artOpenNote:"An evolving collection; no invented works.",artQuestions:"Questions for reading: who represents adolescence? Which experiences and inequalities appear? When do adolescents become the authors of their own narratives?",
-      refsTitle:"References and collections",refsLead:"Access records supporting the supplementary sections and the qualification text. The Guide reader retains the PDF version as its textual basis, while the spreadsheet helps locate authors and works.",
-      refsReader:"Read the dissertation here",refsAuthors:"Browse authors and references",refsThesis:"Open the qualification document",
-      refsCaveat:"Google Drive links follow the owner's sharing permissions. Official translations, portraits and complete audio descriptions have not yet been published here."
+      refsTitle:"References and collections",refsLead:"Read the dissertation and consult the independent biographical profiles within this Guide, without Google Drive dependencies.",
+      refsReader:"Read the dissertation here",refsAuthors:"Browse authors and references",refsThesis:"Return to the dissertation reader",
+      refsCaveat:"The Guide and biographies live on the same site. External sources and some portraits need internet; the text of the biographies remains available offline."
     },
     es:{
       menuTitle:"Explorar la Guía Visual",menuLead:"Se conserva el recorrido original de la investigación. Las secciones complementarias ofrecen otras formas de acercarse a la disertación.",
@@ -1463,13 +1463,13 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
       listenBio:"Escuchar la presentación (voz sintética)",stopBio:"Detener lectura",readPrologue:"Leer el prólogo en el lector de la disertación",
       authorProvenance:"Texto en primera persona adaptado del prólogo y de los agradecimientos de la disertación de cualificación; no es una transcripción literal ni una autobiografía independiente. La fotografía y una narración grabada por la autora requieren material elegido o producido por ella.",
       galleryEyebrow:"Archivo en construcción",galleryTitle:"Galería de autores e ideas",
-      galleryLead:"Perfiles de autores utilizados en la investigación, con trayectorias, conceptos y vínculos con la disertación. La hoja bibliográfica ya contiene 62 fichas; esta sección establece el formato de consulta. Se añadirán retratos, leyendas y audiodescripciones tras su verificación.",
+      galleryLead:"Perfiles de autores utilizados en la investigación, con trayectorias, conceptos y vínculos con la disertación. La consulta independiente contiene 63 fichas con fuentes, notas críticas y algunos retratos documentados. El texto está disponible sin conexión.",
       vigCard:"Mediación semiótica, formación de conceptos y desarrollo de las funciones psicológicas superiores.",
       leonCard:"Actividad, motivos, apropiación cultural y formación de la conciencia.",
       savCard:"Pedagogía Histórico-Crítica, trabajo educativo y función social de la escuela.",
       martCard:"Desarrollo del psiquismo, escolarización y relaciones entre Psicología Histórico-Cultural y Pedagogía Histórico-Crítica.",
       imageNote:"Retrato, procedencia y audiodescripción: pendientes de verificación.",
-      gallerySheet:"Consultar las 62 fichas biográficas en la hoja de cálculo",
+      gallerySheet:"Consultar las 63 fichas biográficas dentro de la Guía",
       galleryCaveat:"La hoja contiene datos biográficos en diferentes etapas de verificación; se señalan las lagunas y discrepancias. Los perfiles no sustituyen la lectura de las obras.",
       artEyebrow:"Curaduría en preparación",artTitle:"Adolescencia, arte y experiencia humana",
       artLead:"Un recorrido por maneras en que adolescentes crearon, fueron representados y se apropiaron de producciones artísticas. Esta sección complementa la reflexión histórica; las obras no pasan automáticamente a integrar el corpus de tesis y disertaciones investigado.",
@@ -1479,9 +1479,9 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
       artLabel:"Las reproducciones requieren verificar los derechos y la procedencia.",artOpenTitle:"La voz de los propios adolescentes",
       artOpen:"Espacio destinado a poemas, dibujos, fotografías, música y producciones culturales creadas por adolescentes, con contexto y autorización de uso.",
       artOpenNote:"Acervo en construcción; sin obras inventadas.",artQuestions:"Preguntas de lectura: ¿quién representa la adolescencia? ¿Qué experiencias y desigualdades aparecen? ¿Cuándo son los adolescentes autores de sus propias narraciones?",
-      refsTitle:"Referencias y archivos",refsLead:"Acceda a los registros que sustentan las secciones complementarias y el texto de cualificación. El lector mantiene como base la versión del PDF; la hoja bibliográfica permite localizar autores y obras.",
-      refsReader:"Leer la disertación aquí",refsAuthors:"Consultar autores y referencias",refsThesis:"Abrir el documento de cualificación",
-      refsCaveat:"Los enlaces de Google Drive respetan los permisos establecidos por su propietaria. Aún no se han publicado traducciones oficiales, retratos ni audiodescripciones completas."
+      refsTitle:"Referencias y archivos",refsLead:"Consulte la disertación y las fichas biográficas independientes dentro de esta Guía, sin depender de Google Drive.",
+      refsReader:"Leer la disertación aquí",refsAuthors:"Consultar autores y referencias",refsThesis:"Volver al lector de la disertación",
+      refsCaveat:"La Guía y las fichas están publicadas en el mismo sitio. Las fuentes externas y algunos retratos necesitan internet; los textos permanecen disponibles sin conexión."
     }
   };
   const pt=new Map([...document.querySelectorAll('[data-tx]')].map(n=>[n.dataset.tx,n.textContent]));
