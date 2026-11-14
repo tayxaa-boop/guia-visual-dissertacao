@@ -7,8 +7,44 @@
 .rights-extended{display:block;max-width:1000px;margin:1.25rem auto;padding:.9rem 1rem;text-align:left;background:#f3f6f7;border:1px solid #bfcbd4;border-left:5px solid #4b6877;border-radius:8px;color:#263c4b;font:normal .91rem/1.55 Arial,sans-serif}
 .rights-extended strong{font-weight:700}
 @media print{.rights-extended{break-inside:avoid;border:1px solid #7a8591;background:white}}
+
+/* Controles de leitura acessível, compartilhados entre as páginas do Guia */
+.accessibility-controls{display:none;align-items:center;flex-wrap:wrap;gap:.3rem;padding:.3rem .45rem;border-radius:12px;background:#eef3f8;border:1px solid #afc0cf}
+html.gv-a11y-ready .accessibility-controls{display:inline-flex}
+.accessibility-controls .a11y-label{font-weight:700;font-size:.88rem;color:#19354e;padding:0 .25rem}
+.accessibility-controls button{font:inherit;font-weight:700;min-height:44px;min-width:44px;padding:.45rem .62rem;white-space:nowrap;background:#fff;color:#1a3349;border:1px solid #536e82;border-radius:8px}
+.accessibility-controls button[aria-pressed="true"]{background:#19283b;color:#fff;border-color:#19283b}
+.accessibility-controls button:disabled{opacity:.5;cursor:not-allowed}
+.accessibility-controls button:focus-visible{outline:3px solid #ce7400;outline-offset:2px}
+.a11y-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.a11y-standalone{display:flex;justify-content:flex-end;max-width:1040px;margin:.8rem auto;padding:0 1rem}
+html.gv-large-type .tools,html.gv-large-type .floating,html.gv-large-type .ma-floating{position:relative;top:auto}
+@media(max-width:650px){.accessibility-controls{max-width:100%}.accessibility-controls .a11y-label{flex:1 0 100%}.tools .accessibility-controls{flex:1 0 auto}}
+@media print{.accessibility-controls,.a11y-standalone{display:none!important}}
+@media screen{
+html.gv-high-contrast{--ink:#000;--sub:#000;--focus:#bf1600}
+html.gv-high-contrast body{background:#fff!important;color:#000!important}
+html.gv-high-contrast header{background:#000!important;color:#fff!important}
+html.gv-high-contrast header :is(h1,h2,p,span,strong,a,small){color:#fff!important}
+html.gv-high-contrast header a{text-decoration:underline!important}
+html.gv-high-contrast header.site .thesis-source{background:#101010!important;color:#fff!important;border-color:#fff!important}
+html.gv-high-contrast .tools,html.gv-high-contrast .accessibility-controls,html.gv-high-contrast .a11y-standalone{background:#fff!important;color:#000!important;border-color:#000!important;box-shadow:none!important}
+html.gv-high-contrast .accessibility-controls .a11y-label{color:#000!important}
+html.gv-high-contrast .accessibility-controls button{color:#000!important;background:#fff!important;border:2px solid #000!important}
+html.gv-high-contrast .accessibility-controls button[aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast main *:not(svg):not(svg *){color:#000!important;background-color:#fff!important;border-color:#111!important;box-shadow:none!important;text-shadow:none!important}
+html.gv-high-contrast main a{color:#002bba!important;text-decoration:underline!important}
+html.gv-high-contrast main :is(button,input,textarea,select){border:2px solid #000!important}
+html.gv-high-contrast main [aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast .tools nav.quick-nav a,html.gv-high-contrast .floating a,html.gv-high-contrast .ma-floating a{background:#fff!important;color:#000!important;border:2px solid #000!important;text-decoration:underline!important}
+html.gv-high-contrast :is(a,button,input,select,summary,textarea):focus-visible{outline:4px solid #d10000!important;outline-offset:3px}
+html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
+}
+
+
 </style></head><body><a href="#fichas" style="position:absolute;left:-9999px" onfocus="this.style.left='1rem'" onblur="this.style.left='-9999px'">Ir às fichas</a>
-<header><p>UDESC · FAED · PPGE | Guia Visual da Pesquisa</p><h1>Fichas biográficas de autoras e autores</h1><p>Pesquise um nome ou tema e abra as fichas para conhecer as contribuições dos autores à pesquisa.</p></header><main>
+<header><p>UDESC · FAED · PPGE | Guia Visual da Pesquisa</p><h1>Fichas biográficas de autoras e autores</h1><p>Pesquise um nome ou tema e abra as fichas para conhecer as contribuições dos autores à pesquisa.</p></header><div class="a11y-standalone"><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div></div>
+<main>
 <p><a href="index.html#galeria">Voltar à galeria do Guia Visual</a></p>
 <div class="notice"><strong>Antes de citar:</strong> confira as fontes indicadas em cada ficha. Alguns dados biográficos ainda não foram confirmados.</div>
 <p class="note">Para consultar fontes externas, conecte-se à internet. Para usar as fichas sem conexão, salve esta página no dispositivo.</p>
@@ -269,4 +305,35 @@
 <p class="note"><a href="https://github.com/tayxaa-boop/guia-visual-dissertacao/blob/main/CURADORIA_RETRATOS.md" target="_blank" rel="noopener noreferrer">Consultar a curadoria e as fontes dos retratos (15 imagens; 48 pendentes)</a>.</p>
 <p class="note"><strong>Fotografias:</strong> os retratos aparecem apenas quando há identificação e licença documentadas. Sem conexão, ou caso um arquivo remoto não carregue, permanecem as iniciais. Nem todo autor possui fotografia identificada e reutilizável. Para figuras antigas, pode aparecer um busto ou retrato artístico, devidamente descrito.</p>
 </main><footer><aside class="rights-extended" role="note" aria-label="Autoria e direitos de reutilização"><strong>© 2026 Taynara Xavier Telles — direitos autorais reservados.</strong> Os textos autorais, a organização, os esquemas e os recursos originais deste Guia destinam-se à consulta. A republicação, adaptação ou distribuição dependem de autorização da autora, ressalvadas as exceções previstas em lei. Obras, imagens, citações e outros materiais de terceiros mantêm seus próprios direitos.</aside>Fichas biográficas · Guia Visual da Pesquisa · 2026.</footer>
-<script>const cs=[...document.querySelectorAll('.bio-card')],inp=document.getElementById('busca'),ct=document.getElementById('count'),none=document.getElementById('none');function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}function apply(){let q=norm(inp.value).trim(),n=0;for(let c of cs){let show=norm(c.dataset.search).includes(q);c.hidden=!show;if(show)n++}ct.textContent=n+' de '+cs.length+' fichas';none.hidden=n!==0}inp.addEventListener('input',apply);document.getElementById('limpar').addEventListener('click',()=>{inp.value='';apply();inp.focus()});</script></body></html>
+<script>const cs=[...document.querySelectorAll('.bio-card')],inp=document.getElementById('busca'),ct=document.getElementById('count'),none=document.getElementById('none');function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}function apply(){let q=norm(inp.value).trim(),n=0;for(let c of cs){let show=norm(c.dataset.search).includes(q);c.hidden=!show;if(show)n++}ct.textContent=n+' de '+cs.length+' fichas';none.hidden=n!==0}inp.addEventListener('input',apply);document.getElementById('limpar').addEventListener('click',()=>{inp.value='';apply();inp.focus()});</script><script>
+/* Preferências de acessibilidade do Guia: sem bibliotecas, compartilhadas entre páginas */
+(function(){
+"use strict";
+var levels=[80,90,100,110,125,150,175,200], key="gv-a11y-preferences-v1";
+var minus=document.getElementById("gv-font-minus"),plus=document.getElementById("gv-font-plus"),contrast=document.getElementById("gv-contrast"),reset=document.getElementById("gv-reset"),status=document.getElementById("gv-a11y-status");
+if(!minus||!plus||!contrast||!reset||!status)return;
+var state={level:2,contrast:false};
+try{var stored=JSON.parse(localStorage.getItem(key)||"null");if(stored&&Number.isInteger(stored.level)&&stored.level>=0&&stored.level<levels.length)state.level=stored.level;if(stored&&typeof stored.contrast==="boolean")state.contrast=stored.contrast;}catch(e){}
+function render(save){
+ var root=document.documentElement;
+ root.style.fontSize=levels[state.level]+"%";
+ root.classList.toggle("gv-high-contrast",state.contrast);
+ root.classList.toggle("gv-large-type",levels[state.level]>=175);
+ minus.disabled=state.level===0;plus.disabled=state.level===levels.length-1;
+ contrast.setAttribute("aria-pressed",String(state.contrast));
+ contrast.setAttribute("aria-label",state.contrast?"Desativar alto contraste":"Ativar alto contraste");
+ contrast.textContent=state.contrast?"Contraste: ligado":"Alto contraste";
+ if(save){
+   status.textContent="Tamanho do texto: "+levels[state.level]+"%. Alto contraste "+(state.contrast?"ativado.":"desativado.");
+   try{localStorage.setItem(key,JSON.stringify(state));}catch(e){}
+ }
+}
+minus.addEventListener("click",function(){if(state.level>0){state.level--;render(true);}});
+plus.addEventListener("click",function(){if(state.level<levels.length-1){state.level++;render(true);}});
+contrast.addEventListener("click",function(){state.contrast=!state.contrast;render(true);});
+reset.addEventListener("click",function(){state={level:2,contrast:false};render(true);});
+render(false);
+document.documentElement.classList.add("gv-a11y-ready");
+})();
+</script>
+</body></html>
