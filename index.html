@@ -131,6 +131,25 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
 @media(max-width:480px){.extra-menu-list{grid-template-columns:1fr}}
 @media print{.extra-menu,.extra-panel{box-shadow:none;break-inside:auto}.extra-menu-list,.language-tool,.action-strip,#roteiro{display:none!important}}
 
+
+/* photo-extension-141126 — fotos autorizadas, descrição e audiodescrição sintética */
+.author-portrait.author-photo-main{display:block;margin:0;padding:0;border:1px solid #c9d6df;border-radius:12px;overflow:hidden;background:#fff;min-height:0;text-align:left;color:var(--ink)}
+.author-photo-main img{display:block;width:100%;max-height:470px;height:auto;object-fit:cover;object-position:center top;background:#eef2f4}
+.author-photo-main figcaption,.memory-figure figcaption,.graduation-figure figcaption{padding:.6rem .85rem;font-size:.93rem;color:#334f62;line-height:1.45;font-weight:600}
+.memory-images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.1rem 0 1.5rem;max-width:780px;align-items:start}
+.memory-figure,.graduation-figure{margin:0;background:#fdfefe;border:1px solid #cdd9e1;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #19283b09}
+.memory-figure img{display:block;height:370px;max-width:100%;width:100%;object-fit:contain;object-position:center;background:#f1f4f7}
+.graduation-figure{max-width:660px;margin:1rem 0 1.5rem}
+.graduation-figure img{display:block;width:100%;height:auto;max-height:380px;object-fit:contain;background:#f1f4f7}
+.photo-access{margin:.25rem .8rem .8rem;background:#fff;border:1px solid #c4cfd8}
+.photo-access summary{font-weight:600;color:#214768}
+.photo-access p{font-size:.91rem;line-height:1.6;text-align:left}
+.photo-access button{min-height:44px;font-size:.91rem;margin:.2rem 0}
+.photo-status{font-size:.85rem;display:block;color:#405e73;min-height:1.1em;padding:.1rem}
+@media(max-width:730px){.memory-images{grid-template-columns:1fr 1fr;gap:.55rem}.memory-figure img{height:270px}}
+@media(max-width:490px){.memory-images{grid-template-columns:1fr;max-width:430px}.memory-figure img{height:410px}}
+@media print{.photo-access button,.photo-status{display:none!important}.memory-figure,.graduation-figure{break-inside:avoid}}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
@@ -191,18 +210,57 @@ footer { padding:1.5rem; font-size:.9rem; text-align:center; color:var(--sub); }
  <p class="eyebrow" data-tx="authorEyebrow">A pesquisadora e os caminhos da pesquisa</p>
  <h2 id="autora-titulo" data-tx="authorTitle">Sobre a autora</h2>
  <div class="author-layout">
-  <aside class="author-portrait">
-   <strong data-tx="photoPlaceholder">Fotografia da autora</strong>
-   <span data-tx="photoMissing">Imagem ainda não selecionada. A descrição acessível será produzida a partir da fotografia escolhida.</span>
-  </aside>
+  
+  <figure class="author-portrait author-photo-main">
+    <img src="assets/autora/formatura-udesc-retrato.jpg" width="966" height="1450" loading="lazy" decoding="async" data-photo-alt="portraitAlt" alt="Taynara sorrindo em traje de formatura, com capelo e beca pretos, segurando um canudo da UDESC.">
+    <figcaption data-photo-tx="portraitCaption">Formatura na UDESC — um marco do percurso de formação.</figcaption>
+    <details class="photo-access">
+      <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
+      <p data-photo-desc="portraitDescription" data-photo-tx="portraitDescription" id="photo-description-portrait">Retrato da autora durante a formatura: mulher sorrindo, com cabelos escuros, capelo e beca pretos sobre roupa clara, segurando um canudo preto identificado com a sigla UDESC. Ao fundo aparecem faixas verdes e vermelhas.</p>
+      <button type="button" class="photo-speak" data-photo-speak="photo-description-portrait" data-photo-tx="photoListen">Ouvir descrição da fotografia</button>
+      <span class="photo-status" role="status" aria-live="polite"></span>
+    </details>
+  </figure>
   <div>
    <h3>Taynara Xavier Telles</h3>
    <p class="eyebrow" data-tx="authorRole">Pedagoga · Professora dos Anos Iniciais · Mestranda em Educação na UDESC</p>
    <p class="panel-lead" data-tx="authorIntro" data-about-read>Antes de investigar a adolescência, percorri os caminhos da escola como estudante e professora. As perguntas que hoje orientam minha pesquisa começaram muito antes de receberem um nome acadêmico.</p>
    <h3 data-tx="authorFromTitle">De onde venho</h3>
    <p data-tx="authorFrom" data-about-read>Cresci em Capinzal, no interior de Santa Catarina. No jardim da casa de minha avó, via crianças seguirem para a escola levando flores às professoras; ali comecei a imaginar a docência. Na escola pública, encontrei uma biblioteca que ainda recordo como minúscula e imensa: suas estantes abriram caminhos entre poemas, palavras e perguntas.</p>
+  <div class="memory-images" aria-label="Imagens da infância e do jardim">
+    <figure class="memory-figure">
+      <img src="assets/autora/infancia-taynara.jpg" width="816" height="1450" loading="lazy" decoding="async" data-photo-alt="childAlt" alt="Taynara criança, usando camiseta branca e bermuda azul-escura, diante de painel ilustrado com personagens infantis, flores e peixes.">
+      <figcaption data-photo-tx="childCaption">Uma fotografia da infância.</figcaption>
+      <details class="photo-access">
+        <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
+        <p id="photo-description-child" data-photo-tx="childDescription">Fotografia antiga, em papel, de Taynara criança, em pé diante de um painel colorido. Ela usa camiseta branca, bermuda azul-escura e sandálias. Ao fundo aparecem personagens infantis com temática rural, uma árvore, flores e peixes sobre uma faixa azul.</p>
+        <button type="button" class="photo-speak" data-photo-speak="photo-description-child" data-photo-tx="photoListen">Ouvir descrição da fotografia</button>
+        <span class="photo-status" role="status" aria-live="polite"></span>
+      </details>
+    </figure>
+    <figure class="memory-figure">
+      <img src="assets/autora/avo-jardim-agosto-2026.jpg" width="816" height="1450" loading="lazy" decoding="async" data-photo-alt="grandmaAlt" alt="Avó da autora em pé no jardim da própria casa, junto a roseiras e vasos de plantas, vestindo roupa de estampa floral.">
+      <figcaption data-photo-tx="grandmaCaption">Minha avó no jardim de sua casa, agosto de 2026.</figcaption>
+      <details class="photo-access">
+        <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
+        <p id="photo-description-grandma" data-photo-tx="grandmaDescription">Fotografia colorida, feita em um dia ensolarado de agosto de 2026. A avó da autora está em pé ao lado de um canteiro com roseiras, lírios e outras plantas em vasos. Usa vestido escuro com flores azuis e verdes. Ao fundo, aparecem um muro baixo, uma grade e construções do outro lado da rua.</p>
+        <button type="button" class="photo-speak" data-photo-speak="photo-description-grandma" data-photo-tx="photoListen">Ouvir descrição da fotografia</button>
+        <span class="photo-status" role="status" aria-live="polite"></span>
+      </details>
+    </figure>
+  </div>
    <h3 data-tx="authorEducationTitle">Os caminhos da formação</h3>
    <p data-tx="authorEducation" data-about-read>Estudei na escola pública e iniciei uma graduação em Psicologia com bolsa integral do ProUni, percurso posteriormente interrompido. Em Florianópolis, graduei-me em Pedagogia pela Universidade do Estado de Santa Catarina enquanto trabalhava como professora dos quartos e quintos anos do Ensino Fundamental. Hoje curso o mestrado em Educação no PPGE/FAED da UDESC. A experiência docente e a formação universitária, atravessadas por encontros e oportunidades, deram forma a inquietações que se tornaram problemas de pesquisa.</p>
+  <figure class="graduation-figure">
+    <img src="assets/autora/formatura-udesc-detalhe.jpg" width="1450" height="966" loading="lazy" decoding="async" data-photo-alt="graduationAlt" alt="Detalhe de foto de formatura: capelo preto, olhos da autora e canudo preto com a inscrição UDESC em dourado.">
+    <figcaption data-photo-tx="graduationCaption">Registro da formatura: a UDESC também faz parte desta história.</figcaption>
+    <details class="photo-access">
+      <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
+      <p id="photo-description-graduation" data-photo-tx="graduationDescription">Fotografia aproximada da formatura. O enquadramento destaca os olhos da autora sob um capelo preto, com uma faixa clara no centro. Na frente do rosto, ela segura um canudo preto com a inscrição UDESC em letras douradas. O fundo está desfocado.</p>
+      <button type="button" class="photo-speak" data-photo-speak="photo-description-graduation" data-photo-tx="photoListen">Ouvir descrição da fotografia</button>
+      <span class="photo-status" role="status" aria-live="polite"></span>
+    </details>
+  </figure>
    <h3 data-tx="authorQuestionsTitle">As perguntas que me movem</h3>
    <p data-tx="authorQuestions" data-about-read>Investigo como a produção acadêmica brasileira compreende a adolescência e o desenvolvimento humano, interrogando suas mediações históricas, sociais e escolares. Nessa trajetória, procuro aprofundar meu diálogo com o materialismo histórico-dialético, a Psicologia Histórico-Cultural e a Pedagogia Histórico-Crítica, sem perder de vista as desigualdades que atravessam a escola e as possibilidades de formação humana.</p>
    <h3 data-tx="authorMemoryTitle">Entre palavras, imagens e memórias</h3>
@@ -1482,5 +1540,91 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
     speakNext();
   });
   window.addEventListener('pagehide',stopVoice);
+})();
+</script>
+<script>
+/* photo-extension-141126: legendas e descrição com tradução manual, sem rede externa */
+(function(){
+  'use strict';
+  const translations={
+    pt:{
+      portraitAlt:"Taynara sorrindo em traje de formatura, com capelo e beca pretos, segurando um canudo da UDESC.",
+      portraitCaption:"Formatura na UDESC — um marco do percurso de formação.",
+      portraitDescription:"Retrato da autora durante a formatura: mulher sorrindo, com cabelos escuros, capelo e beca pretos sobre roupa clara, segurando um canudo preto identificado com a sigla UDESC. Ao fundo aparecem faixas verdes e vermelhas.",
+      childAlt:"Taynara criança, usando camiseta branca e bermuda azul-escura, diante de painel ilustrado com personagens infantis, flores e peixes.",
+      childCaption:"Uma fotografia da infância.",
+      childDescription:"Fotografia antiga, em papel, de Taynara criança, em pé diante de um painel colorido. Ela usa camiseta branca, bermuda azul-escura e sandálias. Ao fundo aparecem personagens infantis com temática rural, uma árvore, flores e peixes sobre uma faixa azul.",
+      grandmaAlt:"Avó da autora em pé no jardim da própria casa, junto a roseiras e vasos de plantas, vestindo roupa de estampa floral.",
+      grandmaCaption:"Minha avó no jardim de sua casa, agosto de 2026.",
+      grandmaDescription:"Fotografia colorida, feita em um dia ensolarado de agosto de 2026. A avó da autora está em pé ao lado de um canteiro com roseiras, lírios e outras plantas em vasos. Usa vestido escuro com flores azuis e verdes. Ao fundo, aparecem um muro baixo, uma grade e construções do outro lado da rua.",
+      graduationAlt:"Detalhe de foto de formatura: capelo preto, olhos da autora e canudo preto com a inscrição UDESC em dourado.",
+      graduationCaption:"Registro da formatura: a UDESC também faz parte desta história.",
+      graduationDescription:"Fotografia aproximada da formatura. O enquadramento destaca os olhos da autora sob um capelo preto, com uma faixa clara no centro. Na frente do rosto, ela segura um canudo preto com a inscrição UDESC em letras douradas. O fundo está desfocado.",
+      photoDetailSummary:"Descrição acessível da fotografia",photoListen:"Ouvir descrição da fotografia",speechBusy:"Lendo a descrição…",speechDone:"Leitura concluída.",speechError:"Não foi possível reproduzir a voz neste navegador."
+    },
+    en:{
+      portraitAlt:"Taynara smiling in graduation robes and a black mortarboard, holding a UDESC diploma tube.",
+      portraitCaption:"Graduation at UDESC — a milestone in my educational journey.",
+      portraitDescription:"Portrait of the author during her graduation ceremony: a smiling woman with dark hair, wearing a black mortarboard and gown over light-colored clothing, holding a black diploma tube marked UDESC. Green and red drapery can be seen in the background.",
+      childAlt:"Taynara as a child, wearing a white T-shirt and dark blue shorts in front of an illustrated backdrop with cartoon figures, flowers and fish.",
+      childCaption:"A photograph from childhood.",
+      childDescription:"An old printed photograph of Taynara as a child, standing in front of a colorful illustrated backdrop. She is wearing a white T-shirt, dark blue shorts and sandals. The backdrop features cartoon figures in a rural setting, a tree, flowers and fish above a blue band.",
+      grandmaAlt:"The author's grandmother standing in her garden beside roses and potted plants, wearing a floral-print dress.",
+      grandmaCaption:"My grandmother in her garden, August 2026.",
+      grandmaDescription:"A color photograph taken on a sunny day in August 2026. The author's grandmother stands beside a garden bed filled with roses, lilies and other potted plants. She is wearing a dark dress with blue and green flowers. A low wall, metal fence and buildings across the street appear in the background.",
+      graduationAlt:"Graduation photograph close-up: a black mortarboard, the author's eyes and a black diploma tube with gold UDESC lettering.",
+      graduationCaption:"A graduation photograph: UDESC is part of this story, too.",
+      graduationDescription:"A close-up graduation photograph. The framing focuses on the author's eyes beneath a black mortarboard with a pale central band. She holds a black diploma tube with the letters UDESC in gold in front of her face. The background is blurred.",
+      photoDetailSummary:"Accessible image description",photoListen:"Listen to the image description",speechBusy:"Reading the description…",speechDone:"Reading completed.",speechError:"Speech playback is unavailable in this browser."
+    },
+    es:{
+      portraitAlt:"Taynara sonriente con toga y birrete negros de graduación, sosteniendo un tubo de diploma de la UDESC.",
+      portraitCaption:"Graduación en la UDESC: un hito en mi trayectoria formativa.",
+      portraitDescription:"Retrato de la autora durante su graduación: una mujer sonriente, de cabello oscuro, con birrete y toga negros sobre ropa clara, que sostiene un tubo de diploma negro con la sigla UDESC. Al fondo aparecen telas verdes y rojas.",
+      childAlt:"Taynara de niña, con camiseta blanca y pantalón corto azul oscuro, frente a un panel ilustrado con personajes, flores y peces.",
+      childCaption:"Una fotografía de la infancia.",
+      childDescription:"Fotografía antigua en papel de Taynara de niña, de pie frente a un panel colorido. Lleva camiseta blanca, pantalón corto azul oscuro y sandalias. Al fondo hay personajes infantiles en un entorno rural, un árbol, flores y peces sobre una franja azul.",
+      grandmaAlt:"La abuela de la autora de pie en su jardín, junto a rosales y plantas en macetas, con un vestido estampado de flores.",
+      grandmaCaption:"Mi abuela en el jardín de su casa, agosto de 2026.",
+      grandmaDescription:"Fotografía en color tomada en un día soleado de agosto de 2026. La abuela de la autora está de pie junto a un jardín con rosales, lirios y otras plantas en macetas. Lleva un vestido oscuro con flores azules y verdes. Detrás se observan un muro bajo, una reja y edificios al otro lado de la calle.",
+      graduationAlt:"Detalle de graduación: birrete negro, ojos de la autora y tubo negro de diploma con letras doradas UDESC.",
+      graduationCaption:"Una fotografía de graduación: la UDESC también forma parte de esta historia.",
+      graduationDescription:"Fotografía de graduación en primer plano. El encuadre destaca los ojos de la autora bajo un birrete negro con una franja clara en el centro. Delante del rostro sostiene un tubo negro con las letras UDESC en dorado. El fondo está desenfocado.",
+      photoDetailSummary:"Descripción accesible de la fotografía",photoListen:"Escuchar la descripción de la fotografía",speechBusy:"Leyendo la descripción…",speechDone:"Lectura finalizada.",speechError:"No se puede reproducir la voz en este navegador."
+    }
+  };
+  const select=document.getElementById('guide-lang');
+  const supported=typeof window.speechSynthesis!=='undefined' && typeof window.SpeechSynthesisUtterance!=='undefined';
+  function current(){return translations[select?.value]||translations.pt;}
+  function localize(){
+    const d=current();
+    document.querySelectorAll('#autora [data-photo-tx]').forEach(el=>{
+      const key=el.getAttribute('data-photo-tx');
+      if(d[key]){el.textContent=d[key];el.setAttribute('lang',select?.value==='pt'?'pt-BR':select?.value||'pt-BR');}
+    });
+    document.querySelectorAll('#autora img[data-photo-alt]').forEach(img=>{
+      const v=d[img.getAttribute('data-photo-alt')];if(v)img.setAttribute('alt',v);
+    });
+    document.querySelectorAll('#autora .photo-status').forEach(el=>el.textContent='');
+  }
+  select?.addEventListener('change',()=>{if(supported)window.speechSynthesis.cancel();localize();});
+  document.querySelectorAll('#autora .photo-speak').forEach(btn=>{
+    if(!supported){btn.disabled=true;return;}
+    btn.addEventListener('click',()=>{
+      const description=document.getElementById(btn.getAttribute('data-photo-speak'));
+      const status=btn.parentElement.querySelector('.photo-status');
+      if(!description || !status)return;
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('#autora .photo-status').forEach(el=>el.textContent='');
+      const lang=select?.value==='en'?'en-US':select?.value==='es'?'es-ES':'pt-BR';
+      const utterance=new SpeechSynthesisUtterance(description.textContent.trim());
+      utterance.lang=lang;utterance.rate=1;
+      status.textContent=current().speechBusy;
+      utterance.onend=()=>{status.textContent=current().speechDone;};
+      utterance.onerror=e=>{if(e.error!=='canceled'&&e.error!=='interrupted')status.textContent=current().speechError;};
+      window.speechSynthesis.speak(utterance);
+    });
+  });
+  localize();
 })();
 </script></body></html>
