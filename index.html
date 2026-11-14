@@ -2048,7 +2048,7 @@ const slides=[
  {title:"Problema e objeto",min:2,plate:1,lead:"Não investigo diretamente os adolescentes: investigo como a produção acadêmica explica a adolescência e o desenvolvimento humano.",
  points:["O fenômeno real e as concepções científicas sobre ele não são a mesma coisa.","A pergunta de pesquisa interroga também as mediações históricas, sociais, escolares e político-educacionais.","O desenvolvimento humano não é um tema paralelo: é aquilo que se procura compreender nas explicações sobre a adolescência."],
  source:"TELLES (2026), Introdução, problema e objetivo geral; PDF da qualificação, pp. 26–28.",
- quote:"",quoteSource:"",
+ quote:"Como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, publicadas ou defendidas entre 2018 e 2026, concebem a adolescência e o desenvolvimento humano, e de que modo articulam, ou deixam de articular, as mediações históricas, sociais, escolares e político-educacionais na explicação desse desenvolvimento?",quoteSource:"Problema de pesquisa — TELLES (2026), Introdução, p. 27 do PDF.",
  notes:"Começar pelo objeto e pela pergunta formal da Introdução: como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, entre 2018 e 2026, concebem adolescência e desenvolvimento humano e articulam as mediações em suas explicações? Explicar brevemente o deslocamento das inquietações da docência para o problema documental; não transformar a motivação pessoal em objeto de análise.",
  transition:"Se meu objeto são as explicações acadêmicas, preciso mostrar como vou reconstruí-las, não apenas classificá-las."},
  {title:"Escolha do método e unidade de análise",min:2.5,plate:4,lead:"O materialismo histórico-dialético orienta perguntas sobre gênese, totalidade, mediações e contradições; não oferece uma lista para pontuar trabalhos.",
@@ -2121,9 +2121,9 @@ function cloneFigure(plate){
 }
 function render(){
  const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
- el("banca-progress-text").textContent=(current+1)+" de "+slides.length+" · "+item.min+" min";
+ el("banca-progress-text").textContent=(current+1)+" de "+slides.length+" · "+String(item.min).replace(".",",")+" min";
  el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
- el("banca-stage-meta").textContent="MOVIMENTO "+(current+1)+" / "+slides.length+" · TEMPO SUGERIDO: "+item.min+" MIN";
+ el("banca-stage-meta").textContent="MOVIMENTO "+(current+1)+" / "+slides.length+" · TEMPO SUGERIDO: "+String(item.min).replace(".",",")+" MIN";
  el("banca-view-title").textContent=item.title;
  el("banca-stage-thesis").textContent=item.lead;
  el("banca-stage-points").replaceChildren();
@@ -2136,7 +2136,7 @@ function render(){
  el("banca-stage-transition").textContent="Transição: "+item.transition;
  el("banca-notes").open=false;
  el("banca-go-plate").href="#prancha"+item.plate;
- el("banca-time-total").textContent="Percurso sugerido: "+total+" min · tempo acumulado: "+time+" min";
+ el("banca-time-total").textContent="Percurso sugerido: "+total+" min · tempo acumulado: "+String(time).replace(".",",")+" min";
  el("banca-prev").disabled=current===0;
  el("banca-next").textContent=current===slides.length-1?"Retornar ao início ↺":"Próximo →";
  const extra=el("banca-visual-extra");extra.replaceChildren();
