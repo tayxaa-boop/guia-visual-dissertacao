@@ -55,11 +55,61 @@ footer{padding:1.5rem;color:#4d5f71;text-align:center;font-size:.9rem}
 .rights-extended{display:block;max-width:1000px;margin:1.25rem auto;padding:.9rem 1rem;text-align:left;background:#f3f6f7;border:1px solid #bfcbd4;border-left:5px solid #4b6877;border-radius:8px;color:#263c4b;font:normal .91rem/1.55 Arial,sans-serif}
 .rights-extended strong{font-weight:700}
 @media print{.rights-extended{break-inside:avoid;border:1px solid #7a8591;background:white}}
+
+/* Controles de leitura acessível, compartilhados entre as páginas do Guia */
+.accessibility-controls{display:none;align-items:center;flex-wrap:wrap;gap:.3rem;padding:.3rem .45rem;border-radius:12px;background:#eef3f8;border:1px solid #afc0cf}
+html.gv-a11y-ready .accessibility-controls{display:inline-flex}
+.accessibility-controls .a11y-label{font-weight:700;font-size:.88rem;color:#19354e;padding:0 .25rem}
+.accessibility-controls button{font:inherit;font-weight:700;min-height:44px;min-width:44px;padding:.45rem .62rem;white-space:nowrap;background:#fff;color:#1a3349;border:1px solid #536e82;border-radius:8px}
+.accessibility-controls button[aria-pressed="true"]{background:#19283b;color:#fff;border-color:#19283b}
+.accessibility-controls button:disabled{opacity:.5;cursor:not-allowed}
+.accessibility-controls button:focus-visible{outline:3px solid #ce7400;outline-offset:2px}
+.a11y-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.a11y-standalone{display:flex;justify-content:flex-end;max-width:1040px;margin:.8rem auto;padding:0 1rem}
+html.gv-large-type .tools,html.gv-large-type .floating,html.gv-large-type .ma-floating{position:relative;top:auto}
+@media(max-width:650px){.accessibility-controls{max-width:100%}.accessibility-controls .a11y-label{flex:1 0 100%}.tools .accessibility-controls{flex:1 0 auto}}
+@media print{.accessibility-controls,.a11y-standalone{display:none!important}}
+@media screen{
+html.gv-high-contrast{--ink:#000;--sub:#000;--focus:#bf1600}
+html.gv-high-contrast body{background:#fff!important;color:#000!important}
+html.gv-high-contrast header{background:#000!important;color:#fff!important}
+html.gv-high-contrast header :is(h1,h2,p,span,strong,a,small){color:#fff!important}
+html.gv-high-contrast header a{text-decoration:underline!important}
+html.gv-high-contrast header.site .thesis-source{background:#101010!important;color:#fff!important;border-color:#fff!important}
+html.gv-high-contrast .tools,html.gv-high-contrast .accessibility-controls,html.gv-high-contrast .a11y-standalone{background:#fff!important;color:#000!important;border-color:#000!important;box-shadow:none!important}
+html.gv-high-contrast .accessibility-controls .a11y-label{color:#000!important}
+html.gv-high-contrast .accessibility-controls button{color:#000!important;background:#fff!important;border:2px solid #000!important}
+html.gv-high-contrast .accessibility-controls button[aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast main *:not(svg):not(svg *){color:#000!important;background-color:#fff!important;border-color:#111!important;box-shadow:none!important;text-shadow:none!important}
+html.gv-high-contrast main a{color:#002bba!important;text-decoration:underline!important}
+html.gv-high-contrast main :is(button,input,textarea,select){border:2px solid #000!important}
+html.gv-high-contrast main [aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast .tools nav.quick-nav a,html.gv-high-contrast .floating a,html.gv-high-contrast .ma-floating a{background:#fff!important;color:#000!important;border:2px solid #000!important;text-decoration:underline!important}
+html.gv-high-contrast :is(a,button,input,select,summary,textarea):focus-visible{outline:4px solid #d10000!important;outline-offset:3px}
+html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
+}
+
+
+/* Identificação por cor das abas desta seção */
+nav.floating a:nth-child(1){--gv-tab-accent:#325b72;--gv-tab-bg:#eaf1f5}
+nav.floating a:nth-child(2){--gv-tab-accent:#a34a23;--gv-tab-bg:#fff1e6}
+nav.floating a:nth-child(3){--gv-tab-accent:#6f438f;--gv-tab-bg:#f4edfa}
+nav.floating a:nth-child(4){--gv-tab-accent:#9c3561;--gv-tab-bg:#fbedf3}
+nav.floating a:nth-child(5){--gv-tab-accent:#136b79;--gv-tab-bg:#eaf7f8}
+nav.floating a:nth-child(6){--gv-tab-accent:#856008;--gv-tab-bg:#fff4d9}
+nav.floating a:nth-child(7){--gv-tab-accent:#15527f;--gv-tab-bg:#e9f3fc}
+nav.floating a:nth-child(8){--gv-tab-accent:#18694f;--gv-tab-bg:#e9f7ef}
+nav.floating a:nth-child(9){--gv-tab-accent:#5147a2;--gv-tab-bg:#eeedfa}
+nav.floating a{border-left:5px solid var(--gv-tab-accent,#325b72)!important;background:var(--gv-tab-bg,#eaf1f5)!important;color:#162b3b!important}
+nav.floating a:hover{filter:brightness(.95);text-decoration:underline}
+html.gv-high-contrast nav.floating a{color:#000!important;background:#fff!important;border:2px solid #000!important;text-decoration:underline}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo</a>
 <header><p class="eyebrow">Guia Visual · Pesquisa em Educação · Curadoria em expansão</p><h1>Quem pôde representar a adolescência?<br>E quem pôde representar o mundo?</h1>
 <p>Dois percursos de arte e história que investigam as formas pelas quais sujeitos jovens foram representados — e as condições nas quais jovens artistas passaram a produzir imagens, textos e linguagens próprias.</p></header>
 <nav class="floating" aria-label="Navegação permanente dos percursos"><a href="index.html#explorar">Guia principal</a><a href="#introducao">Proposta</a><a href="#representada">I · Representações</a><a href="#autoria">II · Autoria adolescente</a><a href="#metodo">Fontes e limites</a><a href="matriz-aberta.html">Matriz Aberta</a></nav>
+<div class="a11y-standalone"><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div></div>
 <main id="conteudo">
 <section class="intro" id="introducao"><h2>Uma cartografia, não uma história linear</h2>
 <p class="key-question">Ao longo da história, quem pôde representar a adolescência — e em quais condições os próprios adolescentes puderam representar o mundo?</p>
@@ -263,4 +313,35 @@ footer{padding:1.5rem;color:#4d5f71;text-align:center;font-size:.9rem}
 </main><footer><aside class="rights-extended" role="note" aria-label="Autoria e direitos de reutilização"><strong>© 2026 Taynara Xavier Telles — direitos autorais reservados.</strong> Os textos autorais, a organização, os esquemas e os recursos originais deste Guia destinam-se à consulta. A republicação, adaptação ou distribuição dependem de autorização da autora, ressalvadas as exceções previstas em lei. Obras, imagens, citações e outros materiais de terceiros mantêm seus próprios direitos.</aside>Curadoria de pesquisa em expansão · Guia Visual da dissertação de Taynara Xavier Telles · 2026</footer>
 <script>
 (function(){document.querySelectorAll('.filters[data-group]').forEach(function(g){var group=g.dataset.group,target=document.getElementById(group==='representada'?'obras-representadas':'obras-autorais');g.addEventListener('click',function(e){var btn=e.target.closest('button[data-filter]');if(!btn||!g.contains(btn))return;var tag=btn.dataset.filter;g.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b===btn));});target.querySelectorAll('.art-item').forEach(function(card){card.hidden=tag!=='all'&&!card.dataset.tags.split(' ').includes(tag);});});});})();
-</script></body></html>
+</script><script>
+/* Preferências de acessibilidade do Guia: sem bibliotecas, compartilhadas entre páginas */
+(function(){
+"use strict";
+var levels=[80,90,100,110,125,150,175,200], key="gv-a11y-preferences-v1";
+var minus=document.getElementById("gv-font-minus"),plus=document.getElementById("gv-font-plus"),contrast=document.getElementById("gv-contrast"),reset=document.getElementById("gv-reset"),status=document.getElementById("gv-a11y-status");
+if(!minus||!plus||!contrast||!reset||!status)return;
+var state={level:2,contrast:false};
+try{var stored=JSON.parse(localStorage.getItem(key)||"null");if(stored&&Number.isInteger(stored.level)&&stored.level>=0&&stored.level<levels.length)state.level=stored.level;if(stored&&typeof stored.contrast==="boolean")state.contrast=stored.contrast;}catch(e){}
+function render(save){
+ var root=document.documentElement;
+ root.style.fontSize=levels[state.level]+"%";
+ root.classList.toggle("gv-high-contrast",state.contrast);
+ root.classList.toggle("gv-large-type",levels[state.level]>=175);
+ minus.disabled=state.level===0;plus.disabled=state.level===levels.length-1;
+ contrast.setAttribute("aria-pressed",String(state.contrast));
+ contrast.setAttribute("aria-label",state.contrast?"Desativar alto contraste":"Ativar alto contraste");
+ contrast.textContent=state.contrast?"Contraste: ligado":"Alto contraste";
+ if(save){
+   status.textContent="Tamanho do texto: "+levels[state.level]+"%. Alto contraste "+(state.contrast?"ativado.":"desativado.");
+   try{localStorage.setItem(key,JSON.stringify(state));}catch(e){}
+ }
+}
+minus.addEventListener("click",function(){if(state.level>0){state.level--;render(true);}});
+plus.addEventListener("click",function(){if(state.level<levels.length-1){state.level++;render(true);}});
+contrast.addEventListener("click",function(){state.contrast=!state.contrast;render(true);});
+reset.addEventListener("click",function(){state={level:2,contrast:false};render(true);});
+render(false);
+document.documentElement.classList.add("gv-a11y-ready");
+})();
+</script>
+</body></html>
