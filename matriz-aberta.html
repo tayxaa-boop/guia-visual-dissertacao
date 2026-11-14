@@ -20,10 +20,60 @@ textarea{min-height:100px;resize:vertical}button{font:inherit;min-height:44px;cu
 footer{text-align:center;padding:2rem;color:#405367}
 @media(max-width:780px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
 @media print{button,input,select,textarea,#lab{display:none!important}}
-.ma-floating{position:sticky;top:0;z-index:6;display:flex;gap:.45rem;padding:.5rem max(1rem,calc((100vw - 1040px)/2));background:#fff;border-bottom:2px solid #d4dfe6;overflow-x:auto;scrollbar-width:thin;white-space:nowrap;box-shadow:0 3px 12px #14243712}.ma-floating a{display:inline-flex;flex:0 0 auto;align-items:center;font-size:.88rem;font-weight:700;min-height:40px;padding:.3rem .7rem;border:1px solid #b4c6d4;border-radius:999px;background:#f5f8fb;text-decoration:none}.ma-floating a:hover,.ma-floating a:focus-visible{background:#dfecf5;text-decoration:underline}html{scroll-padding-top:5rem}.panel,fieldset,#lab{scroll-margin-top:5rem}.rights-notice{border:1px solid #9caeba;border-left:5px solid #536c80;padding:.8rem .95rem;background:#f6f9fb;border-radius:8px;margin:1rem 0;font-size:.93rem;line-height:1.55}@media print{.ma-floating{display:none!important}.rights-notice{break-inside:avoid}}</style></head>
+.ma-floating{position:sticky;top:0;z-index:6;display:flex;gap:.45rem;padding:.5rem max(1rem,calc((100vw - 1040px)/2));background:#fff;border-bottom:2px solid #d4dfe6;overflow-x:auto;scrollbar-width:thin;white-space:nowrap;box-shadow:0 3px 12px #14243712}.ma-floating a{display:inline-flex;flex:0 0 auto;align-items:center;font-size:.88rem;font-weight:700;min-height:40px;padding:.3rem .7rem;border:1px solid #b4c6d4;border-radius:999px;background:#f5f8fb;text-decoration:none}.ma-floating a:hover,.ma-floating a:focus-visible{background:#dfecf5;text-decoration:underline}html{scroll-padding-top:5rem}.panel,fieldset,#lab{scroll-margin-top:5rem}.rights-notice{border:1px solid #9caeba;border-left:5px solid #536c80;padding:.8rem .95rem;background:#f6f9fb;border-radius:8px;margin:1rem 0;font-size:.93rem;line-height:1.55}@media print{.ma-floating{display:none!important}.rights-notice{break-inside:avoid}}
+/* Controles de leitura acessível, compartilhados entre as páginas do Guia */
+.accessibility-controls{display:none;align-items:center;flex-wrap:wrap;gap:.3rem;padding:.3rem .45rem;border-radius:12px;background:#eef3f8;border:1px solid #afc0cf}
+html.gv-a11y-ready .accessibility-controls{display:inline-flex}
+.accessibility-controls .a11y-label{font-weight:700;font-size:.88rem;color:#19354e;padding:0 .25rem}
+.accessibility-controls button{font:inherit;font-weight:700;min-height:44px;min-width:44px;padding:.45rem .62rem;white-space:nowrap;background:#fff;color:#1a3349;border:1px solid #536e82;border-radius:8px}
+.accessibility-controls button[aria-pressed="true"]{background:#19283b;color:#fff;border-color:#19283b}
+.accessibility-controls button:disabled{opacity:.5;cursor:not-allowed}
+.accessibility-controls button:focus-visible{outline:3px solid #ce7400;outline-offset:2px}
+.a11y-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.a11y-standalone{display:flex;justify-content:flex-end;max-width:1040px;margin:.8rem auto;padding:0 1rem}
+html.gv-large-type .tools,html.gv-large-type .floating,html.gv-large-type .ma-floating{position:relative;top:auto}
+@media(max-width:650px){.accessibility-controls{max-width:100%}.accessibility-controls .a11y-label{flex:1 0 100%}.tools .accessibility-controls{flex:1 0 auto}}
+@media print{.accessibility-controls,.a11y-standalone{display:none!important}}
+@media screen{
+html.gv-high-contrast{--ink:#000;--sub:#000;--focus:#bf1600}
+html.gv-high-contrast body{background:#fff!important;color:#000!important}
+html.gv-high-contrast header{background:#000!important;color:#fff!important}
+html.gv-high-contrast header :is(h1,h2,p,span,strong,a,small){color:#fff!important}
+html.gv-high-contrast header a{text-decoration:underline!important}
+html.gv-high-contrast header.site .thesis-source{background:#101010!important;color:#fff!important;border-color:#fff!important}
+html.gv-high-contrast .tools,html.gv-high-contrast .accessibility-controls,html.gv-high-contrast .a11y-standalone{background:#fff!important;color:#000!important;border-color:#000!important;box-shadow:none!important}
+html.gv-high-contrast .accessibility-controls .a11y-label{color:#000!important}
+html.gv-high-contrast .accessibility-controls button{color:#000!important;background:#fff!important;border:2px solid #000!important}
+html.gv-high-contrast .accessibility-controls button[aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast main *:not(svg):not(svg *){color:#000!important;background-color:#fff!important;border-color:#111!important;box-shadow:none!important;text-shadow:none!important}
+html.gv-high-contrast main a{color:#002bba!important;text-decoration:underline!important}
+html.gv-high-contrast main :is(button,input,textarea,select){border:2px solid #000!important}
+html.gv-high-contrast main [aria-pressed="true"]{color:#fff!important;background:#000!important}
+html.gv-high-contrast .tools nav.quick-nav a,html.gv-high-contrast .floating a,html.gv-high-contrast .ma-floating a{background:#fff!important;color:#000!important;border:2px solid #000!important;text-decoration:underline!important}
+html.gv-high-contrast :is(a,button,input,select,summary,textarea):focus-visible{outline:4px solid #d10000!important;outline-offset:3px}
+html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
+}
+
+
+/* Identificação por cor das abas desta seção */
+nav.ma-floating a:nth-child(1){--gv-tab-accent:#325b72;--gv-tab-bg:#eaf1f5}
+nav.ma-floating a:nth-child(2){--gv-tab-accent:#a34a23;--gv-tab-bg:#fff1e6}
+nav.ma-floating a:nth-child(3){--gv-tab-accent:#6f438f;--gv-tab-bg:#f4edfa}
+nav.ma-floating a:nth-child(4){--gv-tab-accent:#9c3561;--gv-tab-bg:#fbedf3}
+nav.ma-floating a:nth-child(5){--gv-tab-accent:#136b79;--gv-tab-bg:#eaf7f8}
+nav.ma-floating a:nth-child(6){--gv-tab-accent:#856008;--gv-tab-bg:#fff4d9}
+nav.ma-floating a:nth-child(7){--gv-tab-accent:#15527f;--gv-tab-bg:#e9f3fc}
+nav.ma-floating a:nth-child(8){--gv-tab-accent:#18694f;--gv-tab-bg:#e9f7ef}
+nav.ma-floating a:nth-child(9){--gv-tab-accent:#5147a2;--gv-tab-bg:#eeedfa}
+nav.ma-floating a{border-left:5px solid var(--gv-tab-accent,#325b72)!important;background:var(--gv-tab-bg,#eaf1f5)!important;color:#162b3b!important}
+nav.ma-floating a:hover{filter:brightness(.95);text-decoration:underline}
+html.gv-high-contrast nav.ma-floating a{color:#000!important;background:#fff!important;border:2px solid #000!important;text-decoration:underline}
+
+</style></head>
 <body>
 <a href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Ir ao conteúdo</a>
 <header><p>PPGE / FAED · Apêndice A · Guia Visual da Pesquisa</p><h1>Matriz Aberta</h1><p>Protótipo de triagem documental e laboratório de experimentação acessível</p><p><a href="index.html#explorar">Retornar ao Guia Visual</a></p></header><nav class="ma-floating" aria-label="Navegação flutuante do Guia e do laboratório" tabindex="0"><a href="index.html#explorar">Início do Guia</a><a href="index.html#autora">Sobre a autora</a><a href="index.html#cap0">Dissertação</a><a href="index.html#leitor">Leitor</a><a href="index.html#galeria">Autores</a><a href="#about">Projeto</a><a href="#lab">Testar a Matriz</a><a href="index.html#fontes">Fontes</a></nav>
+<div class="a11y-standalone"><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div></div>
 <main id="main">
 <section class="panel" aria-labelledby="about"><h2 id="about">Do protocolo à ferramenta</h2>
 <p class="lead">A <strong>Matriz Aberta</strong> é uma proposta experimental baseada na Matriz Analítica Tripartida. Busca ampliar a rastreabilidade e as possibilidades quantitativas e qualitativas da triagem, respeitando a diversidade dos objetos e a acessibilidade digital. <strong>A ferramenta não substitui a análise humana.</strong> Recuperar uma palavra não é demonstrar uma mediação; uma classificação sugerida não é um resultado científico.</p>
@@ -90,4 +140,35 @@ regs.push({obra:el("obra").value,objeto:el("objeto").value,dimensao:el("dim").se
 el("exportar").onclick=function(){var data={projeto:"Matriz Aberta — teste lexical",aviso:"Triagem humana; não constitui análise científica homologada",obra:el("obra").value,objeto:el("objeto").value,registros:regs,confronto_humano:el("confronto").value,sintese_humana:el("sintese").value,nota:"Blocos de teste não são páginas editoriais."};var blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="matriz-aberta-triagem.json";document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},1000);notice("sfinal","JSON solicitado ao navegador. Confira os downloads.");};
 el("limpar").onclick=function(){if(!confirm("Apagar todos os registros locais desta sessão?"))return;["obra","objeto","texto","evid","local","escopo","just","contraste","confronto","sintese"].forEach(function(x){el(x).value="";});el("arquivo").value="";el("pert").value="";el("estado").value="";el("tensao").checked=false;regs.length=0;el("results").replaceChildren();draw();notice("sfinal","Sessão limpa.");notice("sregistro","Nenhum registro.");notice("sbusca","Nenhuma busca realizada.");};
 })();
-</script></body></html>
+</script><script>
+/* Preferências de acessibilidade do Guia: sem bibliotecas, compartilhadas entre páginas */
+(function(){
+"use strict";
+var levels=[80,90,100,110,125,150,175,200], key="gv-a11y-preferences-v1";
+var minus=document.getElementById("gv-font-minus"),plus=document.getElementById("gv-font-plus"),contrast=document.getElementById("gv-contrast"),reset=document.getElementById("gv-reset"),status=document.getElementById("gv-a11y-status");
+if(!minus||!plus||!contrast||!reset||!status)return;
+var state={level:2,contrast:false};
+try{var stored=JSON.parse(localStorage.getItem(key)||"null");if(stored&&Number.isInteger(stored.level)&&stored.level>=0&&stored.level<levels.length)state.level=stored.level;if(stored&&typeof stored.contrast==="boolean")state.contrast=stored.contrast;}catch(e){}
+function render(save){
+ var root=document.documentElement;
+ root.style.fontSize=levels[state.level]+"%";
+ root.classList.toggle("gv-high-contrast",state.contrast);
+ root.classList.toggle("gv-large-type",levels[state.level]>=175);
+ minus.disabled=state.level===0;plus.disabled=state.level===levels.length-1;
+ contrast.setAttribute("aria-pressed",String(state.contrast));
+ contrast.setAttribute("aria-label",state.contrast?"Desativar alto contraste":"Ativar alto contraste");
+ contrast.textContent=state.contrast?"Contraste: ligado":"Alto contraste";
+ if(save){
+   status.textContent="Tamanho do texto: "+levels[state.level]+"%. Alto contraste "+(state.contrast?"ativado.":"desativado.");
+   try{localStorage.setItem(key,JSON.stringify(state));}catch(e){}
+ }
+}
+minus.addEventListener("click",function(){if(state.level>0){state.level--;render(true);}});
+plus.addEventListener("click",function(){if(state.level<levels.length-1){state.level++;render(true);}});
+contrast.addEventListener("click",function(){state.contrast=!state.contrast;render(true);});
+reset.addEventListener("click",function(){state={level:2,contrast:false};render(true);});
+render(false);
+document.documentElement.classList.add("gv-a11y-ready");
+})();
+</script>
+</body></html>
