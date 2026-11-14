@@ -51,6 +51,29 @@ html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
 .visual-legend p{margin:.2rem 0;font-size:.9rem}
 .visual-legend strong{color:#283f50}
 @media print{.visual-legend,.image-context,.image-catalogue{break-inside:avoid}}
+
+/* marca-dagua-gv-2026: identificação visual discreta, não é mecanismo anticópia.
+   Elemento puramente decorativo: não intercepta eventos, não altera o DOM
+   textual e não requer recursos externos, inclusive no uso offline. */
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none !important;
+  user-select:none;
+  z-index:10001;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20760%20260%22%3E%3Cg%20transform%3D%22rotate(-16%20380%20130)%22%3E%3Ctext%20x%3D%2246%22%20y%3D%22142%22%20fill%3D%22%23385367%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%3E%C2%A9%20Taynara%20Xavier%20Telles%20%C2%B7%20Guia%20Visual%20da%20Pesquisa%20%C2%B7%202026%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-repeat:repeat;
+  background-position:center center;
+  background-size:760px 260px;
+  opacity:.13;
+}
+@media print {
+  body::after {opacity:.13;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+}
+@media (forced-colors:active) {
+  body::after {display:none;}
+}
 </style></head><body><a href="#fichas" style="position:absolute;left:-9999px" onfocus="this.style.left='1rem'" onblur="this.style.left='-9999px'">Ir às fichas</a>
 <header><p>UDESC · FAED · PPGE | Guia Visual da Pesquisa</p><h1>Fichas biográficas de autoras e autores</h1><p>Pesquise um nome ou tema e abra as fichas para conhecer as contribuições dos autores à pesquisa.</p></header><div class="a11y-standalone"><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div></div>
 <main>
