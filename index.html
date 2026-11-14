@@ -275,6 +275,60 @@ html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
 .tools nav.quick-nav a:hover,.extra-menu-list a:hover{background:var(--gv-tab-bg,#e7eef3);filter:brightness(.96);text-decoration:underline}
 .tools nav.quick-nav a:focus-visible,.extra-menu-list a:focus-visible{outline:3px solid #1462ab;outline-offset:2px}
 
+
+
+/* Banca: percurso para defesa oral em oito momentos. Complementa as pranchas, sem substituí-las. */
+.banca-launch{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin:.9rem 0 1.25rem;padding:.9rem;border:1px solid #b8c9d7;border-radius:12px;background:#f2f7fa}
+.banca-launch button{background:#234c65;color:#fff;border:2px solid #234c65;font-weight:700;min-height:48px}
+.banca-launch span{font-size:.93rem;color:#385267}
+.banca-presenter[hidden]{display:none!important}
+.banca-presenter{position:fixed;inset:0;z-index:10000;background:#f5f7fa;color:#182b3d;overflow:auto;overscroll-behavior:contain;padding:0;--banca-ink:#182b3d}
+.banca-screen{min-height:100%;display:flex;flex-direction:column;max-width:1640px;margin:auto}
+.banca-header{background:#192b3f;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem clamp(1rem,3vw,2.5rem)}
+.banca-header div:first-child{display:flex;flex-direction:column;gap:.2rem}
+.banca-header strong{font-size:1.18rem}
+.banca-header span{font-size:.9rem}
+.banca-header-right{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.banca-header button{color:#fff;background:transparent;border:1px solid #c4d5e5;min-height:44px}
+.banca-progress{height:7px;background:linear-gradient(to right,#6586a0 0%,#dce5ed 0%)}
+.banca-stage-content{flex:1;display:grid;grid-template-columns:minmax(300px,.85fr) minmax(400px,1.3fr);gap:clamp(1rem,2.5vw,2.5rem);padding:clamp(1rem,3vw,2.2rem);align-items:center}
+.banca-copy{align-self:center}
+.banca-meta{color:#3a6177;font-size:.95rem;font-weight:700;letter-spacing:.025em;margin:0 0 .5rem}
+.banca-copy h3{font-size:clamp(1.55rem,2.7vw,2.55rem);line-height:1.18;margin:0 0 1rem;color:#193d55}
+.banca-thesis{font-size:clamp(1.12rem,1.5vw,1.35rem);line-height:1.45;font-weight:650;margin:.25rem 0 1rem}
+.banca-points{font-size:clamp(.96rem,1.1vw,1.11rem);line-height:1.52;margin:.6rem 0 1rem;padding-left:1.3rem}
+.banca-points li{margin:.45rem 0}
+.banca-quote{font-size:1.02rem;line-height:1.4;border-left:4px solid #9d6b34;padding:.55rem 1rem;margin:.9rem 0;background:#f5efe6}
+.banca-quote p{margin:.2rem 0 .45rem}
+.banca-quote cite{font-style:normal;font-size:.84rem;font-weight:700;color:#374c60}
+.banca-source{font-size:.86rem;color:#40566c;border-top:1px solid #bdcad6;padding-top:.7rem;line-height:1.45}
+.banca-visual{background:#fff;border:1px solid #bfcedb;border-radius:15px;padding:1rem;min-width:0}
+.banca-visual-label{margin:0 0 .5rem;color:#536373;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.banca-stage-figure figure{margin:0;max-width:100%;padding:0}
+.banca-stage-figure svg{width:100%;height:auto;display:block;max-height:440px}
+.banca-stage-figure figcaption{font-size:.83rem;line-height:1.5;padding:.8rem 0 .2rem;color:#43566b;border-top:1px solid #d3dce4}
+.banca-visual-extra{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 0}
+.banca-visual-extra button{font-size:.85rem;min-height:42px;border:1px solid #536b7d}
+.banca-notes{margin:0 clamp(1rem,3vw,2.2rem) 1rem;background:#fff;border:1px dashed #aabccc;padding:.5rem .8rem;border-radius:8px}
+.banca-notes summary{font-size:.89rem}
+.banca-notes p{font-size:.94rem;max-width:110ch;line-height:1.6}
+.banca-footer{position:sticky;bottom:0;display:flex;justify-content:space-between;gap:.8rem;align-items:center;flex-wrap:wrap;border-top:1px solid #ccd8e1;padding:.9rem clamp(1rem,3vw,2.2rem);background:#fff;box-shadow:0 -2px 10px #19283b0d}
+.banca-footer-main{display:flex;align-items:center;flex-wrap:wrap;gap:.55rem}
+.banca-footer-main button,.banca-footer-main a{border:1px solid #536b7c;background:#fff;color:#1b394d;font:inherit;font-weight:700;min-height:43px;border-radius:8px;padding:.5rem .85rem;text-decoration:none;display:inline-flex;align-items:center}
+.banca-footer-main button:disabled{opacity:.5}
+.banca-footer-main a{text-decoration:underline}
+.banca-footer-main #banca-next{color:#fff;background:#1b4c69}
+.banca-footer>span{font-size:.89rem;color:#455c70}
+body.banca-is-presenting{overflow:hidden}
+html.gv-high-contrast .banca-presenter,html.gv-high-contrast .banca-screen,html.gv-high-contrast .banca-stage-content,html.gv-high-contrast .banca-copy,html.gv-high-contrast .banca-visual,html.gv-high-contrast .banca-quote,html.gv-high-contrast .banca-notes,html.gv-high-contrast .banca-footer{background:#fff!important;color:#000!important;border-color:#000!important}
+html.gv-high-contrast .banca-header{background:#000!important;color:#fff!important}
+html.gv-high-contrast .banca-copy :is(h3,p,li),html.gv-high-contrast .banca-visual :is(p,figcaption),html.gv-high-contrast .banca-footer>span{color:#000!important}
+html.gv-high-contrast .banca-header :is(strong,span,button){color:#fff!important}
+html.gv-high-contrast .banca-footer-main #banca-next{background:#000!important;color:#fff!important}
+@media(max-width:980px){.banca-stage-content{grid-template-columns:1fr;align-items:start}.banca-copy h3{font-size:1.8rem}.banca-stage-figure svg{max-height:300px}}
+@media(max-width:650px){.banca-header{align-items:flex-start;flex-wrap:wrap}.banca-stage-content{gap:.7rem}.banca-visual{padding:.5rem}.banca-visual-label{display:none}.banca-stage-figure svg{max-height:200px}.banca-footer{position:relative}.banca-footer-main a{display:none}}
+@media print{.banca-launch,.banca-presenter{display:none!important}}
+
 </style></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site"><p>UNIVERSIDADE DO ESTADO DE SANTA CATARINA • PPGE / FAED</p>
@@ -333,6 +387,34 @@ html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
   <li><a href="#prancha16" data-tx="route7">7. Os exercícios com Soares e Bueno</a></li>
   <li><a href="#prancha18" data-tx="route8">8. Síntese provisória e próximos passos</a></li>
  </ol>
+ <div class="banca-launch">
+  <button type="button" id="banca-start" class="banca-start">Iniciar apresentação guiada · 20 minutos</button>
+  <span>Oito momentos, figuras do próprio Guia, referências e transições. Use as setas para avançar.</span>
+ </div>
+ <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
+  <div class="banca-screen">
+   <header class="banca-header"><div><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div><div class="banca-header-right"><span id="banca-progress-text" role="status" aria-live="polite">1 de 8</span><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
+   <div class="banca-progress" id="banca-progress" aria-hidden="true"></div>
+   <div class="banca-stage-content">
+    <div class="banca-copy">
+     <p id="banca-stage-meta" class="banca-meta"></p>
+     <h3 id="banca-view-title"></h3>
+     <p id="banca-stage-thesis" class="banca-thesis"></p>
+     <ul id="banca-stage-points" class="banca-points"></ul>
+     <blockquote id="banca-stage-quote" class="banca-quote" hidden><p id="banca-stage-quote-text"></p><cite id="banca-stage-quote-cite"></cite></blockquote>
+     <p id="banca-stage-source" class="banca-source"></p>
+    </div>
+    <div class="banca-visual">
+     <p class="banca-visual-label">Representação visual da pesquisa</p>
+     <div id="banca-stage-figure" class="banca-stage-figure"></div>
+     <div id="banca-visual-extra" class="banca-visual-extra"></div>
+    </div>
+   </div>
+   <details id="banca-notes" class="banca-notes"><summary>Notas da fala e transição (abrir apenas para ensaiar)</summary><p id="banca-stage-notes"></p><p id="banca-stage-transition"></p></details>
+   <div class="banca-footer"><div class="banca-footer-main"><button type="button" id="banca-prev">← Anterior</button><button type="button" id="banca-next">Próximo →</button><a href="#prancha1" id="banca-go-plate">Abrir prancha no Guia</a></div><span id="banca-time-total">Percurso sugerido: 20 min · tempo acumulado 2 min</span></div>
+  </div>
+ </div>
+
  <div class="action-strip">
   <button id="banca-toggle" type="button" aria-pressed="false" data-tx="bancaButton">Ampliar pranchas para apresentação</button>
  </div>
@@ -1958,4 +2040,141 @@ render(false);
 document.documentElement.classList.add("gv-a11y-ready");
 })();
 </script>
-</body></html>
+<script>
+/* Apresentação guiada: 20 minutos, remissões à versão de qualificação de 2026. */
+(function(){
+"use strict";
+const slides=[
+ {title:"Problema e objeto",min:2,plate:1,lead:"Não investigo diretamente os adolescentes: investigo como a produção acadêmica explica a adolescência e o desenvolvimento humano.",
+ points:["O fenômeno real e as concepções científicas sobre ele não são a mesma coisa.","A pergunta de pesquisa interroga também as mediações históricas, sociais, escolares e político-educacionais.","O desenvolvimento humano não é um tema paralelo: é aquilo que se procura compreender nas explicações sobre a adolescência."],
+ source:"TELLES (2026), Introdução, problema e objetivo geral; PDF da qualificação, pp. 26–28.",
+ quote:"",quoteSource:"",
+ notes:"Começar pelo objeto e pela pergunta formal da Introdução: como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, entre 2018 e 2026, concebem adolescência e desenvolvimento humano e articulam as mediações em suas explicações? Explicar brevemente o deslocamento das inquietações da docência para o problema documental; não transformar a motivação pessoal em objeto de análise.",
+ transition:"Se meu objeto são as explicações acadêmicas, preciso mostrar como vou reconstruí-las, não apenas classificá-las."},
+ {title:"Escolha do método e unidade de análise",min:2.5,plate:4,lead:"O materialismo histórico-dialético orienta perguntas sobre gênese, totalidade, mediações e contradições; não oferece uma lista para pontuar trabalhos.",
+ points:["A unidade de análise é a lógica interna das explicações de cada produção.","Primeiro reconstruo o argumento em seus próprios termos; depois realizo a interrogação crítica.","A matriz organiza decisões rastreáveis, mas não substitui o movimento de investigação."],
+ source:"MARX (2008, p. 129); NETTO (2011); TELLES (2026), cap. 1, pp. 35–40, e seção 4.5.1.",
+ quote:"O concreto é concreto, porque é a síntese de muitas determinações",quoteSource:"MARX (2008, p. 129), passagem citada na dissertação.",
+ notes:"Defender a permanência da escolha metodológica com a distinção entre método e procedimento. Explicar por que a identidade entre palavras-chave e concepções seria insuficiente. Destacar singularidade de cada estudo, particularidade brasileira e determinações gerais, sem prometer totalidade concluída por preenchimento de fichas.",
+ transition:"A historicidade da própria adolescência explica por que não posso tomar definições etárias como universais."},
+ {title:"Historicidade e particularidade brasileira",min:2,plate:9,lead:"A adolescência é vivida em corpos reais, mas suas condições de formação e reconhecimento são social e historicamente desiguais.",
+ points:["A reconstrução histórica distingue experiências das idades da vida e constituição das categorias que as explicam.","Colonização, escravidão, trabalho, classes e escolarização são determinações indispensáveis à particularidade brasileira.","Direitos formalmente reconhecidos coexistem com desigualdades de acesso ao tempo e às condições de formação."],
+ source:"TELLES (2026), cap. 2, especialmente seção 2.3; discussão com Prado Jr., Gorender e Marquese.",
+ quote:"",quoteSource:"",
+ notes:"Não resumir toda a história da adolescência. Em vez disso, demonstrar a função do capítulo: evitar transpor uma história europeia como padrão universal. Uma passagem pela formação social brasileira é suficiente para ligar trabalho, escolarização e direitos às formas concretas de desenvolvimento.",
+ transition:"Historicizar a adolescência nos coloca diante de outra questão: como se formam as capacidades humanas nessas relações?"},
+ {title:"Desenvolvimento humano e trabalho educativo",min:2.5,plate:10,lead:"O psiquismo se desenvolve nas relações sociais e na atividade de apropriação cultural; a escola participa desse processo sob condições determinadas.",
+ points:["Psicologia Histórico-Cultural: mediação, atividade, funções psíquicas superiores e pensamento conceitual.","Pedagogia Histórico-Crítica: especificidade do ensino e socialização do conhecimento sistematizado.","O papel da escola não pode ser deduzido automaticamente da idade nem afirmado sem examinar as condições reais de sua atividade."],
+ source:"VIGOTSKI (1995, 1996); LEONTIEV (2021); SAVIANI (2011); ANJOS (2017). TELLES (2026), cap. 3.",
+ quote:"",quoteSource:"",
+ notes:"Explicitar em uma frase a distinção entre psicologia e pedagogia: a primeira ajuda a explicar a gênese e as transformações do psiquismo; a segunda formula questões sobre finalidades, conteúdos e organização intencional do trabalho educativo. Relacionar isso à questão ‘como nos tornamos quem somos?’, mas preservar o problema formal da pesquisa. A referência à escola precisa demonstrar mediações, não só celebrar sua importância.",
+ transition:"Com esse horizonte, o próximo passo é decidir que conjunto de produções pode ser efetivamente examinado."},
+ {title:"Corpus: recorte, números e limites",min:2,plate:13,lead:"O recorte de 2018–2026 é o horizonte da pesquisa; os números já recuperados descrevem etapas documentais distintas, não resultados sobre concepções.",
+ points:["Levantamento original 2017–2025: 1.543 ocorrências, 992 documentos únicos e 633 encaminhados à avaliação integral.","Subconjunto 2018–2025: 1.352 ocorrências, 875 documentos únicos e 563 encaminhados à avaliação integral.","A recuperação de 2026, a elegibilidade integral e o levantamento de artigos continuam pendentes."],
+ source:"TELLES (2026), cap. 4, Tabelas 1–2 e Figura 12; prancha 13.",
+ quote:"",quoteSource:"",
+ notes:"Enunciar em voz alta que 633 não é o corpus final e que 875 diz respeito apenas ao subconjunto das teses e dissertações de 2018–2025. Distinguir o universo pretendido, a recuperação documental e a análise integral ainda não concluída. Priorizar clareza e não transformar a apresentação em leitura de planilhas.",
+ transition:"Os números explicam o alcance da busca; não mostram o que os trabalhos dizem. É aí que entra a matriz."},
+ {title:"Matriz Tripartida: perguntas e cinco movimentos",min:4,plate:14,alternate:15,lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis — não para atribuir notas a autores.",
+ points:["Dimensões: epistemológico-metodológica; ontológico-psicológica; pedagógico-político-educacional.","Movimentos: reconstruir, interrogar, registrar, confrontar e sintetizar — com retornos às fontes.","Estados E/M/I/NI/A e marcador transversal T: condições de registro documental, não escala hierárquica; a não aplicação é distinta da ausência."],
+ source:"TELLES (2026), cap. 4, seção 4.5; Quadros 3–6 e Figuras 13–14; pranchas 14–15.",
+ quote:"",quoteSource:"",
+ notes:"Este é o núcleo metodológico e merece o maior tempo. Indicar primeiro a unidade de análise; depois apresentar as três dimensões como perguntas pertinentes a cada objeto, não caixas independentes. Explicar os cinco movimentos e alternar o esquema para mostrar sua reversibilidade. Definir E explicitação, M menção, I inferência fundamentada, NI não identificável, A ausência verificada e T tensão documentada. Ressaltar que ausência requer exame suficiente e não aplicação significa pergunta não pertinente. A banca pode discutir sensibilidade, exequibilidade e ineditismo sem que a matriz precise ser apresentada como validada.",
+ transition:"O teste mais importante não é o desenho da matriz, mas o que ela permite perceber quando encontra produções diferentes."},
+ {title:"Soares e Bueno: o exercício exploratório",min:3,plate:16,lead:"Dois estudos de 2018, com objetos diferentes, permitem testar a sensibilidade das perguntas; não autorizam tendências nacionais.",
+ points:["Soares: escolhas profissionais, motivos, alternativas e condições institucionais de estudantes.","Bueno: constituição de uma prática de educação sexual, organização curricular e intencionalidade educativa.","A comparação preserva as singularidades e distingue argumentos dos autores de inferências analíticas."],
+ source:"SOARES (2018); BUENO (2018). TELLES (2026), cap. 5, seções 5.2–5.5.",
+ quote:"",quoteSource:"",
+ notes:"Apresentar uma pergunta que a matriz torna possível em cada estudo: em Soares, como as alternativas sociais e escolares participam da escolha profissional? Em Bueno, como as condições curriculares tornam possível a prática pedagógica? Demonstrar o ganho: reconhecer funções diferentes das mediações, e também identificar o que os trabalhos não demonstram. Não extrapolar a partir de duas dissertações.",
+ transition:"O exercício não encerra a investigação. Ele ajuda a formular melhor o que deve ser feito depois da qualificação."},
+ {title:"Síntese provisória e questões à banca",min:2,plate:18,lead:"A contribuição desta etapa é tornar explícitos o problema, os fundamentos e um procedimento analítico passível de aperfeiçoamento.",
+ points:["Consolidados até aqui: historicização, fundamentos do desenvolvimento, organização do levantamento e ensaio da matriz.","Em aberto: completar 2026, concluir elegibilidade, dimensionar a análise e revisar critérios diante dos documentos.","Questão para a banca: como preservar rigor e sensibilidade às singularidades sem tornar o protocolo inexequível?"],
+ source:"TELLES (2026), caps. 5–6, especialmente pp. 238–243 do PDF da qualificação.",
+ quote:"O que o conhecimento científico sobre a adolescência me permite compreender acerca dos estudantes que a escola recebe",quoteSource:"TELLES (2026, p. 243 do PDF), pergunta reflexiva da autora.",
+ notes:"Concluir retomando a distinção entre problema formal e compromisso pedagógico. Não anunciar resultados nacionais inexistentes. Reconhecer a qualificação como espaço de interlocução sobre delimitação, consistência e viabilidade. O fechamento deve convidar contribuições precisas dos professores, sem uma longa lista de justificativas defensivas.",
+ transition:"Agradeço a leitura e as contribuições à continuidade desta investigação."}
+];
+const root=document.getElementById("banca-presenter"),start=document.getElementById("banca-start"),exit=document.getElementById("banca-exit");
+if(!root||!start||!exit)return;
+const el=id=>document.getElementById(id);
+let current=0, figureAlternate=false, priorFocus=null;
+const total=slides.reduce((acc,sl)=>acc+sl.min,0);
+function cloneFigure(plate){
+ const src=document.querySelector("#prancha"+plate+" figure.diagram");
+ const target=el("banca-stage-figure");
+ target.replaceChildren();
+ if(!src){const p=document.createElement("p");p.textContent="A prancha visual não está disponível nesta cópia.";target.append(p);return;}
+ const figure=src.cloneNode(true),svg=figure.querySelector("svg");
+ if(svg){
+  const ids=[...svg.querySelectorAll("[id]")],map={};
+  ids.forEach(n=>{const old=n.id;map[old]="banca-copy-"+old;n.id=map[old];});
+  for(const n of [svg,...svg.querySelectorAll("*")]){
+   for(const a of ["aria-labelledby","aria-describedby","marker-start","marker-mid","marker-end","href","xlink:href","fill","stroke","filter","clip-path"]){
+    const v=n.getAttribute(a);if(!v)continue;
+    let updated=v;
+    Object.keys(map).forEach(from=>{updated=updated.replaceAll("url(#"+from+")","url(#"+map[from]+")");if(a==="aria-labelledby"||a==="aria-describedby")updated=updated.split(/\s+/).map(x=>x===from?map[from]:x).join(" ");if((a==="href"||a==="xlink:href")&&updated==="#"+from)updated="#"+map[from];});
+    if(updated!==v)n.setAttribute(a,updated);
+   }
+  }
+ }
+ target.append(figure);
+}
+function render(){
+ const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
+ el("banca-progress-text").textContent=(current+1)+" de "+slides.length+" · "+item.min+" min";
+ el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
+ el("banca-stage-meta").textContent="MOVIMENTO "+(current+1)+" / "+slides.length+" · TEMPO SUGERIDO: "+item.min+" MIN";
+ el("banca-view-title").textContent=item.title;
+ el("banca-stage-thesis").textContent=item.lead;
+ el("banca-stage-points").replaceChildren();
+ for(const point of item.points){const li=document.createElement("li");li.textContent=point;el("banca-stage-points").append(li);}
+ el("banca-stage-quote").hidden=!item.quote;
+ el("banca-stage-quote-text").textContent=item.quote?'“'+item.quote+'”':"";
+ el("banca-stage-quote-cite").textContent=item.quoteSource;
+ el("banca-stage-source").textContent="Fundamentação e remissões: "+item.source;
+ el("banca-stage-notes").textContent="Roteiro de fala: "+item.notes;
+ el("banca-stage-transition").textContent="Transição: "+item.transition;
+ el("banca-notes").open=false;
+ el("banca-go-plate").href="#prancha"+item.plate;
+ el("banca-time-total").textContent="Percurso sugerido: "+total+" min · tempo acumulado: "+time+" min";
+ el("banca-prev").disabled=current===0;
+ el("banca-next").textContent=current===slides.length-1?"Retornar ao início ↺":"Próximo →";
+ const extra=el("banca-visual-extra");extra.replaceChildren();
+ if(item.alternate){
+  const toggle=document.createElement("button");toggle.type="button";
+  toggle.textContent=figureAlternate?"Voltar à Matriz Tripartida":"Ver os cinco movimentos";
+  toggle.addEventListener("click",()=>{figureAlternate=!figureAlternate;cloneFigure(figureAlternate?item.alternate:item.plate);toggle.textContent=figureAlternate?"Voltar à Matriz Tripartida":"Ver os cinco movimentos";});
+  extra.append(toggle);
+ }
+ cloneFigure(figureAlternate&&item.alternate?item.alternate:item.plate);
+ root.scrollTop=0;
+}
+function close(){
+ root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
+ if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
+}
+function open(){
+ priorFocus=document.activeElement;current=0;figureAlternate=false;
+ root.hidden=false;document.body.classList.add("banca-is-presenting");render();exit.focus();window.addEventListener("keydown",keys);
+}
+function next(){current=(current+1)%slides.length;figureAlternate=false;render();}
+function prev(){if(current>0){current--;figureAlternate=false;render();}}
+function keys(e){if(root.hidden)return;
+ if(e.key==="Escape"){e.preventDefault();close();return;}
+ if(e.target instanceof HTMLElement&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
+ if(e.key==="ArrowRight"||e.key==="PageDown"){e.preventDefault();next();}
+ if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();prev();}
+ if(e.key==="Tab"){
+  const allowed=[...root.querySelectorAll("a[href],button:not([disabled]),summary")].filter(x=>x.getClientRects().length>0);
+  if(!allowed.length)return;const first=allowed[0],last=allowed[allowed.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+ }
+}
+start.addEventListener("click",open);
+exit.addEventListener("click",close);
+el("banca-prev").addEventListener("click",prev);
+el("banca-next").addEventListener("click",next);
+el("banca-go-plate").addEventListener("click",close);
+})();
+</script></body></html>
