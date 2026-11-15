@@ -269,3 +269,96 @@ function updateLanguage(){
 document.addEventListener("change",event=>{if(event.target?.id==="guide-lang")updateLanguage()});
 updateLanguage();
 })();
+
+
+/* gv-dual-navigation-and-close-v1 — Hover abre lista; clique abre quadro de botões. */
+(function(){
+"use strict";
+const global=document.getElementById("gv-global-nav");
+if(!global)return;
+const strip=document.getElementById("dissertacao-indice");
+const catalog=document.getElementById("todas-as-abas");
+const dictionary={
+ pt:{close:"× Fechar",closeMenu:"Fechar menu",closeChapters:"Fechar menu de capítulos",closeCatalog:"Fechar quadro de todas as abas",thesisTip:"Passe o mouse para abrir a lista; clique para ver o índice de capítulos.",allTip:"Passe o mouse para abrir a lista; clique para ver o quadro de todas as abas."},
+ en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover for the list; click to jump to the chapter index.",allTip:"Hover for the list; click to jump to all sections."},
+ es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para abrir la lista; haga clic para ver el índice.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
+};
+function language(){
+ const selector=document.getElementById("guide-lang");
+ if(selector&&dictionary[selector.value])return selector.value;
+ try{const saved=localStorage.getItem("gv-guide-language-v2");return dictionary[saved]?saved:"pt";}catch(e){return "pt";}
+}
+const entries=[{name:"thesis",target:"dissertacao-indice"},{name:"more",target:"todas-as-abas"}];
+for(const entry of entries){
+ const summary=global.querySelector('.gv-global-nav__dropdown > summary[data-gvu="'+entry.name+'"]');
+ if(!summary)continue;
+ const details=summary.closest("details");
+ const dropdown=details.querySelector(".gv-global-nav__dropdown-menu");
+ // Clique no título navega. Passar o mouse mantém a abertura das opções.
+ summary.addEventListener("click",function(event){
+  event.preventDefault();
+  details.open=false;
+  const target=document.getElementById(entry.target);
+  if(target){
+   if(entry.target==="dissertacao-indice")target.hidden=false;
+   if(entry.target==="todas-as-abas")target.open=true;
+   if(location.hash!=="#"+entry.target)history.pushState(null,"","#"+entry.target);
+   requestAnimationFrame(()=>target.scrollIntoView({behavior:"smooth",block:"start"}));
+  }else{
+   location.href="index.html#"+entry.target;
+  }
+ });
+ summary.addEventListener("keydown",function(event){
+  if(event.key==="ArrowDown"){
+   event.preventDefault();details.open=true;
+   dropdown.querySelector("a")?.focus();
+  }
+ });
+ if(dropdown){
+  const button=document.createElement("button");
+  button.type="button";button.className="gv-global-dropdown-close";
+  button.dataset.closeTarget=entry.name;
+  dropdown.prepend(button);
+  button.addEventListener("click",function(){
+   details.open=false;
+   summary.focus({preventScroll:true});
+  });
+ }
+}
+// Fechar os quadros não remove seu acesso pelo cabeçalho.
+const chapterClose=document.getElementById("gv-chapter-strip-close");
+if(strip&&chapterClose){
+ chapterClose.addEventListener("click",()=>{
+  strip.hidden=true;
+  global.querySelector('[data-gvu="thesis"]')?.focus({preventScroll:true});
+ });
+}
+const catalogClose=document.getElementById("gv-catalog-close");
+if(catalog&&catalogClose){
+ catalogClose.addEventListener("click",()=>{
+  catalog.open=false;
+  catalog.querySelector("summary")?.focus({preventScroll:true});
+ });
+}
+function handleHash(){
+ if(location.hash==="#dissertacao-indice"&&strip)strip.hidden=false;
+ if(location.hash==="#todas-as-abas"&&catalog)catalog.open=true;
+}
+window.addEventListener("hashchange",handleHash);
+handleHash();
+function localize(){
+ const lang=language(),t=dictionary[lang],tag=lang==="pt"?"pt-BR":lang;
+ global.querySelectorAll(".gv-global-dropdown-close").forEach(btn=>{
+  btn.textContent=t.close;btn.setAttribute("aria-label",t.closeMenu);btn.lang=tag;
+ });
+ for(const entry of entries){
+  const summary=global.querySelector('.gv-global-nav__dropdown > summary[data-gvu="'+entry.name+'"]');
+  if(summary)summary.title=entry.name==="thesis"?t.thesisTip:t.allTip;
+ }
+ if(chapterClose){chapterClose.innerHTML="× <span>"+t.close.replace(/^×\s*/,"")+"</span>";chapterClose.setAttribute("aria-label",t.closeChapters);chapterClose.lang=tag;}
+ if(catalogClose){catalogClose.innerHTML="× <span>"+t.close.replace(/^×\s*/,"")+"</span>";catalogClose.setAttribute("aria-label",t.closeCatalog);catalogClose.lang=tag;}
+}
+document.addEventListener("change",event=>{if(event.target?.id==="guide-lang")localize()});
+localize();
+const style=document.createElement("style");style.id="gv-dual-nav-close-style";style.textContent="\n#dissertacao-indice.gv-chapter-strip {display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;scroll-margin-top:6rem}\n#dissertacao-indice.gv-chapter-strip[hidden]{display:none!important}\n.gv-chapter-strip-close,.gv-catalog-close,.gv-global-dropdown-close{font:700 .85rem/1.3 Arial,sans-serif;cursor:pointer;border:1px solid #afc3d1;border-radius:8px;background:#f4f8fb;color:#24475e;min-height:38px;padding:.5rem .7rem}\n.gv-chapter-strip-close{margin-left:auto}\n.gv-catalog-close{float:right;margin:.15rem 0 .65rem .85rem}\n.gv-global-dropdown-close{align-self:flex-end;min-height:34px;padding:.35rem .65rem;margin:0 0 .25rem;border-radius:7px}\n.gv-chapter-strip-close:hover,.gv-catalog-close:hover,.gv-global-dropdown-close:hover{background:#e4eef5}\n.gv-chapter-strip-close:focus-visible,.gv-catalog-close:focus-visible,.gv-global-dropdown-close:focus-visible{outline:3px solid #b85d16;outline-offset:2px}\n@media print{.gv-chapter-strip-close,.gv-catalog-close,.gv-global-dropdown-close{display:none!important}}\n";document.head.appendChild(style);
+})();
