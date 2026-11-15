@@ -118,7 +118,7 @@ function apply(){
  for(const t of tracked){
    if(!t.node.isConnected)continue;
    const translated=current==="pt"?null:EXACT[current]?.[t.original];
-   t.node.nodeValue=translated?t.raw.replace(t.original,translated):t.raw;
+   t.node.nodeValue=translated?(t.raw.match(/^\s*/)[0]+translated+t.raw.match(/\s*$/)[0]):t.raw;
    if(translated)t.parent.setAttribute("lang",current);
    else if(t.parent.getAttribute("lang")==="en"||t.parent.getAttribute("lang")==="es")t.parent.setAttribute("lang","pt-BR");
  }
