@@ -97,6 +97,7 @@ if(!selector){
 const note=document.getElementById("language-scope");
 let stored="pt";try{const s=localStorage.getItem(KEY);if(options.includes(s))stored=s}catch(e){}
 selector.value=stored;
+if(isIndex){const names={pt:"Português (original)",en:"English (partial)",es:"Español (parcial)"};for(const code of options){const opt=selector.querySelector('option[value="'+code+'"]');if(opt)opt.textContent=names[code];}}
 const tracked=[];
 const areas=isIndex?["header","nav",".intro",".accessibility-controls",".home-topbar",".home-secondary"]:
  ["header","nav",".topnav",".accessibility-controls","footer"];
