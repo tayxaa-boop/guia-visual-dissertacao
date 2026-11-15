@@ -171,7 +171,7 @@ nav.innerHTML='<div class="gv-global-nav__inner">'+
 '<a href="documento-qualificacao.html#referencias" data-gvu="refs">Referências</a>'+
 '</div></details>'+
 '<a href="index.html#cap1" data-gvu="panels">Pranchas</a>'+
-'<a href="index.html#galeria" data-gvu="authors">Autores</a>'+
+'<a href="biografias.html" data-gvu="authors">Autores</a>'+
 '<details class="gv-global-nav__dropdown"><summary data-gvu="more">Todas as abas</summary><div class="gv-global-nav__dropdown-menu">'+
 
 '<a href="glossario.html" data-gvu="glossary">Glossário</a>'+
