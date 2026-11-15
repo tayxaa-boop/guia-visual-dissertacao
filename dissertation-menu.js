@@ -13,9 +13,12 @@ const labels={
 };
 const items=[...menu.querySelectorAll("a")];
 function setOpen(open){root.classList.toggle("is-open",open);trigger.setAttribute("aria-expanded",String(open));}
+let lastPointerType=null;
+root.addEventListener("pointerdown",function(e){lastPointerType=e.pointerType});
+document.addEventListener("keydown",function(e){if(e.key==="Tab")lastPointerType=null});
 root.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse"||e.pointerType==="pen")setOpen(true)});
-root.addEventListener("pointerleave",function(e){if((e.pointerType==="mouse"||e.pointerType==="pen")&&!root.contains(document.activeElement))setOpen(false)});
-root.addEventListener("focusin",function(){setOpen(true)});
+root.addEventListener("pointerleave",function(e){if((e.pointerType==="mouse"||e.pointerType==="pen")&&!menu.contains(document.activeElement))setOpen(false)});
+root.addEventListener("focusin",function(){if(lastPointerType!=="touch")setOpen(true)});
 root.addEventListener("focusout",function(e){if(!root.contains(e.relatedTarget))setOpen(false)});
 trigger.addEventListener("click",function(e){
  if(e.detail===0){setOpen(!root.classList.contains("is-open"));return;}
