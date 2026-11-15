@@ -141,3 +141,118 @@ selector.addEventListener("change",apply);
 if(isIndex && stored!=="pt")selector.dispatchEvent(new Event("change",{bubbles:true}));
 apply();
 })();
+
+/* gv-permanent-header-and-reader-v1: menu único e ajustes flutuantes nas páginas do Guia */
+(function(){
+"use strict";
+if(document.getElementById("gv-global-nav"))return;
+const style=document.createElement("style");
+style.id="gv-global-ui-style";
+style.textContent="\n/* Navegação permanente do Guia: mesmo cabeçalho em todas as abas. */\n.gv-global-nav{position:sticky!important;top:0!important;z-index:500;background:#fff;color:#182d40;border-bottom:1px solid #bfd0dc;box-shadow:0 3px 12px rgba(20,43,64,.12);font:600 15px/1.4 Arial,sans-serif}\n.gv-global-nav *{box-sizing:border-box}\n.gv-global-nav__inner{max-width:1180px;margin:auto;padding:8px 14px;display:flex;align-items:center;gap:14px}\n.gv-global-nav__brand{flex:0 0 auto;font-size:14px;letter-spacing:.01em;color:#203f56!important;text-decoration:none!important;white-space:nowrap}\n.gv-global-nav__links{display:flex;flex:1;align-items:center;justify-content:flex-end;gap:4px;min-width:0}\n.gv-global-nav__links>a,.gv-global-nav__dropdown>summary{display:inline-flex;min-height:42px;align-items:center;gap:4px;color:#1a384f!important;background:transparent;border:1px solid transparent;border-radius:8px;text-decoration:none;padding:9px 10px;font:600 14px/1.35 Arial,sans-serif;white-space:nowrap;cursor:pointer}\n.gv-global-nav__dropdown{position:relative;flex:0 0 auto}\n.gv-global-nav__dropdown>summary{list-style:none}\n.gv-global-nav__dropdown>summary::-webkit-details-marker{display:none}\n.gv-global-nav__links>a:hover,.gv-global-nav__dropdown>summary:hover,.gv-global-nav__dropdown[open]>summary{background:#eef4f8;border-color:#c7d5df;text-decoration:underline}\n.gv-global-nav__dropdown-menu{position:absolute;top:calc(100% + 5px);left:0;min-width:200px;max-height:65vh;overflow:auto;padding:6px;z-index:501;border:1px solid #b4c8d7;border-radius:10px;background:white;box-shadow:0 10px 30px rgba(20,43,64,.2);display:flex;flex-direction:column;gap:2px}\n.gv-global-nav__dropdown:last-child .gv-global-nav__dropdown-menu{left:auto;right:0;min-width:230px}\n.gv-global-nav__dropdown-menu a{display:block;border-radius:6px;padding:9px 11px;color:#1a384f!important;text-decoration:none!important;font-size:14px;font-weight:500}\n.gv-global-nav__dropdown-menu a:hover,.gv-global-nav__dropdown-menu a:focus-visible{background:#e8f1f8;text-decoration:underline!important}\n.gv-global-nav__toggle{display:none;min-height:44px;background:#f5f8fa;border:1px solid #9bb3c5;color:#16374c;border-radius:9px;padding:8px 12px;font:700 14px Arial,sans-serif}\n.gv-global-nav :is(a,summary,button):focus-visible{outline:3px solid #bf6b00!important;outline-offset:2px}\nhtml.gv-global-ui-ready .tools.home-tools{position:relative!important;top:auto!important;z-index:auto!important;border-bottom:0!important;box-shadow:none!important;padding-top:0;padding-bottom:0}\nhtml.gv-global-ui-ready .tools.home-tools nav.quick-nav,html.gv-global-ui-ready nav.topnav,html.gv-global-ui-ready nav.floating,html.gv-global-ui-ready nav.ma-floating{display:none!important}\nhtml.gv-global-ui-ready .a11y-standalone{display:none!important}\nhtml.gv-global-ui-ready{scroll-padding-top:80px!important}\nhtml.gv-global-ui-ready [id]{scroll-margin-top:80px}\nhtml.gv-global-ui-ready .gv-global-nav{scroll-margin-top:0}\nhtml.gv-large-type .gv-global-nav{position:sticky!important;top:0!important}\n.gv-reader-float{position:fixed;z-index:550;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));max-width:calc(100vw - 28px);color:#1c3a52;font:500 14px/1.4 Arial,sans-serif}\n.gv-reader-float [hidden]{display:none!important}\n.gv-reader-float__panel{display:flex;align-items:flex-start;gap:7px;max-width:100%;border:1px solid #b1c6d5;border-radius:13px;padding:6px 6px 6px 7px;background:#f3f7fa;box-shadow:0 6px 25px rgba(14,37,58,.2)}\n.gv-reader-float__panel>.accessibility-controls{display:flex!important;gap:5px;align-items:center;flex-wrap:wrap;padding:0;border:0;background:transparent}\n.gv-reader-float__panel>.accessibility-controls .a11y-label{font-size:13px}\n.gv-reader-float__panel>.accessibility-controls button{min-height:44px;min-width:44px;font-size:14px;padding:7px 10px}\n.gv-reader-float__close{width:34px;height:34px;min-width:34px;border:1px solid #90a6b8;border-radius:8px;background:#fff;color:#1e3a50;cursor:pointer;font-size:23px;line-height:1;padding:0}\n.gv-reader-float__open{min-height:44px;background:#f3f7fa;color:#183a53;border:1px solid #91a9bc;border-radius:24px;padding:9px 13px;box-shadow:0 3px 14px rgba(14,37,58,.2);font-size:14px;font-weight:700;cursor:pointer}\n.gv-reader-float :is(button):focus-visible{outline:3px solid #c16a00!important;outline-offset:2px}\nhtml.gv-high-contrast .gv-global-nav,html.gv-high-contrast .gv-global-nav__dropdown-menu,html.gv-high-contrast .gv-reader-float__panel,html.gv-high-contrast .gv-reader-float__open{background:#fff!important;color:#000!important;border:2px solid #000!important}\nhtml.gv-high-contrast .gv-global-nav :is(a,summary),html.gv-high-contrast .gv-reader-float__close{color:#000!important;background:#fff!important;border-color:#000!important}\n@media(max-width:870px){\n.gv-global-nav__inner{justify-content:space-between;flex-wrap:wrap;gap:6px}\n.gv-global-nav__toggle{display:inline-flex;align-items:center;justify-content:center}\n.gv-global-nav__links{display:none;flex:1 0 100%;width:100%;min-width:0;flex-direction:column;align-items:stretch;gap:1px;max-height:calc(100dvh - 85px);overflow-y:auto;padding:3px 0 5px}\n.gv-global-nav__links.gv-global-nav__links--open{display:flex}\n.gv-global-nav__links>a,.gv-global-nav__dropdown>summary{width:100%;min-height:42px}\n.gv-global-nav__dropdown-menu,.gv-global-nav__dropdown:last-child .gv-global-nav__dropdown-menu{position:static;min-width:0;max-height:none;box-shadow:none;border:0;border-left:3px solid #b5c9d7;border-radius:0;margin:0 0 4px 13px}\n.gv-reader-float{left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));max-width:none;display:flex;justify-content:flex-end}\n.gv-reader-float__panel{max-width:100%;max-height:calc(100dvh - 25px);overflow:auto}\n.gv-reader-float__panel>.accessibility-controls{flex:1;min-width:0;justify-content:flex-start}\n.gv-reader-float__panel>.accessibility-controls .a11y-label{display:none}\n}\n@media print{.gv-global-nav,.gv-reader-float{display:none!important}}\n";
+document.head.appendChild(style);
+const labels={
+pt:{brand:"Guia Visual",menu:"Menu",home:"Início",essential:"Percurso Essencial",thesis:"Dissertação",panels:"Pranchas",authors:"Autores",more:"Todas as abas",intro:"Introdução",chapter:"Capítulo",refs:"Referências",banca:"Banca",glossary:"Glossário",art:"Arte e história",matrix:"Matriz Aberta",access:"Acessibilidade",portable:"Edição portátil",libras:"Libras e transcrição",reader:"Leitura",close:"Fechar a barra de leitura",open:"Reabrir a barra de leitura"},
+en:{brand:"Visual Guide",menu:"Menu",home:"Home",essential:"Essential Path",thesis:"Dissertation",panels:"Panels",authors:"Authors",more:"All sections",intro:"Introduction",chapter:"Chapter",refs:"References",banca:"Examination",glossary:"Glossary",art:"Art and history",matrix:"Open Matrix",access:"Accessibility",portable:"Offline edition",libras:"Sign language and transcript",reader:"Reading",close:"Close reading controls",open:"Reopen reading controls"},
+es:{brand:"Guía Visual",menu:"Menú",home:"Inicio",essential:"Recorrido esencial",thesis:"Disertación",panels:"Láminas",authors:"Autores",more:"Todas las secciones",intro:"Introducción",chapter:"Capítulo",refs:"Referencias",banca:"Evaluación",glossary:"Glosario",art:"Arte e historia",matrix:"Matriz Abierta",access:"Accesibilidad",portable:"Edición sin conexión",libras:"Lengua de señas y transcripción",reader:"Lectura",close:"Cerrar controles de lectura",open:"Reabrir controles de lectura"}
+};
+const nav=document.createElement("nav");
+nav.className="gv-global-nav";
+nav.id="gv-global-nav";
+nav.setAttribute("aria-label","Menu principal permanente do Guia Visual");
+nav.innerHTML='<div class="gv-global-nav__inner">'+
+'<a class="gv-global-nav__brand" href="index.html#explorar" data-gvu="brand">Guia Visual</a>'+
+'<button type="button" class="gv-global-nav__toggle" aria-expanded="false" aria-controls="gv-global-nav-links" data-gvu="menu">Menu</button>'+
+'<div class="gv-global-nav__links" id="gv-global-nav-links">'+
+'<a href="index.html#explorar" data-gvu="home">Início</a>'+
+'<a href="percurso-essencial.html" data-gvu="essential">Percurso Essencial</a>'+
+'<details class="gv-global-nav__dropdown"><summary data-gvu="thesis">Dissertação</summary><div class="gv-global-nav__dropdown-menu">'+
+'<a href="index.html#cap0" data-gvu="intro">Introdução</a>'+
+[1,2,3,4,5,6].map(n=>'<a href="index.html#cap'+n+'" data-gv-chapter="'+n+'">Capítulo '+n+'</a>').join("")+
+'<a href="documento-qualificacao.html#referencias" data-gvu="refs">Referências</a>'+
+'</div></details>'+
+'<a href="index.html#cap1" data-gvu="panels">Pranchas</a>'+
+'<a href="index.html#galeria" data-gvu="authors">Autores</a>'+
+'<details class="gv-global-nav__dropdown"><summary data-gvu="more">Todas as abas</summary><div class="gv-global-nav__dropdown-menu">'+
+'<a href="index.html#roteiro" data-gvu="banca">Banca</a>'+
+'<a href="glossario.html" data-gvu="glossary">Glossário</a>'+
+'<a href="percursos-arte.html" data-gvu="art">Arte e história</a>'+
+'<a href="matriz-aberta.html" data-gvu="matrix">Matriz Aberta</a>'+
+'<a href="acessibilidade.html" data-gvu="access">Acessibilidade</a>'+
+'<a href="portatil.html" data-gvu="portable">Edição portátil</a>'+
+'<a href="libras-apresentacao.html" data-gvu="libras">Libras e transcrição</a>'+
+'</div></details>'+
+'</div></div>';
+const mainHeader=document.querySelector("body > header");
+if(mainHeader&&mainHeader.parentElement===document.body)mainHeader.insertAdjacentElement("afterend",nav);
+else document.body.insertBefore(nav,document.body.firstChild);
+document.documentElement.classList.add("gv-global-ui-ready");
+const navToggle=nav.querySelector(".gv-global-nav__toggle");
+const links=nav.querySelector(".gv-global-nav__links");
+function toggleMobile(open){
+ links.classList.toggle("gv-global-nav__links--open",open);
+ navToggle.setAttribute("aria-expanded",String(open));
+}
+navToggle.addEventListener("click",()=>toggleMobile(navToggle.getAttribute("aria-expanded")!=="true"));
+nav.querySelectorAll(".gv-global-nav__dropdown").forEach(details=>{
+ details.addEventListener("pointerenter",event=>{if(event.pointerType==="mouse"&&matchMedia("(min-width:871px)").matches)details.open=true});
+ details.addEventListener("pointerleave",event=>{if(event.pointerType==="mouse"&&!details.contains(document.activeElement))details.open=false});
+ details.addEventListener("toggle",()=>{if(details.open)nav.querySelectorAll(".gv-global-nav__dropdown").forEach(other=>{if(other!==details)other.open=false})});
+ details.addEventListener("keydown",event=>{if(event.key==="Escape"){details.open=false;details.querySelector("summary").focus()}});
+});
+document.addEventListener("pointerdown",event=>{if(!nav.contains(event.target))nav.querySelectorAll(".gv-global-nav__dropdown").forEach(x=>x.open=false)});
+nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{toggleMobile(false);nav.querySelectorAll(".gv-global-nav__dropdown").forEach(x=>x.open=false)}));
+
+const controls=document.querySelector(".accessibility-controls");
+let closeButton=null,openButton=null;
+if(controls){
+ const reader=document.createElement("aside");
+ reader.className="gv-reader-float";
+ reader.id="gv-reader-float";
+ reader.setAttribute("aria-label","Ferramentas de leitura permanentes");
+ const panel=document.createElement("div");
+ panel.className="gv-reader-float__panel";
+ panel.id="gv-reader-float-panel";
+ closeButton=document.createElement("button");
+ closeButton.type="button";
+ closeButton.className="gv-reader-float__close";
+ closeButton.textContent="\u00d7";
+ openButton=document.createElement("button");
+ openButton.type="button";
+ openButton.className="gv-reader-float__open";
+ openButton.setAttribute("aria-controls","gv-reader-float-panel");
+ panel.appendChild(controls);
+ panel.appendChild(closeButton);
+ reader.appendChild(panel);
+ reader.appendChild(openButton);
+ document.body.appendChild(reader);
+ const key="gv-a11y-panel-hidden-v1";
+ function setClosed(closed,focus){
+  panel.hidden=closed;
+  openButton.hidden=!closed;
+  openButton.setAttribute("aria-expanded",String(!closed));
+  if(focus)(closed?openButton:closeButton).focus();
+  try{sessionStorage.setItem(key,closed?"1":"0")}catch(e){}
+ }
+ closeButton.addEventListener("click",()=>setClosed(true,true));
+ openButton.addEventListener("click",()=>setClosed(false,true));
+ let closed=false;
+ try{closed=sessionStorage.getItem(key)==="1"}catch(e){}
+ setClosed(closed,false);
+}
+function currentLanguage(){
+ const selector=document.getElementById("guide-lang");
+ if(selector&&labels[selector.value])return selector.value;
+ try{const stored=localStorage.getItem("gv-guide-language-v2");return labels[stored]?stored:"pt"}catch(e){return "pt"}
+}
+function updateLanguage(){
+ const lang=currentLanguage(),dict=labels[lang];
+ nav.querySelectorAll("[data-gvu]").forEach(el=>{const key=el.getAttribute("data-gvu");if(dict[key]){el.textContent=dict[key];el.lang=lang==="pt"?"pt-BR":lang}});
+ nav.querySelectorAll("[data-gv-chapter]").forEach(el=>{el.textContent=dict.chapter+" "+el.dataset.gvChapter;el.lang=lang==="pt"?"pt-BR":lang});
+ if(closeButton){closeButton.setAttribute("aria-label",dict.close);closeButton.title=dict.close}
+ if(openButton){openButton.textContent="Aa · "+dict.reader;openButton.setAttribute("aria-label",dict.open);openButton.title=dict.open}
+ const readerLabel=controls?.querySelector(".a11y-label");
+ if(readerLabel)readerLabel.textContent=dict.reader;
+}
+document.addEventListener("change",event=>{if(event.target?.id==="guide-lang")updateLanguage()});
+updateLanguage();
+})();
