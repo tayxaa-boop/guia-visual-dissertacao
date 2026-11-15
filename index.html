@@ -350,29 +350,6 @@ html.gv-high-contrast .banca-footer-main #banca-next{background:#000!important;c
 @media print{.banca-launch,.banca-presenter{display:none!important}}
 
 
-/* marca-dagua-gv-2026: identificação visual discreta, não é mecanismo anticópia.
-   Elemento puramente decorativo: não intercepta eventos, não altera o DOM
-   textual e não requer recursos externos, inclusive no uso offline. */
-body::after {
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none !important;
-  user-select:none;
-  z-index:10001;
-  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20760%20260%22%3E%3Cg%20transform%3D%22rotate(-16%20380%20130)%22%3E%3Ctext%20x%3D%2246%22%20y%3D%22142%22%20fill%3D%22%23385367%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2221%22%20font-weight%3D%22600%22%3E%C2%A9%20Taynara%20Xavier%20Telles%20%C2%B7%20Guia%20Visual%20da%20Pesquisa%20%C2%B7%202026%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-repeat:repeat;
-  background-position:center center;
-  background-size:760px 260px;
-  opacity:.13;
-}
-@media print {
-  body::after {opacity:.13;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
-}
-@media (forced-colors:active) {
-  body::after {display:none;}
-}
-
 /* Identidade editorial: o site é autoral; a origem acadêmica é o Apêndice A. */
 header.site .site-kicker{font-size:.79rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:#d5e0e8}
 header.site #site-title{font-size:clamp(2rem,4vw,3rem);margin:.45rem 0 .4rem;line-height:1.15}
@@ -426,7 +403,6 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 
 
 /* Leitura sem sobreposição da identificação visual: preserva autoria textual e direitos no rodapé. */
-html.gv-no-watermark body::after,html.gv-high-contrast body::after,body.linear::after,body.banca-is-presenting::after{display:none!important}
 .relational-reading{margin:.75rem 0 1rem;border:1px solid #9bb4c6;border-left:5px solid #386c80;padding:.6rem .85rem;border-radius:8px;background:#f3f8fa}
 .relational-reading summary{font-weight:700;cursor:pointer;color:#16384f}
 .relational-reading p{line-height:1.65;font-size:1rem;margin:.55rem 0}
@@ -471,10 +447,36 @@ html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!
 @media(max-width:700px){.gv-guide-paths{grid-template-columns:1fr}.gv-guide-index{flex-direction:column}.gv-guide-index a{width:100%}}
 @media print{.gv-guide-index{display:none}.gv-guide-paths{grid-template-columns:1fr}.gv-guide-promise,.gv-guide-hint{background:white}}
 @media(forced-colors:active){.gv-guide-promise,.gv-guide-path,.gv-guide-index{border:1px solid CanvasText}}
+
+/* Cabeçalho editorial em duas colunas, mantendo conteúdo original e leitura responsiva. */
+header.site { padding:clamp(1.5rem,2.7vw,2.6rem) clamp(1rem,3vw,3.5rem); }
+header.site .hero-grid { display:grid; grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr); gap:clamp(1.5rem,3.4vw,3.5rem); align-items:start; max-width:1240px; margin:0 auto; }
+header.site .hero-main,header.site .hero-side { min-width:0; }
+header.site .hero-main p { max-width:100%; }
+header.site .hero-main .site-kicker { margin:0 0 .55rem; }
+header.site .hero-main #site-title { margin:.1rem 0 .4rem; }
+header.site .hero-main .site-author { margin:.65rem 0 1rem; }
+header.site .hero-main .site-origin { margin-top:.65rem; }
+header.site .hero-side { display:flex; flex-direction:column; gap:1rem; padding-top:.5rem; }
+header.site .hero-side .site-status { max-width:none; margin:0; padding:.86rem 1rem; }
+header.site .hero-side .thesis-source { max-width:none; margin:0; padding:.9rem 1rem; }
+header.site .hero-side .thesis-source p { max-width:none; }
+@media(max-width:930px) {
+ header.site .hero-grid { grid-template-columns:minmax(0,1fr); max-width:750px; gap:1.1rem; }
+ header.site .hero-side { padding-top:0; gap:.7rem; }
+}
+@media(max-width:480px) {
+ header.site { padding:1.35rem 1rem; }
+ header.site .hero-side .site-status,header.site .hero-side .thesis-source { padding:.78rem .85rem; }
+}
+@media print { header.site .hero-grid { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:1rem; } }
+
 </style>
 <link rel="stylesheet" href="dialetica-canva.css"></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
 <header class="site" aria-labelledby="site-title">
+<div class="hero-grid">
+  <div class="hero-main">
 <p class="site-kicker">Projeto digital autoral · Pesquisa de mestrado em Educação</p>
 <h1 id="site-title">Guia Visual da Pesquisa</h1>
 <p class="site-subtitle">Plataforma digital autoral vinculada à dissertação de mestrado</p>
@@ -482,13 +484,18 @@ html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!
 <p class="site-purpose">Ambiente digital de acessibilidade, divulgação científica e exploração dos fundamentos teórico-metodológicos da investigação.</p>
 <p class="site-work-title"><cite>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026): mediações históricas, sociais e escolares da Psicologia e da Educação.</cite></p>
 <p class="site-origin">Origem acadêmica: Apêndice A da dissertação de qualificação. As 21 pranchas, descrições textuais e remissões permanecem preservadas.</p>
+  </div>
+  <div class="hero-side">
 <aside class="site-status" role="note" aria-label="Natureza editorial e vínculo institucional">Projeto autoral complementar à dissertação em desenvolvimento. Não constitui publicação institucional da UDESC nem substitui a versão acadêmica oficialmente depositada.</aside>
 <div class="thesis-source" role="note" aria-label="Referência bibliográfica da pesquisa">
 <p class="thesis-source-title">Referência da dissertação: versão de qualificação</p>
 <p>TELLES, Taynara Xavier. <strong>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026)</strong>: mediações históricas, sociais e escolares da Psicologia e da Educação. 2026. Dissertação (Mestrado em Educação) – Centro de Ciências Humanas e da Educação, Universidade do Estado de Santa Catarina, Florianópolis, 2026.</p>
 <p class="thesis-source-note">(Versão apresentada para o exame de qualificação. A publicação integral da versão definitiva ocorrerá após a defesa e os procedimentos institucionais de depósito e validação no Repositório Institucional da UDESC.)</p>
-</div></header>
-<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><button type="button" id="gv-watermark-toggle" aria-pressed="false" title="Ocultar ou mostrar a marca-d’água decorativa">Sem marca-d’água</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#sobre-guia" data-tx="aboutQuick">Sobre o Guia</a><a href="percurso-essencial.html" lang="pt-BR">Percurso Essencial</a><a href="glossario.html" lang="pt-BR">Glossário</a><a href="documento-qualificacao.html" lang="pt-BR">Dissertação HTML (banca)</a><a href="portatil.html" lang="pt-BR">Edição portátil</a><a href="libras-apresentacao.html" lang="pt-BR">Libras: roteiro</a><a href="acessibilidade.html" lang="pt-BR">Acessibilidade</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#producoes" data-xi="nProd">Produções</a><a href="#mensagens" data-xi="nMsg">Mensagens</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
+</div>
+  </div>
+</div>
+</header>
+<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#sobre-guia" data-tx="aboutQuick">Sobre o Guia</a><a href="percurso-essencial.html" lang="pt-BR">Percurso Essencial</a><a href="glossario.html" lang="pt-BR">Glossário</a><a href="documento-qualificacao.html" lang="pt-BR">Dissertação HTML (banca)</a><a href="portatil.html" lang="pt-BR">Edição portátil</a><a href="libras-apresentacao.html" lang="pt-BR">Libras: roteiro</a><a href="acessibilidade.html" lang="pt-BR">Acessibilidade</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#producoes" data-xi="nProd">Produções</a><a href="#mensagens" data-xi="nMsg">Mensagens</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
 <main id="conteudo">
 
 <nav class="extra-menu" id="explorar" aria-labelledby="explorar-titulo">
@@ -2676,7 +2683,4 @@ showIdentity();localize();
 </script>
 
 <script src="dialetica-canva.js"></script>
-<script>
-/* A identificação autoral permanece no cabeçalho e no rodapé, independentemente da marca-d'água. */
-(function(){const button=document.getElementById("gv-watermark-toggle");if(!button)return;const key="gv-no-watermark";let hidden=false;try{hidden=localStorage.getItem(key)==="true";}catch(e){}function paint(){document.documentElement.classList.toggle("gv-no-watermark",hidden);button.setAttribute("aria-pressed",String(hidden));button.textContent=hidden?"Mostrar marca-d’água":"Sem marca-d’água";button.setAttribute("aria-label",hidden?"Mostrar marca-d’água decorativa":"Ocultar marca-d’água para leitura");}button.addEventListener("click",function(){hidden=!hidden;try{localStorage.setItem(key,String(hidden));}catch(e){}paint();});paint();})();
-</script></body></html>
+</body></html>
