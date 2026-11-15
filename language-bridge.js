@@ -166,11 +166,11 @@ nav.innerHTML='<div class="gv-global-nav__inner">'+
 '<a href="index.html#explorar" data-gvu="home">Início</a>'+
 '<a href="percurso-essencial.html" data-gvu="essential">Percurso Essencial</a>'+
 '<details class="gv-global-nav__dropdown"><summary data-gvu="thesis">Dissertação</summary><div class="gv-global-nav__dropdown-menu">'+
-'<a href="index.html#cap0" data-gvu="intro">Introdução</a>'+
-[1,2,3,4,5,6].map(n=>'<a href="index.html#cap'+n+'" data-gv-chapter="'+n+'">Capítulo '+n+'</a>').join("")+
+'<a href="documento-qualificacao.html#introducao" data-gvu="intro">Introdução</a>'+
+[1,2,3,4,5,6].map(n=>'<a href="documento-qualificacao.html#cap'+n+'" data-gv-chapter="'+n+'">Capítulo '+n+'</a>').join("")+
 '<a href="documento-qualificacao.html#referencias" data-gvu="refs">Referências</a>'+
 '</div></details>'+
-'<a href="index.html#cap1" data-gvu="panels">Pranchas</a>'+
+'<a href="index.html#dissertacao-indice" data-gvu="panels">Pranchas</a>'+
 '<a href="biografias.html" data-gvu="authors">Autores</a>'+
 '<details class="gv-global-nav__dropdown"><summary data-gvu="more">Todas as abas</summary><div class="gv-global-nav__dropdown-menu">'+
 
@@ -279,9 +279,9 @@ if(!global)return;
 const strip=document.getElementById("dissertacao-indice");
 const catalog=document.getElementById("todas-as-abas");
 const dictionary={
- pt:{close:"× Fechar",closeMenu:"Fechar menu",closeChapters:"Fechar menu de capítulos",closeCatalog:"Fechar quadro de todas as abas",thesisTip:"Passe o mouse para abrir a lista; clique para ver o índice de capítulos.",allTip:"Passe o mouse para abrir a lista; clique para ver o quadro de todas as abas."},
- en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover for the list; click to jump to the chapter index.",allTip:"Hover for the list; click to jump to all sections."},
- es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para abrir la lista; haga clic para ver el índice.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
+ pt:{close:"× Fechar",closeMenu:"Fechar menu",closeChapters:"Fechar menu de capítulos",closeCatalog:"Fechar quadro de todas as abas",thesisTip:"Passe o mouse para abrir os capítulos do texto integral; clique para ler a dissertação em HTML.",allTip:"Passe o mouse para abrir a lista; clique para ver o quadro de todas as abas."},
+ en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover to browse full-text chapters; click to read the dissertation in HTML.",allTip:"Hover for the list; click to jump to all sections."},
+ es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para ver los capítulos; haga clic para leer la disertación completa en HTML.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
 };
 function language(){
  const selector=document.getElementById("guide-lang");
@@ -298,6 +298,7 @@ for(const entry of entries){
  summary.addEventListener("click",function(event){
   event.preventDefault();
   details.open=false;
+  if(entry.name==="thesis"){location.href="documento-qualificacao.html";return;}
   const target=document.getElementById(entry.target);
   if(target){
    if(entry.target==="dissertacao-indice")target.hidden=false;
@@ -325,6 +326,8 @@ for(const entry of entries){
   });
  }
 }
+// Pranchas mantém o índice acessível mesmo quando foi fechado antes.
+global.querySelector('[data-gvu="panels"]')?.addEventListener("click",function(){if(strip)strip.hidden=false});
 // Fechar os quadros não remove seu acesso pelo cabeçalho.
 const chapterClose=document.getElementById("gv-chapter-strip-close");
 if(strip&&chapterClose){
