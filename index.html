@@ -489,6 +489,17 @@ header.site .hero-side .thesis-source p { max-width:none; }
 .author-social-links svg{width:21px;height:21px;display:block;}
 @media(prefers-reduced-motion:reduce){.author-social-links a{transition:none;}.author-social-links a:hover{transform:none;}}
 
+
+/* Vinculação acadêmica: marca do laboratório após os contatos da autora */
+.author-lab-affiliation{border-top:1px solid #e2eaf0;margin:.85rem 0 0;padding-top:.8rem;}
+.author-lab-kicker{margin:0 0 .45rem;color:#5b6b78;font-size:.7rem;letter-spacing:.035em;text-transform:uppercase;font-weight:700;}
+.author-lab-link{display:block;background:#f7fafc;border:1px solid #d5e0e7;border-radius:9px;overflow:hidden;color:#274e69;text-decoration:none;}
+.author-lab-link img{display:block;width:100%;height:auto;aspect-ratio:1000/351;object-fit:contain;background:#22334d;}
+.author-lab-name{display:block;font-size:.87rem;font-weight:700;padding:.6rem .65rem 0;}
+.author-lab-subtitle{display:block;font-size:.72rem;line-height:1.35;padding:.12rem .65rem .65rem;color:#596d79;}
+.author-lab-link:hover{background:#ecf4f8;border-color:#7d9fb4;}
+.author-lab-link:focus-visible{outline:3px solid #b06b25;outline-offset:3px;}
+
 </style>
 <link rel="stylesheet" href="dialetica-canva.css"><link rel="stylesheet" href="home-clean.css">
 <link rel="stylesheet" href="dissertation-menu.css">
@@ -922,6 +933,14 @@ header.site .hero-side .thesis-source p { max-width:none; }
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3.5h16v2H4zm0 4h16v2H4zm0 4h16V21l-8-4.1L4 21z"/></svg>
         </a>
       </nav>
+      <div class="author-lab-affiliation">
+        <p class="author-lab-kicker">Laboratório de pesquisa</p>
+        <a class="author-lab-link" href="https://www.udesc.br/faed/piscoeduc" target="_blank" rel="noopener noreferrer" aria-label="Visitar página oficial do PSICOEDUC no portal da UDESC (abre em nova aba)" title="PSICOEDUC — Página oficial na UDESC">
+          <img src="https://www.udesc.br/arquivos/faed/imagens/psicoeduc_17514884486214_12481.jpg" alt="Identidade visual do PSICOEDUC: livros abertos de onde emergem flores e borboletas, sobre fundo azul-marinho" width="1000" height="351" loading="lazy" decoding="async">
+          <span class="author-lab-name">PSICOEDUC <span aria-hidden="true">↗</span></span>
+          <span class="author-lab-subtitle">Psicologia e Educação: temáticas contemporâneas · FAED/UDESC</span>
+        </a>
+      </div>
     </div>
     <details class="photo-access">
       <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
