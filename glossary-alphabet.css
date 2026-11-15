@@ -1,0 +1,39 @@
+/* Glossário · navegação alfabética flutuante — 2026-11-14 */
+.gv-alpha-rail{position:fixed;right:max(10px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:460;width:90px;max-height:min(76dvh,660px);display:flex;flex-direction:column;gap:.4rem;padding:.6rem .48rem;background:#fff;border:1px solid #b7c9d6;box-shadow:0 5px 23px rgba(24,48,70,.15);border-radius:16px;color:#193a50;font:700 .84rem/1.3 Arial,Helvetica,sans-serif}
+.gv-alpha-rail[hidden]{display:none!important}
+.gv-alpha-rail__head{display:flex;gap:.3rem;align-items:center;justify-content:space-between;padding:0 .15rem}
+.gv-alpha-rail__title{letter-spacing:.03em;white-space:nowrap}
+.gv-alpha-rail__collapse{border:0;background:transparent;color:#35596e;border-radius:6px;cursor:pointer;font:inherit;min-width:26px;min-height:26px;padding:.15rem}
+.gv-alpha-rail__collapse:hover{background:#eaf1f5}
+.gv-alpha-rail__letters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;min-height:0;padding:2px}
+.gv-alpha-rail__letter{display:grid;place-items:center;border:1px solid #cfdae2;border-radius:7px;background:#f1f6f9;color:#163c54;text-decoration:none;font:700 .94rem/1.3 Arial,sans-serif;min-height:34px;min-width:0;padding:.18rem .08rem;cursor:pointer}
+.gv-alpha-rail__letter:hover:not(:disabled),.gv-alpha-rail__letter:focus-visible:not(:disabled){background:#ddebf4;border-color:#678ca3}
+.gv-alpha-rail__letter[aria-current="location"]{background:#244f69;color:white;border-color:#244f69}
+.gv-alpha-rail__letter:disabled{opacity:.32;cursor:default;background:#f7f8fa;border-style:dashed}
+.gv-alpha-rail__top{border:0;border-top:1px solid #dce5ea;padding:.45rem .1rem .1rem;background:transparent;color:#24516c;font:700 .78rem Arial,sans-serif;cursor:pointer;text-align:center}
+.gv-alpha-rail__top:hover{text-decoration:underline}
+.gv-alpha-rail__status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.gv-alpha-restore{position:fixed;right:max(12px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:459;border:1px solid #9db5c5;border-radius:999px;background:#fff;color:#224b64;padding:.7rem .45rem;box-shadow:0 4px 15px #1a3b5620;writing-mode:vertical-rl;font:700 .87rem Arial,sans-serif;cursor:pointer}
+.gv-alpha-restore[hidden]{display:none!important}
+.entry h2{scroll-margin-top:7rem}
+html.gv-high-contrast .gv-alpha-rail,html.gv-high-contrast .gv-alpha-restore{background:#fff!important;color:#000!important;border:2px solid #000!important;box-shadow:none!important}
+html.gv-high-contrast .gv-alpha-rail__letter{background:#fff!important;border:1px solid #000!important;color:#000!important}
+html.gv-high-contrast .gv-alpha-rail__letter[aria-current="location"]{background:#000!important;color:#fff!important}
+html.gv-high-contrast .gv-alpha-rail__letter:disabled{opacity:.25}
+@media(max-width:1359px){
+ .gv-alpha-rail{top:auto;transform:none;bottom:clamp(84px,12dvh,116px);left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right));width:auto;max-height:none;flex-direction:row;align-items:center;gap:.45rem;padding:.4rem .5rem;border-radius:12px}
+ .gv-alpha-rail__head{flex:0 0 auto;min-width:0}
+ .gv-alpha-rail__letters{display:flex;flex:1 1 auto;overflow-x:auto;overflow-y:hidden;gap:.3rem;scrollbar-width:thin;padding:.14rem;white-space:nowrap}
+ .gv-alpha-rail__letter{flex:0 0 auto;min-width:37px;min-height:39px;padding:.3rem .42rem}
+ .gv-alpha-rail__top{flex:0 0 auto;border:0;border-left:1px solid #dce5ea;padding:.4rem .15rem .4rem .5rem;white-space:nowrap}
+ .gv-alpha-restore{top:auto;transform:none;bottom:clamp(84px,12dvh,116px);right:max(10px,env(safe-area-inset-right));writing-mode:horizontal-tb;padding:.7rem .9rem}
+ body:has(.gv-alpha-rail:not([hidden])) main{padding-bottom:8rem}
+}
+@media(max-width:560px){
+ .gv-alpha-rail__head{gap:0}
+ .gv-alpha-rail__title{font-size:.78rem}
+ .gv-alpha-rail__top{font-size:.73rem}
+ .gv-alpha-rail__letter{min-width:42px;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.gv-alpha-rail,.gv-alpha-restore{display:none!important}}
