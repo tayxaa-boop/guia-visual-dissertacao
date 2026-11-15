@@ -501,7 +501,7 @@ header.site .hero-side .thesis-source p { max-width:none; }
 .author-lab-link:focus-visible{outline:3px solid #b06b25;outline-offset:3px;}
 
 </style>
-<link rel="stylesheet" href="dialetica-canva.css"><link rel="stylesheet" href="home-clean.css">
+<link rel="stylesheet" href="dialetica-canva.css"><link rel="stylesheet" href="home-clean.css"><link rel="stylesheet" href="guide-discovery.css">
 <link rel="stylesheet" href="dissertation-menu.css">
 <link rel="stylesheet" href="tipografia-arial.css">
 </head><body>
@@ -621,16 +621,28 @@ header.site .hero-side .thesis-source p { max-width:none; }
 <a href="#fontes" data-tx="menuRefs">Dissertação e fichas biográficas</a>
       </div>
     </details>
-    <details class="home-language">
-      <summary data-home-tx="language">Idioma dos conteúdos complementares</summary>
-      <div class="language-tool">
-  <label for="guide-lang" data-tx="languageLabel">Idioma dos conteúdos complementares</label>
-  <select id="guide-lang" aria-describedby="language-scope">
-   <option value="pt" lang="pt-BR">Português</option><option value="en" lang="en">English</option><option value="es" lang="es">Español</option>
-  </select>
- </div>
- <p class="language-scope" id="language-scope" data-tx="languageScope">O idioma selecionado vale para as seções complementares. As pranchas e a dissertação permanecem em português.</p>
-    </details>
+    <div class="gv-discovery" id="gv-discovery" aria-label="Busca e idiomas de navegação">
+      <form class="gv-site-search" id="gv-site-search" role="search" autocomplete="off">
+        <label class="gv-visually-hidden" for="gv-search-input">Pesquisar no Guia</label>
+        <input type="search" id="gv-search-input" name="q" placeholder="Pesquisar no Guia" aria-label="Pesquisar no Guia" aria-controls="gv-search-results" aria-expanded="false">
+        <button type="submit" aria-label="Pesquisar" title="Pesquisar no Guia"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m15.5 15.5 5.1 5.1"></path></svg></button>
+      </form>
+      <div class="gv-languages" role="group" aria-label="Selecionar idioma da navegação">
+        <button type="button" class="gv-flag" data-guide-lang="pt" lang="pt-BR" aria-label="Português, idioma original" title="Português · original" aria-pressed="true"><span class="gv-flag__emoji" aria-hidden="true">🇧🇷</span><span>PT</span></button>
+        <button type="button" class="gv-flag" data-guide-lang="en" lang="en" aria-label="English, partial translation" title="English · partial" aria-pressed="false"><span class="gv-flag__emoji" aria-hidden="true">🇬🇧</span><span>ENG</span></button>
+        <button type="button" class="gv-flag" data-guide-lang="es" lang="es" aria-label="Español, traducción parcial" title="Español · parcial" aria-pressed="false"><span class="gv-flag__emoji" aria-hidden="true">🇪🇸</span><span>ESP</span></button>
+        <button type="button" class="gv-flag" data-guide-lang="fr" lang="fr" aria-label="Français, traduction partielle" title="Français · partiel" aria-pressed="false"><span class="gv-flag__emoji" aria-hidden="true">🇫🇷</span><span>FRA</span></button>
+      </div>
+      <label for="guide-lang" class="gv-visually-hidden">Idioma da navegação</label>
+      <select id="guide-lang" class="gv-visually-hidden" tabindex="-1" aria-describedby="language-scope">
+        <option value="pt" lang="pt-BR">Português (original)</option><option value="en" lang="en">English (partial)</option><option value="es" lang="es">Español (parcial)</option><option value="fr" lang="fr">Français (partiel)</option>
+      </select>
+      <details class="gv-lang-note">
+        <summary aria-label="Sobre os idiomas" title="Sobre os idiomas">i</summary>
+        <p class="language-scope" id="language-scope" role="note">Português é o idioma original. Inglês, espanhol e francês oferecem navegação e textos editoriais selecionados; as pranchas, o glossário, as fichas e a dissertação continuam em português.</p>
+      </details>
+    </div>
+    <div id="gv-search-results" class="gv-search-results" role="region" aria-label="Resultados da pesquisa" aria-live="polite" hidden></div>
   </div>
 </nav>
 <section class="intro" aria-labelledby="objetivos"><h2 id="objetivos">Como ler este guia</h2>
@@ -2262,6 +2274,18 @@ btn.addEventListener('click',()=>{let on=document.body.classList.toggle('linear'
       refsCaveat:"Los enlaces a archivos y las imágenes alojadas en sitios externos requieren internet. Para consultar sin conexión, utilice una copia local que incluya las páginas necesarias."
     }
   };
+dictionary.fr={
+ aboutQuick:"À propos du Guide",aboutMenu:"À propos de ce Guide",
+ menuTitle:"Explorer le Guide visuel",menuLead:"Choisissez un parcours et utilisez les raccourcis pour changer de section.",
+ menuAuthor:"À propos de l’autrice",menuChapters:"Parcours illustré · 21 planches",menuGallery:"Chercheuses et chercheurs cités dans le mémoire",
+ menuArt:"Adolescence, art et expérience humaine",menuAccess:"Lecture accessible du mémoire",menuRefs:"Mémoire et notices biographiques",
+ languageLabel:"Langue de navigation",languageScope:"La navigation et certains textes éditoriaux sont traduits ; les planches et le mémoire restent en portugais.",
+ authorEyebrow:"La chercheuse et son parcours",authorTitle:"À propos de l’autrice",authorContact:"Contact universitaire",
+ authorRole:"Pédagogue · Enseignante dans le primaire · Étudiante en master de sciences de l’éducation à l’UDESC",
+ authorFromTitle:"D’où je viens",authorEducationTitle:"Les chemins de ma formation",authorQuestionsTitle:"Les questions qui me guident",authorMemoryTitle:"Entre mots, images et souvenirs",
+ refsTitle:"Mémoire et notices biographiques",refsLead:"Consultez le mémoire et les notices biographiques depuis ce Guide.",
+ refsReader:"Ouvrir le lecteur du mémoire",refsAuthors:"Consulter les notices biographiques",refsThesis:"Retourner au lecteur du mémoire"
+};
   const pt=new Map([...document.querySelectorAll('[data-tx]')].map(n=>[n.dataset.tx,n.textContent]));
   const select=document.getElementById('guide-lang');
   const bancaBtn=document.getElementById('banca-toggle');
@@ -2574,5 +2598,6 @@ showIdentity();localize();
 <script src="home-clean.js"></script>
 <script src="language-bridge.js"></script>
 <script src="dissertation-menu.js"></script>
+<script src="guide-discovery.js"></script>
 <script>/* Preservação dos antigos endereços #galeria */(function(){if(window.location.hash==="#galeria")window.location.replace("biografias.html");})();</script>
 </body></html>
