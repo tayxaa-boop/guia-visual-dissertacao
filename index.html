@@ -548,7 +548,7 @@ header.site .hero-side .thesis-source p { max-width:none; }
   <p class="home-eyebrow" data-home-tx="welcomeKicker">GUIA DE NAVEGAÇÃO</p>
   <h2 id="explorar-titulo" data-home-tx="welcomeTitle">Por onde começar?</h2>
   <p class="home-welcome-lead" data-home-tx="welcomeLead">Escolha um caminho. As outras seções continuam disponíveis quando você precisar delas.</p>
-  <div class="home-featured" aria-label="Dois percursos principais">
+  <div class="home-featured" aria-label="Três percursos principais">
     <a class="home-route" href="percurso-essencial.html">
       <span class="home-route-index">01</span>
       <span class="home-route-copy"><strong data-home-tx="r1Title">Compreender a pesquisa</strong><span data-home-tx="r1Copy">Uma visão de conjunto em sete etapas.</span></span>
@@ -557,6 +557,11 @@ header.site .hero-side .thesis-source p { max-width:none; }
     <a class="home-route" href="#cap0">
       <span class="home-route-index">02</span>
       <span class="home-route-copy"><strong data-home-tx="r2Title">Explorar as 21 pranchas</strong><span data-home-tx="r2Copy">Os capítulos, os conceitos e suas relações visuais.</span></span>
+      <span class="home-route-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="home-route" href="#autora">
+      <span class="home-route-index">03</span>
+      <span class="home-route-copy"><strong data-home-tx="r3Title">Sobre a autora</strong><span data-home-tx="r3Copy">Trajetória, formação e produções acadêmicas.</span></span>
       <span class="home-route-arrow" aria-hidden="true">↗</span>
     </a>
     </div>
@@ -866,7 +871,11 @@ header.site .hero-side .thesis-source p { max-width:none; }
 <section class="extra-panel" id="autora" aria-labelledby="autora-titulo">
  <p class="eyebrow" data-tx="authorEyebrow">A pesquisadora e os caminhos da pesquisa</p>
  <h2 id="autora-titulo" data-tx="authorTitle">Sobre a autora</h2>
- <div class="author-layout">
+ <nav class="author-mini-nav" aria-label="Navegação sobre a autora">
+  <a href="#autora-historia" data-author-nav="story">Trajetória e formação</a>
+  <a href="#producoes" data-xi="pTitle">Produções acadêmicas</a>
+ </nav>
+ <div class="author-layout" id="autora-historia">
   
   <figure class="author-portrait author-photo-main">
     <img src="assets/autora/formatura-udesc-retrato.jpg" width="966" height="1450" loading="lazy" decoding="async" data-photo-alt="portraitAlt" alt="Taynara sorrindo em traje de formatura, com capelo e beca pretos, segurando um canudo da UDESC.">
@@ -932,6 +941,17 @@ header.site .hero-side .thesis-source p { max-width:none; }
    <div class="crosslinks"><a href="#leitor" data-tx="readPrologue">Ler o prólogo no leitor da dissertação</a></div>
   </div>
  </div>
+ <section class="gv-author-productions" id="producoes" aria-labelledby="producoes-titulo">
+  <p class="eyebrow" data-xi="pEye">Acervo autoral · Em formação</p>
+  <h3 id="producoes-titulo" data-xi="pTitle">Produções acadêmicas</h3>
+  <p class="gv-author-productions__lead" data-xi="pLead">Publicações de minha autoria serão reunidas aqui quando cadastradas e identificadas. Este acervo não constitui um resultado adicional da dissertação.</p>
+  <details class="gv-author-productions__details"><summary data-author-nav="details">Consultar artigos e critérios editoriais</summary><div class="gv-author-productions__detail-body">
+    <h4 id="artigos-titulo" data-xi="pArticles">Artigos</h4>
+    <p data-xi="pEmpty">Nenhum artigo cadastrado no Guia até o momento.</p>
+    <p class="gv-editor-note" data-xi="pFormat">Os registros poderão conter referência bibliográfica, resumo, palavras-chave, DOI ou endereço persistente e acesso ao texto quando autorizado.</p>
+    <p class="gv-editor-note" data-xi="pCaution">Trabalhos em elaboração, submetidos, aceitos e publicados serão identificados separadamente.</p>
+</div></details>
+</section>
 </section>
 <section class="reader-shell" id="leitor" aria-labelledby="leitor-titulo">
   <h2 id="leitor-titulo">Leitura acessível da dissertação</h2>
@@ -1907,17 +1927,7 @@ header.site .hero-side .thesis-source p { max-width:none; }
  <p class="side-note" data-tx="artQuestions">Questões de leitura: quem representa a adolescência? Quais experiências e desigualdades aparecem? Quando os adolescentes são autores de suas próprias narrativas?</p>
 </section>
 
-<section class="extra-panel" id="producoes" aria-labelledby="producoes-titulo">
-  <p class="eyebrow" data-xi="pEye">Acervo autoral · Em formação</p>
-  <h2 id="producoes-titulo" data-xi="pTitle">Produções acadêmicas</h2>
-  <p class="panel-lead" data-xi="pLead">Um espaço para futuras publicações de minha autoria. A existência desta seção não significa que já haja artigos publicados, nem transforma produções posteriores em resultados da dissertação.</p>
-  <article class="gv-vazio" aria-labelledby="artigos-titulo">
-    <h3 id="artigos-titulo" data-xi="pArticles">Artigos</h3>
-    <p data-xi="pEmpty">Nenhum artigo cadastrado até o momento. Este espaço receberá somente produções com autoria, título e situação editorial devidamente identificados.</p>
-    <p class="gv-editor-note" data-xi="pFormat">Os registros poderão conter referência bibliográfica, resumo, palavras-chave, DOI ou endereço persistente e acesso ao texto quando autorizado.</p>
-  </article>
-  <p class="gv-editor-note" data-xi="pCaution">Trabalhos em elaboração, submetidos, aceitos e publicados serão identificados de maneira distinta, sem antecipar publicações inexistentes.</p>
-</section>
+
 <section class="extra-panel" id="fontes" aria-labelledby="fontes-titulo">
  <h2 id="fontes-titulo" data-tx="refsTitle">Dissertação e fichas biográficas</h2>
  
