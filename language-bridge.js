@@ -173,7 +173,7 @@ nav.innerHTML='<div class="gv-global-nav__inner">'+
 '<a href="index.html#cap1" data-gvu="panels">Pranchas</a>'+
 '<a href="index.html#galeria" data-gvu="authors">Autores</a>'+
 '<details class="gv-global-nav__dropdown"><summary data-gvu="more">Todas as abas</summary><div class="gv-global-nav__dropdown-menu">'+
-'<a href="index.html#roteiro" data-gvu="banca">Banca</a>'+
+
 '<a href="glossario.html" data-gvu="glossary">Glossário</a>'+
 '<a href="percursos-arte.html" data-gvu="art">Arte e história</a>'+
 '<a href="matriz-aberta.html" data-gvu="matrix">Matriz Aberta</a>'+
