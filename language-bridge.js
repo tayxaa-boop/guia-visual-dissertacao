@@ -6,7 +6,7 @@
 const KEY="gv-guide-language-v2";
 const options=["pt","en","es","fr"];
 const LABELS={
- pt:{selector:"Idioma da navegação",note:"O português é o texto original. Inglês e espanhol abrangem a interface e textos editoriais selecionados; pranchas, glossário, fichas e dissertação permanecem em português. A tradução automática do navegador pode ajudar na consulta, mas não substitui uma tradução acadêmica revisada.",short:"Português (original)",link:"Voltar ao início do Guia",status:"Conteúdo acadêmico original: português."},
+ pt:{selector:"Idioma da navegação",note:"O português é o texto original. Inglês, espanhol e francês abrangem a navegação e textos editoriais selecionados; pranchas, glossário, fichas e dissertação permanecem em português. A tradução automática do navegador pode ajudar na consulta, mas não substitui uma tradução acadêmica revisada.",short:"Português (original)",link:"Voltar ao início do Guia",status:"Conteúdo acadêmico original: português."},
  en:{selector:"Navigation language",note:"The navigation and selected editorial texts are translated. Panels, glossary, biographical profiles and dissertation remain in the original Portuguese. Your browser's page translation may assist reading, but is not a reviewed academic translation.",short:"English (partial)",link:"Back to the Guide",status:"Original academic content: Portuguese."},
  es:{selector:"Idioma de navegación",note:"La navegación y algunos textos editoriales están traducidos. Las láminas, el glosario, las fichas biográficas y la disertación permanecen en portugués. La traducción del navegador puede ayudar a leerlos, pero no es una traducción académica revisada.",short:"Español (parcial)",link:"Volver al inicio de la Guía",status:"Contenido académico original: portugués."}
 };
