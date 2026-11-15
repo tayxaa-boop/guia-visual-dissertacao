@@ -1,0 +1,7 @@
+/* Guia Visual da Pesquisa | Tipografia unificada (14/11/2026)
+   Arial em todas as páginas e elementos textuais, inclusive pranchas SVG.
+   Preserva tamanho, peso, itálico, cores, ícones vetoriais e imagens institucionais. */
+:root, html, body, body *, body *::before, body *::after,
+svg text, svg tspan, svg textPath {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
