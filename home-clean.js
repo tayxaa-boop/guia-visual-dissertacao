@@ -9,6 +9,8 @@ pt:{story:'Trajetória e formação',details:'Consultar artigos e critérios edi
 en:{story:'Background and education',details:'View articles and editorial criteria'},
 es:{story:'Trayectoria y formación',details:'Consultar artículos y criterios editoriales'}
 };
+i18n.fr={heroDeck:"Un parcours visuel pour explorer les questions, les fondements et les choix analytiques de la recherche.",heroMore:"À propos de la recherche et de cette édition",allTabs:"Toutes les sections",reading:"Lecture et accessibilité",welcomeKicker:"GUIDE DE NAVIGATION",welcomeTitle:"Par où commencer ?",welcomeLead:"Choisissez un parcours. Les autres sections restent accessibles à tout moment.",r1Title:"Comprendre la recherche",r1Copy:"Une vue d’ensemble en sept étapes.",r2Title:"Explorer les 21 planches",r2Copy:"Les chapitres, les concepts et leurs relations visuelles.",r3Title:"À propos de l’autrice",r3Copy:"Parcours, formation et publications scientifiques.",catalog:"Autres ressources et sections du Guide",catalogLead:"Accédez aux outils de consultation, aux chapitres, aux ressources complémentaires et aux informations d’accessibilité.",language:"Langue de navigation"};
+authorNav.fr={story:"Parcours et formation",details:"Consulter les articles et les critères éditoriaux"};
 const sel=document.getElementById('guide-lang');
 function localize(){const lang=i18n[sel?.value]?sel.value:'pt';document.querySelectorAll('[data-home-tx]').forEach(el=>{const val=i18n[lang][el.dataset.homeTx];if(val){el.textContent=val;el.lang=lang==='pt'?'pt-BR':lang;}});document.querySelectorAll('[data-author-nav]').forEach(el=>{const val=authorNav[lang]?.[el.dataset.authorNav];if(val){el.textContent=val;el.lang=lang==='pt'?'pt-BR':lang;}});}
 sel?.addEventListener('change',localize);localize();
