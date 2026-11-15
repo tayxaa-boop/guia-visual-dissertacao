@@ -277,6 +277,25 @@ html.gv-high-contrast main .reader-speaking{background:#fff0a5!important}
 
 
 
+
+/* Cronômetro de apresentação: tempo real e silencioso, independente da navegação por pranchas. */
+.banca-clock{display:flex;gap:.65rem;align-items:center;padding:.35rem .6rem;background:#102135;color:#fff;border:1px solid #7892a9;border-radius:11px;flex-wrap:wrap}
+.banca-clock-display{display:flex;flex-direction:column;align-items:flex-end;gap:0;min-width:112px}
+.banca-clock .banca-clock-caption{font-size:.66rem;letter-spacing:.075em;color:#c8ddec}
+.banca-clock .banca-clock-digits{font-size:clamp(1.25rem,2vw,1.75rem);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.035em;line-height:1.15;color:#fff}
+.banca-clock .banca-clock-remaining{font-size:.72rem;font-weight:650;color:#e6f0f7;font-variant-numeric:tabular-nums}
+.banca-clock-actions{display:flex;gap:.35rem;flex-wrap:wrap}
+.banca-clock .banca-clock-actions button{min-height:39px;padding:.3rem .53rem;font-size:.82rem;font-weight:700;border-color:#b4cbdc;color:#fff;background:#233e55}
+.banca-clock .banca-clock-actions button:focus-visible{outline:3px solid #f0b846;outline-offset:2px}
+.banca-clock[data-status="attention"]{border-color:#f4bd55;background:#493412}
+.banca-clock[data-status="attention"] .banca-clock-digits{color:#ffe29a}
+.banca-clock[data-status="overtime"]{border-color:#ff8b93;background:#541d27}
+.banca-clock[data-status="overtime"] .banca-clock-digits{color:#ffe2e5}
+html.gv-high-contrast .banca-header .banca-clock{background:#000!important;border:2px solid #fff!important}
+html.gv-high-contrast .banca-header .banca-clock :is(span,button){color:#fff!important}
+@media(max-width:730px){.banca-header-right{width:100%;justify-content:space-between}.banca-clock{gap:.35rem}.banca-clock-actions button{min-height:38px}}
+@media print{.banca-clock{display:none!important}}
+
 /* Banca: percurso para defesa oral em oito momentos. Complementa as pranchas, sem substituí-las. */
 .banca-launch{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin:.9rem 0 1.25rem;padding:.9rem;border:1px solid #b8c9d7;border-radius:12px;background:#f2f7fa}
 .banca-launch button{background:#234c65;color:#fff;border:2px solid #234c65;font-weight:700;min-height:48px}
@@ -417,7 +436,11 @@ body::after {
  
  <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
   <div class="banca-screen">
-   <header class="banca-header"><div><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div><div class="banca-header-right"><span id="banca-progress-text" role="status" aria-live="polite">1 de 8</span><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
+   <header class="banca-header"><div><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div><div class="banca-header-right"><div class="banca-clock" role="group" aria-label="Cronômetro da apresentação">
+  <div class="banca-clock-display"><span class="banca-clock-caption">TEMPO DECORRIDO</span><span id="banca-clock-elapsed" class="banca-clock-digits" role="timer" aria-label="Tempo decorrido">00:00</span><span id="banca-clock-remaining" class="banca-clock-remaining">20:00 restantes</span></div>
+  <div class="banca-clock-actions"><button type="button" id="banca-clock-pause" aria-label="Pausar cronômetro" title="Pausar ou retomar cronômetro">Pausar</button><button type="button" id="banca-clock-reset" title="Reiniciar cronômetro a partir de zero">Reiniciar</button></div>
+  <span id="banca-clock-status" class="a11y-visually-hidden" role="status" aria-live="polite"></span>
+ </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 8</span><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
    <div class="banca-progress" id="banca-progress" aria-hidden="true"></div>
    <div class="banca-stage-content">
     <div class="banca-copy">
@@ -2123,6 +2146,43 @@ if(!root||!start||!exit)return;
 const el=id=>document.getElementById(id);
 let current=0, figureAlternate=false, priorFocus=null;
 const total=slides.reduce((acc,sl)=>acc+sl.min,0);
+
+const clock=el("banca-clock-elapsed"),remaining=el("banca-clock-remaining"),clockShell=root.querySelector(".banca-clock");
+const pauseClockButton=el("banca-clock-pause"),resetClockButton=el("banca-clock-reset"),clockStatus=el("banca-clock-status");
+const limitMs=total*60*1000;
+let intervalId=null,baseElapsed=0,startedAt=0,clockRunning=false;
+function formatted(ms){
+ const sec=Math.floor(Math.max(0,ms)/1000);
+ const hh=Math.floor(sec/3600),mm=Math.floor((sec%3600)/60),ss=sec%60;
+ const two=n=>String(n).padStart(2,"0");
+ return (hh?two(hh)+":":"")+two(mm)+":"+two(ss);
+}
+function elapsedMs(){return baseElapsed+(clockRunning?performance.now()-startedAt:0);}
+function paintClock(){
+ const elapsed=elapsedMs(),left=limitMs-elapsed;
+ clock.textContent=formatted(elapsed);
+ clock.setAttribute("aria-label","Tempo decorrido: "+formatted(elapsed));
+ remaining.textContent=left>0?formatted(left)+" restantes":"+"+formatted(-left)+" após 20 min";
+ clockShell.dataset.status=elapsed>=limitMs?"overtime":elapsed>=limitMs*.9?"attention":"normal";
+ pauseClockButton.textContent=clockRunning?"Pausar":"Retomar";
+ pauseClockButton.setAttribute("aria-label",clockRunning?"Pausar cronômetro":"Retomar cronômetro");
+}
+function stopTicker(){if(intervalId!==null){clearInterval(intervalId);intervalId=null;}}
+function startTicker(){stopTicker();intervalId=setInterval(paintClock,250);}
+function restartClock(){
+ stopTicker();baseElapsed=0;startedAt=performance.now();clockRunning=true;
+ paintClock();startTicker();clockStatus.textContent="Cronômetro iniciado em zero.";
+}
+function pauseOrResumeClock(){
+ if(clockRunning){baseElapsed=elapsedMs();clockRunning=false;stopTicker();clockStatus.textContent="Cronômetro pausado.";}
+ else{startedAt=performance.now();clockRunning=true;startTicker();clockStatus.textContent="Cronômetro retomado.";}
+ paintClock();
+}
+pauseClockButton.addEventListener("click",pauseOrResumeClock);
+resetClockButton.addEventListener("click",function(){
+ if(window.confirm("Reiniciar o cronômetro em 00:00?"))restartClock();
+});
+
 function cloneFigure(plate){
  const src=document.querySelector("#prancha"+plate+" figure.diagram");
  const target=el("banca-stage-figure");
@@ -2174,12 +2234,13 @@ function render(){
  root.scrollTop=0;
 }
 function close(){
+ stopTicker();clockRunning=false;paintClock();
  root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
 function open(){
  priorFocus=document.activeElement;current=0;figureAlternate=false;
- root.hidden=false;document.body.classList.add("banca-is-presenting");render();exit.focus();window.addEventListener("keydown",keys);
+ root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
 function next(){current=(current+1)%slides.length;figureAlternate=false;render();}
 function prev(){if(current>0){current--;figureAlternate=false;render();}}
