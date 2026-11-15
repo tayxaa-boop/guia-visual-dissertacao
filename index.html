@@ -443,6 +443,34 @@ html.gv-high-contrast .relational-reading{background:#fff!important;color:#000!i
 .banca-stage-figure .relational-reading summary{font-size:.85rem}
 .banca-stage-figure .relational-reading p{font-size:.87rem;line-height:1.5}
 html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!important;border-color:#000!important}
+
+/* Sobre o Guia: instruções acessíveis de entrada e interlocução na mesma seção. */
+.gv-guide-about{border-top:4px solid #58778c}
+.gv-guide-about .gv-guide-promise{line-height:1.7;background:#eaf1f5;border-left:4px solid #507791;padding:.9rem 1rem;border-radius:5px;margin:1.15rem 0}
+.gv-guide-index{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.3rem 0;padding:.75rem;background:#f5f8fa;border-radius:9px;border:1px solid #d2dde5}
+.gv-guide-index a{display:inline-block;text-decoration:none;font-weight:700;padding:.65rem .85rem;background:white;color:#173d55;border:1px solid #a9c0cd;border-radius:7px;min-height:44px}
+.gv-guide-index a:focus-visible,.gv-guide-path a:focus-visible{outline:3px solid #145c96;outline-offset:2px}
+.gv-guide-part{margin:1.35rem 0;padding-top:.4rem}
+.gv-guide-part h3,.gv-guide-feedback h2{color:#193c53;line-height:1.3}
+.gv-guide-steps{padding-left:1.6rem;max-width:85ch;line-height:1.75}
+.gv-guide-steps li{padding:.45rem .3rem .65rem .25rem}
+.gv-guide-steps li::marker{font-weight:800;color:#215f84}
+.gv-guide-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1rem 0}
+.gv-guide-path{border:1px solid #ccd9e1;border-radius:10px;background:#f7f9fb;padding:1rem;display:flex;flex-direction:column;gap:.55rem}
+.gv-guide-path h4,.gv-guide-identity .identity-unit h4{margin:0;font-size:1.03rem}
+.gv-guide-path p{margin:0;line-height:1.65;flex:1}
+.gv-guide-path a{align-self:flex-start;display:inline-block;padding:.4rem .65rem;color:#143f60;font-weight:700;text-underline-offset:3px}
+.gv-guide-access-list{padding-left:1.35rem;max-width:85ch;line-height:1.7}
+.gv-guide-access-list li{margin:.55rem 0}
+.gv-guide-hint{background:#f3f6f8;border-radius:6px;padding:.75rem .9rem;line-height:1.6;max-width:85ch}
+.gv-guide-identity{border-top:1px solid #d6e0e6;padding-top:1rem}
+.gv-guide-feedback{border-top:3px solid #a8beca;margin-top:2rem;padding-top:1.3rem;scroll-margin-top:8rem}
+.gv-guide-feedback p{line-height:1.65}
+.gv-guide-edition{padding-top:.8rem;border-top:1px solid #d6e0e6}
+#guia-passo-a-passo,#guia-escolha,#guia-recursos{scroll-margin-top:8rem}
+@media(max-width:700px){.gv-guide-paths{grid-template-columns:1fr}.gv-guide-index{flex-direction:column}.gv-guide-index a{width:100%}}
+@media print{.gv-guide-index{display:none}.gv-guide-paths{grid-template-columns:1fr}.gv-guide-promise,.gv-guide-hint{background:white}}
+@media(forced-colors:active){.gv-guide-promise,.gv-guide-path,.gv-guide-index{border:1px solid CanvasText}}
 </style>
 <link rel="stylesheet" href="dialetica-canva.css"></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
@@ -467,7 +495,7 @@ html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!
  <h2 id="explorar-titulo" data-tx="menuTitle">Explore o Guia Visual</h2>
  <p data-tx="menuLead">Escolha um percurso para começar. Use os atalhos para mudar de seção a qualquer momento.</p>
  <div class="extra-menu-list">
-  <a href="#sobre-guia" data-tx="aboutMenu">Sobre este Guia</a>
+  <a href="#sobre-guia" data-xi="guideMenu">Sobre o Guia · comece aqui</a>
   <a href="#roteiro" data-tx="menuBanca">Percurso para a banca</a>
   <a href="#dialetica" data-tx="dialMenu">Movimento dialético</a>
   <a href="#autora" data-tx="menuAuthor">Sobre a autora</a>
@@ -503,15 +531,102 @@ html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!
 
 
 
-<section class="extra-panel" id="sobre-guia" aria-labelledby="sobre-guia-titulo">
- <p class="eyebrow" data-tx="aboutEyebrow">Identidade editorial · Edição digital 2026</p>
- <h2 id="sobre-guia-titulo" data-tx="aboutTitle">Do Apêndice A à plataforma digital autoral</h2>
- <p class="panel-lead" data-tx="aboutLead">O Guia nasceu como recurso de acessibilidade vinculado à dissertação. Hoje reúne percursos de divulgação científica e consulta interativa, sem substituir a argumentação da pesquisa nem converter exercícios exploratórios em resultados gerais.</p>
- <div class="identity-panels">
-  <div class="identity-unit"><h3 data-tx="aboutAcademicTitle">Origem e vínculo acadêmico</h3><p data-tx="aboutAcademic">O Apêndice A registra a finalidade acadêmica do Guia na dissertação de qualificação; o site constitui sua implementação digital, que poderá continuar sendo aperfeiçoada depois.</p></div>
-  <div class="identity-unit"><h3 data-tx="aboutStatusTitle">Natureza editorial</h3><p data-tx="aboutStatus">Projeto de autoria de Taynara Xavier Telles, vinculado à pesquisa realizada no PPGE/UDESC. Não é uma publicação oficial da universidade nem substitui a dissertação definitiva depositada institucionalmente.</p></div>
- </div>
- <p class="edition-note" data-tx="aboutEdition">Edição digital 2026 · Atualização editorial: <time datetime="2026-11-14">14 de novembro de 2026</time>. O registro de futuras atualizações deve preservar a rastreabilidade entre a versão apresentada à banca e as expansões posteriores.</p>
+
+<section class="extra-panel gv-guide-about" id="sobre-guia" aria-labelledby="sobre-guia-titulo">
+  <p class="eyebrow" data-xi="guideEyebrow">Um ponto de partida para todas as pessoas</p>
+  <h2 id="sobre-guia-titulo" data-xi="guideTitle">Sobre o Guia · Comece por aqui</h2>
+  <p class="panel-lead" data-xi="guideLead">Este espaço foi criado para aproximar diferentes leitores de uma pesquisa sobre adolescência, desenvolvimento humano e educação. Você pode começar pelo que desperta sua curiosidade: não é necessário conhecer termos acadêmicos nem ler a dissertação inteira antes de explorar.</p>
+  <p class="gv-guide-promise" data-xi="guidePromise"><strong>Acessibilidade não é reduzir o conhecimento.</strong> É ampliar as condições de leitura, percepção, navegação e apropriação de ideias complexas, sem abandonar o rigor da investigação.</p>
+  <nav class="gv-guide-index" aria-label="Atalhos desta seção">
+    <a href="#guia-passo-a-passo" data-xi="guideJumpSteps">1. Primeiros passos</a>
+    <a href="#guia-escolha" data-xi="guideJumpPaths">2. Escolha seu caminho</a>
+    <a href="#guia-recursos" data-xi="guideJumpAccess">3. Ajuste a leitura</a>
+    <a href="#mensagens" data-xi="guideJumpMessages">4. Envie uma mensagem</a>
+  </nav>
+  <section class="gv-guide-part" id="guia-passo-a-passo" aria-labelledby="guia-passo-titulo">
+    <h3 id="guia-passo-titulo" data-xi="guideStepsTitle">Como usar o Guia — passo a passo</h3>
+    <ol class="gv-guide-steps">
+      <li><strong data-xi="guideStep1Title">Abra o Guia.</strong> <span data-xi="guideStep1">Você já está nele! Pode chegar aqui por um link ou pelo QR Code. Para navegar, não é necessário criar conta.</span></li>
+      <li><strong data-xi="guideStep2Title">Escolha por onde começar.</strong> <span data-xi="guideStep2">Para uma primeira visita, recomendo o Percurso Essencial. Ele apresenta a pesquisa em sete etapas.</span> <a href="percurso-essencial.html" data-xi="guideOpenEssential">Abrir Percurso Essencial</a>.</li>
+      <li><strong data-xi="guideStep3Title">Siga os menus e os títulos.</strong> <span data-xi="guideStep3">Toque nos itens no celular ou clique no computador. Você pode escolher capítulos, esquemas, conceitos e materiais complementares — não precisa seguir uma ordem única.</span></li>
+      <li><strong data-xi="guideStep4Title">Ajuste a leitura ao seu jeito.</strong> <span data-xi="guideStep4">Nos controles superiores, procure A+ para aumentar as letras, Alto contraste ou Ativar leitura linear. No leitor da dissertação também há opções para ouvir o texto.</span></li>
+      <li><strong data-xi="guideStep5Title">Volte ou pergunte.</strong> <span data-xi="guideStep5">Use “Início” para retornar ao menu, a seta de voltar do navegador quando necessário e, se quiser, o espaço de mensagens ao final desta seção.</span></li>
+    </ol>
+    <p class="gv-guide-hint" data-xi="guideNoNeed">Não é obrigatório ler as centenas de páginas da dissertação para começar a compreender a proposta. O Guia oferece caminhos próprios de aproximação; a dissertação permanece a referência para examinar integralmente os argumentos e as evidências.</p>
+  </section>
+  <section class="gv-guide-part" id="guia-escolha" aria-labelledby="guia-escolha-titulo">
+    <h3 id="guia-escolha-titulo" data-xi="guidePathsTitle">O que você gostaria de fazer?</h3>
+    <div class="gv-guide-paths">
+      <div class="gv-guide-path"><h4 data-xi="guidePath1">Entender a ideia geral</h4><p data-xi="guidePath1Text">Comece com o percurso curto, organizado em sete etapas.</p><a href="percurso-essencial.html" data-xi="guideGoEssential">Começar percurso</a></div>
+      <div class="gv-guide-path"><h4 data-xi="guidePath2">Ver os esquemas da pesquisa</h4><p data-xi="guidePath2Text">Explore as 21 pranchas por capítulos, com descrições textuais e explicações.</p><a href="#cap0" data-xi="guideGoPlates">Explorar as pranchas</a></div>
+      <div class="gv-guide-path"><h4 data-xi="guidePath3">Encontrar o significado de um conceito</h4><p data-xi="guidePath3Text">Use o glossário navegável e siga as remissões para outras seções.</p><a href="glossario.html" data-xi="guideGoGlossary">Consultar o glossário</a></div>
+      <div class="gv-guide-path"><h4 data-xi="guidePath4">Ler a pesquisa em detalhes</h4><p data-xi="guidePath4Text">Acesse a edição HTML da dissertação de qualificação, com leitura estruturada.</p><a href="documento-qualificacao.html" data-xi="guideGoText">Abrir dissertação em HTML</a></div>
+      <div class="gv-guide-path"><h4 data-xi="guidePath5">Conhecer materiais e ideias complementares</h4><p data-xi="guidePath5Text">Visite os percursos de arte, as fichas biográficas e os espaços de investigação em desenvolvimento.</p><a href="#galeria" data-xi="guideGoAuthors">Explorar autoras e autores</a></div>
+      <div class="gv-guide-path"><h4 data-xi="guidePath6">Conhecer os recursos de acessibilidade</h4><p data-xi="guidePath6Text">Consulte as opções disponíveis, suas limitações e como participar da melhoria do site.</p><a href="acessibilidade.html" data-xi="guideGoAccess">Abrir página de acessibilidade</a></div>
+    </div>
+  </section>
+  <section class="gv-guide-part" id="guia-recursos" aria-labelledby="guia-recursos-titulo">
+    <h3 id="guia-recursos-titulo" data-xi="guideAccessTitle">Recursos para diferentes formas de leitura</h3>
+    <ul class="gv-guide-access-list">
+      <li data-xi="guideAccess1">Letras ajustáveis e opção de alto contraste na barra de leitura.</li>
+      <li data-xi="guideAccess2">Leitura linear, descrições textuais dos esquemas e navegação por títulos e menus.</li>
+      <li data-xi="guideAccess3">No computador, use Tab para avançar entre links e botões e Enter para ativá-los; nos avisos expansíveis, Enter ou Espaço.</li>
+      <li data-xi="guideAccess4">Se a marca-d’água atrapalhar, use o controle “Sem marca-d’água” para ocultá-la durante a leitura.</li>
+      <li data-xi="guideAccess5">Há uma edição portátil para consultas sem conexão, conforme os arquivos disponíveis no dispositivo. Materiais hospedados fora do Guia podem depender da internet.</li>
+    </ul>
+    <p class="gv-guide-hint"><a href="portatil.html" data-xi="guideOffline">Consultar edição portátil</a> · <a href="libras-apresentacao.html" data-xi="guideLibras">Libras: consultar roteiro e situação do vídeo</a>.</p>
+    <p class="gv-guide-hint" data-xi="guideAccessLimit">Os recursos de acessibilidade estão em aperfeiçoamento; sua presença não equivale a uma certificação de conformidade. O relato de dificuldades de uso é bem-vindo.</p>
+  </section>
+  <section class="gv-guide-part gv-guide-identity" aria-labelledby="guia-origem-titulo">
+    <h3 id="guia-origem-titulo" data-xi="guideIdentityTitle">Por que este Guia existe?</h3>
+    <p data-xi="guideMission">Para tornar visíveis as relações entre o problema investigado, os fundamentos teóricos, a trajetória histórica da adolescência, o corpus documental e os procedimentos de análise; para ampliar as condições de estudo; e para abrir caminhos de interlocução sobre a pesquisa.</p>
+    <div class="identity-panels">
+      <div class="identity-unit"><h4 data-xi="guideAcademicTitle">Origem acadêmica</h4><p data-xi="guideAcademic">O Guia nasceu como Apêndice A da dissertação de mestrado e tornou-se uma plataforma digital autoral complementar, com possibilidades de atualização.</p></div>
+      <div class="identity-unit"><h4 data-xi="guideStatusTitle">Vínculo institucional</h4><p data-xi="guideStatus">Projeto de Taynara Xavier Telles, vinculado à pesquisa realizada no PPGE/UDESC. Não é publicação oficial da universidade nem substitui a versão definitiva da dissertação depositada institucionalmente.</p></div>
+    </div>
+  </section>
+  <section class="gv-guide-feedback" id="mensagens" aria-labelledby="mensagens-titulo">
+  <p class="eyebrow" data-xi="fEye">Espaço de interlocução</p>
+  <h2 id="mensagens-titulo" data-xi="fTitle">Mensagens à pesquisadora</h2>
+  <p class="panel-lead" data-xi="fLead">Apreciações, críticas, dúvidas teóricas ou metodológicas e sugestões são bem-vindas. As mensagens são privadas e não serão publicadas aqui sem autorização.</p>
+  <p><span data-xi="fDirect">Contato:</span> <a href="mailto:tayxaa@gmail.com">tayxaa@gmail.com</a></p>
+  <form id="gv-feedback-form" class="gv-feedback" aria-describedby="gv-feedback-privacy gv-feedback-how">
+    <div class="gv-f-field">
+      <label for="gv-f-topic" data-xi="fTopic">Assunto</label>
+      <select id="gv-f-topic" required>
+        <option value="" data-xi="fChoose">Escolha um assunto</option>
+        <option value="appreciation" data-xi="fApp">Apreciação</option>
+        <option value="critique" data-xi="fCrit">Crítica</option>
+        <option value="theory" data-xi="fTheory">Dúvida teórica</option>
+        <option value="method" data-xi="fMethod">Dúvida metodológica</option>
+        <option value="suggestion" data-xi="fSuggest">Sugestão</option>
+        <option value="other" data-xi="fOther">Outro</option>
+      </select>
+    </div>
+    <fieldset aria-describedby="gv-feedback-privacy">
+      <legend data-xi="fIdentity">Identificação no texto da mensagem</legend>
+      <label class="gv-f-option"><input type="radio" name="gv-f-sign" value="name" checked><span data-xi="fWith">Identificação opcional</span></label>
+      <label class="gv-f-option"><input type="radio" name="gv-f-sign" value="unsigned"><span data-xi="fWithout">Sem assinatura no texto</span></label>
+    </fieldset>
+    <div id="gv-f-identification">
+      <div class="gv-f-field"><label for="gv-f-name" data-xi="fName">Nome (opcional)</label><input id="gv-f-name" type="text" maxlength="100" autocomplete="name"></div>
+      <div class="gv-f-field"><label for="gv-f-reply" data-xi="fReply">E-mail para resposta (opcional)</label><input id="gv-f-reply" type="email" maxlength="150" autocomplete="email"></div>
+    </div>
+    <div class="gv-f-field">
+      <label for="gv-f-message" data-xi="fMessage">Mensagem</label>
+      <textarea id="gv-f-message" minlength="5" maxlength="1600" rows="6" required></textarea>
+      <small data-xi="fLimit">Limite de 1.600 caracteres para compatibilidade com aplicativos de e-mail.</small>
+    </div>
+    <p id="gv-feedback-privacy" class="gv-f-warning" data-xi="fPrivacy">Atenção: a opção “sem assinatura” não é anonimato verdadeiro. Ao enviar pelo aplicativo de e-mail, o endereço do remetente poderá ser revelado. Um formulário genuinamente anônimo exigirá um serviço externo ainda não configurado.</p>
+    <p id="gv-feedback-how" class="gv-editor-note" data-xi="fHow">Este site não armazena nem envia a mensagem diretamente: o botão abre um rascunho no seu aplicativo de e-mail, onde você confirma o envio.</p>
+    <div class="gv-f-actions">
+      <button type="submit" data-xi="fSend">Preparar e-mail</button>
+      <button type="button" id="gv-f-copy" data-xi="fCopy">Copiar texto</button>
+    </div>
+    <p id="gv-f-status" class="gv-f-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+  <p class="edition-note gv-guide-edition" data-xi="guideEdition">Guia Visual da Pesquisa · Edição digital 2026. As atualizações do site devem ser identificadas, preservando a distinção entre a versão de qualificação e os desenvolvimentos posteriores.</p>
 </section>
 
 <section class="extra-panel" id="roteiro" aria-labelledby="roteiro-titulo">
@@ -1779,47 +1894,6 @@ html.gv-high-contrast .banca-figure-source{color:#000!important;background:#fff!
   </article>
   <p class="gv-editor-note" data-xi="pCaution">Trabalhos em elaboração, submetidos, aceitos e publicados serão identificados de maneira distinta, sem antecipar publicações inexistentes.</p>
 </section>
-<section class="extra-panel" id="mensagens" aria-labelledby="mensagens-titulo">
-  <p class="eyebrow" data-xi="fEye">Espaço de interlocução</p>
-  <h2 id="mensagens-titulo" data-xi="fTitle">Mensagens à pesquisadora</h2>
-  <p class="panel-lead" data-xi="fLead">Apreciações, críticas, dúvidas teóricas ou metodológicas e sugestões são bem-vindas. As mensagens são privadas e não serão publicadas aqui sem autorização.</p>
-  <p><span data-xi="fDirect">Contato:</span> <a href="mailto:tayxaa@gmail.com">tayxaa@gmail.com</a></p>
-  <form id="gv-feedback-form" class="gv-feedback" aria-describedby="gv-feedback-privacy gv-feedback-how">
-    <div class="gv-f-field">
-      <label for="gv-f-topic" data-xi="fTopic">Assunto</label>
-      <select id="gv-f-topic" required>
-        <option value="" data-xi="fChoose">Escolha um assunto</option>
-        <option value="appreciation" data-xi="fApp">Apreciação</option>
-        <option value="critique" data-xi="fCrit">Crítica</option>
-        <option value="theory" data-xi="fTheory">Dúvida teórica</option>
-        <option value="method" data-xi="fMethod">Dúvida metodológica</option>
-        <option value="suggestion" data-xi="fSuggest">Sugestão</option>
-        <option value="other" data-xi="fOther">Outro</option>
-      </select>
-    </div>
-    <fieldset aria-describedby="gv-feedback-privacy">
-      <legend data-xi="fIdentity">Identificação no texto da mensagem</legend>
-      <label class="gv-f-option"><input type="radio" name="gv-f-sign" value="name" checked><span data-xi="fWith">Identificação opcional</span></label>
-      <label class="gv-f-option"><input type="radio" name="gv-f-sign" value="unsigned"><span data-xi="fWithout">Sem assinatura no texto</span></label>
-    </fieldset>
-    <div id="gv-f-identification">
-      <div class="gv-f-field"><label for="gv-f-name" data-xi="fName">Nome (opcional)</label><input id="gv-f-name" type="text" maxlength="100" autocomplete="name"></div>
-      <div class="gv-f-field"><label for="gv-f-reply" data-xi="fReply">E-mail para resposta (opcional)</label><input id="gv-f-reply" type="email" maxlength="150" autocomplete="email"></div>
-    </div>
-    <div class="gv-f-field">
-      <label for="gv-f-message" data-xi="fMessage">Mensagem</label>
-      <textarea id="gv-f-message" minlength="5" maxlength="1600" rows="6" required></textarea>
-      <small data-xi="fLimit">Limite de 1.600 caracteres para compatibilidade com aplicativos de e-mail.</small>
-    </div>
-    <p id="gv-feedback-privacy" class="gv-f-warning" data-xi="fPrivacy">Atenção: a opção “sem assinatura” não é anonimato verdadeiro. Ao enviar pelo aplicativo de e-mail, o endereço do remetente poderá ser revelado. Um formulário genuinamente anônimo exigirá um serviço externo ainda não configurado.</p>
-    <p id="gv-feedback-how" class="gv-editor-note" data-xi="fHow">Este site não armazena nem envia a mensagem diretamente: o botão abre um rascunho no seu aplicativo de e-mail, onde você confirma o envio.</p>
-    <div class="gv-f-actions">
-      <button type="submit" data-xi="fSend">Preparar e-mail</button>
-      <button type="button" id="gv-f-copy" data-xi="fCopy">Copiar texto</button>
-    </div>
-    <p id="gv-f-status" class="gv-f-status" role="status" aria-live="polite"></p>
-  </form>
-</section>
 <section class="extra-panel" id="fontes" aria-labelledby="fontes-titulo">
  <h2 id="fontes-titulo" data-tx="refsTitle">Dissertação e fichas biográficas</h2>
  
@@ -2563,8 +2637,8 @@ const el=id=>document.getElementById(id);
 const lang=()=>['en','es'].includes(el('guide-lang')?.value)?el('guide-lang').value:'pt';
 const pt=new Map([...document.querySelectorAll('[data-xi]')].map(e=>[e.dataset.xi,e.textContent]));
 const translations={
-en:{nProd:'Publications',nMsg:'Messages',mProd:'My academic work',mMsg:'Messages and dialogue',pEye:"Author's archive · In progress",pTitle:'Academic work',pLead:'A space for future publications by the author. This section does not claim that articles already exist or turn later publications into dissertation findings.',pArticles:'Articles',pEmpty:'No articles are currently listed. Entries will be added only with verified title, authorship and editorial status.',pFormat:'Entries may include a reference, abstract, keywords, DOI or persistent link and full text when permitted.',pCaution:'Drafts, submissions, accepted and published work will be clearly distinguished.',fEye:'Academic dialogue',fTitle:'Messages to the researcher',fLead:'Appreciations, criticism, theoretical and methodological questions and suggestions are welcome. Messages are private and will not be published without permission.',fDirect:'Contact:',fTopic:'Subject',fChoose:'Choose a subject',fApp:'Appreciation',fCrit:'Criticism',fTheory:'Theoretical question',fMethod:'Methodological question',fSuggest:'Suggestion',fOther:'Other',fIdentity:'Identification in message body',fWith:'Optional identification',fWithout:'No signature in message body',fName:'Name (optional)',fReply:'Reply email (optional)',fMessage:'Message',fLimit:'Maximum 1,600 characters for email app compatibility.',fPrivacy:'Note: an unsigned message is NOT truly anonymous. Your email app may reveal the sender address. Truly anonymous submissions require a separate service not yet configured.',fHow:'This site neither stores nor sends your message. The button opens a draft in your email app, where you confirm sending.',fSend:'Prepare email',fCopy:'Copy text'},
-es:{nProd:'Producciones',nMsg:'Mensajes',mProd:'Mis producciones académicas',mMsg:'Mensajes e interlocución',pEye:'Archivo autoral · En formación',pTitle:'Producciones académicas',pLead:'Espacio para futuras publicaciones de la autora. Esta sección no implica que ya existan artículos publicados ni convierte producciones posteriores en resultados de la disertación.',pArticles:'Artículos',pEmpty:'Todavía no hay artículos registrados. Se añadirán solo con título, autoría y situación editorial comprobados.',pFormat:'Los registros podrán incluir referencia, resumen, palabras clave, DOI o enlace persistente y texto completo cuando esté permitido.',pCaution:'Se distinguirán los borradores, envíos, trabajos aceptados y publicados.',fEye:'Interlocución científica',fTitle:'Mensajes a la investigadora',fLead:'Se agradecen apreciaciones, críticas, preguntas teóricas o metodológicas y sugerencias. Los mensajes son privados y no se publicarán sin autorización.',fDirect:'Contacto:',fTopic:'Tema',fChoose:'Elija un tema',fApp:'Apreciación',fCrit:'Crítica',fTheory:'Duda teórica',fMethod:'Duda metodológica',fSuggest:'Sugerencia',fOther:'Otro',fIdentity:'Identificación en el texto',fWith:'Identificación opcional',fWithout:'Sin firma en el texto',fName:'Nombre (opcional)',fReply:'Correo de respuesta (opcional)',fMessage:'Mensaje',fLimit:'Máximo 1.600 caracteres para aplicaciones de correo.',fPrivacy:'Atención: un texto sin firma NO es verdaderamente anónimo. La aplicación de correo puede revelar el remitente. Para anonimato real se necesita un servicio externo aún no configurado.',fHow:'El sitio no guarda ni envía mensajes directamente. El botón abre un borrador en su aplicación de correo para que confirme el envío.',fSend:'Preparar correo',fCopy:'Copiar texto'}};
+en:{guideMenu:"About the Guide · start here",guideEyebrow:"A starting point for everyone",guideTitle:"About the Guide · Start here",guideLead:"This space helps different readers explore a research project about adolescence, human development and education. Begin with what interests you: you do not need academic vocabulary or to read the entire dissertation first.",guidePromise:"Accessibility does not mean reducing knowledge. It means widening the possibilities for reading, perceiving, navigating and engaging with complex ideas while preserving intellectual rigor.",guideJumpSteps:"1. First steps",guideJumpPaths:"2. Choose your route",guideJumpAccess:"3. Adjust your reading",guideJumpMessages:"4. Send a message",guideStepsTitle:"How to use the Guide — step by step",guideStep1Title:"Open the Guide.",guideStep1:"You are already here! Open it through a link or QR code. No account is required to navigate.",guideStep2Title:"Choose where to begin.",guideStep2:"For a first visit, try the Essential Pathway. It presents the research in seven steps.",guideOpenEssential:"Open Essential Pathway",guideStep3Title:"Follow menus and headings.",guideStep3:"Tap on a phone or click on a computer. Explore chapters, diagrams, concepts and additional material in whichever order works for you.",guideStep4Title:"Adjust reading to your needs.",guideStep4:"Look for A+ (larger text), High Contrast and Linear Reading at the top. The dissertation reader also offers options to listen to text.",guideStep5Title:"Go back or ask.",guideStep5:"Use “Home” to return to the menu, the browser's back button when needed, or the message section at the end.",guideNoNeed:"You do not have to read hundreds of dissertation pages to start engaging with the research. The Guide is an independent route into the ideas; the dissertation remains the full reference for arguments and evidence.",guidePathsTitle:"What would you like to do?",guidePath1:"Understand the main idea",guidePath1Text:"Start with the short seven-step pathway.",guideGoEssential:"Start the pathway",guidePath2:"Explore research diagrams",guidePath2Text:"Explore 21 panels by chapter, with text descriptions and explanations.",guideGoPlates:"Explore panels",guidePath3:"Look up a concept",guidePath3Text:"Use the browsable glossary and links to other sections.",guideGoGlossary:"Open glossary",guidePath4:"Read the full research",guidePath4Text:"Open the qualification dissertation in a structured HTML edition.",guideGoText:"Open dissertation in HTML",guidePath5:"Discover related ideas and materials",guidePath5Text:"Browse art pathways, biographical cards and ongoing research spaces.",guideGoAuthors:"Explore authors",guidePath6:"Explore accessibility options",guidePath6Text:"Learn what is available, what is still limited, and how to contribute feedback.",guideGoAccess:"Open accessibility page",guideAccessTitle:"Resources for different ways of reading",guideAccess1:"Adjustable text size and a high-contrast option in the reading toolbar.",guideAccess2:"Linear reading, text descriptions of diagrams, and navigation through headings and menus.",guideAccess3:"On a computer, press Tab to move through links and buttons and Enter to activate them; use Enter or Space for expandable notes.",guideAccess4:"If the watermark hinders reading, use the “Without watermark” control to hide it.",guideAccess5:"A portable edition is available for offline use when its files are on the device. External materials may require internet access.",guideOffline:"Open portable edition",guideLibras:"Sign language: guide and video status",guideAccessLimit:"Accessibility features are being improved; their presence is not a certification of compliance. Reports of usability barriers are welcome.",guideIdentityTitle:"Why does the Guide exist?",guideMission:"To make the relationships between the research problem, theoretical foundations, history of adolescence, document corpus and analysis procedures visible; to make study more accessible; and to support dialogue.",guideAcademicTitle:"Academic origin",guideAcademic:"The Guide began as Appendix A of the master's dissertation and became a complementary author-created digital platform.",guideStatusTitle:"Institutional relationship",guideStatus:"A project by Taynara Xavier Telles linked to research at PPGE/UDESC. It is not an official university publication and does not replace the final institutionally deposited dissertation.",guideEdition:"Visual Guide to the Research · Digital edition 2026. Updates should be identified to distinguish the qualification version from later work.",nProd:'Publications',nMsg:'Messages',mProd:'My academic work',mMsg:'Messages and dialogue',pEye:"Author's archive · In progress",pTitle:'Academic work',pLead:'A space for future publications by the author. This section does not claim that articles already exist or turn later publications into dissertation findings.',pArticles:'Articles',pEmpty:'No articles are currently listed. Entries will be added only with verified title, authorship and editorial status.',pFormat:'Entries may include a reference, abstract, keywords, DOI or persistent link and full text when permitted.',pCaution:'Drafts, submissions, accepted and published work will be clearly distinguished.',fEye:'Academic dialogue',fTitle:'Messages to the researcher',fLead:'Appreciations, criticism, theoretical and methodological questions and suggestions are welcome. Messages are private and will not be published without permission.',fDirect:'Contact:',fTopic:'Subject',fChoose:'Choose a subject',fApp:'Appreciation',fCrit:'Criticism',fTheory:'Theoretical question',fMethod:'Methodological question',fSuggest:'Suggestion',fOther:'Other',fIdentity:'Identification in message body',fWith:'Optional identification',fWithout:'No signature in message body',fName:'Name (optional)',fReply:'Reply email (optional)',fMessage:'Message',fLimit:'Maximum 1,600 characters for email app compatibility.',fPrivacy:'Note: an unsigned message is NOT truly anonymous. Your email app may reveal the sender address. Truly anonymous submissions require a separate service not yet configured.',fHow:'This site neither stores nor sends your message. The button opens a draft in your email app, where you confirm sending.',fSend:'Prepare email',fCopy:'Copy text'},
+es:{guideMenu:"Sobre la Guía · empiece aquí",guideEyebrow:"Un punto de partida para todas las personas",guideTitle:"Sobre la Guía · Empiece aquí",guideLead:"Este espacio acerca a distintos lectores a una investigación sobre adolescencia, desarrollo humano y educación. Comience por lo que le interese: no necesita conocer términos académicos ni leer toda la disertación primero.",guidePromise:"Accesibilidad no significa reducir el conocimiento. Significa ampliar las condiciones de lectura, percepción, navegación y apropiación de ideas complejas sin abandonar el rigor.",guideJumpSteps:"1. Primeros pasos",guideJumpPaths:"2. Elija su camino",guideJumpAccess:"3. Ajuste la lectura",guideJumpMessages:"4. Envíe un mensaje",guideStepsTitle:"Cómo usar la Guía — paso a paso",guideStep1Title:"Abra la Guía.",guideStep1:"¡Ya está aquí! Puede acceder mediante un enlace o código QR. No necesita crear una cuenta para navegar.",guideStep2Title:"Elija por dónde comenzar.",guideStep2:"Para la primera visita, recomendamos el Recorrido Esencial, en siete etapas.",guideOpenEssential:"Abrir Recorrido Esencial",guideStep3Title:"Siga los menús y títulos.",guideStep3:"Toque en el móvil o haga clic en el ordenador. Explore capítulos, esquemas, conceptos y otros materiales en el orden que prefiera.",guideStep4Title:"Ajuste la lectura a su manera.",guideStep4:"Busque A+ para aumentar letras, Alto contraste y Lectura lineal. El lector de la disertación también permite escuchar texto.",guideStep5Title:"Regrese o pregunte.",guideStep5:"Use «Inicio» para volver al menú, el botón atrás del navegador o el espacio de mensajes al final.",guideNoNeed:"No es necesario leer cientos de páginas para empezar a comprender la propuesta. La Guía ofrece una aproximación propia; la disertación sigue siendo la referencia para el examen completo de argumentos y evidencias.",guidePathsTitle:"¿Qué desea hacer?",guidePath1:"Comprender la idea general",guidePath1Text:"Empiece con el recorrido breve de siete etapas.",guideGoEssential:"Empezar recorrido",guidePath2:"Ver los esquemas de la investigación",guidePath2Text:"Explore 21 láminas por capítulos, con descripciones y explicaciones.",guideGoPlates:"Explorar láminas",guidePath3:"Consultar un concepto",guidePath3Text:"Use el glosario navegable y sus remisiones.",guideGoGlossary:"Abrir glosario",guidePath4:"Leer la investigación completa",guidePath4Text:"Acceda a la disertación de calificación en formato HTML.",guideGoText:"Abrir disertación en HTML",guidePath5:"Conocer materiales e ideas complementarias",guidePath5Text:"Visite los recorridos artísticos, las fichas biográficas y los espacios de investigación.",guideGoAuthors:"Explorar autores",guidePath6:"Conocer las opciones de accesibilidad",guidePath6Text:"Consulte los recursos disponibles, sus límites y cómo participar.",guideGoAccess:"Abrir página de accesibilidad",guideAccessTitle:"Recursos para diferentes maneras de leer",guideAccess1:"Tamaño de letra ajustable y opción de alto contraste en la barra de lectura.",guideAccess2:"Lectura lineal, descripciones de los esquemas y navegación por títulos y menús.",guideAccess3:"En ordenador, Tab avanza entre enlaces y botones; Enter los activa. Para notas desplegables, Enter o Espacio.",guideAccess4:"Si la marca de agua dificulta leer, use el control «Sin marca de agua» para ocultarla.",guideAccess5:"Existe una edición portátil que permite uso sin internet cuando los archivos están disponibles localmente. Los recursos externos pueden requerir conexión.",guideOffline:"Consultar edición portátil",guideLibras:"Lengua de señas: guía y estado del vídeo",guideAccessLimit:"Las funciones de accesibilidad están en desarrollo y no implican certificación de conformidad. Los comentarios sobre dificultades son bienvenidos.",guideIdentityTitle:"¿Por qué existe esta Guía?",guideMission:"Para mostrar las relaciones entre el problema, los fundamentos, la historia de la adolescencia, los documentos y los procedimientos de análisis; ampliar las condiciones de estudio; y fomentar el diálogo.",guideAcademicTitle:"Origen académico",guideAcademic:"La Guía nació como Apéndice A de la disertación de maestría y se amplió como plataforma digital autoral complementaria.",guideStatusTitle:"Vínculo institucional",guideStatus:"Proyecto de Taynara Xavier Telles vinculado a la investigación del PPGE/UDESC. No es publicación oficial de la universidad ni reemplaza la disertación definitiva depositada institucionalmente.",guideEdition:"Guía Visual de la Investigación · Edición digital 2026. Las actualizaciones se identificarán para distinguir la versión de calificación de los desarrollos posteriores.",nProd:'Producciones',nMsg:'Mensajes',mProd:'Mis producciones académicas',mMsg:'Mensajes e interlocución',pEye:'Archivo autoral · En formación',pTitle:'Producciones académicas',pLead:'Espacio para futuras publicaciones de la autora. Esta sección no implica que ya existan artículos publicados ni convierte producciones posteriores en resultados de la disertación.',pArticles:'Artículos',pEmpty:'Todavía no hay artículos registrados. Se añadirán solo con título, autoría y situación editorial comprobados.',pFormat:'Los registros podrán incluir referencia, resumen, palabras clave, DOI o enlace persistente y texto completo cuando esté permitido.',pCaution:'Se distinguirán los borradores, envíos, trabajos aceptados y publicados.',fEye:'Interlocución científica',fTitle:'Mensajes a la investigadora',fLead:'Se agradecen apreciaciones, críticas, preguntas teóricas o metodológicas y sugerencias. Los mensajes son privados y no se publicarán sin autorización.',fDirect:'Contacto:',fTopic:'Tema',fChoose:'Elija un tema',fApp:'Apreciación',fCrit:'Crítica',fTheory:'Duda teórica',fMethod:'Duda metodológica',fSuggest:'Sugerencia',fOther:'Otro',fIdentity:'Identificación en el texto',fWith:'Identificación opcional',fWithout:'Sin firma en el texto',fName:'Nombre (opcional)',fReply:'Correo de respuesta (opcional)',fMessage:'Mensaje',fLimit:'Máximo 1.600 caracteres para aplicaciones de correo.',fPrivacy:'Atención: un texto sin firma NO es verdaderamente anónimo. La aplicación de correo puede revelar el remitente. Para anonimato real se necesita un servicio externo aún no configurado.',fHow:'El sitio no guarda ni envía mensajes directamente. El botón abre un borrador en su aplicación de correo para que confirme el envío.',fSend:'Preparar correo',fCopy:'Copiar texto'}};
 const strings={
 pt:{checkTopic:'Selecione um assunto.',checkMessage:'Escreva uma mensagem com pelo menos cinco caracteres.',checkEmail:'Confira o e-mail informado.',draft:'O aplicativo de e-mail foi solicitado. Confira se a mensagem abriu e conclua o envio.',copied:'Texto copiado. Cole-o no seu e-mail.',copyFail:'Não foi possível copiar automaticamente. Use o endereço indicado acima.',unsigned:'Sem assinatura (remetente de e-mail poderá ser identificado)',identified:'Identificação opcional',name:'Nome',reply:'E-mail para resposta',message:'Mensagem',subject:'Assunto'},
 en:{checkTopic:'Choose a subject.',checkMessage:'Write at least five characters.',checkEmail:'Check the email address.',draft:'Your email application was requested. Check the draft and send it.',copied:'Text copied. Paste it in your email app.',copyFail:'Automatic copying failed. Please use the email address above.',unsigned:'Unsigned (email sender may still be identifiable)',identified:'Optional identification',name:'Name',reply:'Reply email',message:'Message',subject:'Subject'},
