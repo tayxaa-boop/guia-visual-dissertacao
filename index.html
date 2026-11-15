@@ -424,6 +424,18 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 .tools nav.quick-nav a[href="acessibilidade.html"],.extra-menu-list a[href="acessibilidade.html"]{--gv-tab-accent:#325b86;--gv-tab-bg:#edf3fa}
 
 
+
+/* Leitura sem sobreposição da identificação visual: preserva autoria textual e direitos no rodapé. */
+html.gv-no-watermark body::after,html.gv-high-contrast body::after,body.linear::after,body.banca-is-presenting::after{display:none!important}
+.relational-reading{margin:.75rem 0 1rem;border:1px solid #9bb4c6;border-left:5px solid #386c80;padding:.6rem .85rem;border-radius:8px;background:#f3f8fa}
+.relational-reading summary{font-weight:700;cursor:pointer;color:#16384f}
+.relational-reading p{line-height:1.65;font-size:1rem;margin:.55rem 0}
+.relational-reading .relational-note{font-size:.87rem;color:#405b6d}
+html.gv-high-contrast .relational-reading{background:#fff!important;color:#000!important;border-color:#000!important}
+.tools nav.quick-nav a[href="glossario.html"],.extra-menu-list a[href="glossario.html"]{--gv-tab-accent:#5b4b83;--gv-tab-bg:#f1edfa}
+.tools nav.quick-nav a[href="documento-qualificacao.html"],.extra-menu-list a[href="documento-qualificacao.html"]{--gv-tab-accent:#396375;--gv-tab-bg:#edf4f7}
+.tools nav.quick-nav a[href="portatil.html"],.extra-menu-list a[href="portatil.html"]{--gv-tab-accent:#3b6952;--gv-tab-bg:#eaf6ed}
+@media print{.relational-reading:not([open])>*:not(summary){display:block}}
 </style>
 <link rel="stylesheet" href="dialetica-canva.css"></head><body>
 <a class="skip" href="#conteudo">Ir diretamente ao conteúdo principal</a>
@@ -441,7 +453,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <p>TELLES, Taynara Xavier. <strong>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026)</strong>: mediações históricas, sociais e escolares da Psicologia e da Educação. 2026. Dissertação (Mestrado em Educação) – Centro de Ciências Humanas e da Educação, Universidade do Estado de Santa Catarina, Florianópolis, 2026.</p>
 <p class="thesis-source-note">(Versão apresentada para o exame de qualificação. A publicação integral da versão definitiva ocorrerá após a defesa e os procedimentos institucionais de depósito e validação no Repositório Institucional da UDESC.)</p>
 </div></header>
-<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#sobre-guia" data-tx="aboutQuick">Sobre o Guia</a><a href="percurso-essencial.html" lang="pt-BR">Percurso Essencial</a><a href="libras-apresentacao.html" lang="pt-BR">Libras: roteiro</a><a href="acessibilidade.html" lang="pt-BR">Acessibilidade</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#producoes" data-xi="nProd">Produções</a><a href="#mensagens" data-xi="nMsg">Mensagens</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
+<div class="tools" aria-label="Ferramentas de leitura"><a href="#leitor" class="reader-source">Ouvir ou ler a dissertação</a><button id="linear" type="button" aria-pressed="false">Ativar leitura linear</button><button type="button" onclick="window.print()">Imprimir</button><div class="accessibility-controls" role="group" aria-label="Ajustes de acessibilidade"><span class="a11y-label">Leitura</span><button type="button" id="gv-font-minus" aria-label="Diminuir tamanho da letra" title="Diminuir tamanho da letra">A−</button><button type="button" id="gv-font-plus" aria-label="Aumentar tamanho da letra" title="Aumentar tamanho da letra">A+</button><button type="button" id="gv-contrast" aria-pressed="false" aria-label="Ativar alto contraste">Alto contraste</button><button type="button" id="gv-reset" title="Restaurar tamanho e contraste originais">Padrão</button><button type="button" id="gv-watermark-toggle" aria-pressed="false" title="Ocultar ou mostrar a marca-d’água decorativa">Sem marca-d’água</button><span id="gv-a11y-status" class="a11y-visually-hidden" role="status" aria-live="polite" aria-atomic="true"></span></div><span>As notas podem ser abertas com Enter ou Espaço.</span><nav class="quick-nav" aria-label="Navegação rápida, disponível durante a leitura" tabindex="0"><a href="#explorar">Início</a><a href="#sobre-guia" data-tx="aboutQuick">Sobre o Guia</a><a href="percurso-essencial.html" lang="pt-BR">Percurso Essencial</a><a href="glossario.html" lang="pt-BR">Glossário</a><a href="documento-qualificacao.html" lang="pt-BR">Dissertação HTML (banca)</a><a href="portatil.html" lang="pt-BR">Edição portátil</a><a href="libras-apresentacao.html" lang="pt-BR">Libras: roteiro</a><a href="acessibilidade.html" lang="pt-BR">Acessibilidade</a><a href="#roteiro">Banca</a><a href="#dialetica" data-tx="dialQuick">Dialética</a><a href="#autora">Sobre a autora</a><a href="#leitor">Leitor</a><a href="#cap0">Introdução</a><a href="#cap1">Cap. 1</a><a href="#cap2">Cap. 2</a><a href="#cap3">Cap. 3</a><a href="#cap4">Cap. 4</a><a href="#cap5">Cap. 5</a><a href="#cap6">Cap. 6</a><a href="#galeria">Autores</a><a href="#producoes" data-xi="nProd">Produções</a><a href="#mensagens" data-xi="nMsg">Mensagens</a><a href="#arte">Arte</a><a href="percursos-arte.html" lang="pt-BR">Percursos artísticos</a><a href="matriz-aberta.html">Matriz Aberta</a><a href="#fontes">Leituras</a></nav></div>
 <main id="conteudo">
 
 <nav class="extra-menu" id="explorar" aria-labelledby="explorar-titulo">
@@ -454,6 +466,9 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
   <a href="#autora" data-tx="menuAuthor">Sobre a autora</a>
   <a href="#cap0" data-tx="menuChapters">Percurso ilustrado da pesquisa · 21 pranchas</a>
   <a href="percurso-essencial.html" lang="pt-BR">Percurso Essencial · leitura em sete etapas</a>
+  <a href="glossario.html" lang="pt-BR">Glossário de conceitos · com remissões</a>
+  <a href="documento-qualificacao.html" lang="pt-BR">Dissertação em HTML · banca 17/11/2026</a>
+  <a href="portatil.html" lang="pt-BR">Edição portátil · consulta sem internet</a>
   <a href="libras-apresentacao.html" lang="pt-BR">Libras · transcrição e roteiro (vídeo pendente)</a>
   <a href="acessibilidade.html" lang="pt-BR">Acessibilidade e participação</a>
   <a href="#galeria" data-tx="menuGallery">Galeria de autores e ideias</a>
@@ -854,6 +869,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Escolarização e formação</text>
 </svg><figcaption>Quatro relações envolvem o núcleo das concepções científicas: corporeidade, organização histórica das idades, produção de conhecimento e escolarização. A pesquisa examina como tais relações são explicadas, e não a experiência adolescente diretamente.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>No centro, o objeto são as concepções científicas, e não a experiência direta dos adolescentes. Corporeidade, organização histórica das idades, conhecimento e escolarização convergem como perguntas. As conexões não indicam que uma dimensão isolada produza as demais.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Reconstrução do argumento</h4><ul>
 <li>O crescimento biológico existe, mas não fixa universalmente o conteúdo social da adolescência.</li>
 <li>As formas de nomear e explicar a adolescência são historicamente constituídas.</li>
@@ -894,6 +910,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#856008" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho educativo</text>
 </svg><figcaption>O problema conecta o período de 2018 a 2026 às relações explicativas sobre adolescência, desenvolvimento e escola. A conjuntura e as políticas delimitam perguntas possíveis; sua presença efetiva nas produções exige demonstração documental.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A conjuntura brasileira de 2018 a 2026 delimita o horizonte documental e as perguntas acerca da escola. Políticas, condições sociais e explicações científicas devem ser confrontadas nas fontes: o contexto histórico não demonstra automaticamente que uma mediação foi analisada por cada estudo.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Problema investigativo</h4><ul>
 <li>Identificar as concepções de adolescência e desenvolvimento humano na produção brasileira.</li>
 <li>Examinar como são articuladas ou não as mediações históricas, sociais, escolares e político-educacionais.</li>
@@ -937,6 +954,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Capítulos 5–6: exercício e</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">horizonte</text>
 </svg><figcaption>A arquitetura relaciona método e história, fundamentos do desenvolvimento e da escola, constituição do corpus e exercício exploratório. As setas são recíprocas: o material documental pode exigir retorno às categorias e hipóteses iniciais.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Método, reconstrução histórica, fundamentos do desenvolvimento e da educação, corpus e exercício exploratório constituem um percurso relacionado. Os retornos às etapas anteriores indicam revisão de problemas, categorias e evidências, não um circuito fechado com resposta previamente estabelecida.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Função dos capítulos</h4><ul>
 <li>Cap. 1: explicita método, objeto, fontes e recorte.</li>
 <li>Caps. 2–3: formulam determinações históricas, psicológicas e pedagógicas.</li>
@@ -978,6 +996,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#9A4B12" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Mediações e contradições</text>
 </svg><figcaption>A investigação parte do objeto documental situado em contextos particulares, pergunta pelas mediações constitutivas e reconstrói relações entre universal, particular e singular, sempre sob o controle das fontes.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Cada documento é tomado em sua singularidade e situado nas particularidades históricas brasileiras. A interpretação procura relações mais gerais sem apagar a organização específica do argumento. Totalidade, contradições e mediações são exigências investigativas, não etiquetas aplicadas antes da leitura.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Orientação teórico-metodológica</h4><ul>
 <li>O método orienta a passagem da aparência imediata à reconstrução das determinações.</li>
 <li>Universal, particular e singular devem ser diferenciados sem isolamento.</li>
@@ -1021,6 +1040,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Relações entre evidências</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">e conclusões</text>
 </svg><figcaption>Os tipos documentais conectam-se à lógica interna de cada produção. A análise passa pelos argumentos, pelos procedimentos e pelas evidências, preservando a diferença entre descrição de uma população e explicação do desenvolvimento.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A unidade documental é cada artigo, tese ou dissertação, enquanto a unidade de análise é a lógica de sua explicação. O caminho da leitura vai do problema às premissas, aos procedimentos, às evidências e às conclusões, permitindo reconstruir nexos entre eles.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Delimitação das fontes</h4><ul>
 <li>Produção brasileira é definida pelo âmbito institucional de publicação ou defesa.</li>
 <li>O objeto empírico do estudo analisado não precisa estar situado no Brasil.</li>
@@ -1062,6 +1082,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Violência, proteção e</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">direitos</text>
 </svg><figcaption>Quatro campos da conjuntura brasileira se relacionam à delimitação temporal: currículo, pandemia, permanência e proteção. A pesquisa pode perguntar como essas relações aparecem nos documentos, sem atribuí-las previamente a todos eles.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A delimitação 2018–2026 relaciona mudanças curriculares, condições de escolarização na pandemia, políticas de permanência e proteção. Esses planos compõem o contexto que justifica perguntas às produções, mas as relações efetivamente formuladas exigem verificação em cada documento.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Mediações conjunturais</h4><ul>
 <li>A reforma curricular de 2017 antecede e atravessa parte do intervalo estudado.</li>
 <li>A pandemia alterou condições de escolarização e participação.</li>
@@ -1103,6 +1124,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Trabalho e reprodução da</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">vida</text>
 </svg><figcaption>A representação aproxima idade contada, transformações do organismo, lugar nas relações sociais e trabalho. Nenhuma dimensão, isoladamente, define uma adolescência universal e invariável.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Idade cronológica, transformações orgânicas, posição social e trabalho participam da organização das idades da vida. Nenhum desses planos, separado dos demais, explica universalmente a adolescência; sua articulação muda historicamente.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Reconstrução histórica</h4><ul>
 <li>Diferentes formações sociais organizam transições e responsabilidades de modos distintos.</li>
 <li>O trabalho integra a produção da vida social e as formas de formação humana.</li>
@@ -1144,6 +1166,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Proteção, disciplina e</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">controle</text>
 </svg><figcaption>O conceito de adolescência se constitui em relações entre transformações produtivas, escola, família e instituições. Esses nexos são contraditórios e historicamente desiguais, não uma cadeia causal simples.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Transformações do trabalho, organização da família, escolarização e novas instituições participam da constituição moderna de classificações e experiências adolescentes. A figura não apresenta uma linha evolutiva uniforme nem presume que uma experiência europeia seja universal.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Nexos históricos</h4><ul>
 <li>As transformações produtivas redefinem tempos e possibilidades de formação.</li>
 <li>Escola, família e Estado participam da diferenciação das idades.</li>
@@ -1183,6 +1206,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#912D37" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Direitos e acesso à escola</text>
 </svg><figcaption>Colonização, classes, trabalho, direitos e escolarização articulam-se na produção desigual das condições de adolescência no Brasil. A escola aparece como mediação contraditória da formação humana.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Colonização, escravização, formação de classes, trabalho, direitos e escolarização conformam a particularidade brasileira. O reconhecimento jurídico pode ampliar direitos enquanto a distribuição das condições concretas de formação permanece desigual, constituindo uma tensão histórica.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Determinações articuladas</h4><ul>
 <li>Formação colonial, escravização e desenvolvimento capitalista participam da configuração brasileira.</li>
 <li>A posição de classe e as desigualdades raciais e de gênero diferenciam experiências juvenis.</li>
@@ -1226,6 +1250,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Funções psíquicas</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">superiores</text>
 </svg><figcaption>Relações entre sujeitos, signos, apropriação e funções psíquicas superiores convergem para a compreensão do desenvolvimento como processo histórico-social mediado, sem negar sua materialidade orgânica.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A constituição das funções psíquicas superiores envolve relações entre pessoas, uso de signos, atividade e apropriação cultural. O movimento da relação social à reorganização do psiquismo não é transmissão mecânica: envolve atividade singular em condições históricas determinadas.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Psicologia Histórico-Cultural</h4><ul>
 <li>A gênese social do psiquismo confronta reduções biologicistas.</li>
 <li>As relações mediadas por signos participam da reorganização das funções psicológicas.</li>
@@ -1265,6 +1290,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ensino e apropriação</text>
 </svg><figcaption>Motivos, pensamento conceitual e autoconsciência se relacionam à apropriação cultural e às condições de ensino. O trabalho educativo constitui uma mediação própria, não mera aplicação de princípios psicológicos.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Mudanças de motivos, pensamento conceitual e autoconsciência se relacionam às atividades e condições de apropriação cultural. O ensino é uma mediação pedagógica específica, cuja função não se reduz a aplicar categorias psicológicas à sala de aula.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Relações psicológicas</h4><ul>
 <li>Atividade, motivos e apropriação participam da organização da consciência.</li>
 <li>O pensamento conceitual altera relações com o conhecimento e consigo mesmo.</li>
@@ -1306,6 +1332,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#62418C" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Limites das evidências</text>
 </svg><figcaption>Historicidade, psicologia, educação escolar e evidências convergem em perguntas sobre cada produção. O confronto com a lógica interna do estudo retroage sobre as categorias teóricas do próprio instrumento.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Os fundamentos históricos, psicológicos e pedagógicos não são três listas para classificar documentos. Eles se transformam em perguntas dirigidas à lógica interna dos trabalhos; as respostas documentais podem exigir reformulação das perguntas iniciais.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Articulação necessária</h4><ul>
 <li>O Cap. 2 historiciza a adolescência e as condições sociais de formação.</li>
 <li>O Cap. 3 investiga processos psíquicos e a função da educação escolar.</li>
@@ -1348,6 +1375,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#15527F" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Busca complementar de 2026</text>
 </svg><figcaption>Quatro componentes se relacionam: buscas, deduplicação, recorte temporal e atualização documental. O levantamento original de 2017 a 2025 e o subconjunto de 2018 a 2025 possuem totais distintos e não equivalem ao corpus final elegível.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Busca, deduplicação, recorte temporal e triagem compõem operações distintas. A sequência de registros brutos para documentos únicos e leitura integral não equivale ao conjunto definitivamente elegível. Os quantitativos do levantamento original e do subconjunto temporal não devem ser confundidos.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Levantamento original 2017–2025</h4><ul>
 <li>1.543 ocorrências atribuídas nas estratégias da BDTD.</li>
 <li>992 documentos únicos: 609 dissertações e 383 teses.</li>
@@ -1387,6 +1415,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Evidência e decisão</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">interpretativa</text>
 </svg><figcaption>As três dimensões interrogam reciprocamente a lógica interna de cada produção. Evidências e justificativas sustentam estados qualitativos E, M, I, NI e A, com T como marcador transversal, sem pontuação ou hierarquia automática.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A lógica interna de cada documento ocupa o centro. A dimensão epistemológico-metodológica pergunta como o objeto é construído; a ontológico-psicológica interroga o desenvolvimento; e a pedagógico-político-educacional examina a função da escola e das condições educativas. Evidências sustentam registros E, M, I, NI e A; T indica tensão documentada, sem escala de pontuação. A investigação pode retornar de uma dimensão a outra.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Três dimensões reais</h4><ul>
 <li>Como o autor constrói e fundamenta seu objeto?</li>
 <li>Como concebe adolescência, psiquismo e desenvolvimento humano?</li>
@@ -1427,6 +1456,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Confronto e síntese</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">provisória</text>
 </svg><figcaption>O esquema associa reconstrução, interrogação, registro, confronto e síntese em movimento reversível. O retorno às fontes e às perguntas constitui parte da análise, não falha procedimental.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Os cinco movimentos são reconstrução interna, interrogação analítica, registro das mediações, confronto crítico e síntese provisória. As setas de retorno representam revisões fundamentadas diante das fontes, e não etapas lineares obrigatoriamente concluídas de uma só vez.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Operações articuladas</h4><ul>
 <li>I. Reconstruir objeto, fundamentos, procedimentos e conclusões do texto.</li>
 <li>II. Formular perguntas pertinentes às três dimensões da matriz.</li>
@@ -1471,6 +1501,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Organização e finalidade</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">pedagógica</text>
 </svg><figcaption>Duas dissertações se conectam a perguntas sobre concepções e mediações: uma investiga a escolha profissional, outra a constituição institucional de uma prática pedagógica. A comparação parte de suas singularidades.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Soares e Bueno são estudos distintos. Em Soares, a análise interroga escolha profissional e condições sociais e escolares; em Bueno, a formação de uma prática curricular de educação sexual. As mesmas dimensões permitem perguntas comparáveis, mas a singularidade de cada estudo permanece central.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Estudo de Soares (2018)</h4><ul>
 <li>Investiga escolhas profissionais e experiências de estudantes no IFPA.</li>
 <li>Interroga a relação entre identificação subjetiva, alternativas ofertadas e apoio institucional.</li>
@@ -1513,6 +1544,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Resultados formativos:</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">evidências</text>
 </svg><figcaption>Os registros contrapõem dados, suas funções argumentativas e os limites de inferência: uma condição escolar pode ser contexto, alternativa concreta ou mediação explicativa, a depender da fonte.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Excertos e proposições dos autores fundamentam os registros das relações. Uma condição escolar pode aparecer como contexto, alternativa objetiva ou mediação explicativa; essa função não é deduzida da mera presença de uma palavra. As inferências da pesquisadora devem ser identificadas separadamente.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Soares (2018)</h4><ul>
 <li>O perfil caracteriza condições sociais, sem explicar isoladamente escolhas.</li>
 <li>A alternativa de novos cursos é uma preferência hipotética; não comprova mudança efetiva.</li>
@@ -1551,6 +1583,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ampliação do corpus</text>
 </svg><figcaption>O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>As reconstruções dos dois estudos permitem comparar questões e limites do instrumento, sem produzir tendências nacionais. A ampliação do corpus deve retroalimentar a sensibilidade da matriz, seus registros e a pertinência das perguntas.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>O que foi demonstrado</h4><ul>
 <li>A matriz orienta perguntas pertinentes a dois objetos distintos.</li>
 <li>Permite diferenciar contexto, explicitação, inferência e indeterminação.</li>
@@ -1593,6 +1626,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#495565" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Matriz em aperfeiçoamento</text>
 </svg><figcaption>Quatro elementos da pesquisa (fundamentos históricos, psicológicos, corpus e matriz) possuem graus distintos de elaboração. Sua unidade é processual e permanece aberta à qualificação e à revisão.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>Fundamentação histórica, estudo psicológico-pedagógico, constituição documental e matriz não estão no mesmo estágio de desenvolvimento. A unidade alcançada é processual: o exame da banca pode modificar escolhas e prioridades da continuidade da investigação.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Avanços situados</h4><ul>
 <li>Reconstrução teórica da adolescência e do desenvolvimento humano.</li>
 <li>Explicitação de fundamentos e procedimentos documentais.</li>
@@ -1635,6 +1669,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Revisão fundamentada das</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">questões</text>
 </svg><figcaption>No centro está a responsabilidade do confronto: escuta do objeto particular, evidência verificável, distinção de autoria e possibilidade de revisão das questões. As quatro dimensões limitam reciprocamente a interpretação.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A relação entre escuta da lógica interna, evidência documental, distinção de autoria e confronto crítico limita a interpretação. Referenciais não substituem exame do objeto e tensões entre proposições não são convertidas automaticamente em contradições dialéticas.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Compromissos epistemológicos</h4><ul>
 <li>O referencial da pesquisadora fundamenta perguntas, não juízos antecipados.</li>
 <li>A heterogeneidade das produções demanda pertinência diferenciada.</li>
@@ -1677,6 +1712,7 @@ footer .site-edition{display:block;font-size:.86rem;line-height:1.5;margin:1rem 
 <text x="1016.0" y="272.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Reelaborar sínteses</text>
 <text x="1016.0" y="293.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">provisórias</text>
 </svg><figcaption>O percurso continua em duas direções articuladas: constituição do corpus e aprofundamento do procedimento analítico. A ampliação documental deve produzir novas perguntas e justificar revisões, não apenas aumentar contagens.</figcaption></figure>
+<details class="relational-reading"><summary>Leitura relacional desta figura (alternativa textual)</summary><p>A continuidade articula duas frentes: completar a constituição do universo documental e aprofundar a aplicação controlada da matriz. O acréscimo de documentos não basta por si; novas evidências podem exigir revisão dos critérios e das categorias e produzir uma síntese mais determinada.</p><p class="relational-note">Esta leitura orienta a compreensão das relações representadas; consulte a prancha e a dissertação para a argumentação completa.</p></details>
 <div class="cards"><section class="card"><h4>Tarefas de continuidade</h4><ul>
 <li>Concluir recuperação, triagem e avaliação integral das fontes.</li>
 <li>Ampliar a aplicação controlada da matriz e documentar seu custo de execução.</li>
@@ -2547,4 +2583,7 @@ showIdentity();localize();
 </script>
 
 <script src="dialetica-canva.js"></script>
-</body></html>
+<script>
+/* A identificação autoral permanece no cabeçalho e no rodapé, independentemente da marca-d'água. */
+(function(){const button=document.getElementById("gv-watermark-toggle");if(!button)return;const key="gv-no-watermark";let hidden=false;try{hidden=localStorage.getItem(key)==="true";}catch(e){}function paint(){document.documentElement.classList.toggle("gv-no-watermark",hidden);button.setAttribute("aria-pressed",String(hidden));button.textContent=hidden?"Mostrar marca-d’água":"Sem marca-d’água";button.setAttribute("aria-label",hidden?"Mostrar marca-d’água decorativa":"Ocultar marca-d’água para leitura");}button.addEventListener("click",function(){hidden=!hidden;try{localStorage.setItem(key,String(hidden));}catch(e){}paint();});paint();})();
+</script></body></html>
