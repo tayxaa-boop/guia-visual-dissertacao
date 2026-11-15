@@ -476,6 +476,19 @@ header.site .hero-side .thesis-source p { max-width:none; }
 }
 @media print { header.site .hero-grid { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:1rem; } }
 
+
+/* Contato da autora: links com ícones abaixo da fotografia, com alvos acessíveis */
+.author-photo-contact{margin:0 .7rem .45rem;padding:.65rem .15rem .75rem;border-top:1px solid #e1e9ef;}
+.author-email-link{display:inline-flex;align-items:center;gap:.48rem;padding:.25rem .15rem;color:#274e69;font-size:.85rem;line-height:1.35;font-weight:600;text-decoration:none;overflow-wrap:anywhere;}
+.author-email-link:hover{text-decoration:underline;}
+.author-email-link svg{width:18px;height:18px;flex:none;}
+.author-social-links{display:flex;align-items:center;gap:.55rem;margin-top:.55rem;}
+.author-social-links a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;border:1px solid #cbdce7;background:#f3f7fa;color:#2a516e;text-decoration:none;transition:background-color .15s ease,border-color .15s ease,transform .15s ease;}
+.author-social-links a:hover{background:#e6f0f6;border-color:#789fb6;transform:translateY(-1px);}
+.author-social-links a:focus-visible,.author-email-link:focus-visible{outline:3px solid #b06b25;outline-offset:3px;}
+.author-social-links svg{width:21px;height:21px;display:block;}
+@media(prefers-reduced-motion:reduce){.author-social-links a{transition:none;}.author-social-links a:hover{transform:none;}}
+
 </style>
 <link rel="stylesheet" href="dialetica-canva.css"><link rel="stylesheet" href="home-clean.css">
 <link rel="stylesheet" href="dissertation-menu.css">
@@ -893,6 +906,23 @@ header.site .hero-side .thesis-source p { max-width:none; }
   <figure class="author-portrait author-photo-main">
     <img src="assets/autora/formatura-udesc-retrato.jpg" width="966" height="1450" loading="lazy" decoding="async" data-photo-alt="portraitAlt" alt="Taynara sorrindo em traje de formatura, com capelo e beca pretos, segurando um canudo da UDESC.">
     <figcaption data-photo-tx="portraitCaption">Formatura na UDESC: um marco do percurso de formação.</figcaption>
+    <div class="author-photo-contact" aria-label="Contato e redes sociais da autora">
+      <a class="author-email-link" href="mailto:tayxaa@gmail.com" aria-label="Enviar e-mail para tayxaa@gmail.com" title="Enviar e-mail">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+        <span>tayxaa@gmail.com</span>
+      </a>
+      <nav class="author-social-links" aria-label="Perfis da autora nas redes sociais">
+        <a href="https://www.instagram.com/tayaxt_?rpxt=aG82enlibTJ2djRw&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram da autora (abre em nova aba)" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.65" cy="6.45" r="1.15" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1F1BXsh1uM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook da autora (abre em nova aba)" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.9 21v-7.7h2.6l.4-3.2h-3V8c0-.9.3-1.5 1.6-1.5h1.6V3.2C16.8 3.1 16 3 15 3c-3 0-4.9 1.8-4.9 5.1v2H7.5v3.2h2.6V21z"/></svg>
+        </a>
+        <a href="https://substack.com/@tayxaa" target="_blank" rel="noopener noreferrer" aria-label="Substack da autora (abre em nova aba)" title="Substack">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 3.5h16v2H4zm0 4h16v2H4zm0 4h16V21l-8-4.1L4 21z"/></svg>
+        </a>
+      </nav>
+    </div>
     <details class="photo-access">
       <summary data-photo-tx="photoDetailSummary">Descrição acessível da fotografia</summary>
       <p data-photo-desc="portraitDescription" data-photo-tx="portraitDescription" id="photo-description-portrait">Retrato da autora durante a formatura: mulher sorrindo, com cabelos escuros, capelo e beca pretos sobre roupa clara, segurando um canudo preto identificado com a sigla UDESC. Ao fundo aparecem faixas verdes e vermelhas.</p>
@@ -902,7 +932,7 @@ header.site .hero-side .thesis-source p { max-width:none; }
   </figure>
   <div>
    <h3>Taynara Xavier Telles</h3>
-   <p class="eyebrow" data-tx="authorRole">Pedagoga · Professora dos Anos Iniciais · Mestranda em Educação na UDESC</p><p class="author-contact"><strong data-tx="authorContact">Contato acadêmico:</strong> <a href="mailto:tayxaa@gmail.com">tayxaa@gmail.com</a></p>
+   <p class="eyebrow" data-tx="authorRole">Pedagoga · Professora dos Anos Iniciais · Mestranda em Educação na UDESC</p>
    <p class="panel-lead" data-tx="authorIntro" data-about-read>Antes de investigar a adolescência, percorri os caminhos da escola como estudante e professora. As perguntas que hoje orientam minha pesquisa começaram muito antes de receberem um nome acadêmico.</p>
    <h3 data-tx="authorFromTitle">De onde venho</h3>
    <p data-tx="authorFrom" data-about-read>Cresci em Capinzal, no interior de Santa Catarina. No jardim da casa de minha avó, via crianças seguirem para a escola levando flores às professoras; ali comecei a imaginar a docência. Na escola pública, encontrei uma biblioteca que ainda recordo como minúscula e imensa: suas estantes abriram caminhos entre poemas, palavras e perguntas.</p>
