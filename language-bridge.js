@@ -4,12 +4,13 @@
 (function(){
 "use strict";
 const KEY="gv-guide-language-v2";
-const options=["pt","en","es"];
+const options=["pt","en","es","fr"];
 const LABELS={
  pt:{selector:"Idioma da navegação",note:"O português é o texto original. Inglês e espanhol abrangem a interface e textos editoriais selecionados; pranchas, glossário, fichas e dissertação permanecem em português. A tradução automática do navegador pode ajudar na consulta, mas não substitui uma tradução acadêmica revisada.",short:"Português (original)",link:"Voltar ao início do Guia",status:"Conteúdo acadêmico original: português."},
  en:{selector:"Navigation language",note:"The navigation and selected editorial texts are translated. Panels, glossary, biographical profiles and dissertation remain in the original Portuguese. Your browser's page translation may assist reading, but is not a reviewed academic translation.",short:"English (partial)",link:"Back to the Guide",status:"Original academic content: Portuguese."},
  es:{selector:"Idioma de navegación",note:"La navegación y algunos textos editoriales están traducidos. Las láminas, el glosario, las fichas biográficas y la disertación permanecen en portugués. La traducción del navegador puede ayudar a leerlos, pero no es una traducción académica revisada.",short:"Español (parcial)",link:"Volver al inicio de la Guía",status:"Contenido académico original: portugués."}
 };
+LABELS.fr={selector:"Langue de navigation",note:"Le portugais est la langue originale. La navigation et certains textes éditoriaux sont traduits en français. Les planches, le glossaire, les notices biographiques et le mémoire restent en portugais. La traduction automatique du navigateur peut aider à la consultation, mais ne constitue pas une traduction académique révisée.",short:"Français (partiel)",link:"Retour à l’accueil du Guide",status:"Langue originale des contenus scientifiques : portugais."};
 const EXACT={
  en:{
  "Ir diretamente ao conteúdo principal":"Skip to main content",
@@ -80,14 +81,47 @@ const EXACT={
  "Tamanho da fonte":"Tamaño del texto","Contraste":"Contraste","Anterior":"Anterior","Próximo":"Siguiente"
  }
 };
+EXACT.fr={
+ "Ir diretamente ao conteúdo principal":"Aller directement au contenu principal",
+ "Projeto digital autoral · Pesquisa de mestrado em Educação":"Projet numérique indépendant · Recherche de master en éducation",
+ "Guia Visual da Pesquisa":"Guide visuel de la recherche",
+ "Plataforma digital autoral vinculada à dissertação de mestrado":"Plateforme numérique d’auteur liée au mémoire de master",
+ "Ambiente digital de acessibilidade, divulgação científica e exploração dos fundamentos teórico-metodológicos da investigação.":"Espace numérique consacré à l’accessibilité, à la médiation scientifique et aux fondements théoriques et méthodologiques de la recherche.",
+ "Início":"Accueil","Percurso Essencial":"Parcours essentiel","Introdução":"Introduction","Banca":"Jury",
+ "Sobre o Guia":"À propos du Guide","Glossário":"Glossaire","Dissertação HTML (banca)":"Mémoire HTML (jury)",
+ "Edição portátil":"Édition portable","Libras: roteiro":"Langue des signes brésilienne : script","Acessibilidade":"Accessibilité",
+ "Dialética":"Dialectique","Sobre a autora":"À propos de l’autrice","Leitor":"Lecteur",
+ "Autores":"Chercheuses et chercheurs","Produções":"Publications","Mensagens":"Messages","Arte":"Art","Percursos artísticos":"Parcours artistiques","Matriz Aberta":"Matrice ouverte","Leituras":"Lectures",
+ "Ouvir ou ler a dissertação":"Écouter ou lire le mémoire","Ativar leitura linear":"Activer la lecture linéaire",
+ "Desativar leitura linear":"Désactiver la lecture linéaire","Imprimir":"Imprimer","Leitura":"Lecture",
+ "Alto contraste":"Contraste élevé","Contraste: ligado":"Contraste activé","Padrão":"Réinitialiser",
+ "As notas podem ser abertas com Enter ou Espaço.":"Les notes peuvent être ouvertes avec Entrée ou Espace.",
+ "Glossário de conceitos · com remissões":"Glossaire des concepts · renvois",
+ "Dissertação em HTML · banca 17/11/2026":"Mémoire HTML · jury du 17/11/2026",
+ "Edição portátil · consulta sem internet":"Édition portable · consultation hors ligne",
+ "Libras · transcrição e roteiro (vídeo pendente)":"Langue des signes brésilienne · transcription et script (vidéo à venir)",
+ "Acessibilidade e participação":"Accessibilité et participation",
+ "Percursos artísticos · 19 fichas e fontes":"Parcours artistiques · 19 fiches et sources",
+ "Matriz Aberta · protótipo e teste":"Matrice ouverte · prototype et essai",
+ "Como ler este guia":"Comment lire ce Guide",
+ "Escolha a seção":"Choisissez une section",
+ "Use o menu ou os atalhos superiores para ir diretamente à introdução, aos capítulos e aos percursos complementares.":"Utilisez le menu ou les raccourcis pour accéder à l’introduction, aux chapitres et aux parcours complémentaires.",
+ "Explore as pranchas":"Explorez les planches",
+ "Leia o esquema, consulte sua descrição textual e abra os avisos expansíveis para aprofundar a leitura.":"Observez chaque schéma, consultez sa description et développez les notes pour approfondir la lecture.",
+ "Ajuste a leitura":"Adaptez la lecture",
+ "Ative a leitura linear ou abra o leitor da dissertação. Para navegar por teclado, use Tab, Enter e Espaço nos controles.":"Activez la lecture linéaire ou ouvrez le lecteur du mémoire. Pour naviguer au clavier, utilisez Tab, Entrée et Espace.",
+ "Direitos autorais: divulgação e reprodução não autorizadas.":"Droits d’auteur : diffusion et reproduction non autorisées.",
+ "Voltar ao Guia":"Retour au Guide","Voltar ao início":"Retour à l’accueil",
+ "Tamanho da fonte":"Taille du texte","Contraste":"Contraste","Anterior":"Précédent","Próximo":"Suivant"
+};
 const isIndex=!!document.getElementById("guide-lang");
 let selector=document.getElementById("guide-lang");
 let bridge;
 if(!selector){
  bridge=document.createElement("section");
  bridge.className="gv-language-bridge";
- bridge.setAttribute("aria-label","Idioma de navegação / Navigation language / Idioma de navegación");
- bridge.innerHTML='<div class="gv-language-bridge__inner"><label for="gv-bridge-select" id="gv-bridge-label">Idioma da navegação</label><select id="gv-bridge-select"><option value="pt">Português — original</option><option value="en">English — partial</option><option value="es">Español — parcial</option></select><a href="index.html" id="gv-bridge-home">Voltar ao início do Guia</a></div><p id="gv-bridge-note" role="note"></p>';
+ bridge.setAttribute("aria-label","Idioma de navegação / Navigation language / Idioma de navegación / Langue de navigation");
+ bridge.innerHTML='<div class="gv-language-bridge__inner"><label for="gv-bridge-select" id="gv-bridge-label">Idioma da navegação</label><select id="gv-bridge-select"><option value="pt">Português — original</option><option value="en">English — partial</option><option value="es">Español — parcial</option><option value="fr">Français — partiel</option></select><a href="index.html" id="gv-bridge-home">Voltar ao início do Guia</a></div><p id="gv-bridge-note" role="note"></p>';
  const css=document.createElement("style");
  css.textContent=".gv-language-bridge{background:#f7fafc;color:#172d43;border-block:1px solid #bdced9;padding:.65rem max(1rem,calc((100vw - 1100px)/2));font:15px/1.5 Arial,Helvetica,sans-serif}.gv-language-bridge__inner{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.gv-language-bridge label{font-weight:700}.gv-language-bridge select{width:auto;max-width:100%;padding:.45rem .5rem;border:1px solid #667f92;border-radius:7px;font:inherit;background:white;color:#182b3e}.gv-language-bridge a{margin-left:auto;color:#13466c;text-decoration:underline;font-weight:600}.gv-language-bridge p{max-width:100ch;margin:.4rem 0 0;color:#364d60;font-size:.86rem}@media print{.gv-language-bridge{display:none}}";
  document.head.append(css);
@@ -97,7 +131,7 @@ if(!selector){
 const note=document.getElementById("language-scope");
 let stored="pt";try{const s=localStorage.getItem(KEY);if(options.includes(s))stored=s}catch(e){}
 selector.value=stored;
-if(isIndex){const names={pt:"Português (original)",en:"English (partial)",es:"Español (parcial)"};for(const code of options){const opt=selector.querySelector('option[value="'+code+'"]');if(opt)opt.textContent=names[code];}}
+if(isIndex){const names={pt:"Português (original)",en:"English (partial)",es:"Español (parcial)",fr:"Français (partiel)"};for(const code of options){const opt=selector.querySelector('option[value="'+code+'"]');if(opt)opt.textContent=names[code];}}
 const tracked=[];
 const areas=isIndex?["header","nav",".intro",".accessibility-controls",".home-topbar",".home-secondary"]:
  ["header","nav",".topnav",".accessibility-controls","footer"];
@@ -121,7 +155,7 @@ function apply(){
    const translated=current==="pt"?null:EXACT[current]?.[t.original];
    t.node.nodeValue=translated?(t.raw.match(/^\s*/)[0]+translated+t.raw.match(/\s*$/)[0]):t.raw;
    if(translated)t.parent.setAttribute("lang",current);
-   else if(t.parent.getAttribute("lang")==="en"||t.parent.getAttribute("lang")==="es")t.parent.setAttribute("lang","pt-BR");
+   else if(t.parent.getAttribute("lang")==="en"||t.parent.getAttribute("lang")==="es"||t.parent.getAttribute("lang")==="fr")t.parent.setAttribute("lang","pt-BR");
  }
  if(isIndex){
    const label=document.querySelector('[for="guide-lang"]');
@@ -155,6 +189,7 @@ pt:{brand:"Guia Visual",menu:"Menu",home:"Início",essential:"Percurso Essencial
 en:{brand:"Visual Guide",menu:"Menu",home:"Home",essential:"Essential Path",thesis:"Dissertation",panels:"Panels",authors:"Authors",more:"All sections",intro:"Introduction",chapter:"Chapter",refs:"References",banca:"Examination",glossary:"Glossary",art:"Art and history",matrix:"Open Matrix",access:"Accessibility",portable:"Offline edition",libras:"Sign language and transcript",reader:"Reading",close:"Close reading controls",open:"Reopen reading controls"},
 es:{brand:"Guía Visual",menu:"Menú",home:"Inicio",essential:"Recorrido esencial",thesis:"Disertación",panels:"Láminas",authors:"Autores",more:"Todas las secciones",intro:"Introducción",chapter:"Capítulo",refs:"Referencias",banca:"Evaluación",glossary:"Glosario",art:"Arte e historia",matrix:"Matriz Abierta",access:"Accesibilidad",portable:"Edición sin conexión",libras:"Lengua de señas y transcripción",reader:"Lectura",close:"Cerrar controles de lectura",open:"Reabrir controles de lectura"}
 };
+labels.fr={brand:"Guide visuel",menu:"Menu",home:"Accueil",essential:"Parcours essentiel",thesis:"Mémoire",panels:"Planches",authors:"Chercheurs",more:"Toutes les sections",intro:"Introduction",chapter:"Chapitre",refs:"Références",banca:"Jury",glossary:"Glossaire",art:"Art et histoire",matrix:"Matrice ouverte",access:"Accessibilité",portable:"Édition hors ligne",libras:"Langue des signes et transcription",reader:"Lecture",close:"Fermer les outils de lecture",open:"Rouvrir les outils de lecture"};
 const nav=document.createElement("nav");
 nav.className="gv-global-nav";
 nav.id="gv-global-nav";
@@ -266,7 +301,7 @@ function updateLanguage(){
  const readerLabel=controls?.querySelector(".a11y-label");
  if(readerLabel)readerLabel.textContent=dict.reader;
 }
-document.addEventListener("change",event=>{if(event.target?.id==="guide-lang")updateLanguage()});
+document.addEventListener("change",event=>{if(event.target?.id==="guide-lang"||event.target?.id==="gv-bridge-select")updateLanguage()});
 updateLanguage();
 })();
 
@@ -283,6 +318,7 @@ const dictionary={
  en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover to browse full-text chapters; click to read the dissertation in HTML.",allTip:"Hover for the list; click to jump to all sections."},
  es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para ver los capítulos; haga clic para leer la disertación completa en HTML.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
 };
+dictionary.fr={close:"× Fermer",closeMenu:"Fermer le menu",closeChapters:"Fermer les chapitres",closeCatalog:"Fermer les sections",thesisTip:"Survolez pour voir les chapitres ; cliquez pour lire le mémoire en HTML.",allTip:"Survolez la liste ; cliquez pour consulter toutes les sections."};
 function language(){
  const selector=document.getElementById("guide-lang");
  if(selector&&dictionary[selector.value])return selector.value;
@@ -361,7 +397,7 @@ function localize(){
  if(chapterClose){chapterClose.innerHTML="× <span>"+t.close.replace(/^×\s*/,"")+"</span>";chapterClose.setAttribute("aria-label",t.closeChapters);chapterClose.lang=tag;}
  if(catalogClose){catalogClose.innerHTML="× <span>"+t.close.replace(/^×\s*/,"")+"</span>";catalogClose.setAttribute("aria-label",t.closeCatalog);catalogClose.lang=tag;}
 }
-document.addEventListener("change",event=>{if(event.target?.id==="guide-lang")localize()});
+document.addEventListener("change",event=>{if(event.target?.id==="guide-lang"||event.target?.id==="gv-bridge-select")localize()});
 localize();
 const style=document.createElement("style");style.id="gv-dual-nav-close-style";style.textContent="\n#dissertacao-indice.gv-chapter-strip {display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;scroll-margin-top:6rem}\n#dissertacao-indice.gv-chapter-strip[hidden]{display:none!important}\n.gv-chapter-strip-close,.gv-catalog-close,.gv-global-dropdown-close{font:700 .85rem/1.3 Arial,sans-serif;cursor:pointer;border:1px solid #afc3d1;border-radius:8px;background:#f4f8fb;color:#24475e;min-height:38px;padding:.5rem .7rem}\n.gv-chapter-strip-close{margin-left:auto}\n.gv-catalog-close{float:right;margin:.15rem 0 .65rem .85rem}\n.gv-global-dropdown-close{align-self:flex-end;min-height:34px;padding:.35rem .65rem;margin:0 0 .25rem;border-radius:7px}\n.gv-chapter-strip-close:hover,.gv-catalog-close:hover,.gv-global-dropdown-close:hover{background:#e4eef5}\n.gv-chapter-strip-close:focus-visible,.gv-catalog-close:focus-visible,.gv-global-dropdown-close:focus-visible{outline:3px solid #b85d16;outline-offset:2px}\n@media print{.gv-chapter-strip-close,.gv-catalog-close,.gv-global-dropdown-close{display:none!important}}\n";document.head.appendChild(style);
 })();
