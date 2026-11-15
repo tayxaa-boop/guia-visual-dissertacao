@@ -21,9 +21,9 @@ root.addEventListener("pointerleave",function(e){if((e.pointerType==="mouse"||e.
 root.addEventListener("focusin",function(){if(lastPointerType!=="touch")setOpen(true)});
 root.addEventListener("focusout",function(e){if(!root.contains(e.relatedTarget))setOpen(false)});
 trigger.addEventListener("click",function(e){
- if(e.detail===0){setOpen(!root.classList.contains("is-open"));return;}
- if(e.pointerType==="touch"){setOpen(!root.classList.contains("is-open"));return;}
- setOpen(true);
+ // A dissertação é o texto integral; o menu vertical é acessível por hover e seta para baixo.
+ e.preventDefault();
+ location.href="documento-qualificacao.html";
 });
 trigger.addEventListener("keydown",function(e){
  if(e.key==="ArrowDown"){e.preventDefault();setOpen(true);items[0]?.focus();}
