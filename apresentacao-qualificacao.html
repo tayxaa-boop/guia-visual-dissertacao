@@ -877,9 +877,7 @@ function render(){
  if(original){
    const note=document.createElement("p");note.className="banca-figure-source";
    note.append(document.createTextNode("Relação com a dissertação: Figura "+original+". "));
-   const a=document.createElement("a");a.href="documento-qualificacao.html#figura-"+original;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Localizar legenda na versão HTML";
-   const docLink=document.createElement("a");docLink.href="https://docs.google.com/document/d/1UXbEtZc5sw4_EHzvuanW4gHlC--NjScZAsdg45C32xE/edit";docLink.target="_blank";docLink.rel="noopener noreferrer";docLink.textContent="Conferir imagem original na qualificação";
-   note.append(a,document.createTextNode(" · "),docLink);extra.append(note);
+   note.append(document.createTextNode("O texto integral ainda não foi publicado; consulte as pranchas e o Guia Visual para os esquemas disponíveis."));extra.append(note);
  }
  root.scrollTop=0;
 }
