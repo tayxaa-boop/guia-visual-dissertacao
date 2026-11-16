@@ -315,11 +315,11 @@ if(!global)return;
 const strip=document.getElementById("dissertacao-indice");
 const catalog=document.getElementById("todas-as-abas");
 const dictionary={
- pt:{close:"× Fechar",closeMenu:"Fechar menu",closeChapters:"Fechar menu de capítulos",closeCatalog:"Fechar quadro de todas as abas",thesisTip:"Passe o mouse para abrir os capítulos do texto integral; clique para ler a dissertação em HTML.",allTip:"Passe o mouse para abrir a lista; clique para ver o quadro de todas as abas."},
- en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover to browse full-text chapters; click to read the dissertation in HTML.",allTip:"Hover for the list; click to jump to all sections."},
- es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para ver los capítulos; haga clic para leer la disertación completa en HTML.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
+ pt:{close:"× Fechar",closeMenu:"Fechar menu",closeChapters:"Fechar menu de capítulos",closeCatalog:"Fechar quadro de todas as abas",thesisTip:"Passe o mouse para ver os capítulos; clique para consultar apenas as amostras autorizadas da dissertação.",allTip:"Passe o mouse para abrir a lista; clique para ver o quadro de todas as abas."},
+ en:{close:"× Close",closeMenu:"Close menu",closeChapters:"Close chapter navigation",closeCatalog:"Close all-sections panel",thesisTip:"Hover to browse the chapters; click to access available dissertation excerpts only.",allTip:"Hover for the list; click to jump to all sections."},
+ es:{close:"× Cerrar",closeMenu:"Cerrar menú",closeChapters:"Cerrar el menú de capítulos",closeCatalog:"Cerrar el cuadro de secciones",thesisTip:"Pase el cursor para ver los capítulos; haga clic para acceder solo a los fragmentos disponibles.",allTip:"Pase el cursor para abrir la lista; haga clic para ver todas las secciones."}
 };
-dictionary.fr={close:"× Fermer",closeMenu:"Fermer le menu",closeChapters:"Fermer les chapitres",closeCatalog:"Fermer les sections",thesisTip:"Survolez pour voir les chapitres ; cliquez pour lire le mémoire en HTML.",allTip:"Survolez la liste ; cliquez pour consulter toutes les sections."};
+dictionary.fr={close:"× Fermer",closeMenu:"Fermer le menu",closeChapters:"Fermer les chapitres",closeCatalog:"Fermer les sections",thesisTip:"Survolez les chapitres ; cliquez pour consulter uniquement les extraits disponibles.",allTip:"Survolez la liste ; cliquez pour consulter toutes les sections."};
 function language(){
  const selector=document.getElementById("guide-lang");
  if(selector&&dictionary[selector.value])return selector.value;
