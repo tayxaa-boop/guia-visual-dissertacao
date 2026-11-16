@@ -21,7 +21,7 @@ root.addEventListener("pointerleave",function(e){if((e.pointerType==="mouse"||e.
 root.addEventListener("focusin",function(){if(lastPointerType!=="touch")setOpen(true)});
 root.addEventListener("focusout",function(e){if(!root.contains(e.relatedTarget))setOpen(false)});
 trigger.addEventListener("click",function(e){
- // A dissertação é o texto integral; o menu vertical é acessível por hover e seta para baixo.
+ // O menu conduz somente a amostras autorizadas. O texto integral aguarda publicação oficial.
  e.preventDefault();
  location.href="documento-qualificacao.html";
 });
