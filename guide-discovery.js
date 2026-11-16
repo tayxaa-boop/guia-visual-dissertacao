@@ -19,7 +19,7 @@ function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/
 const pages=[
 ["Percurso Essencial","percurso-essencial.html","síntese pesquisa sete etapas desenvolvimento adolescência"],
 ["Glossário de conceitos","glossario.html","conceitos mediação contradição totalidade psicologia histórico-cultural"],
-["Dissertação em HTML","documento-qualificacao.html","texto integral capítulos referências qualificação"],
+["Amostras da dissertação","documento-qualificacao.html","amostra trechos capítulos leitura voz publicação"],
 ["Edição portátil","portatil.html","offline sem internet acessibilidade leitura"],
 ["Biografias de pesquisadoras e pesquisadores","biografias.html","autoras autores Vigotski Leontiev Luria Elkonin pedagogia psicologia"],
 ["Percursos artísticos","percursos-arte.html","arte adolescência literatura fotografia pintura"],
