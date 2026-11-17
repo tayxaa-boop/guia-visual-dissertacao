@@ -938,6 +938,14 @@ html,body{background:#f5f7fa}
 .banca-stage-epigraph #banca-epigraph-source{font-style:normal;font-weight:600;color:#60798a}
 .banca-presenter .banca-stage-content.is-interactive .banca-stage-epigraph{font-size:.79rem;margin:.03rem 0 .2rem;max-width:100ch}
 .banca-presenter.banca-read-contrast .banca-stage-epigraph,.banca-presenter.banca-read-contrast .banca-stage-epigraph span{color:#000!important}
+
+/* Ajuste responsivo do material novo nos três modos de visualização. */
+.banca-presenter.banca-read-contrast .banca-study-bubble{background:#fff!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-study-bubble :is(strong,span,small){color:#000!important}
+.banca-presenter.banca-read-contrast .banca-study-grid .banca-study-center{background:#000!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-study-grid .banca-study-center :is(strong,span,small){color:#fff!important}
+.banca-presenter.banca-read-contrast .banca-study-caption{background:#fff!important;color:#000!important}
+.banca-study-switch button:focus-visible{outline:3px solid #d99829;outline-offset:3px}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
@@ -1803,7 +1811,7 @@ stageFigure.addEventListener("click",event=>{
   return;
  }
  if(target.dataset.methodView){
-  const view=target.dataset.methodView,host=stageFigure.querySelector(".banca-method-figure");
+  const view=target.dataset.methodView,host=stageFigure.querySelector(".banca-method-figure, .banca-study-figure");
   if(!host)return;
   for(const button of host.querySelectorAll("[data-method-view]"))button.setAttribute("aria-pressed",String(button.dataset.methodView===view));
   for(const panel of host.querySelectorAll("[data-method-panel]"))panel.hidden=panel.dataset.methodPanel!==view;
