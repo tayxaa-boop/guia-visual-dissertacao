@@ -682,6 +682,64 @@ html,body{background:#f5f7fa}
 }
 @media print{.banca-presenter .banca-floating-ui{display:none!important}}
 
+/* Ajuste 17/11/2026 · menus flutuantes agrupados à direita, sem cobrir as notas.
+   O trilho permanece visível no modo apresentação; o título das notas recebe
+   espaço próprio, inclusive com letras ampliadas e em telas menores. */
+.banca-presenter .banca-floating-ui{
+ position:fixed;
+ inset:auto clamp(.6rem,1.6vw,1.4rem) calc(5.5rem + env(safe-area-inset-bottom)) auto;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-end;
+ justify-content:flex-end;
+ gap:.5rem;
+ width:max-content;
+ max-width:calc(100vw - 1rem);
+ height:auto;
+}
+.banca-presenter .banca-float-group,
+.banca-presenter .banca-float-navigation,
+.banca-presenter .banca-float-reading{
+ position:relative;
+ inset:auto;
+ bottom:auto;
+ left:auto;
+ right:auto;
+ align-items:flex-end;
+ width:auto;
+ max-width:100%;
+}
+.banca-presenter .banca-float-launcher{min-width:0}
+.banca-presenter #banca-notes{
+ margin-right:clamp(12.8rem,18vw,16rem);
+ min-width:0;
+}
+.banca-presenter #banca-notes>summary{
+ max-width:100%;
+ overflow-wrap:break-word;
+}
+@media(max-width:699px){
+ .banca-presenter .banca-floating-ui{
+  right:.5rem;
+  bottom:calc(4.7rem + env(safe-area-inset-bottom));
+  gap:.4rem;
+ }
+ .banca-presenter #banca-notes{
+  margin-left:.55rem;
+  margin-right:clamp(9.7rem,45vw,12.5rem);
+ }
+ .banca-presenter #banca-notes>summary{
+  font-size:.86rem;
+  line-height:1.35;
+ }
+ .banca-presenter .banca-float-panel{max-height:min(55dvh,440px)}
+}
+@media(max-width:390px){
+ .banca-presenter #banca-notes{margin-right:9.2rem}
+ .banca-presenter .banca-float-launcher{font-size:.78rem;padding:.45rem .55rem}
+}
+@media print{.banca-presenter .banca-floating-ui{display:none!important}}
+
 /* Notas-relâmpago: autores, obras, categorias, páginas e setas. */
 .banca-notes .banca-note-sequences{display:grid;gap:.55rem;padding:.55rem .35rem .25rem}
 .banca-notes .banca-cue-line{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .42rem;margin:0!important;max-width:none!important}
