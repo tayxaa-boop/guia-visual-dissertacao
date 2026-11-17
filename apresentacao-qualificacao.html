@@ -300,7 +300,7 @@ html.gv-high-contrast .banca-header .banca-clock :is(span,button){color:#fff!imp
 .banca-presenter{position:fixed;inset:0;z-index:10000;background:#f5f7fa;color:#182b3d;overflow:auto;overscroll-behavior:contain;padding:0;--banca-ink:#182b3d}
 .banca-screen{min-height:100%;display:flex;flex-direction:column;max-width:1640px;margin:auto}
 .banca-header{background:#192b3f;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem clamp(1rem,3vw,2.5rem)}
-.banca-header div:first-child{display:flex;flex-direction:column;gap:.2rem}
+.banca-header > .banca-identity{display:flex;flex-direction:column;gap:.2rem}
 .banca-header strong{font-size:1.18rem}
 .banca-header span{font-size:.9rem}
 .banca-header-right{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
@@ -481,17 +481,40 @@ html,body{background:#f5f7fa}
 .banca-presenter .banca-points li,.banca-presenter .banca-thesis{overflow-wrap:anywhere}
 @media(max-width:1050px){.banca-presenter .banca-stage-content{grid-template-columns:1fr}.banca-presenter .banca-stage-figure svg{max-height:390px}}
 #banca-time-total{font-size:.8rem}
+
+/* Identidade institucional no espaço central do cabeçalho. */
+.banca-header .banca-brand{display:flex;align-items:center;justify-content:center;gap:12px;padding:7px 12px;background:#fff;border-radius:10px;flex-shrink:1;min-width:245px;max-width:410px;box-shadow:0 2px 9px #07182a18}
+.banca-brand img{display:block;object-fit:contain;max-width:58%;height:57px;width:auto;min-width:0}
+.banca-brand img:last-child{max-width:37%;height:57px}
+.banca-brand-divider{width:1px;height:43px;flex:none;background:#c6d3de}
+.banca-stage-figure img{display:block;max-width:100%;height:auto;margin:0 auto}
+.banca-stage-content.is-zoom{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:.25rem;padding:.65rem clamp(.65rem,2vw,1.5rem)}
+.banca-stage-content.is-zoom .banca-copy{align-self:stretch}
+.banca-stage-content.is-zoom .banca-copy h3{font-size:clamp(1.1rem,1.65vw,1.5rem);margin:0}
+.banca-stage-content.is-zoom .banca-meta{font-size:.8rem;margin:0 0 .05rem}
+.banca-stage-content.is-zoom .banca-thesis,.banca-stage-content.is-zoom .banca-points,.banca-stage-content.is-zoom .banca-quote,.banca-stage-content.is-zoom .banca-source{display:none}
+.banca-stage-content.is-zoom .banca-visual{width:100%;padding:.45rem}
+.banca-stage-content.is-zoom .banca-visual-label{display:none}
+.banca-stage-content.is-zoom .banca-stage-figure img{width:100%;max-height:calc(100dvh - 250px);object-fit:contain}
+.banca-stage-content.is-zoom .banca-stage-figure figcaption{font-size:.75rem;padding:.3rem .6rem}
+@media(max-width:1100px){.banca-header{flex-wrap:wrap}.banca-header .banca-brand{order:2;margin-inline:auto}.banca-header-right{order:3}}
+@media(max-width:650px){.banca-header .banca-brand{width:100%;max-width:340px;padding:5px 9px}.banca-brand img{height:42px}.banca-brand img:last-child{height:42px}.banca-brand-divider{height:34px}}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
-<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Oito movimentos com as figuras do Guia e notas de fala. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
+<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Nove movimentos com as figuras do Guia e notas de fala. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
 <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
   <div class="banca-screen">
-   <header class="banca-header"><div><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div><div class="banca-header-right"><div class="banca-clock" role="group" aria-label="Cronômetro da apresentação">
+   <header class="banca-header"><div class="banca-identity"><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div>
+ <div class="banca-brand" aria-label="Identidade institucional UDESC, FAED e PPGE">
+   <img src="https://www1.udesc.br/imagens/id_submenu/2013/marca_faed_horizontal_rgb_01.jpg" alt="Logomarca institucional UDESC e FAED" loading="eager">
+   <span class="banca-brand-divider" aria-hidden="true"></span>
+   <img src="https://www.udesc.br/arquivos/faed/id_cpmenu/9974/PPGE___marca_com_extenso___vertical_17152800180435_9974.png" alt="Logomarca do Programa de Pós-Graduação em Educação — PPGE" loading="eager">
+ </div><div class="banca-header-right"><div class="banca-clock" role="group" aria-label="Cronômetro da apresentação">
   <div class="banca-clock-display"><span class="banca-clock-caption">TEMPO DECORRIDO</span><span id="banca-clock-elapsed" class="banca-clock-digits" role="timer" aria-label="Tempo decorrido">00:00</span><span id="banca-clock-remaining" class="banca-clock-remaining">20:00 restantes</span></div>
   <div class="banca-clock-actions"><button type="button" id="banca-clock-pause" aria-label="Pausar cronômetro" title="Pausar ou retomar cronômetro">Pausar</button><button type="button" id="banca-clock-reset" title="Reiniciar cronômetro a partir de zero">Reiniciar</button></div>
   <span id="banca-clock-status" class="a11y-visually-hidden" role="status" aria-live="polite"></span>
- </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 8</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
+ </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 9</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
    <div class="banca-progress" id="banca-progress" aria-hidden="true"></div>
    <div class="banca-stage-content">
     <div class="banca-copy">
@@ -725,7 +748,8 @@ html,body{background:#f5f7fa}
 <text x="1016.0" y="109.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Revisão da matriz</text>
 <rect x="866" y="226" width="300" height="104" rx="14" fill="#F8FAFC" stroke="#176746" stroke-width="2"/>
 <text x="1016.0" y="283.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#142437">Ampliação do corpus</text>
-</svg><figcaption>O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</figcaption></figure></article></div>
+</svg><figcaption>O confronto entre dois estudos produz sínteses individualizadas e questões comparáveis, mas não tendências gerais. A ampliação do corpus deve retroalimentar a revisão de perguntas e critérios.</figcaption></figure></article>
+<article id="pranchametodologico"><figure class="diagram"><img src="zoom-metodologico-qualificacao.svg" width="2048" height="1001" alt="Zoom metodológico: sequência a defender, três dimensões analíticas, unidade de análise, cinco movimentos articulados, estados do registro documental, testes Soares e Bueno e limite da síntese." decoding="async"><figcaption>Zoom metodológico, mantendo integralmente as informações da prancha de referência. Fonte: elaboração da autora, 2026.</figcaption></figure></article></div>
 <script>/* Apresentação guiada: 20 minutos, remissões à versão de qualificação de 2026. */
 (function(){
 "use strict";
@@ -760,23 +784,30 @@ const slides=[
  quote:"",quoteSource:"",
  notes:"Enunciar em voz alta que 633 não é o corpus final e que 875 diz respeito apenas ao subconjunto das teses e dissertações de 2018–2025. Distinguir o universo pretendido, a recuperação documental e a análise integral ainda não concluída. Priorizar clareza e não transformar a apresentação em leitura de planilhas.",
  transition:"Os números explicam o alcance da busca; não mostram o que os trabalhos dizem. É aí que entra a matriz."},
- {title:"Matriz Tripartida: perguntas e cinco movimentos",min:4,plate:14,alternate:15,lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis, sem atribuir notas a autores.",
+ {title:"Matriz Tripartida: perguntas e cinco movimentos",min:3,plate:14,alternate:15,lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis, sem atribuir notas a autores.",
  points:["Dimensões: epistemológico-metodológica; ontológico-psicológica; pedagógico-político-educacional.","Movimentos: reconstruir, interrogar, registrar, confrontar e sintetizar, com retornos às fontes.","Estados E/M/I/NI/A e marcador transversal T: condições de registro documental, não escala hierárquica; a não aplicação é distinta da ausência."],
  source:"TELLES (2026), cap. 4, seção 4.5; Quadros 3–6 e Figuras 13–14; pranchas 14–15.",
  quote:"",quoteSource:"",
  notes:"Este é o núcleo metodológico e merece o maior tempo. Indicar primeiro a unidade de análise; depois apresentar as três dimensões como perguntas pertinentes a cada objeto, não caixas independentes. Explicar os cinco movimentos e alternar o esquema para mostrar sua reversibilidade. Definir E explicitação, M menção, I inferência fundamentada, NI não identificável, A ausência verificada e T tensão documentada. Ressaltar que ausência requer exame suficiente e não aplicação significa pergunta não pertinente. A banca pode discutir sensibilidade, exequibilidade e ineditismo sem que a matriz precise ser apresentada como validada.",
  transition:"O teste mais importante não é o desenho da matriz, mas o que ela permite perceber quando encontra produções diferentes."},
+ {title:"Zoom metodológico: como a matriz foi construída",min:1,plate:"metodologico",zoom:true,
+ lead:"O problema da pesquisa orienta três perguntas articuladas, operações documentais e interpretações fundamentadas.",
+ points:[],
+ source:"TELLES (2026), seção 4.5 e exercício exploratório do capítulo 5; prancha explicativa da autora.",
+ quote:"",quoteSource:"",
+ notes:"Exibir a prancha integral sem alterar o conteúdo: destacar a sequência problema → três perguntas → dimensões → operações documentais → interpretações fundamentadas. Apontar unidade de análise, cinco movimentos, estados documentais e limites do teste com Soares e Bueno. Esta prancha não é um checklist de qualidade.",
+ transition:"O percurso da matriz pode ser observado nos dois exercícios documentais de 2018."},
  {title:"Soares e Bueno: o exercício exploratório",min:3,plate:16,lead:"Dois estudos de 2018, com objetos diferentes, permitem testar a sensibilidade das perguntas; não autorizam tendências nacionais.",
  points:["Soares: escolhas profissionais, motivos, alternativas e condições institucionais de estudantes.","Bueno: constituição de uma prática de educação sexual, organização curricular e intencionalidade educativa.","A comparação preserva as singularidades e distingue argumentos dos autores de inferências analíticas."],
  source:"SOARES (2018); BUENO (2018). TELLES (2026), cap. 5, seções 5.2–5.5.",
  quote:"",quoteSource:"",
  notes:"Apresentar uma pergunta que a matriz torna possível em cada estudo: em Soares, como as alternativas sociais e escolares participam da escolha profissional? Em Bueno, como as condições curriculares tornam possível a prática pedagógica? Demonstrar o ganho: reconhecer funções diferentes das mediações, e também identificar o que os trabalhos não demonstram. Não extrapolar a partir de duas dissertações.",
  transition:"O exercício não encerra a investigação. Ele ajuda a formular melhor o que deve ser feito depois da qualificação."},
- {title:"Síntese provisória e questões à banca",min:2,plate:18,lead:"A contribuição desta etapa é tornar explícitos o problema, os fundamentos e um procedimento analítico passível de aperfeiçoamento.",
- points:["Consolidados até aqui: historicização, fundamentos do desenvolvimento, organização do levantamento e ensaio da matriz.","Em aberto: completar 2026, concluir elegibilidade, dimensionar a análise e revisar critérios diante dos documentos.","Questão para a banca: como preservar rigor e sensibilidade às singularidades sem tornar o protocolo inexequível?"],
+ {title:"Síntese provisória e horizontes do desenvolvimento",min:2,plate:18,lead:"A contribuição desta etapa é tornar explícitos o problema, os fundamentos e um procedimento analítico passível de aperfeiçoamento.",
+ points:["Consolidados até aqui: historicização, fundamentos do desenvolvimento, organização do levantamento e ensaio da matriz.","Em aberto: completar 2026, concluir elegibilidade, dimensionar a análise e revisar critérios diante dos documentos.","A adolescência oferece possibilidades de reorganização do psiquismo, especialmente pela formação do pensamento por conceitos, mediada pelas relações sociais e pelo ensino."],
  source:"TELLES (2026), caps. 5–6, especialmente pp. 238–243 do PDF da qualificação.",
- quote:"O que o conhecimento científico sobre a adolescência me permite compreender acerca dos estudantes que a escola recebe",quoteSource:"TELLES (2026, p. 243 do PDF), pergunta reflexiva da autora.",
- notes:"Concluir retomando a distinção entre problema formal e compromisso pedagógico. Não anunciar resultados nacionais inexistentes. Reconhecer a qualificação como espaço de interlocução sobre delimitação, consistência e viabilidade. O fechamento deve convidar contribuições precisas dos professores, sem uma longa lista de justificativas defensivas.",
+ quote:"a adolescência é um momento privilegiado tanto pelo desenvolvimento do pensamento por conceitos",quoteSource:"ANJOS (2014), resumo de Aportes teóricos da psicologia histórico-cultural para a educação escolar de adolescentes; formulação a partir de Vigotski. DOI: 10.7867/1809-0354.2014v9n1p106-126.",
+ notes:"Concluir retomando a distinção entre problema formal e compromisso pedagógico. A citação de Anjos (2014), apoiada em Vigotski, sublinha a adolescência como um período de possibilidades de transformações psíquicas, que não se realizam automaticamente: dependem de mediações históricas, sociais e escolares. Não anunciar resultados nacionais inexistentes. Agradecer à banca as contribuições para delimitação e viabilidade.",
  transition:"Agradeço a leitura e as contribuições à continuidade desta investigação."}
 ];
 const root=document.getElementById("banca-presenter"),start=document.getElementById("banca-start"),exit=document.getElementById("banca-exit");
@@ -847,6 +878,8 @@ function render(){
  const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
  el("banca-progress-text").textContent=(current+1)+" de "+slides.length;
  el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
+ const zoomMode=!!item.zoom;
+ el("banca-presenter").querySelector(".banca-stage-content").classList.toggle("is-zoom",zoomMode);
  el("banca-stage-meta").textContent="MOVIMENTO "+(current+1)+" / "+slides.length;
  el("banca-view-title").textContent=item.title;
  el("banca-stage-thesis").textContent=item.lead;
@@ -918,7 +951,7 @@ const notesButton=document.getElementById("banca-standalone-rou");
 let notesWin=null;
 function share(){
  if(!notesWin||notesWin.closed)return;
- const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 8";
+ const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 9";
  const index=Math.max(0,(parseInt(progress,10)||1)-1);
  const state={index,elapsed:document.getElementById("banca-clock-elapsed")?.textContent||"00:00",remaining:document.getElementById("banca-clock-remaining")?.textContent||"",presenting:!document.getElementById("banca-presenter").hidden};
  try{notesWin.gvShowState?.(state);}catch(e){}
