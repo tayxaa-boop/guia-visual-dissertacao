@@ -681,6 +681,17 @@ html,body{background:#f5f7fa}
  .banca-presenter .banca-float-panel{max-height:58dvh;width:min(335px,calc(100vw - .8rem))}
 }
 @media print{.banca-presenter .banca-floating-ui{display:none!important}}
+
+/* Notas-relâmpago: autores, obras, categorias, páginas e setas. */
+.banca-notes .banca-note-sequences{display:grid;gap:.55rem;padding:.55rem .35rem .25rem}
+.banca-notes .banca-cue-line{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .42rem;margin:0!important;max-width:none!important}
+.banca-notes .banca-cue-label{font-size:.77rem;font-weight:800;color:#38566d;text-transform:uppercase;letter-spacing:.045em;margin-right:.2rem}
+.banca-notes .banca-cue-chip{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:.25rem;background:#f0f5f8;border:1px solid #d5e0e7;padding:.28rem .47rem;border-radius:7px;font-size:.88rem;font-weight:600;color:#1a3b50;line-height:1.42}
+.banca-notes .banca-cue-page{color:#4b6980;background:#fff;border:1px solid #ccd8e0;border-radius:5px;padding:0 .25rem;font-size:.76rem;font-weight:700;white-space:nowrap}
+.banca-notes .banca-cue-arrow{font-size:1.03rem;color:#477a94;font-weight:800;line-height:1}
+.banca-notes .banca-note-legend{display:block;font-size:.72rem;color:#50687c;line-height:1.35;margin:.35rem .3rem 0}
+@media(max-width:699px){.banca-notes .banca-cue-chip{font-size:.82rem}.banca-notes .banca-cue-page{font-size:.72rem}}
+@media(forced-colors:active){.banca-notes .banca-cue-chip,.banca-notes .banca-cue-page{border:1px solid CanvasText}}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
@@ -756,7 +767,7 @@ html,body{background:#f5f7fa}
      <div id="banca-visual-extra" class="banca-visual-extra"></div>
     </div>
    </div>
-   <details id="banca-notes" class="banca-notes"><summary>Notas da fala e transição (abrir apenas para ensaiar)</summary><p id="banca-stage-notes"></p><p id="banca-stage-transition"></p></details>
+   <details id="banca-notes" class="banca-notes"><summary>Notas da fala e transição</summary><div class="banca-note-sequences"><p id="banca-stage-notes" aria-label="Palavras-chave da fala"></p><p id="banca-stage-transition" aria-label="Palavras-chave da transição"></p></div><small class="banca-note-legend">Páginas indicadas: dissertação de qualificação, TELLES (2026), não as obras citadas.</small></details>
    <div class="banca-footer"><div class="banca-footer-main"><button type="button" id="banca-prev">← Anterior</button><button type="button" id="banca-next">Próximo →</button><a href="#prancha1" id="banca-go-plate">Abrir prancha no Guia</a></div><span id="banca-time-total">Use as setas para navegar pelos movimentos</span></div>
   </div>
   
@@ -1026,63 +1037,63 @@ const slides=[
  {title:"Percurso da investigação · problema, hipótese e objetivos",min:1,plate:"dialetica",cover:true,lead:"A pergunta de pesquisa orienta objetivos relacionados, com retornos críticos entre fundamento, corpus e explicação.",points:[],
  source:"TELLES (2026), Introdução, pp. 27–28; matriz de objetivos e microobjetivos da qualificação.",
  quote:"",quoteSource:"",
- notes:"Abrir com o título da dissertação, a pergunta formal, a hipótese de trabalho sem antecipar tendências, e o objetivo geral. Na figura, o objetivo geral está no centro e cinco verbos exatos do texto da qualificação se articulam reciprocamente. Clicar em cada verbo abre seu enunciado literal e um mapeamento de capítulos/subcapítulos. Enfatizar que a planilha de microobjetivos é uma reconstrução da leitura, não parte literal dos objetivos.",
- transition:"Com o percurso exposto, passo à distinção decisiva entre o fenômeno adolescência e o objeto documental: as explicações acadêmicas."},
+ notes:"TELLES · Introdução [p. 27] → hipótese [p. 27] → objetivo geral [p. 27] → cinco objetivos [pp. 27–28] → movimento dialético [p. 39]",
+ transition:"fenômeno [p. 29] → objeto documental [p. 27]"},
  {title:"Problema e objeto",min:1,plate:1,lead:"Não investigo diretamente os adolescentes: investigo como a produção acadêmica explica a adolescência e o desenvolvimento humano.",
  points:["O fenômeno real e as concepções científicas sobre ele não são a mesma coisa.","A pergunta de pesquisa interroga também as mediações históricas, sociais, escolares e político-educacionais.","O desenvolvimento humano não é um tema paralelo: é aquilo que se procura compreender nas explicações sobre a adolescência."],
  source:"TELLES (2026), Introdução, problema e objetivo geral; PDF da qualificação, pp. 26–28.",
  quote:"Como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, publicadas ou defendidas entre 2018 e 2026, concebem a adolescência e o desenvolvimento humano, e de que modo articulam, ou deixam de articular, as mediações históricas, sociais, escolares e político-educacionais na explicação desse desenvolvimento?",quoteSource:"Problema de pesquisa: TELLES (2026), Introdução, p. 27 do PDF.",
- notes:"Começar pelo objeto e pela pergunta formal da Introdução: como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, entre 2018 e 2026, concebem adolescência e desenvolvimento humano e articulam as mediações em suas explicações? Explicar brevemente o deslocamento das inquietações da docência para o problema documental; não transformar a motivação pessoal em objeto de análise.",
- transition:"Se meu objeto são as explicações acadêmicas, preciso mostrar como vou reconstruí-las, não apenas classificá-las."},
+ notes:"problema de pesquisa [p. 27] → fenômeno × concepções científicas [p. 29] → desenvolvimento humano [p. 27] → mediações históricas e escolares [p. 27]",
+ transition:"concepções acadêmicas [p. 27] → reconstrução de explicações [p. 47]"},
  {title:"Escolha do método e unidade de análise",min:2.5,plate:4,lead:"O materialismo histórico-dialético orienta perguntas sobre gênese, totalidade, mediações e contradições; não oferece uma lista para pontuar trabalhos.",
  points:["A unidade de análise é a lógica interna das explicações de cada produção.","Primeiro reconstruo o argumento em seus próprios termos; depois realizo a interrogação crítica.","A matriz organiza decisões rastreáveis, mas não substitui o movimento de investigação."],
  source:"MARX (2008, p. 129); NETTO (2011); TELLES (2026), cap. 1, pp. 35–40, e seção 4.5.1.",
  quote:"O concreto é concreto, porque é a síntese de muitas determinações",quoteSource:"MARX (2008, p. 129), passagem citada na dissertação.",
- notes:"Defender a permanência da escolha metodológica com a distinção entre método e procedimento. Explicar por que a identidade entre palavras-chave e concepções seria insuficiente. Destacar singularidade de cada estudo, particularidade brasileira e determinações gerais, sem prometer totalidade concluída por preenchimento de fichas.",
- transition:"A historicidade da própria adolescência explica por que não posso tomar definições etárias como universais."},
+ notes:"MARX · Contribuição à crítica da economia política [p. 35] → NETTO · Introdução ao estudo do método de Marx [pp. 35–36] → concreto e determinações [p. 39] → unidade de análise [pp. 47; 182] → método ≠ protocolo [p. 181]",
+ transition:"historicidade [p. 61] → crítica à universalização [pp. 61–64]"},
  {title:"Historicidade e particularidade brasileira",min:2,plate:9,lead:"A adolescência é vivida em corpos reais, mas suas condições de formação e reconhecimento são social e historicamente desiguais.",
  points:["A reconstrução histórica distingue experiências das idades da vida e constituição das categorias que as explicam.","Colonização, escravidão, trabalho, classes e escolarização são determinações indispensáveis à particularidade brasileira.","Direitos formalmente reconhecidos coexistem com desigualdades de acesso ao tempo e às condições de formação."],
  source:"TELLES (2026), cap. 2, especialmente seção 2.3; discussão com Prado Jr., Gorender e Marquese.",
  quote:"",quoteSource:"",
- notes:"Não resumir toda a história da adolescência. Em vez disso, demonstrar a função do capítulo: evitar transpor uma história europeia como padrão universal. Uma passagem pela formação social brasileira é suficiente para ligar trabalho, escolarização e direitos às formas concretas de desenvolvimento.",
- transition:"Historicizar a adolescência nos coloca diante de outra questão: como se formam as capacidades humanas nessas relações?"},
+ notes:"PRADO JR. · Formação do Brasil contemporâneo [p. 88] → GORENDER · O escravismo colonial [p. 88] → MARQUESE · Capitalismo, escravidão e economia cafeeira [p. 89] → trabalho/classes [p. 92] → escolarização [p. 95] → direitos [p. 104]",
+ transition:"condições históricas [p. 86] → formação humana [p. 120]"},
  {title:"Desenvolvimento humano e trabalho educativo",min:2.5,plate:10,lead:"O psiquismo se desenvolve nas relações sociais e na atividade de apropriação cultural; a escola participa desse processo sob condições determinadas.",
  points:["Psicologia Histórico-Cultural: mediação, atividade, funções psíquicas superiores e pensamento conceitual.","Pedagogia Histórico-Crítica: especificidade do ensino e socialização do conhecimento sistematizado.","O papel da escola não pode ser deduzido automaticamente da idade nem afirmado sem examinar as condições reais de sua atividade."],
  source:"VIGOTSKI (1995, 1996); LEONTIEV (2021); SAVIANI (2011); ANJOS (2017). TELLES (2026), cap. 3.",
  quote:"",quoteSource:"",
- notes:"Explicitar em uma frase a distinção entre psicologia e pedagogia: a primeira ajuda a explicar a gênese e as transformações do psiquismo; a segunda formula questões sobre finalidades, conteúdos e organização intencional do trabalho educativo. Relacionar isso à questão ‘como nos tornamos quem somos?’, mas preservar o problema formal da pesquisa. A referência à escola precisa demonstrar mediações, não só celebrar sua importância.",
- transition:"Com esse horizonte, o próximo passo é decidir que conjunto de produções pode ser efetivamente examinado."},
+ notes:"VIGOTSKI · Obras escogidas III–IV [pp. 125–130] → LEONTIEV · Atividade. Consciência. Personalidade [pp. 131–137] → pensamento conceitual [p. 146] → SAVIANI · Pedagogia histórico-crítica [p. 157] → trabalho educativo [p. 157]",
+ transition:"desenvolvimento [p. 163] → corpus [p. 167]"},
  {title:"Corpus: recorte, números e limites",min:2,plate:13,lead:"O recorte de 2018–2026 é o horizonte da pesquisa; os números já recuperados descrevem etapas documentais distintas, não resultados sobre concepções.",
  points:["Levantamento original 2017–2025: 1.543 ocorrências, 992 documentos únicos e 633 encaminhados à avaliação integral.","Subconjunto 2018–2025: 1.352 ocorrências, 875 documentos únicos e 563 encaminhados à avaliação integral.","A recuperação de 2026, a elegibilidade integral e o levantamento de artigos continuam pendentes."],
  source:"TELLES (2026), cap. 4, Tabelas 1–2 e Figura 12; prancha 13.",
  quote:"",quoteSource:"",
- notes:"Enunciar em voz alta que 633 não é o corpus final e que 875 diz respeito apenas ao subconjunto das teses e dissertações de 2018–2025. Distinguir o universo pretendido, a recuperação documental e a análise integral ainda não concluída. Priorizar clareza e não transformar a apresentação em leitura de planilhas.",
- transition:"Os números explicam o alcance da busca; não mostram o que os trabalhos dizem. É aí que entra a matriz."},
+ notes:"BDTD · estratégias de busca [p. 171] → deduplicação [p. 173] → Tabela 2 · recortes [p. 175] → triagem/elegibilidade [pp. 177–179] → atualização de 2026 [p. 168]",
+ transition:"recuperação documental [pp. 170–175] → explicações [p. 181]"},
  {title:"Matriz Tripartida: perguntas e cinco movimentos",min:3,plate:14,alternate:15,lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis, sem atribuir notas a autores.",
  points:["Dimensões: epistemológico-metodológica; ontológico-psicológica; pedagógico-político-educacional.","Movimentos: reconstruir, interrogar, registrar, confrontar e sintetizar, com retornos às fontes.","Estados E/M/I/NI/A e marcador transversal T: condições de registro documental, não escala hierárquica; a não aplicação é distinta da ausência."],
  source:"TELLES (2026), cap. 4, seção 4.5; Quadros 3–6 e Figuras 13–14; pranchas 14–15.",
  quote:"",quoteSource:"",
- notes:"Este é o núcleo metodológico e merece o maior tempo. Indicar primeiro a unidade de análise; depois apresentar as três dimensões como perguntas pertinentes a cada objeto, não caixas independentes. Explicar os cinco movimentos e alternar o esquema para mostrar sua reversibilidade. Definir E explicitação, M menção, I inferência fundamentada, NI não identificável, A ausência verificada e T tensão documentada. Ressaltar que ausência requer exame suficiente e não aplicação significa pergunta não pertinente. A banca pode discutir sensibilidade, exequibilidade e ineditismo sem que a matriz precise ser apresentada como validada.",
- transition:"O teste mais importante não é o desenho da matriz, mas o que ela permite perceber quando encontra produções diferentes."},
+ notes:"MARX · método [p. 182] → TELLO · Epistemologías de la política educativa [p. 184] → SÁNCHEZ GAMBOA · Pesquisa em educação [p. 184] → três dimensões [p. 191] → cinco movimentos [pp. 186–202] → E/M/I/NI/A/T [p. 194]",
+ transition:"matriz [p. 205] → testes [p. 214]"},
  {title:"Zoom metodológico: como a matriz foi construída",min:1,plate:"metodologico",zoom:true,
  lead:"O problema da pesquisa orienta três perguntas articuladas, operações documentais e interpretações fundamentadas.",
  points:[],
  source:"TELLES (2026), seção 4.5 e exercício exploratório do capítulo 5; prancha explicativa da autora.",
  quote:"",quoteSource:"",
- notes:"Exibir a prancha integral sem alterar o conteúdo: destacar a sequência problema → três perguntas → dimensões → operações documentais → interpretações fundamentadas. Apontar unidade de análise, cinco movimentos, estados documentais e limites do teste com Soares e Bueno. Esta prancha não é um checklist de qualidade.",
- transition:"O percurso da matriz pode ser observado nos dois exercícios documentais de 2018."},
+ notes:"problema [p. 27] → dimensões [p. 191] → reconstrução [p. 187] → interrogação [p. 190] → registro [p. 193] → confronto [p. 197] → síntese [p. 201]",
+ transition:"matriz [p. 181] → SOARES/BUENO [pp. 217; 223]"},
  {title:"Soares e Bueno: o exercício exploratório",min:3,plate:16,lead:"Dois estudos de 2018, com objetos diferentes, permitem testar a sensibilidade das perguntas; não autorizam tendências nacionais.",
  points:["Soares: escolhas profissionais, motivos, alternativas e condições institucionais de estudantes.","Bueno: constituição de uma prática de educação sexual, organização curricular e intencionalidade educativa.","A comparação preserva as singularidades e distingue argumentos dos autores de inferências analíticas."],
  source:"SOARES (2018); BUENO (2018). TELLES (2026), cap. 5, seções 5.2–5.5.",
  quote:"",quoteSource:"",
- notes:"Apresentar uma pergunta que a matriz torna possível em cada estudo: em Soares, como as alternativas sociais e escolares participam da escolha profissional? Em Bueno, como as condições curriculares tornam possível a prática pedagógica? Demonstrar o ganho: reconhecer funções diferentes das mediações, e também identificar o que os trabalhos não demonstram. Não extrapolar a partir de duas dissertações.",
- transition:"O exercício não encerra a investigação. Ele ajuda a formular melhor o que deve ser feito depois da qualificação."},
+ notes:"SOARES · A escolha profissional no ensino técnico [p. 217] → 32/54: escolha hipotética [p. 229] → BUENO · História da criação do Papo Jovem [p. 223] → integração curricular [pp. 224–225] → limites da inferência [pp. 229–230] → síntese [p. 237]",
+ transition:"duas aplicações [p. 237] → revisão da matriz [p. 239]"},
  {title:"Síntese provisória e horizontes do desenvolvimento",min:2,plate:18,lead:"A contribuição desta etapa é tornar explícitos o problema, os fundamentos e um procedimento analítico passível de aperfeiçoamento.",
  points:["Consolidados até aqui: historicização, fundamentos do desenvolvimento, organização do levantamento e ensaio da matriz.","Em aberto: completar 2026, concluir elegibilidade, dimensionar a análise e revisar critérios diante dos documentos.","A adolescência oferece possibilidades de reorganização do psiquismo, especialmente pela formação do pensamento por conceitos, mediada pelas relações sociais e pelo ensino."],
  source:"TELLES (2026), caps. 5–6, especialmente pp. 238–243 do PDF da qualificação.",
  quote:"Os produtos da imaginação começam a se expressar, em suas máximas possibilidades, a partir da adolescência, por meio do pensamento por conceitos",quoteSource:"ANJOS (2017), resumo de O desenvolvimento histórico-cultural da imaginação na adolescência e a educação escolar. DOI: 10.26673/rtes.v13.n2.jul-dez.2017.9602.",
- notes:"Concluir retomando a distinção entre problema formal e compromisso pedagógico. A citação de Anjos (2017), apoiada nos fundamentos histórico-culturais, destaca as potencialidades de desenvolvimento da imaginação e do pensamento conceitual na adolescência, que não se realizam automaticamente: dependem de mediações históricas, sociais e escolares. Não anunciar resultados nacionais inexistentes. Agradecer à banca as contribuições para delimitação e viabilidade.",
- transition:"Agradeço a leitura e as contribuições à continuidade desta investigação."}
+ notes:"VIGOTSKI · Obras escogidas IV [p. 146] → ANJOS · Desenvolvimento da personalidade na adolescência [pp. 146–153] → pensamento conceitual [p. 153] → SAVIANI · Pedagogia histórico-crítica [p. 157] → síntese exploratória [p. 237] → horizontes [p. 240]",
+ transition:"limites [pp. 240–243] → contribuições da banca"}
 ];
 const root=document.getElementById("banca-presenter"),start=document.getElementById("banca-start"),exit=document.getElementById("banca-exit");
 if(!root||!start||!exit)return;
@@ -1337,6 +1348,22 @@ function cloneFigure(plate){
  const rel=document.querySelector("#prancha"+plate+" .relational-reading");
  if(rel){const copied=rel.cloneNode(true);copied.open=false;target.append(copied);}
 }
+
+function renderCueLine(id,label,value){
+ const target=el(id);target.classList.add("banca-cue-line");target.replaceChildren();
+ const title=document.createElement("strong");title.className="banca-cue-label";title.textContent=label;target.append(title);
+ const steps=(value||"").split("→").map(x=>x.trim()).filter(Boolean);
+ for(let i=0;i<steps.length;i++){
+  if(i){const arrow=document.createElement("span");arrow.className="banca-cue-arrow";arrow.textContent="→";arrow.setAttribute("aria-hidden","true");target.append(arrow);}
+  const step=steps[i],pos=step.lastIndexOf(" ["),match=pos>=0&&step.endsWith("]")?step.slice(pos+2,-1):null;
+  const chip=document.createElement("span");chip.className="banca-cue-chip";
+  if(match&&(match.startsWith("p.")||match.startsWith("pp."))){
+   chip.append(document.createTextNode(step.slice(0,pos)));
+   const page=document.createElement("span");page.className="banca-cue-page";page.textContent=match;chip.append(page);
+  }else chip.textContent=step;
+  target.append(chip);
+ }
+}
 function render(){
  const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
  updateMenuPosition();
@@ -1358,8 +1385,8 @@ function render(){
  el("banca-stage-quote-text").textContent=item.quote?'“'+item.quote+'”':"";
  el("banca-stage-quote-cite").textContent=item.quoteSource;
  el("banca-stage-source").textContent="Fundamentação e remissões: "+item.source;
- el("banca-stage-notes").textContent="Roteiro de fala: "+item.notes;
- el("banca-stage-transition").textContent="Transição: "+item.transition;
+ renderCueLine("banca-stage-notes","Fala",item.notes);
+ renderCueLine("banca-stage-transition","Transição",item.transition);
  el("banca-notes").open=false;
  el("banca-go-plate").href=coverMode?"index.html#dialetica":"#prancha"+item.plate;
  el("banca-go-plate").textContent=coverMode?"Percurso dialético no Guia":"Abrir prancha no Guia";
