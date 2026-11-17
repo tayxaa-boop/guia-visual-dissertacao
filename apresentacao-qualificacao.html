@@ -639,6 +639,48 @@ html,body{background:#f5f7fa}
   .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom):not(.is-figure-focus){padding:.85rem .9rem}
   .banca-presenter .banca-stage-content.is-figure-focus .banca-stage-figure svg{max-height:45dvh}
 }
+
+/* Menus de apoio à projeção: recolhíveis, teclado e leitores de tela. */
+.banca-presenter .banca-floating-ui{position:fixed;inset:0;pointer-events:none;z-index:10030;font-family:Arial,sans-serif}
+.banca-presenter .banca-float-group{position:absolute;bottom:calc(5.5rem + env(safe-area-inset-bottom));pointer-events:auto;display:flex;flex-direction:column;gap:.45rem;max-width:calc(100vw - 1rem)}
+.banca-presenter .banca-float-navigation{left:clamp(.6rem,1.6vw,1.4rem);align-items:flex-start}
+.banca-presenter .banca-float-reading{right:clamp(.6rem,1.6vw,1.4rem);align-items:flex-end}
+.banca-presenter .banca-float-launcher{min-height:44px;padding:.58rem .83rem;color:#fff;background:#244f67;border:2px solid #e2edf4;border-radius:999px;box-shadow:0 5px 20px #1b334a35;font-weight:700;font-size:.94rem;white-space:nowrap}
+.banca-presenter .banca-float-launcher[aria-expanded=true]{background:#153f58}
+.banca-presenter .banca-float-panel{width:min(365px,calc(100vw - 1.4rem));max-height:min(70dvh,620px);overflow:auto;padding:1rem;border:1px solid #a9c4d6;border-radius:16px;background:#fff;color:#1c354b;box-shadow:0 16px 48px #10283e45;overscroll-behavior:contain;order:-1}
+.banca-presenter .banca-float-panel[hidden]{display:none!important}
+.banca-presenter .banca-float-panel .banca-float-heading{display:flex;align-items:center;justify-content:space-between;gap:.45rem}
+.banca-presenter .banca-float-heading h3{font-size:1.13rem;line-height:1.3;margin:.15rem 0 .35rem;color:#203e54}
+.banca-presenter .banca-float-close{font-size:1.7rem;line-height:1;min-width:44px;min-height:44px;border:1px solid #a8bfce;border-radius:10px;background:#f2f6f9;color:#22455e;flex-shrink:0}
+.banca-presenter .banca-float-help{font-size:.87rem;margin:.2rem 0 .8rem;line-height:1.45;color:#50677c}
+.banca-presenter .banca-float-links{display:flex;flex-direction:column;gap:.35rem}
+.banca-presenter .banca-float-links a{display:flex;gap:.6rem;align-items:flex-start;padding:.56rem .64rem;text-decoration:none;background:#f5f8fa;border:1px solid #d3e0e8;border-radius:8px;color:#1b4058;line-height:1.32;font-size:.89rem}
+.banca-presenter .banca-float-links a:hover,.banca-presenter .banca-float-links a:focus-visible{border-color:#5f91ac;background:#e7f1f6}
+.banca-presenter .banca-float-links a[aria-current=step]{background:#dbeaf2;border-color:#39728e;font-weight:700}
+.banca-presenter .banca-float-links .banca-link-number{flex:0 0 2.8rem;font-weight:800;color:#29556e}
+.banca-presenter .banca-float-control-row{display:flex;gap:.35rem;flex-wrap:wrap;margin:.65rem 0}
+.banca-presenter .banca-float-control-row button{padding:.46rem .6rem;min-height:44px;font-size:.88rem;border:1px solid #91aec0;background:#f3f7fa;color:#1c3b50;border-radius:8px;font-weight:700}
+.banca-presenter .banca-float-control-row button[aria-pressed=true]{background:#214d69;color:#fff}
+.banca-presenter .banca-float-control-row button:disabled{opacity:.48;cursor:not-allowed}
+.banca-presenter .banca-float-control-row #banca-speech-start{background:#235c72;color:#fff}
+.banca-presenter .banca-float-voice{margin-top:.6rem;padding-top:.45rem;border-top:1px solid #d1e0e8}
+.banca-presenter .banca-float-voice h4{margin:.15rem 0 .25rem;font-size:1rem;color:#234b64}
+.banca-presenter .banca-speech-status{font-size:.83rem;line-height:1.45;color:#4b6577;margin:.4rem 0 0}
+.banca-presenter .banca-float-launcher:focus-visible,.banca-presenter .banca-float-panel :is(button,a):focus-visible{outline:3px solid #d78e3a;outline-offset:3px}
+.banca-presenter.banca-read-contrast .banca-stage-content{background:#fff!important;color:#000!important}
+.banca-presenter.banca-read-contrast .banca-stage-content .banca-copy :is(h3,p,li,cite),
+.banca-presenter.banca-read-contrast .banca-stage-content .banca-visual :is(p,figcaption),
+.banca-presenter.banca-read-contrast .banca-cover :is(h4,h5,p,span,small){color:#000!important}
+.banca-presenter.banca-read-contrast .banca-stage-content :is(.banca-cover-text,.banca-cover-diagram,.banca-visual,.banca-quote,.banca-source){background:#fff!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-orbit-center{background:#000!important;color:#fff!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-orbit-center :is(span,strong,p){color:#fff!important}
+.banca-presenter.banca-read-contrast .banca-objective-node{background:#fff!important;color:#000!important;border-color:#000!important}
+@media(max-width:650px){
+ .banca-presenter .banca-float-group{bottom:calc(4.7rem + env(safe-area-inset-bottom))}
+ .banca-presenter .banca-float-launcher{padding:.5rem .65rem;font-size:.82rem}
+ .banca-presenter .banca-float-panel{max-height:58dvh;width:min(335px,calc(100vw - .8rem))}
+}
+@media print{.banca-presenter .banca-floating-ui{display:none!important}}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
@@ -716,6 +758,38 @@ html,body{background:#f5f7fa}
    </div>
    <details id="banca-notes" class="banca-notes"><summary>Notas da fala e transição (abrir apenas para ensaiar)</summary><p id="banca-stage-notes"></p><p id="banca-stage-transition"></p></details>
    <div class="banca-footer"><div class="banca-footer-main"><button type="button" id="banca-prev">← Anterior</button><button type="button" id="banca-next">Próximo →</button><a href="#prancha1" id="banca-go-plate">Abrir prancha no Guia</a></div><span id="banca-time-total">Use as setas para navegar pelos movimentos</span></div>
+  </div>
+  
+  <div class="banca-floating-ui" id="banca-floating-ui" aria-label="Menus de apoio da apresentação">
+    <section class="banca-float-group banca-float-navigation" aria-label="Navegação por movimentos">
+      <button type="button" class="banca-float-launcher" id="banca-nav-trigger" aria-controls="banca-nav-panel" aria-expanded="false" title="Abrir menu de movimentos">☷ Movimentos</button>
+      <div class="banca-float-panel" id="banca-nav-panel" hidden>
+        <div class="banca-float-heading"><h3>Ir para um movimento</h3><button type="button" class="banca-float-close" id="banca-nav-close" aria-label="Fechar menu de movimentos">×</button></div>
+        <p class="banca-float-help">Selecione a abertura ou um movimento para ir diretamente à prancha, sem reiniciar o cronômetro.</p>
+        <nav id="banca-float-links" class="banca-float-links" aria-label="Índice clicável dos movimentos"></nav>
+      </div>
+    </section>
+    <section class="banca-float-group banca-float-reading" aria-label="Ajustes de leitura e narração">
+      <button type="button" class="banca-float-launcher" id="banca-read-trigger" aria-controls="banca-read-panel" aria-expanded="false" title="Abrir ajustes de leitura">Aa Leitura</button>
+      <div class="banca-float-panel" id="banca-read-panel" hidden>
+        <div class="banca-float-heading"><h3>Leitura e acessibilidade</h3><button type="button" class="banca-float-close" id="banca-read-close" aria-label="Fechar ajustes de leitura">×</button></div>
+        <div class="banca-float-control-row" role="group" aria-label="Ajuste de tamanho e contraste">
+          <button type="button" id="banca-text-minus" aria-label="Diminuir tamanho da letra">A−</button>
+          <button type="button" id="banca-text-plus" aria-label="Aumentar tamanho da letra">A+</button>
+          <button type="button" id="banca-contrast-toggle" aria-pressed="false">Alto contraste</button>
+          <button type="button" id="banca-text-reset">Padrão</button>
+        </div>
+        <div class="banca-float-voice" role="group" aria-label="Leitura em voz alta da prancha">
+          <h4>Leitura em voz alta</h4>
+          <div class="banca-float-control-row">
+            <button type="button" id="banca-speech-start">▶ Ler prancha</button>
+            <button type="button" id="banca-speech-pause" disabled>Pausar</button>
+            <button type="button" id="banca-speech-stop" disabled>Parar</button>
+          </div>
+          <p id="banca-speech-status" class="banca-speech-status" role="status" aria-live="polite">Narração disponível conforme o navegador e as vozes do dispositivo.</p>
+        </div>
+      </div>
+    </section>
   </div>
  </div>
 
@@ -1040,6 +1114,168 @@ el("banca-cover-mount").addEventListener("click",function(event){
  dialog.showModal();
 });
 
+
+/* Controles flutuantes: navegação, acessibilidade e síntese de voz. */
+const navPanel=el("banca-nav-panel"),readPanel=el("banca-read-panel");
+const navTrigger=el("banca-nav-trigger"),readTrigger=el("banca-read-trigger");
+const voiceStart=el("banca-speech-start"),voicePause=el("banca-speech-pause"),voiceStop=el("banca-speech-stop");
+const voiceStatus=el("banca-speech-status");
+let readingScale=1,speechJob=0,speechActive=false,speechPaused=false,speechChunks=[];
+const speechSupported=typeof window.speechSynthesis!=="undefined"&&typeof window.SpeechSynthesisUtterance!=="undefined";
+if(!speechSupported){voiceStart.disabled=true;voiceStatus.textContent="Este navegador não oferece leitura em voz alta. Os outros ajustes permanecem disponíveis.";}
+function showPanel(which,show){
+ const target=which==="nav"?navPanel:readPanel;
+ const trigger=which==="nav"?navTrigger:readTrigger;
+ const other=which==="nav"?readPanel:navPanel;
+ const otherTrigger=which==="nav"?readTrigger:navTrigger;
+ if(show){other.hidden=true;otherTrigger.setAttribute("aria-expanded","false");}
+ target.hidden=!show;trigger.setAttribute("aria-expanded",String(show));
+ if(!show)trigger.focus();
+}
+navTrigger.addEventListener("click",()=>showPanel("nav",navPanel.hidden));
+readTrigger.addEventListener("click",()=>showPanel("read",readPanel.hidden));
+el("banca-nav-close").addEventListener("click",()=>showPanel("nav",false));
+el("banca-read-close").addEventListener("click",()=>showPanel("read",false));
+const linksHost=el("banca-float-links");
+const linkNodes=[];
+slides.forEach((item,index)=>{
+ const link=document.createElement("a");
+ link.href=index===0?"#abertura":"#movimento-"+index;
+ link.dataset.slideIndex=String(index);
+ const number=document.createElement("span");number.className="banca-link-number";
+ number.textContent=index===0?"Início":String(index).padStart(2,"0");
+ const caption=document.createElement("span");caption.textContent=index===0?"Abertura — problema, hipótese e objetivos":item.title;
+ link.append(number,caption);
+ link.addEventListener("click",event=>{
+   event.preventDefault();
+   stopSpeech();
+   if(dialog.open)dialog.close();
+   current=index;figureAlternate=false;figureFocus=false;
+   showPanel("nav",false);render();root.scrollTop=0;
+ });
+ linksHost.append(link);linkNodes.push(link);
+});
+function updateMenuPosition(){
+ linkNodes.forEach((link,index)=>{
+  if(index===current)link.setAttribute("aria-current","step");
+  else link.removeAttribute("aria-current");
+ });
+}
+const scaleSelectors=[
+ ".banca-cover-text h4",".banca-cover-text h5",".banca-cover-text p",".banca-cover-text small",
+ ".banca-orbit-heading h4",".banca-orbit-heading p",".banca-orbit-center span",
+ ".banca-orbit-center strong",".banca-orbit-center p",".banca-objective-node strong",
+ ".banca-objective-node span",".banca-orbit-foot",
+ ".banca-copy h3",".banca-copy .banca-meta",".banca-copy .banca-thesis",
+ ".banca-copy .banca-points li",".banca-copy .banca-quote p",".banca-copy .banca-quote cite",
+ ".banca-copy .banca-source",".banca-visual-label",".banca-stage-figure figcaption",
+ ".banca-figure-source"
+].join(",");
+function applyReadingScale(){
+ const nodes=[...root.querySelectorAll(scaleSelectors)];
+ for(const node of nodes){
+  node.style.removeProperty("font-size");
+  if(readingScale!==1){
+   const original=Number.parseFloat(window.getComputedStyle(node).fontSize);
+   if(Number.isFinite(original))node.style.fontSize=(original*readingScale).toFixed(2)+"px";
+  }
+ }
+}
+function setReadingScale(value){
+ readingScale=Math.max(.85,Math.min(1.4,Math.round(value*100)/100));
+ applyReadingScale();
+ el("banca-text-minus").disabled=readingScale<=.85;
+ el("banca-text-plus").disabled=readingScale>=1.4;
+}
+el("banca-text-minus").addEventListener("click",()=>setReadingScale(readingScale-.1));
+el("banca-text-plus").addEventListener("click",()=>setReadingScale(readingScale+.1));
+el("banca-contrast-toggle").addEventListener("click",function(){
+ const active=root.classList.toggle("banca-read-contrast");
+ this.setAttribute("aria-pressed",String(active));
+});
+el("banca-text-reset").addEventListener("click",()=>{
+ setReadingScale(1);
+ root.classList.remove("banca-read-contrast");
+ el("banca-contrast-toggle").setAttribute("aria-pressed","false");
+});
+function composeSpeech(){
+ const item=slides[current],parts=[];
+ if(item.cover){
+  const nodes=root.querySelectorAll(".banca-cover-kicker,.banca-cover-text h4,.banca-cover-people,.banca-cover-section h5,.banca-cover-section p,.banca-orbit-heading h4,.banca-orbit-center,.banca-objective-node strong,.banca-objective-node span,.banca-orbit-foot");
+  nodes.forEach(node=>{if(node.textContent.trim())parts.push(node.textContent.trim());});
+ }else{
+  parts.push(item.title);
+  if(!item.zoom){
+   parts.push(item.lead);
+   item.points.forEach(x=>parts.push(x));
+   if(item.quote)parts.push(item.quote);
+   if(item.quoteSource)parts.push(item.quoteSource);
+  }
+  const svgDesc=el("banca-stage-figure").querySelector("svg desc");
+  if(svgDesc&&svgDesc.textContent)parts.push(svgDesc.textContent);
+  const img=el("banca-stage-figure").querySelector("img[alt]");
+  if(img&&img.alt)parts.push(img.alt);
+  const caption=el("banca-stage-figure").querySelector("figcaption");
+  if(caption)parts.push(caption.textContent);
+  const source=el("banca-stage-source");
+  if(source&&!item.zoom)parts.push(source.textContent);
+ }
+ return parts.join(". ").replace(/\s+/g," ").trim();
+}
+function chunkSpeech(text){
+ const words=text.split(/\s+/),chunks=[];let currentChunk="";
+ for(const word of words){
+  if((currentChunk+" "+word).length>190&&currentChunk){chunks.push(currentChunk);currentChunk=word;}
+  else currentChunk+=(currentChunk?" ":"")+word;
+ }
+ if(currentChunk)chunks.push(currentChunk);
+ return chunks;
+}
+function voiceButtons(){
+ voiceStart.disabled=!speechSupported;
+ voicePause.disabled=!speechActive;
+ voiceStop.disabled=!speechActive;
+ voicePause.textContent=speechPaused?"Retomar":"Pausar";
+}
+function stopSpeech(){
+ speechJob++;speechChunks=[];speechActive=false;speechPaused=false;
+ if(speechSupported)window.speechSynthesis.cancel();
+ voiceButtons();
+}
+function speakNext(token){
+ if(token!==speechJob)return;
+ const chunk=speechChunks.shift();
+ if(!chunk){speechActive=false;speechPaused=false;voiceStatus.textContent="Leitura da prancha concluída.";voiceButtons();return;}
+ const utterance=new SpeechSynthesisUtterance(chunk);
+ utterance.lang="pt-BR";utterance.rate=.98;
+ const preferred=window.speechSynthesis.getVoices().find(v=>/^pt(-BR)?$/i.test(v.lang))||
+                 window.speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith("pt"));
+ if(preferred)utterance.voice=preferred;
+ utterance.onend=()=>speakNext(token);
+ utterance.onerror=(event)=>{
+  if(token!==speechJob)return;
+  stopSpeech();voiceStatus.textContent="A narração foi interrompida pelo navegador. Tente iniciar novamente.";
+ };
+ window.speechSynthesis.speak(utterance);
+}
+voiceStart.addEventListener("click",()=>{
+ if(!speechSupported)return;
+ stopSpeech();
+ const text=composeSpeech();
+ if(!text){voiceStatus.textContent="Não há texto disponível nesta prancha.";return;}
+ speechChunks=chunkSpeech(text);speechActive=true;speechPaused=false;
+ voiceStatus.textContent="Lendo a prancha atual em português. Ao mudar de movimento, a voz será interrompida.";
+ voiceButtons();
+ speakNext(++speechJob);
+});
+voicePause.addEventListener("click",()=>{
+ if(!speechSupported||!speechActive)return;
+ if(speechPaused){window.speechSynthesis.resume();speechPaused=false;voiceStatus.textContent="Leitura retomada.";}
+ else{window.speechSynthesis.pause();speechPaused=true;voiceStatus.textContent="Leitura pausada.";}
+ voiceButtons();
+});
+voiceStop.addEventListener("click",()=>{stopSpeech();voiceStatus.textContent="Leitura interrompida.";});
+
 let current=0, figureAlternate=false, figureFocus=false, priorFocus=null;
 const total=slides.reduce((acc,sl)=>acc+sl.min,0);
 
@@ -1103,6 +1339,7 @@ function cloneFigure(plate){
 }
 function render(){
  const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
+ updateMenuPosition();
  el("banca-progress-text").textContent=(current+1)+" de "+slides.length;
  el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
  const zoomMode=!!item.zoom,coverMode=!!item.cover;
@@ -1155,10 +1392,11 @@ function render(){
    note.append(document.createTextNode("Relação com a dissertação: Figura "+original+". "));
    note.append(document.createTextNode("O texto integral ainda não foi publicado; consulte as pranchas e o Guia Visual para os esquemas disponíveis."));extra.append(note);
  }
+ applyReadingScale();
  root.scrollTop=0;
 }
 function close(){
- stopTicker();clockRunning=false;paintClock();
+ stopSpeech();stopTicker();clockRunning=false;paintClock();
  if(dialog.open)dialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
@@ -1166,11 +1404,16 @@ function open(){
  priorFocus=document.activeElement;current=0;figureAlternate=false;figureFocus=false;
  root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
-function next(){if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;render();}
-function prev(){if(dialog.open)dialog.close();if(current>0){current--;figureAlternate=false;figureFocus=false;render();}}
+function next(){stopSpeech();if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;render();}
+function prev(){if(dialog.open)dialog.close();if(current>0){stopSpeech();current--;figureAlternate=false;figureFocus=false;render();}}
 function keys(e){if(root.hidden)return;
  if(dialog.open)return;
- if(e.key==="Escape"){e.preventDefault();close();return;}
+ if(e.key==="Escape"){
+  e.preventDefault();
+  if(!readPanel.hidden){showPanel("read",false);return;}
+  if(!navPanel.hidden){showPanel("nav",false);return;}
+  close();return;
+ }
  if(e.target instanceof HTMLElement&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
  if(e.key==="ArrowRight"||e.key==="PageDown"){e.preventDefault();next();}
  if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();prev();}
