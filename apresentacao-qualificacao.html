@@ -557,6 +557,88 @@ html,body{background:#f5f7fa}
 @media(max-width:960px){.banca-cover{grid-template-columns:1fr}.banca-orbit{height:520px}}
 @media(max-width:520px){.banca-orbit{height:480px}.banca-orbit-center{top:40%;left:32%;width:36%;padding:6px;border-width:2px}.banca-objective-node{width:41%;padding:6px;min-height:17%}.banca-objective-node.node-c{width:31%;right:0}.banca-objective-node span{font-size:.71rem}.banca-objective-node strong{font-size:.74rem}}
 @media(prefers-reduced-motion:reduce){.banca-objective-node{transition:none}}
+
+/* Modo projetor: escala ampliada para as pranchas 1–9, sem alterar os conteúdos.
+   A abertura e o zoom metodológico mantêm suas composições específicas. */
+@media (min-width:1051px){
+  .banca-presenter .banca-screen{max-width:1900px}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom):not(.is-figure-focus){
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+    gap:clamp(1.1rem,2.1vw,2.7rem);
+    padding:clamp(1.15rem,2.1vw,2.3rem) clamp(1.25rem,2.8vw,3rem);
+    align-items:center;
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-copy h3{
+    font-size:clamp(2rem,3.05vw,3.1rem);
+    line-height:1.14;
+    margin-bottom:clamp(.75rem,1.1vw,1.1rem)
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-meta{font-size:clamp(.98rem,1.14vw,1.16rem)}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-thesis{
+    font-size:clamp(1.25rem,1.56vw,1.68rem);
+    line-height:1.38;
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-points{
+    font-size:clamp(1.09rem,1.2vw,1.33rem);
+    line-height:1.45;
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-points li{margin:.45rem 0}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-quote{
+    font-size:clamp(1.07rem,1.18vw,1.25rem);
+    line-height:1.43;
+    padding:.8rem 1rem;
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-quote cite{font-size:.89rem}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-source{font-size:clamp(.87rem,.94vw,1.01rem);line-height:1.48}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-visual{padding:clamp(.85rem,1.35vw,1.5rem)}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-visual-label{font-size:clamp(.85rem,.94vw,1rem);line-height:1.4}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-stage-figure svg{
+    width:100%;height:auto;max-height:min(53dvh,620px);
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-stage-figure figcaption{
+    font-size:clamp(.88rem,.94vw,1.02rem);line-height:1.5;
+  }
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-figure-source{
+    font-size:clamp(.85rem,.91vw,.98rem);
+  }
+}
+@media (min-width:700px) and (max-width:1050px){
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom):not(.is-figure-focus){grid-template-columns:minmax(0,1fr);gap:1rem;padding:1.2rem 1.6rem}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-copy h3{font-size:clamp(1.8rem,3.2vw,2.4rem)}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-thesis{font-size:clamp(1.15rem,2.1vw,1.4rem)}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-points{font-size:clamp(1.03rem,1.8vw,1.24rem);line-height:1.42}
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom) .banca-stage-figure svg{max-height:48dvh}
+}
+/* Ampliação opcional do esquema: é só um modo de visualização reversível. */
+.banca-visual-extra .banca-figure-focus-toggle{background:#204e6b;color:#fff;border-color:#204e6b;font-weight:700}
+.banca-visual-extra .banca-figure-focus-toggle:focus-visible{outline:3px solid #efb454;outline-offset:3px}
+.banca-presenter .banca-stage-content.is-figure-focus{
+  display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;
+  gap:.3rem;padding:clamp(.5rem,1vw,1rem) clamp(.8rem,2vw,2rem);
+}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-copy{width:100%;align-self:stretch}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-meta{font-size:.84rem;margin:0}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-copy h3{
+  font-size:clamp(1.4rem,2.3vw,2.3rem);margin:0 0 .3rem;
+}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-thesis,
+.banca-presenter .banca-stage-content.is-figure-focus .banca-points,
+.banca-presenter .banca-stage-content.is-figure-focus .banca-quote,
+.banca-presenter .banca-stage-content.is-figure-focus .banca-source,
+.banca-presenter .banca-stage-content.is-figure-focus #banca-authors-link{display:none!important}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-visual{width:100%;max-width:none;padding:clamp(.65rem,1vw,1rem)}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-visual-label{margin:.15rem 0 .4rem;font-size:.87rem}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-stage-figure svg{
+  width:100%;max-height:min(61dvh,650px);height:auto;margin:auto
+}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-stage-figure figcaption{
+  font-size:clamp(.89rem,1vw,1.05rem);padding:.35rem .4rem .2rem
+}
+.banca-presenter .banca-stage-content.is-figure-focus .banca-figure-source{font-size:.9rem;padding:.4rem .6rem}
+@media(max-width:699px){
+  .banca-presenter .banca-stage-content:not(.is-cover):not(.is-zoom):not(.is-figure-focus){padding:.85rem .9rem}
+  .banca-presenter .banca-stage-content.is-figure-focus .banca-stage-figure svg{max-height:45dvh}
+}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
@@ -958,7 +1040,7 @@ el("banca-cover-mount").addEventListener("click",function(event){
  dialog.showModal();
 });
 
-let current=0, figureAlternate=false, priorFocus=null;
+let current=0, figureAlternate=false, figureFocus=false, priorFocus=null;
 const total=slides.reduce((acc,sl)=>acc+sl.min,0);
 
 const clock=el("banca-clock-elapsed"),remaining=el("banca-clock-remaining"),clockShell=root.querySelector(".banca-clock");
@@ -1027,6 +1109,7 @@ function render(){
  const stage=el("banca-presenter").querySelector(".banca-stage-content");
  stage.classList.toggle("is-zoom",zoomMode);
  stage.classList.toggle("is-cover",coverMode);
+ stage.classList.toggle("is-figure-focus",figureFocus&&!zoomMode&&!coverMode);
  el("banca-cover-mount").hidden=!coverMode;
  el("banca-authors-link").hidden=current!==slides.length-1;
  el("banca-stage-meta").textContent=coverMode?"ABERTURA · problema, hipótese e objetivos":"MOVIMENTO "+current+" / "+(slides.length-1);
@@ -1047,6 +1130,15 @@ function render(){
  el("banca-prev").disabled=current===0;
  el("banca-next").textContent=current===slides.length-1?"Retornar ao início ↺":"Próximo →";
  const extra=el("banca-visual-extra");extra.replaceChildren();
+ if(!zoomMode&&!coverMode){
+  const toggleFigure=document.createElement("button");toggleFigure.type="button";
+  toggleFigure.className="banca-figure-focus-toggle";
+  toggleFigure.textContent=figureFocus?"Exibir texto e esquema":"Ampliar esquema";
+  toggleFigure.setAttribute("aria-pressed",String(figureFocus));
+  toggleFigure.setAttribute("title",figureFocus?"Restaurar visualização completa":"Destacar o esquema em tela ampliada sem remover conteúdo");
+  toggleFigure.addEventListener("click",()=>{figureFocus=!figureFocus;render();});
+  extra.append(toggleFigure);
+ }
  if(item.alternate){
   const toggle=document.createElement("button");toggle.type="button";
   toggle.textContent=figureAlternate?"Voltar à Matriz Tripartida":"Ver os cinco movimentos";
@@ -1071,11 +1163,11 @@ function close(){
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
 function open(){
- priorFocus=document.activeElement;current=0;figureAlternate=false;
+ priorFocus=document.activeElement;current=0;figureAlternate=false;figureFocus=false;
  root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
-function next(){if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;render();}
-function prev(){if(dialog.open)dialog.close();if(current>0){current--;figureAlternate=false;render();}}
+function next(){if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;render();}
+function prev(){if(dialog.open)dialog.close();if(current>0){current--;figureAlternate=false;figureFocus=false;render();}}
 function keys(e){if(root.hidden)return;
  if(dialog.open)return;
  if(e.key==="Escape"){e.preventDefault();close();return;}
