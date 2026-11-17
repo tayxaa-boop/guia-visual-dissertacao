@@ -499,10 +499,68 @@ html,body{background:#f5f7fa}
 .banca-stage-content.is-zoom .banca-stage-figure figcaption{font-size:.75rem;padding:.3rem .6rem}
 @media(max-width:1100px){.banca-header{flex-wrap:wrap}.banca-header .banca-brand{order:2;margin-inline:auto}.banca-header-right{order:3}}
 @media(max-width:650px){.banca-header .banca-brand{width:100%;max-width:340px;padding:5px 9px}.banca-brand img{height:42px}.banca-brand img:last-child{height:42px}.banca-brand-divider{height:34px}}
+
+/* Ajustes da prancha de abertura e marca institucional fundida ao cabeçalho. */
+.banca-header .banca-brand{background:transparent;box-shadow:none;border-radius:0;padding:0;max-width:440px}
+.banca-brand img{filter:grayscale(1) invert(1) contrast(1.12);mix-blend-mode:screen}
+.banca-brand-divider{background:rgba(233,241,249,.52)}
+.banca-stage-content.is-cover{display:block;padding:clamp(.45rem,1vw,.9rem) clamp(.7rem,2vw,1.65rem)}
+.banca-stage-content.is-cover>.banca-copy,.banca-stage-content.is-cover>.banca-visual{display:none}
+#banca-cover-mount[hidden],#banca-authors-link[hidden]{display:none!important}
+.banca-cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:clamp(12px,2vw,30px);align-items:start;width:100%}
+.banca-cover-text{padding:clamp(13px,1.5vw,25px);background:#fff;border:1px solid #ccdae4;border-radius:13px;box-shadow:0 2px 10px #142e4010}
+.banca-cover-kicker{font-size:.77rem;font-weight:700;color:#557284;text-transform:uppercase;letter-spacing:.055em;margin:0 0 .3rem}
+.banca-cover-text h4{font-size:clamp(1.1rem,1.5vw,1.5rem);font-weight:800;line-height:1.28;color:#1e3c54;margin:.2rem 0 .65rem}
+.banca-cover-people{font-size:.89rem;line-height:1.45;color:#395366;border-bottom:1px solid #dae4eb;padding-bottom:.7rem;margin:.2rem 0 .65rem}
+.banca-cover-people span{display:block;margin-top:.3rem}
+.banca-cover-section{border-left:3px solid #81a0b5;padding:.2rem .7rem;margin:.65rem 0}
+.banca-cover-section:nth-of-type(2){border-color:#b18a57}
+.banca-cover-section:nth-of-type(3){border-color:#4e886c}
+.banca-cover-section h5{font-size:.9rem;letter-spacing:.01em;color:#21445e;margin:0 0 .17rem}
+.banca-cover-section p{font-size:clamp(.81rem,.94vw,.95rem);line-height:1.43;margin:0;color:#273d50}
+.banca-cover-section small,.banca-cover-ref{font-size:.7rem;color:#61768a;line-height:1.4}
+.banca-cover-ref{margin:.7rem 0 0}
+.banca-cover-diagram{background:#fcfdff;border:1px solid #c7d8e4;border-radius:13px;padding:clamp(12px,1.3vw,20px);min-width:0}
+.banca-orbit-heading span{color:#4c7283;text-transform:uppercase;font-weight:700;letter-spacing:.055em;font-size:.74rem}
+.banca-orbit-heading h4{margin:0;color:#21475e;font-size:clamp(1rem,1.4vw,1.25rem)}
+.banca-orbit-heading p{margin:.2rem 0;font-size:.86rem;color:#476378}
+.banca-orbit{position:relative;min-width:0;height:clamp(430px,51vh,560px);margin:.45rem 0;overflow:hidden}
+.banca-orbit-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.banca-orbit-lines path{fill:none;stroke:#7a97a8;stroke-width:2.5}
+.banca-orbit-center{position:absolute;left:34%;top:38%;width:32%;min-height:24%;border-radius:50%;background:#21475e;color:white;border:4px solid #cedfe5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;box-shadow:0 6px 20px #153c5028}
+.banca-orbit-center span{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:#c5e5eb}
+.banca-orbit-center strong{font-size:clamp(.87rem,1.25vw,1.16rem);line-height:1.15}
+.banca-orbit-center p{font-size:clamp(.7rem,.8vw,.84rem);line-height:1.2;margin:.4rem 0 0;color:#eef7f9}
+.banca-objective-node{position:absolute;min-height:16%;width:37%;padding:8px 11px;display:flex;flex-direction:column;justify-content:center;gap:.1rem;text-align:left;background:#f3f8fa;border:2px solid #98b4c1;border-radius:12px;box-shadow:0 3px 10px #22435317}
+.banca-objective-node strong{color:#214f66;font-size:clamp(.8rem,1.05vw,.97rem);letter-spacing:.035em}
+.banca-objective-node span{font-size:clamp(.69rem,.86vw,.84rem);color:#2d4559;line-height:1.25}
+.banca-objective-node small{font-size:.66rem;color:#326f8b}
+.banca-objective-node:hover,.banca-objective-node:focus-visible{background:#e3f1f5;border-color:#256a89;outline-offset:2px}
+.banca-objective-node.node-a{top:4%;left:2%}
+.banca-objective-node.node-b{top:4%;right:2%}
+.banca-objective-node.node-c{top:41%;right:.5%;width:31.5%}
+.banca-objective-node.node-d{bottom:2%;right:2%}
+.banca-objective-node.node-e{bottom:2%;left:2%}
+.banca-orbit-foot{font-size:.76rem;color:#516e7c;line-height:1.4;margin:.5rem 0 0;border-top:1px solid #d7e3e9;padding-top:.55rem}
+.banca-objective-dialog{width:min(720px,95vw);max-height:min(85vh,830px);overflow:auto;background:#fff;border:1px solid #85a8bd;border-radius:15px;padding:clamp(18px,3vw,28px);color:#1e344b;box-shadow:0 18px 80px #12263860}
+.banca-objective-dialog::backdrop{background:rgba(11,24,38,.68)}
+.banca-dialog-close{float:right;background:#234f66!important;color:#fff!important;border:0!important;font-weight:700}
+.banca-dialog-kicker{font-size:.83rem;letter-spacing:.08em;text-transform:uppercase;color:#4e7689;font-weight:700}
+.banca-objective-dialog h3{font-size:1.6rem;color:#21455f;margin:.1rem 0 1rem}
+.banca-objective-dialog h4{font-size:1rem;margin:1.1rem 0 .3rem;color:#29566c}
+.banca-objective-dialog p,.banca-objective-dialog li{line-height:1.55;font-size:.98rem}
+.banca-objective-dialog li{margin:.35rem 0}
+.banca-dialog-limit{background:#edf5f6;border-left:3px solid #58928b;padding:.7rem .9rem}
+.banca-objective-dialog small{font-size:.76rem;color:#5b7185}
+.banca-authors-link{display:inline-flex;gap:.4rem;align-items:center;background:#e5f1f7;border:1px solid #8bb0c7;border-radius:9px;padding:.6rem 1rem;color:#1f5878;font-weight:800;letter-spacing:.06em;text-decoration:none}
+.banca-authors-link:hover{background:#d6eaf5}
+@media(max-width:960px){.banca-cover{grid-template-columns:1fr}.banca-orbit{height:520px}}
+@media(max-width:520px){.banca-orbit{height:480px}.banca-orbit-center{top:40%;left:32%;width:36%;padding:6px;border-width:2px}.banca-objective-node{width:41%;padding:6px;min-height:17%}.banca-objective-node.node-c{width:31%;right:0}.banca-objective-node span{font-size:.71rem}.banca-objective-node strong{font-size:.74rem}}
+@media(prefers-reduced-motion:reduce){.banca-objective-node{transition:none}}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
-<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Nove movimentos com as figuras do Guia e notas de fala. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
+<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Dez movimentos, incluindo abertura interativa com objetivos da pesquisa e notas de fala. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
 <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
   <div class="banca-screen">
    <header class="banca-header"><div class="banca-identity"><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div>
@@ -514,9 +572,51 @@ html,body{background:#f5f7fa}
   <div class="banca-clock-display"><span class="banca-clock-caption">TEMPO DECORRIDO</span><span id="banca-clock-elapsed" class="banca-clock-digits" role="timer" aria-label="Tempo decorrido">00:00</span><span id="banca-clock-remaining" class="banca-clock-remaining">20:00 restantes</span></div>
   <div class="banca-clock-actions"><button type="button" id="banca-clock-pause" aria-label="Pausar cronômetro" title="Pausar ou retomar cronômetro">Pausar</button><button type="button" id="banca-clock-reset" title="Reiniciar cronômetro a partir de zero">Reiniciar</button></div>
   <span id="banca-clock-status" class="a11y-visually-hidden" role="status" aria-live="polite"></span>
- </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 9</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
+ </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 10</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
    <div class="banca-progress" id="banca-progress" aria-hidden="true"></div>
    <div class="banca-stage-content">
+    <div id="banca-cover-mount" hidden>
+<section class="banca-cover" aria-label="Prancha de abertura: problema, hipótese e objetivos">
+  <div class="banca-cover-text">
+    <p class="banca-cover-kicker">UDESC · FAED · Programa de Pós-Graduação em Educação</p>
+    <h4>Concepções de adolescência e desenvolvimento humano na produção acadêmica brasileira (2018–2026): mediações históricas, sociais e escolares da Psicologia e da Educação</h4>
+    <p class="banca-cover-people"><strong>Orientadora:</strong> Prof.ª Dr.ª Patrícia de Oliveira e Silva Mendes
+      <span><strong>Banca:</strong> Prof. Dr. Ricardo Eleutério dos Anjos (UNESP) · Prof. Dr. Ivan Penteado Dourado (UDESC)</span>
+    </p>
+    <section class="banca-cover-section"><h5>Problema</h5>
+      <p>Como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, publicadas ou defendidas entre 2018 e 2026, concebem a adolescência e o desenvolvimento humano, e de que modo articulam, ou deixam de articular, as mediações históricas, sociais, escolares e político-educacionais na explicação desse desenvolvimento?</p>
+    </section>
+    <section class="banca-cover-section"><h5>Hipótese de trabalho</h5>
+      <p>As diferenças entre as concepções não se expressam apenas nas definições e nos referenciais teóricos declarados, mas também nas relações explicativas entre condições orgânicas, atividade social, escolarização e formação humana. Essas relações podem revelar distintas articulações e tensões entre os fundamentos anunciados e as explicações construídas, sem pressupor tendências no corpus.</p>
+      <small>Síntese para exposição oral; redação integral na Introdução, p. 27.</small>
+    </section>
+    <section class="banca-cover-section"><h5>Objetivo geral</h5>
+      <p>Identificar as concepções de adolescência e desenvolvimento humano expressas nas produções acadêmicas brasileiras dos campos da Educação e da Psicologia, publicadas ou defendidas entre 2018 e 2026, examinando seus fundamentos teóricos e o modo como articulam ou deixam de articular as mediações históricas, sociais, escolares e político-educacionais na explicação do desenvolvimento adolescente.</p>
+    </section>
+    <p class="banca-cover-ref">Fonte: TELLES (2026), Introdução, pp. 27–28. Objetivos transcritos; hipótese sintetizada e identificada como tal.</p>
+  </div>
+  <div class="banca-cover-diagram" aria-label="Percurso dialético dos objetivos específicos">
+    <div class="banca-orbit-heading"><span>Percurso complementar · método e objeto</span><h4>Movimento dialético dos objetivos</h4><p>Selecione um verbo para abrir o objetivo integral e as mediações com capítulos e subcapítulos.</p></div>
+    <div class="banca-orbit">
+      <svg viewBox="0 0 1000 650" preserveAspectRatio="none" class="banca-orbit-lines" role="img" aria-label="Cinco objetivos específicos articulados reciprocamente ao objetivo geral central por setas de ida e retorno.">
+        <defs><marker id="banca-orbit-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto-start-reverse"><path d="M0 0L6 3.5L0 7Z" fill="#668596"/></marker></defs>
+        <ellipse cx="500" cy="331" rx="272" ry="217" fill="none" stroke="#d9e4eb" stroke-width="3" stroke-dasharray="12 15"/>
+        <path d="M435 275 Q352 181 250 150" marker-start="url(#banca-orbit-arrow)" marker-end="url(#banca-orbit-arrow)"/>
+        <path d="M565 275 Q650 181 750 150" marker-start="url(#banca-orbit-arrow)" marker-end="url(#banca-orbit-arrow)"/>
+        <path d="M660 330 Q705 331 775 330" marker-start="url(#banca-orbit-arrow)" marker-end="url(#banca-orbit-arrow)"/>
+        <path d="M565 402 Q650 479 750 518" marker-start="url(#banca-orbit-arrow)" marker-end="url(#banca-orbit-arrow)"/>
+        <path d="M435 402 Q342 475 250 518" marker-start="url(#banca-orbit-arrow)" marker-end="url(#banca-orbit-arrow)"/>
+      </svg>
+      <div class="banca-orbit-center"><span>OBJETIVO GERAL</span><strong>Identificar concepções</strong><p>e examinar a articulação das mediações do desenvolvimento adolescente</p></div>
+      <button type="button" class="banca-objective-node node-a" data-oe="a"><strong>HISTORICIZAR</strong><span>formação histórico-social da adolescência</span><small>Abrir objetivo ↗</small></button>
+      <button type="button" class="banca-objective-node node-b" data-oe="b"><strong>SISTEMATIZAR</strong><span>fundamentos psicológicos e pedagógicos</span><small>Abrir objetivo ↗</small></button>
+      <button type="button" class="banca-objective-node node-c" data-oe="c"><strong>CONSTITUIR</strong><span>corpus documental e matriz analítica</span><small>Abrir objetivo ↗</small></button>
+      <button type="button" class="banca-objective-node node-d" data-oe="d"><strong>EXAMINAR</strong><span>concepções e relações explicativas</span><small>Abrir objetivo ↗</small></button>
+      <button type="button" class="banca-objective-node node-e" data-oe="e"><strong>APREENDER</strong><span>aproximações, diferenças e tensões</span><small>Abrir objetivo ↗</small></button>
+    </div>
+    <p class="banca-orbit-foot">As setas são recíprocas: o encontro com os documentos pode exigir retorno aos fundamentos e às perguntas iniciais. Mapeamento interpretativo dos microobjetivos, não certificação de cumprimento.</p>
+  </div>
+</section></div>
     <div class="banca-copy">
      <p id="banca-stage-meta" class="banca-meta"></p>
      <h3 id="banca-view-title"></h3>
@@ -524,6 +624,7 @@ html,body{background:#f5f7fa}
      <ul id="banca-stage-points" class="banca-points"></ul>
      <blockquote id="banca-stage-quote" class="banca-quote" hidden><p id="banca-stage-quote-text"></p><cite id="banca-stage-quote-cite"></cite></blockquote>
      <p id="banca-stage-source" class="banca-source"></p>
+<a id="banca-authors-link" class="banca-authors-link" href="https://tayxaa-boop.github.io/guia-visual-dissertacao/biografias.html" target="_blank" rel="noopener noreferrer" hidden>AUTORES ↗</a>
     </div>
     <div class="banca-visual">
      <p class="banca-visual-label">Esquema do Guia · síntese relacional da pesquisa</p>
@@ -535,6 +636,18 @@ html,body{background:#f5f7fa}
    <div class="banca-footer"><div class="banca-footer-main"><button type="button" id="banca-prev">← Anterior</button><button type="button" id="banca-next">Próximo →</button><a href="#prancha1" id="banca-go-plate">Abrir prancha no Guia</a></div><span id="banca-time-total">Use as setas para navegar pelos movimentos</span></div>
   </div>
  </div>
+
+<dialog id="banca-objective-dialog" class="banca-objective-dialog" aria-labelledby="banca-objective-dialog-title" aria-describedby="banca-objective-dialog-full">
+  <button id="banca-objective-dialog-close" class="banca-dialog-close" type="button" aria-label="Fechar detalhes do objetivo">Fechar ×</button>
+  <p id="banca-objective-dialog-code" class="banca-dialog-kicker"></p>
+  <h3 id="banca-objective-dialog-title"></h3>
+  <h4>Objetivo específico — redação integral</h4>
+  <p id="banca-objective-dialog-full"></p>
+  <h4>Capítulos e subcapítulos que procuram contemplá-lo</h4>
+  <ul id="banca-objective-dialog-sections"></ul>
+  <p id="banca-objective-dialog-limit" class="banca-dialog-limit"></p>
+  <small>Remissão: TELLES (2026), pp. 27–28, e matriz de objetivos e microobjetivos elaborada para leitura da dissertação. O mapeamento é interpretativo.</small>
+</dialog>
 <div hidden id="banca-source-figures"><article id="prancha1"><figure class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" role="img" aria-labelledby="t1 d1">
 <title id="t1">Inquietação originária e delimitação do objeto</title>
 <desc id="d1">Quatro relações envolvem o núcleo das concepções científicas: corporeidade, organização histórica das idades, produção de conhecimento e escolarização. A pesquisa examina como tais relações são explicadas, e não a experiência adolescente diretamente.</desc>
@@ -754,7 +867,12 @@ html,body{background:#f5f7fa}
 (function(){
 "use strict";
 const slides=[
- {title:"Problema e objeto",min:2,plate:1,lead:"Não investigo diretamente os adolescentes: investigo como a produção acadêmica explica a adolescência e o desenvolvimento humano.",
+ {title:"Percurso da investigação · problema, hipótese e objetivos",min:1,plate:"dialetica",cover:true,lead:"A pergunta de pesquisa orienta objetivos relacionados, com retornos críticos entre fundamento, corpus e explicação.",points:[],
+ source:"TELLES (2026), Introdução, pp. 27–28; matriz de objetivos e microobjetivos da qualificação.",
+ quote:"",quoteSource:"",
+ notes:"Abrir com o título da dissertação, a pergunta formal, a hipótese de trabalho sem antecipar tendências, e o objetivo geral. Na figura, o objetivo geral está no centro e cinco verbos exatos do texto da qualificação se articulam reciprocamente. Clicar em cada verbo abre seu enunciado literal e um mapeamento de capítulos/subcapítulos. Enfatizar que a planilha de microobjetivos é uma reconstrução da leitura, não parte literal dos objetivos.",
+ transition:"Com o percurso exposto, passo à distinção decisiva entre o fenômeno adolescência e o objeto documental: as explicações acadêmicas."},
+ {title:"Problema e objeto",min:1,plate:1,lead:"Não investigo diretamente os adolescentes: investigo como a produção acadêmica explica a adolescência e o desenvolvimento humano.",
  points:["O fenômeno real e as concepções científicas sobre ele não são a mesma coisa.","A pergunta de pesquisa interroga também as mediações históricas, sociais, escolares e político-educacionais.","O desenvolvimento humano não é um tema paralelo: é aquilo que se procura compreender nas explicações sobre a adolescência."],
  source:"TELLES (2026), Introdução, problema e objetivo geral; PDF da qualificação, pp. 26–28.",
  quote:"Como as produções acadêmicas brasileiras dos campos da Educação e da Psicologia, publicadas ou defendidas entre 2018 e 2026, concebem a adolescência e o desenvolvimento humano, e de que modo articulam, ou deixam de articular, as mediações históricas, sociais, escolares e político-educacionais na explicação desse desenvolvimento?",quoteSource:"Problema de pesquisa: TELLES (2026), Introdução, p. 27 do PDF.",
@@ -813,6 +931,33 @@ const slides=[
 const root=document.getElementById("banca-presenter"),start=document.getElementById("banca-start"),exit=document.getElementById("banca-exit");
 if(!root||!start||!exit)return;
 const el=id=>document.getElementById(id);
+
+const objectiveDetails={
+ a:{verb:"Historicizar",full:"Historicizar a constituição da adolescência como categoria social e histórica, apreendendo as relações entre as formas de organização das idades da vida, o trabalho, a escolarização e as particularidades da formação social brasileira.",sections:["Introdução: delimitação do problema e do objetivo específico (pp. 27–28).","Capítulo 2, 2.1: produção histórico-social das idades da vida.","Capítulo 2, 2.2.1–2.2.4: modernidade, século XIX, adolescência como objeto científico e sociabilidades.","Capítulo 2, 2.3.1–2.3.5: formação social brasileira, trabalho/classes, escolarização, direitos e adolescência contemporânea."],limit:"Reconstrução histórico-teórica desenvolvida; os exemplos não compõem um retrato universal de todas as experiências adolescentes."},
+ b:{verb:"Sistematizar",full:"Sistematizar as contribuições da Psicologia Histórico-Cultural e da Pedagogia Histórico-Crítica para a compreensão do desenvolvimento humano, da adolescência e da educação escolar, considerando as relações entre atividade, apropriação cultural, pensamento conceitual e trabalho educativo.",sections:["Capítulo 3, 3.1: fundamentos e objetos da Psicologia Histórico-Cultural e da Pedagogia Histórico-Crítica.","Capítulo 3, 3.2–3.3: funções psíquicas, atividade, apropriação e consciência.","Capítulo 3, 3.4–3.6: periodização, pensamento conceitual, personalidade e trabalho educativo.","Capítulo 3, 3.7: síntese das determinações e implicações para a análise das produções."],limit:"O referencial fundamenta perguntas analíticas; não antecipa nem substitui a reconstrução dos estudos selecionados."},
+ c:{verb:"Constituir",full:"Constituir o corpus documental da investigação, mediante procedimentos explicitados de identificação, recuperação, seleção e organização das produções acadêmicas, e desenvolver uma matriz analítica orientada pelos fundamentos teórico-metodológicos da pesquisa.",sections:["Capítulo 1, 1.1–1.4: objeto, método, pesquisas antecedentes, fontes e recorte temporal.","Capítulo 4, 4.1–4.4: delimitação documental, recuperação, unificação, deduplicação e elegibilidade.","Capítulo 4, 4.5 e 4.5.1: gênese e fundamentos da Matriz Analítica Tripartida.","Capítulo 4, 4.5.7 e 4.6–4.6.3: movimentos de análise, auditabilidade, exequibilidade e horizonte de ampliação."],limit:"Corpus e matriz estão em estágios distintos: recuperação de 2026 e elegibilidade integral continuam abertas."},
+ d:{verb:"Examinar",full:"Examinar as concepções de adolescência e desenvolvimento humano expressas nas produções selecionadas, reconstruindo seus fundamentos e as relações estabelecidas entre determinações orgânicas, históricas e sociais, bem como o lugar atribuído à escolarização.",sections:["Capítulo 4, 4.5.2–4.5.4: reconstrução interna, interrogação analítica e registro de mediações/evidências.","Capítulo 5, 5.1–5.2: caracterização dos dois estudos e reconstrução de suas explicações.","Capítulo 5, 5.2.1 e 5.2.2: exercícios com Soares (2018) e Bueno (2018).","Capítulo 5, 5.3–5.4: interrogação e confronto exploratórios das mediações documentadas."],limit:"Na qualificação, o procedimento foi exercitado em duas dissertações; não caracteriza análise concluída do corpus nacional."},
+ e:{verb:"Apreender",full:"Apreender, no conjunto das produções analisadas, aproximações, diferenças, tensões e possíveis insuficiências explicativas relativas às mediações históricas, sociais, escolares e político-educacionais do desenvolvimento adolescente, preservando a particularidade dos objetos e argumentos investigados.",sections:["Capítulo 4, 4.5.5–4.5.6: confronto crítico e síntese provisória por produção.","Capítulo 5, 5.3–5.5: comparação exploratória, diferenças e sínteses individuais.","Capítulo 6: balanço dos limites e projeções para continuidade da investigação."],limit:"Este objetivo ainda não alcança o conjunto das produções; duas aplicações não autorizam tendências nacionais."}
+};
+
+const dialog=el("banca-objective-dialog");
+let objectiveOpener=null;
+el("banca-objective-dialog-close").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("close",()=>{if(objectiveOpener&&document.contains(objectiveOpener))objectiveOpener.focus();objectiveOpener=null;});
+el("banca-cover-mount").addEventListener("click",function(event){
+ const button=event.target.closest("button[data-oe]");
+ if(!button)return;
+ const item=objectiveDetails[button.dataset.oe];if(!item)return;
+ objectiveOpener=button;
+ el("banca-objective-dialog-code").textContent="Objetivo específico "+button.dataset.oe.toUpperCase();
+ el("banca-objective-dialog-title").textContent=item.verb;
+ el("banca-objective-dialog-full").textContent=item.full;
+ el("banca-objective-dialog-limit").textContent="Alcance nesta etapa: "+item.limit;
+ const list=el("banca-objective-dialog-sections");list.replaceChildren();
+ for(const str of item.sections){const li=document.createElement("li");li.textContent=str;list.append(li);}
+ dialog.showModal();
+});
+
 let current=0, figureAlternate=false, priorFocus=null;
 const total=slides.reduce((acc,sl)=>acc+sl.min,0);
 
@@ -878,9 +1023,13 @@ function render(){
  const item=slides[current],time=slides.slice(0,current+1).reduce((n,x)=>n+x.min,0);
  el("banca-progress-text").textContent=(current+1)+" de "+slides.length;
  el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
- const zoomMode=!!item.zoom;
- el("banca-presenter").querySelector(".banca-stage-content").classList.toggle("is-zoom",zoomMode);
- el("banca-stage-meta").textContent="MOVIMENTO "+(current+1)+" / "+slides.length;
+ const zoomMode=!!item.zoom,coverMode=!!item.cover;
+ const stage=el("banca-presenter").querySelector(".banca-stage-content");
+ stage.classList.toggle("is-zoom",zoomMode);
+ stage.classList.toggle("is-cover",coverMode);
+ el("banca-cover-mount").hidden=!coverMode;
+ el("banca-authors-link").hidden=current!==slides.length-1;
+ el("banca-stage-meta").textContent=(coverMode?"ABERTURA":"MOVIMENTO "+(current+1))+" / "+slides.length;
  el("banca-view-title").textContent=item.title;
  el("banca-stage-thesis").textContent=item.lead;
  el("banca-stage-points").replaceChildren();
@@ -892,7 +1041,8 @@ function render(){
  el("banca-stage-notes").textContent="Roteiro de fala: "+item.notes;
  el("banca-stage-transition").textContent="Transição: "+item.transition;
  el("banca-notes").open=false;
- el("banca-go-plate").href="#prancha"+item.plate;
+ el("banca-go-plate").href=coverMode?"index.html#dialetica":"#prancha"+item.plate;
+ el("banca-go-plate").textContent=coverMode?"Percurso dialético no Guia":"Abrir prancha no Guia";
  el("banca-time-total").textContent="Use as setas para navegar pelos movimentos";
  el("banca-prev").disabled=current===0;
  el("banca-next").textContent=current===slides.length-1?"Retornar ao início ↺":"Próximo →";
@@ -903,7 +1053,8 @@ function render(){
   toggle.addEventListener("click",()=>{figureAlternate=!figureAlternate;cloneFigure(figureAlternate?item.alternate:item.plate);toggle.textContent=figureAlternate?"Voltar à Matriz Tripartida":"Ver os cinco movimentos";});
   extra.append(toggle);
  }
- cloneFigure(figureAlternate&&item.alternate?item.alternate:item.plate);
+ if(coverMode)el("banca-stage-figure").replaceChildren();
+ else cloneFigure(figureAlternate&&item.alternate?item.alternate:item.plate);
  const displayPlate=figureAlternate&&item.alternate?item.alternate:item.plate;
  const figureNums={1:1,4:2,9:6,10:8,13:12,14:13,15:14};
  const original=figureNums[displayPlate];
@@ -916,16 +1067,17 @@ function render(){
 }
 function close(){
  stopTicker();clockRunning=false;paintClock();
- root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
+ if(dialog.open)dialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
 function open(){
  priorFocus=document.activeElement;current=0;figureAlternate=false;
  root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
-function next(){current=(current+1)%slides.length;figureAlternate=false;render();}
-function prev(){if(current>0){current--;figureAlternate=false;render();}}
+function next(){if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;render();}
+function prev(){if(dialog.open)dialog.close();if(current>0){current--;figureAlternate=false;render();}}
 function keys(e){if(root.hidden)return;
+ if(dialog.open)return;
  if(e.key==="Escape"){e.preventDefault();close();return;}
  if(e.target instanceof HTMLElement&&/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
  if(e.key==="ArrowRight"||e.key==="PageDown"){e.preventDefault();next();}
@@ -951,7 +1103,7 @@ const notesButton=document.getElementById("banca-standalone-rou");
 let notesWin=null;
 function share(){
  if(!notesWin||notesWin.closed)return;
- const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 9";
+ const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 10";
  const index=Math.max(0,(parseInt(progress,10)||1)-1);
  const state={index,elapsed:document.getElementById("banca-clock-elapsed")?.textContent||"00:00",remaining:document.getElementById("banca-clock-remaining")?.textContent||"",presenting:!document.getElementById("banca-presenter").hidden};
  try{notesWin.gvShowState?.(state);}catch(e){}
