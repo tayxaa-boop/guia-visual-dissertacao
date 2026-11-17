@@ -560,7 +560,7 @@ html,body{background:#f5f7fa}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
-<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Dez movimentos, incluindo abertura interativa com objetivos da pesquisa e notas de fala. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
+<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Nove movimentos precedidos por uma prancha de abertura interativa com os objetivos da pesquisa; roteiro e notas de fala disponíveis. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
 <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
   <div class="banca-screen">
    <header class="banca-header"><div class="banca-identity"><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div>
@@ -1029,7 +1029,7 @@ function render(){
  stage.classList.toggle("is-cover",coverMode);
  el("banca-cover-mount").hidden=!coverMode;
  el("banca-authors-link").hidden=current!==slides.length-1;
- el("banca-stage-meta").textContent=(coverMode?"ABERTURA":"MOVIMENTO "+(current+1))+" / "+slides.length;
+ el("banca-stage-meta").textContent=coverMode?"ABERTURA · problema, hipótese e objetivos":"MOVIMENTO "+current+" / "+(slides.length-1);
  el("banca-view-title").textContent=item.title;
  el("banca-stage-thesis").textContent=item.lead;
  el("banca-stage-points").replaceChildren();
