@@ -844,6 +844,13 @@ html,body{background:#f5f7fa}
  .banca-cases-orbit .case-choice{left:0}.banca-cases-orbit .case-curriculum{right:0}
  .banca-method-dialog-table table{font-size:.85rem}
 }
+
+/* Alto contraste também nos balões interativos e em seus detalhes. */
+.banca-presenter.banca-read-contrast .banca-method-bubble{background:#fff!important;color:#000!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-method-bubble :is(strong,span,small){color:#000!important}
+.banca-presenter.banca-read-contrast .banca-method-core{background:#000!important;color:#fff!important;border-color:#000!important}
+.banca-presenter.banca-read-contrast .banca-method-core :is(span,small){color:#fff!important}
+.banca-presenter.banca-read-contrast .banca-method-caption{background:#fff!important;color:#000!important;border-color:#000!important}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
@@ -981,7 +988,7 @@ html,body{background:#f5f7fa}
   <button type="button" class="banca-method-bubble movs-five" data-method-key="m5" aria-haspopup="dialog"><strong>V · Síntese provisória</strong><span>Unidade da explicação e limites</span><small>Abrir detalhes ↗</small></button>
   <button type="button" class="banca-method-core" data-method-key="core" aria-haspopup="dialog">RECONSTRUIR ↔ INTERROGAR <span>↔ REGISTRAR ↔ CONFRONTAR ↔ SINTETIZAR</span><small>Com possibilidade de retorno</small></button>
   </section>
-  <figcaption class="banca-method-caption" data-method-caption="axes">As três dimensões interrogam a lógica interna de cada produção. **A pertinência precede o registro dos estados.** Quadro 5 (p. 191) e Figura 14 (p. 192).</figcaption>
+  <figcaption class="banca-method-caption" data-method-caption="axes">As três dimensões interrogam a lógica interna de cada produção. A pertinência precede o registro dos estados. Quadro 5 (p. 191) e Figura 14 (p. 192).</figcaption>
   <figcaption class="banca-method-caption" data-method-caption="movements" hidden>Os cinco movimentos são articulados e revisáveis, não etapas estanques. Quadro 3 (pp. 186–187) e seções 4.5.2–4.5.6 (pp. 187–203).</figcaption>
   <p class="banca-method-foot">Clique em qualquer balão para consultar a explicação e a reconstituição dos quadros da dissertação. As fichas são material de apoio à qualificação, não substituem a leitura das fontes.</p>
  </figure>
