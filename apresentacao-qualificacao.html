@@ -1366,8 +1366,8 @@ slides.forEach((item,index)=>{
  link.addEventListener("click",event=>{
    event.preventDefault();
    stopSpeech();
-   if(dialog.open)dialog.close();
-   current=index;figureAlternate=false;figureFocus=false;
+   if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();
+   current=index;figureAlternate=false;figureFocus=false;interactiveExpanded=false;
    showPanel("nav",false);render();root.scrollTop=0;
  });
  linksHost.append(link);linkNodes.push(link);
@@ -1386,7 +1386,7 @@ const scaleSelectors=[
  ".banca-copy h3",".banca-copy .banca-meta",".banca-copy .banca-thesis",
  ".banca-copy .banca-points li",".banca-copy .banca-quote p",".banca-copy .banca-quote cite",
  ".banca-copy .banca-source",".banca-visual-label",".banca-stage-figure figcaption",
- ".banca-figure-source"
+ ".banca-figure-source",".banca-method-bubble strong",".banca-method-bubble span",".banca-method-core",".banca-method-toolbar h4",".banca-method-caption"
 ].join(",");
 function applyReadingScale(){
  const nodes=[...root.querySelectorAll(scaleSelectors)];
@@ -1427,6 +1427,13 @@ function composeSpeech(){
    item.points.forEach(x=>parts.push(x));
    if(item.quote)parts.push(item.quote);
    if(item.quoteSource)parts.push(item.quoteSource);
+  }
+  const interactiveFigure=el("banca-stage-figure").querySelector(".banca-method-figure");
+  if(interactiveFigure){
+   const visiblePanels=[...interactiveFigure.querySelectorAll("[data-method-panel]")].filter(x=>!x.hidden);
+   const bubbles=visiblePanels.length?visiblePanels[0].querySelectorAll(".banca-method-bubble,.banca-method-core"):interactiveFigure.querySelectorAll(".banca-method-bubble,.banca-method-core");
+   for(const bubble of bubbles)parts.push(bubble.textContent.trim());
+   const caption=interactiveFigure.querySelector(".banca-method-caption:not([hidden])");if(caption)parts.push(caption.textContent.trim());
   }
   const svgDesc=el("banca-stage-figure").querySelector("svg desc");
   if(svgDesc&&svgDesc.textContent)parts.push(svgDesc.textContent);
@@ -1492,6 +1499,59 @@ voicePause.addEventListener("click",()=>{
  voiceButtons();
 });
 voiceStop.addEventListener("click",()=>{stopSpeech();voiceStatus.textContent="Leitura interrompida.";});
+
+
+const methodDetails={"core":{"kicker":"UNIDADE DE ANÁLISE · FIGURA 13 / FIGURA 14","title":"Lógica interna da explicação","lead":"A unidade de análise é a organização de relações argumentativas de cada produção: como se articulam problema, fundamentos, procedimentos, evidências e conclusões. As dimensões não são classes de estudos nem requisitos externos ao objeto.","refs":"TELLES (2026), seção 4.5.1, pp. 182–185; Figura 13 (p. 185); Figura 14 (p. 192).","tables":[{"title":"Quadro 3 · Cinco movimentos articulados (pp. 186–187)","headers":["Movimento","Operação predominante","Registro"],"rows":[["I · Reconstrução interna","Objeto, problema, objetivos, fundamentos, procedimentos, materiais, resultados e conclusões.","Ficha de Reconstrução Argumentativa com passagens localizadas"],["II · Interrogação analítica","Categorias, funções explicativas, três dimensões e pertinência das perguntas.","Roteiro de questões aplicáveis e justificativa de pertinência/não aplicação"],["III · Registro das mediações","Excertos, distinção autor/inferência, estados E/M/I/NI/A e T transversal.","Ficha de mediações: dimensão, pergunta, estado, excertos, páginas e justificativas"],["IV · Confronto crítico","Coerência entre problema, fundamentos, evidências e conclusões; tensões demonstradas.","Registro de confronto: proposições, evidências, limites e novas questões"],["V · Síntese provisória","Unidade das relações explicativas, mediações, tensões e limites, sem generalização precoce.","Síntese individualizada, conclusões delimitadas, revisão e comparação possíveis"]]}],"limit":"A síntese permanece provisória. O preenchimento da matriz não produz automaticamente uma totalidade concreta. As perguntas e decisões admitem retorno às fontes."},"epi":{"kicker":"DIMENSÃO 1 · COMO CONHECEMOS?","title":"Epistemológico-metodológica","lead":"Problema • pressupostos • procedimentos • evidências • conclusão. Interroga a construção do objeto e as bases documentais da explicação, sem classificar o valor científico global do estudo.","refs":"Marx (2011a); Sánchez Gamboa (2018); Tello (2012). TELLES (2026), seção 4.5.3, pp. 190–191; Quadro 5 (p. 191).","tables":[{"title":"Quadro 5 · Pergunta e informações a examinar","headers":["Questão orientadora","Informações"],"rows":[["Como o objeto é construído? Que relações e evidências sustentam sua explicação?","Problema; objetivos; pressupostos; procedimentos; conceitos; resultados; argumentos; conclusões"]]}],"limit":"Uma filiação teórica declarada não basta para deduzir a lógica efetiva da explicação. Registre o que o documento demonstra."},"onto":{"kicker":"DIMENSÃO 2 · O QUE É EXPLICADO?","title":"Ontológico-psicológica","lead":"Adolescência • constituição do psiquismo • atividade • apropriação • pensamento. Pergunta pelas determinações atribuídas ao desenvolvimento humano e às experiências adolescentes.","refs":"Vigotski (1995, 1996); Leontiev (2021); Martins (2013a); Anjos (2017). TELLES (2026), seção 4.5.3, pp. 190–191; Quadro 5 (p. 191).","tables":[{"title":"Quadro 5 · Pergunta e informações a examinar","headers":["Questão orientadora","Informações"],"rows":[["Que determinações são atribuídas à adolescência e ao desenvolvimento humano?","Organismo; sociedade; psiquismo; atividade; apropriação; pensamento; afetividade e demais processos pertinentes"]]}],"limit":"A menção à adolescência ou à idade dos participantes não comprova investigação sobre a gênese das funções psíquicas."},"ped":{"kicker":"DIMENSÃO 3 · QUAL A FUNÇÃO DA ESCOLA?","title":"Pedagógico-político-educacional","lead":"Ensino • conhecimentos • trabalho educativo • condições institucionais e políticas. Interroga a função assumida pela escola e pelo ensino na explicação, somente quando pertinente ao objeto estudado.","refs":"Saviani (2011); Duarte (2016); Lavoura e Martins (2017). TELLES (2026), seção 4.5.3, pp. 190–191; Quadro 5 (p. 191).","tables":[{"title":"Quadro 5 · Pergunta e informações a examinar","headers":["Questão orientadora","Informações"],"rows":[["Qual função a escolarização e o trabalho educativo assumem quando pertinentes?","Função da escola; conhecimentos; ensino; atividade docente/discente; condições institucionais; políticas"]]}],"limit":"Não converter as perguntas da pesquisadora em exigência de que todos os estudos ofereçam proposições pedagógicas."},"evidence":{"kicker":"REGISTRO DOCUMENTAL · QUADRO 6","title":"E, M, I, NI, A e T","lead":"Estados documentam a condição de uma relação examinada. E explicitação, M menção, I inferência fundamentada, NI não identificável, A ausência verificada e T tensão interna transversal.","refs":"TELLES (2026), seção 4.5.4, pp. 193–195; Quadro 6, p. 194.","tables":[{"title":"Quadro 6 · Estados das mediações e registro mínimo","headers":["Código","Estado","Critério","Registro mínimo"],"rows":[["E","Explicitação","Autor formula e utiliza a relação na explicação.","Proposição, excerto, localização"],["M","Menção","Relação comparece como referência descritiva/contextual, sem função explicativa demonstrada.","Excerto e justificativa da função descritiva"],["I","Inferência fundamentada","Relação não formulada diretamente, mas reconstruível por articulação justificada de passagens.","Excertos convergentes; inferência separada"],["NI","Não identificável","Material disponível não permite decidir com segurança sobre presença/função.","Limite documental; verificação pendente"],["A","Ausência verificada","Relação não localizada após exame suficiente das partes pertinentes do estudo.","Delimitação do exame; justificativa"],["T","Tensão interna (marcador transversal)","Tensão argumentativa sustentada por passagens contrastáveis.","Passagens; relações; fundamento da leitura"]]}],"limit":"Questão não pertinente = não aplicação, registrada separadamente e sem estado. E não equivale a explicação válida; não há pontuação ou hierarquia."},"m1":{"kicker":"MOVIMENTO I · RECONSTRUÇÃO INTERNA","title":"Compreender o estudo em seus próprios termos","lead":"Reconstituir objeto, problema, objetivos, fundamentos, materiais, procedimentos, resultados e conclusões; preservar a unidade das relações explicativas nos próprios termos da produção.","refs":"TELLES (2026), seção 4.5.2, pp. 187–189; Quadros 3 (p. 186) e 4 (p. 188).","tables":[{"title":"Quadro 3 · Operação e registro","headers":["Operações documentais","Registro documental previsto"],"rows":[["Objeto, problema, objetivos, fundamentos, procedimentos, materiais, resultados e conclusões.","Ficha de Reconstrução Argumentativa com passagens localizadas"]]},{"title":"Quadro 4 · Elementos orientadores da ficha (síntese)","headers":["Elemento","Questão documental"],"rows":[["Fenômeno e objeto","Que fenômeno é tomado como ponto de partida e qual aspecto é delimitado?"],["Problema e objetivos","Que questão organiza a investigação? O que se pretende conhecer?"],["Fundamentos e relações","Que referenciais sustentam a construção do objeto e quais vínculos explicativos são efetivamente desenvolvidos?"],["Materiais e procedimentos","Quais fontes e procedimentos foram mobilizados?"],["Evidências, resultados e conclusões","O que sustenta as proposições e como as conclusões se relacionam ao percurso?"]]}],"limit":"Não confundir reconstrução interna com adesão ao referencial do autor ou simples preenchimento descritivo."},"m2":{"kicker":"MOVIMENTO II · INTERROGAÇÃO ANALÍTICA","title":"Perguntar o que é pertinente ao objeto","lead":"Formular perguntas a partir das relações reconstruídas: como conhecemos, o que se explica e qual é a função atribuída à escolarização. A pertinência ao objeto vem antes dos estados.","refs":"TELLES (2026), seção 4.5.3, pp. 190–193; Quadros 3 (p. 186) e 5 (p. 191).","tables":[{"title":"Quadro 3 · Operação e registro","headers":["Operações documentais","Registro documental previsto"],"rows":[["Categorias, funções explicativas, três dimensões e pertinência das perguntas.","Roteiro de questões aplicáveis e justificativa de pertinência/não aplicação"]]},{"title":"Quadro 5 · Três dimensões interrogativas","headers":["Dimensão","Questão central","Informações a examinar"],"rows":[["Epistemológico-metodológica","Como o objeto é construído? Que relações e evidências sustentam sua explicação?","Problema; objetivos; pressupostos; procedimentos; conceitos; resultados; argumentos; conclusões"],["Ontológico-psicológica","Que determinações são atribuídas à adolescência e ao desenvolvimento humano?","Organismo; sociedade; psiquismo; atividade; apropriação; pensamento; afetividade e demais processos pertinentes"],["Pedagógico-político-educacional","Qual função a escolarização e o trabalho educativo assumem quando pertinentes?","Função da escola; conhecimentos; ensino; atividade docente/discente; condições institucionais; políticas"]]}],"limit":"Pergunta não pertinente é registrada como não aplicação, não como A (ausência). Informação insuficiente sobre pertinência permanece pendente."},"m3":{"kicker":"MOVIMENTO III · REGISTRO DAS MEDIAÇÕES","title":"Documentar relações, excertos, páginas e estados","lead":"Vincular cada interpretação à produção, questão pertinente, passagem documental e localização, distinguindo as formulações dos autores das inferências da pesquisadora.","refs":"TELLES (2026), seção 4.5.4, pp. 193–196; Quadros 3 (p. 186) e 6 (p. 194).","tables":[{"title":"Quadro 3 · Operação e registro","headers":["Operações documentais","Registro documental previsto"],"rows":[["Excertos, distinção autor/inferência, estados E/M/I/NI/A e T transversal.","Ficha de mediações: dimensão, pergunta, estado, excertos, páginas e justificativas"]]},{"title":"Quadro 6 · Estados de registro das mediações","headers":["Código","Estado","Critério","Registro mínimo"],"rows":[["E","Explicitação","Autor formula e utiliza a relação na explicação.","Proposição, excerto, localização"],["M","Menção","Relação comparece como referência descritiva/contextual, sem função explicativa demonstrada.","Excerto e justificativa da função descritiva"],["I","Inferência fundamentada","Relação não formulada diretamente, mas reconstruível por articulação justificada de passagens.","Excertos convergentes; inferência separada"],["NI","Não identificável","Material disponível não permite decidir com segurança sobre presença/função.","Limite documental; verificação pendente"],["A","Ausência verificada","Relação não localizada após exame suficiente das partes pertinentes do estudo.","Delimitação do exame; justificativa"],["T","Tensão interna (marcador transversal)","Tensão argumentativa sustentada por passagens contrastáveis.","Passagens; relações; fundamento da leitura"]]}],"limit":"Estados são atribuídos a relações específicas, não à produção como um todo. T é transversal e pode acompanhar outro estado."},"m4":{"kicker":"MOVIMENTO IV · CONFRONTO CRÍTICO","title":"Examinar coerência e alcance das inferências","lead":"Confrontar problema, fundamentos, métodos, evidências, resultados e conclusões; investigar tensões demonstráveis e alcance das generalizações sem impor adesão ao referencial da dissertação.","refs":"TELLES (2026), seção 4.5.5, pp. 197–201; Quadros 3 (p. 186) e 7 (p. 199).","tables":[{"title":"Quadro 3 · Operação e registro","headers":["Operações documentais","Registro documental previsto"],"rows":[["Coerência entre problema, fundamentos, evidências e conclusões; tensões demonstradas.","Registro de confronto: proposições, evidências, limites e novas questões"]]},{"title":"Quadro 7 · Planos de confronto (síntese)","headers":["Plano","Questão e critério"],"rows":[["Delimitação do objeto","A proposição integra o problema efetivamente investigado?"],["Posição teórica declarada","Distinguir pressupostos anunciados e relações desenvolvidas."],["Sustentação da proposição","Que argumentos, materiais e resultados fundamentam a afirmação?"],["Coerência interna","Identificar convergências e tensões demonstráveis."],["Alcance explicativo","As conclusões permanecem compatíveis com o objeto e as evidências?"],["Interrogação crítica","Distinguir questões da pesquisadora das afirmações do autor."],["Delimitação do resultado","O que o confronto permite afirmar, com que limites?"]]}],"limit":"Divergência teórica não é deficiência científica por si só. Uma tensão exige passagens contrastáveis, não coexistência de autores distintos."},"m5":{"kicker":"MOVIMENTO V · SÍNTESE PROVISÓRIA","title":"Reconstituir a unidade da explicação e seus limites","lead":"Elaborar síntese interpretativa individualizada, articulando núcleo explicativo, determinações, funções das dimensões, evidências, tensões, limites e questões abertas.","refs":"TELLES (2026), seção 4.5.6, pp. 201–204; Quadros 3 (p. 187) e 8 (pp. 202–203).","tables":[{"title":"Quadro 3 · Operação e registro","headers":["Operações documentais","Registro documental previsto"],"rows":[["Unidade das relações explicativas, mediações, tensões e limites, sem generalização precoce.","Síntese individualizada, conclusões delimitadas, revisão e comparação possíveis"]]},{"title":"Quadro 8 · Elementos da síntese interpretativa","headers":["Elemento","Registro produzido"],"rows":[["Núcleo explicativo","Proposição central com sustentação documental"],["Articulação das determinações","Relações explicativas articuladas e respectivas evidências"],["Função das dimensões","Relações pertinentes e funções no argumento"],["Sustentação e alcance","Excertos, páginas, inferências e limites"],["Tensões e questões abertas","Tensões fundamentadas, limites e questões para revisão"],["Formulação sintética","Síntese individualizada, fundamentada e revisável"]]}],"limit":"Não generalizar resultados para o corpus a partir da síntese de cada estudo. A interpretação permanece aberta à revisão."},"case-soares":{"kicker":"SOARES (2018) · ESCOLHA PROFISSIONAL","title":"Alternativas institucionais e preferência declarada","lead":"Na situação hipotética sobre oferta de cursos do IFPA Campus Castanhal, 32 de 54 estudantes afirmaram que considerariam outra escolha. A resposta não demonstra mudança efetiva de curso ou causalidade isolada da oferta.","refs":"TELLES (2026), seções 5.2.1, 5.3–5.4, pp. 217–221 e 229–235; Soares (2018, pp. 45–46).","tables":[{"title":"Quadro 14 · Percurso em Soares (síntese)","headers":["Movimento","Relação reconstruída"],"rows":[["I · Reconstrução interna","Pergunta hipotética no IFPA: 32/54 estudantes admitiriam mudar preferência (Soares, 2018, pp. 45–46)."],["II · Interrogação analítica","Como identidade e interesses se relacionam com cursos institucionalmente disponíveis?"],["III · Registro da mediação","E: relação explicitada entre oferta hipotética e resposta de preferência; evidência: questionário."],["IV · Confronto crítico","Não comprova mudança efetiva de curso nem o peso causal isolado da oferta ou da identidade."],["V · Síntese provisória","Escolha interpretada na relação entre elaboração subjetiva e possibilidades educacionais situadas."]]}],"limit":"Uma preferência declarada em questionário hipotético não é decisão efetivada. A escolha deve ser compreendida em relações entre subjetividade e possibilidades sociais."},"case-bueno":{"kicker":"BUENO (2018) · PAPO JOVEM","title":"Institucionalização do trabalho educativo","lead":"A reorganização do material e do tempo curricular em 2014 permitiu duas aulas semanais de educação sexual no Fundamental II; no Ensino Médio o projeto permaneceu extracurricular. O dado demonstra condição institucional, não transformação psíquica individual.","refs":"TELLES (2026), seções 5.2.2, 5.3–5.4, pp. 223–228 e 229–235; Bueno (2018, pp. 96–97).","tables":[{"title":"Quadro 14 · Percurso em Bueno (síntese)","headers":["Movimento","Relação reconstruída"],"rows":[["I · Reconstrução interna","Em 2014, reorganização de material e horários permitiu duas aulas semanais no Fundamental II (Bueno, 2018, pp. 96–97)."],["II · Interrogação analítica","Que decisões e condições temporais tornaram possível a inserção da atividade no currículo?"],["III · Registro da mediação","E: relação entre grade, decisão da gestão e integração ao projeto pedagógico."],["IV · Confronto crítico","Curricularização documenta condições de realização, não aprendizagem ou desenvolvimento psíquico comprovados."],["V · Síntese provisória","Continuidade de uma finalidade educativa mediada pela organização concreta da escola."]]}],"limit":"Organização curricular e finalidades pedagógicas documentadas não equivalem a medição de apropriação cultural ou aprendizagem."},"case-choice":{"kicker":"EVIDÊNCIA SOARES · QUADRO 13","title":"32/54: alternativa institucional hipotética","lead":"A resposta à possibilidade de outra oferta de cursos integra a explicação sobre preferências, mas não comprova efetivação de mudança nem peso causal isolado da instituição.","refs":"TELLES (2026), Quadro 13, p. 235; Soares (2018, pp. 45–46).","tables":[{"title":"Quadro 13 · Registro exploratório","headers":["Evidência","Mediação / estado","Limite"],"rows":[["32 de 54 admitiriam outra escolha","E — oferta institucional e preferência declarada","Alternativa entra no horizonte de escolha; não demonstra mudança efetiva de curso"]]}],"limit":"O estado E registra a relação explicitada, não comprova causalidade ou qualidade científica."},"case-curriculum":{"kicker":"EVIDÊNCIA BUENO · QUADRO 13","title":"Tempo curricular e institucionalização","lead":"A mudança na grade e no material didático permitiu duas aulas semanais de educação sexual nos anos finais do Ensino Fundamental. A inserção curricular documenta condição de realização da atividade.","refs":"TELLES (2026), Quadro 13, p. 235; Bueno (2018, pp. 96–97).","tables":[{"title":"Quadro 13 · Registro exploratório","headers":["Evidência","Mediação / estado","Limite"],"rows":[["Reorganização da grade em 2014","E — organização do tempo e reconhecimento curricular","Ensino Médio extracurricular; não mensura aprendizagem"]]}],"limit":"Não extrapolar a institucionalização para efeitos psíquicos sem evidências."},"case-compare":{"kicker":"QUADRO 14 · TESTE EXPLORATÓRIO","title":"Os cinco movimentos em evidências distintas","lead":"O confronto emprega as mesmas questões analíticas, mas os objetos e suas condições de prova não são equivalentes. O quadro preserva as duas sequências documentais e seus limites.","refs":"TELLES (2026), Quadro 14, pp. 236–237, elaborado com base em Soares (2018, pp. 45–46) e Bueno (2018, pp. 96–97).","tables":[{"title":"Quadro 14 · Rastreamento dos cinco movimentos (reconstituição para apresentação)","headers":["Movimento","Soares · escolha profissional","Bueno · Papo Jovem"],"rows":[["I · Reconstrução interna","Pergunta hipotética no IFPA: 32/54 estudantes admitiriam mudar preferência (Soares, 2018, pp. 45–46).","Em 2014, reorganização de material e horários permitiu duas aulas semanais no Fundamental II (Bueno, 2018, pp. 96–97)."],["II · Interrogação analítica","Como identidade e interesses se relacionam com cursos institucionalmente disponíveis?","Que decisões e condições temporais tornaram possível a inserção da atividade no currículo?"],["III · Registro da mediação","E: relação explicitada entre oferta hipotética e resposta de preferência; evidência: questionário.","E: relação entre grade, decisão da gestão e integração ao projeto pedagógico."],["IV · Confronto crítico","Não comprova mudança efetiva de curso nem o peso causal isolado da oferta ou da identidade.","Curricularização documenta condições de realização, não aprendizagem ou desenvolvimento psíquico comprovados."],["V · Síntese provisória","Escolha interpretada na relação entre elaboração subjetiva e possibilidades educacionais situadas.","Continuidade de uma finalidade educativa mediada pela organização concreta da escola."]]}],"limit":"O teste exploratório demonstrou possibilidades de operacionalização, não tendências nacionais. Duas dissertações não fundamentam síntese geral sobre o corpus."},"case-core":{"kicker":"SÍNTESE RELACIONAL · CAPÍTULO 5","title":"Evidências, mediações e limites","lead":"Escola e condições institucionais participam de modo diferente das explicações: em Soares, como alternativas possíveis de escolha; em Bueno, como condições de institucionalização de uma prática educativa.","refs":"TELLES (2026), seções 5.3–5.5, pp. 229–239; Quadro 14, pp. 236–237.","tables":[{"title":"Quadro 14 · Comparação do alcance","headers":["Soares","Bueno"],"rows":[["Preferências declaradas não provam mudança de curso nem causalidade isolada da oferta.","Reorganização curricular demonstra condições de realização, não aprendizagem ou desenvolvimento psíquico comprovados."],["Síntese: articulação entre elaboração subjetiva e alternativas educacionais situadas.","Síntese: finalidades educativas mediadas pela organização concreta da escola."]]}],"limit":"Uma aplicação da matriz não deve atribuir aos autores relações teóricas que eles não formularam nem avaliar fora do alcance de seus objetos."}};
+const methodDialog=el("banca-method-dialog");
+let lastMethodOpener=null,interactiveExpanded=false;
+el("banca-method-dialog-close").addEventListener("click",()=>methodDialog.close());
+methodDialog.addEventListener("close",()=>{
+ if(lastMethodOpener&&document.contains(lastMethodOpener))lastMethodOpener.focus();
+ lastMethodOpener=null;
+});
+function displayMethodDetail(key,opener){
+ const item=methodDetails[key];if(!item)return;
+ lastMethodOpener=opener;
+ el("banca-method-dialog-kicker").textContent=item.kicker;
+ el("banca-method-dialog-title").textContent=item.title;
+ el("banca-method-dialog-explanation").textContent=item.lead;
+ el("banca-method-dialog-refs").textContent="Remissões: "+item.refs;
+ el("banca-method-dialog-limit").textContent="Limite interpretativo: "+item.limit;
+ const container=el("banca-method-dialog-table");container.replaceChildren();
+ for(const t of item.tables){
+  const heading=document.createElement("h4");heading.textContent=t.title;container.append(heading);
+  const table=document.createElement("table");
+  const thead=document.createElement("thead"),headRow=document.createElement("tr");
+  for(const val of t.headers){const th=document.createElement("th");th.scope="col";th.textContent=val;headRow.append(th);}
+  thead.append(headRow);table.append(thead);
+  const body=document.createElement("tbody");
+  for(const row of t.rows){
+   const tr=document.createElement("tr");
+   for(const val of row){const td=document.createElement("td");td.textContent=val;tr.append(td);}
+   body.append(tr);
+  }
+  table.append(body);container.append(table);
+ }
+ methodDialog.showModal();
+}
+const stageFigure=el("banca-stage-figure");
+stageFigure.addEventListener("click",event=>{
+ const target=event.target.closest("button");if(!target)return;
+ if(target.dataset.methodKey){displayMethodDetail(target.dataset.methodKey,target);return;}
+ if(target.dataset.methodView){
+  const view=target.dataset.methodView,host=stageFigure.querySelector(".banca-method-figure");
+  if(!host)return;
+  for(const button of host.querySelectorAll("[data-method-view]"))button.setAttribute("aria-pressed",String(button.dataset.methodView===view));
+  for(const panel of host.querySelectorAll("[data-method-panel]"))panel.hidden=panel.dataset.methodPanel!==view;
+  for(const caption of host.querySelectorAll("[data-method-caption]"))caption.hidden=caption.dataset.methodCaption!==view;
+ }
+});
+function cloneInteractiveFigure(type){
+ const template=el("banca-interactive-"+type);
+ stageFigure.replaceChildren();
+ if(!template){stageFigure.textContent="O esquema interativo não está disponível nesta cópia.";return;}
+ stageFigure.append(template.content.cloneNode(true));
+}
 
 let current=0, figureAlternate=false, figureFocus=false, priorFocus=null;
 const total=slides.reduce((acc,sl)=>acc+sl.min,0);
@@ -1575,11 +1635,13 @@ function render(){
  updateMenuPosition();
  el("banca-progress-text").textContent=(current+1)+" de "+slides.length;
  el("banca-progress").style.background="linear-gradient(to right,#4d7895 "+((current+1)/slides.length*100)+"%,#dce5ed "+((current+1)/slides.length*100)+"%)";
- const zoomMode=!!item.zoom,coverMode=!!item.cover;
+ const zoomMode=!!item.zoom,coverMode=!!item.cover,interactiveMode=!!item.interactive;
  const stage=el("banca-presenter").querySelector(".banca-stage-content");
  stage.classList.toggle("is-zoom",zoomMode);
  stage.classList.toggle("is-cover",coverMode);
- stage.classList.toggle("is-figure-focus",figureFocus&&!zoomMode&&!coverMode);
+ stage.classList.toggle("is-figure-focus",figureFocus&&!zoomMode&&!coverMode&&!interactiveMode);
+ stage.classList.toggle("is-interactive",interactiveMode);
+ stage.classList.toggle("is-interactive-expanded",interactiveMode&&interactiveExpanded);
  el("banca-cover-mount").hidden=!coverMode;
  el("banca-authors-link").hidden=current!==slides.length-1;
  el("banca-stage-meta").textContent=coverMode?"ABERTURA · problema, hipótese e objetivos":"MOVIMENTO "+current+" / "+(slides.length-1);
@@ -1600,7 +1662,14 @@ function render(){
  el("banca-prev").disabled=current===0;
  el("banca-next").textContent=current===slides.length-1?"Retornar ao início ↺":"Próximo →";
  const extra=el("banca-visual-extra");extra.replaceChildren();
- if(!zoomMode&&!coverMode){
+ if(interactiveMode){
+  const toggleText=document.createElement("button");toggleText.type="button";
+  toggleText.className="banca-figure-focus-toggle";
+  toggleText.textContent=interactiveExpanded?"Destacar esquema relacional":"Exibir texto e esquema";
+  toggleText.setAttribute("aria-pressed",String(interactiveExpanded));
+  toggleText.addEventListener("click",()=>{interactiveExpanded=!interactiveExpanded;render();});
+  extra.append(toggleText);
+ }else if(!zoomMode&&!coverMode){
   const toggleFigure=document.createElement("button");toggleFigure.type="button";
   toggleFigure.className="banca-figure-focus-toggle";
   toggleFigure.textContent=figureFocus?"Exibir texto e esquema":"Ampliar esquema";
@@ -1616,11 +1685,12 @@ function render(){
   extra.append(toggle);
  }
  if(coverMode)el("banca-stage-figure").replaceChildren();
+ else if(interactiveMode)cloneInteractiveFigure(item.interactive);
  else cloneFigure(figureAlternate&&item.alternate?item.alternate:item.plate);
  const displayPlate=figureAlternate&&item.alternate?item.alternate:item.plate;
  const figureNums={1:1,4:2,9:6,10:8,13:12,14:13,15:14};
  const original=figureNums[displayPlate];
- if(original){
+ if(original&&!interactiveMode){
    const note=document.createElement("p");note.className="banca-figure-source";
    note.append(document.createTextNode("Relação com a dissertação: Figura "+original+". "));
    note.append(document.createTextNode("O texto integral ainda não foi publicado; consulte as pranchas e o Guia Visual para os esquemas disponíveis."));extra.append(note);
@@ -1630,17 +1700,17 @@ function render(){
 }
 function close(){
  stopSpeech();stopTicker();clockRunning=false;paintClock();
- if(dialog.open)dialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
+ if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
 function open(){
  priorFocus=document.activeElement;current=0;figureAlternate=false;figureFocus=false;
  root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
-function next(){stopSpeech();if(dialog.open)dialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;render();}
-function prev(){if(dialog.open)dialog.close();if(current>0){stopSpeech();current--;figureAlternate=false;figureFocus=false;render();}}
+function next(){stopSpeech();if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}
+function prev(){if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(current>0){stopSpeech();current--;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}}
 function keys(e){if(root.hidden)return;
- if(dialog.open)return;
+ if(dialog.open||methodDialog.open)return;
  if(e.key==="Escape"){
   e.preventDefault();
   if(!readPanel.hidden){showPanel("read",false);return;}
