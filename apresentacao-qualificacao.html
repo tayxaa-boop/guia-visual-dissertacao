@@ -750,10 +750,104 @@ html,body{background:#f5f7fa}
 .banca-notes .banca-note-legend{display:block;font-size:.72rem;color:#50687c;line-height:1.35;margin:.35rem .3rem 0}
 @media(max-width:699px){.banca-notes .banca-cue-chip{font-size:.82rem}.banca-notes .banca-cue-page{font-size:.72rem}}
 @media(forced-colors:active){.banca-notes .banca-cue-chip,.banca-notes .banca-cue-page{border:1px solid CanvasText}}
+
+/* Matriz Tripartida e testes exploratórios: pranchas relacionais interativas. */
+.banca-presenter .banca-stage-content.is-interactive{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ padding:clamp(.65rem,1.4vw,1.35rem) clamp(.9rem,2.1vw,2rem)!important;gap:.4rem!important;
+}
+.banca-presenter .banca-stage-content.is-interactive .banca-copy{width:100%;align-self:stretch}
+.banca-presenter .banca-stage-content.is-interactive .banca-meta{font-size:.84rem;margin:0 0 .12rem}
+.banca-presenter .banca-stage-content.is-interactive .banca-copy h3{
+ font-size:clamp(1.55rem,2.65vw,2.5rem)!important;margin:0 0 .3rem!important
+}
+.banca-presenter .banca-stage-content.is-interactive .banca-copy :is(.banca-thesis,.banca-points,.banca-source,.banca-quote){display:none}
+.banca-presenter .banca-stage-content.is-interactive .banca-visual{
+ width:100%!important;max-width:none;padding:clamp(.7rem,1vw,1rem)
+}
+.banca-presenter .banca-stage-content.is-interactive .banca-visual-label{display:none}
+.banca-presenter .banca-stage-content.is-interactive.is-interactive-expanded{
+ display:grid!important;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)!important;align-items:start!important
+}
+.banca-presenter .banca-stage-content.is-interactive-expanded .banca-copy :is(.banca-thesis,.banca-points,.banca-source,.banca-quote){
+ display:block!important
+}
+.banca-presenter .banca-stage-content.is-interactive-expanded .banca-visual{width:100%}
+.banca-method-figure{margin:0;min-width:0;font-family:Arial,sans-serif}
+.banca-method-toolbar{display:flex;align-items:center;justify-content:space-between;gap:.7rem;flex-wrap:wrap;border-bottom:1px solid #d6e3ec;padding:0 .25rem .6rem}
+.banca-method-kicker{color:#4b7187;font-size:.78rem;letter-spacing:.065em;font-weight:700;margin:0 .1rem}
+.banca-method-toolbar h4{font-size:clamp(1.1rem,1.65vw,1.63rem);color:#1e435e;margin:.15rem 0}
+.banca-method-tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.banca-presenter .banca-method-tabs button{border:1px solid #7a9db1;color:#1d4b65;background:#f4f8fb;border-radius:9px;font-weight:700;min-height:44px;padding:.6rem .8rem}
+.banca-presenter .banca-method-tabs button[aria-pressed=true]{background:#204f70;color:#fff}
+.banca-method-orbit{position:relative;height:clamp(390px,52dvh,590px);overflow:visible;max-width:1550px;margin:0 auto;width:100%}
+.banca-method-orbit[hidden],.banca-method-caption[hidden]{display:none!important}
+.banca-link-routes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.banca-presenter .banca-method-bubble{position:absolute;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;gap:.23rem;min-height:21%;width:29%;padding:clamp(.6rem,1.1vw,1.15rem);border:2px solid #7da1b9;border-radius:15px;box-shadow:0 2px 8px #22496017;background:#f5f9fb;color:#173952;cursor:pointer}
+.banca-method-bubble strong{font-size:clamp(.9rem,1.22vw,1.25rem);line-height:1.2;color:#173f5f}
+.banca-method-bubble span{font-size:clamp(.81rem,.96vw,1.07rem);line-height:1.32;color:#314b60}
+.banca-method-bubble small{font-size:.76rem;color:#316d89}
+.banca-presenter .banca-method-bubble:focus-visible,.banca-presenter .banca-method-core:focus-visible,.banca-presenter .banca-method-tabs button:focus-visible{outline:4px solid #d79a37;outline-offset:3px}
+.banca-presenter .banca-method-bubble:hover{border-color:#1c6888;background:#e9f4f8}
+.banca-method-core{position:absolute;left:35%;top:39%;width:30%;min-height:22%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;border:2px solid #a4c6d7;border-radius:16px;padding:12px;background:#20577d;color:#fff;box-shadow:0 6px 18px #244c7530;text-align:center;font-size:clamp(.95rem,1.25vw,1.34rem);font-weight:800;line-height:1.24}
+.banca-method-core span{font-size:.84em;font-weight:600}
+.banca-method-core small{font-size:.64em;color:#e0f0f9}
+.banca-method-orbit .axes-epi,.banca-method-orbit .movs-one{top:12%;left:2%}
+.banca-method-orbit .axes-onto,.banca-method-orbit .movs-two{bottom:12%;left:2%}
+.banca-method-orbit .axes-ped,.banca-method-orbit .movs-three{top:12%;right:2%}
+.banca-method-orbit .axes-evidence,.banca-method-orbit .movs-four{bottom:12%;right:2%}
+.banca-method-orbit .movs-five{left:35%;top:1%;min-height:19%;width:30%;align-items:center;text-align:center}
+.banca-method-orbit[data-method-panel=movements] .banca-method-core{top:40%;min-height:21%}
+.banca-method-caption{font-size:clamp(.84rem,.95vw,1.02rem);color:#344f62;background:#edf4f8;border-left:4px solid #6b9ab1;line-height:1.45;padding:.6rem .8rem;margin:.25rem 0}
+.banca-method-foot{font-size:.82rem;color:#546f81;margin:.35rem 0 0}
+.banca-cases-tag{font-size:.84rem;color:#38647d;background:#ebf4f8;padding:.45rem .7rem;border:1px solid #c1d7e3;border-radius:9px}
+.banca-cases-orbit .case-soares{top:8%;left:1.5%;background:#f0edf6;border-color:#a8a4c0}
+.banca-cases-orbit .case-bueno{top:8%;right:1.5%;background:#fbf1e5;border-color:#c5a781}
+.banca-cases-orbit .case-choice{bottom:8%;left:1.5%}
+.banca-cases-orbit .case-curriculum{bottom:8%;right:1.5%}
+.banca-cases-orbit .case-compare{top:2%;left:35%;width:30%;min-height:16%;align-items:center;text-align:center}
+.banca-cases-orbit .banca-method-core{top:40%}
+.banca-method-dialog{width:min(920px,96vw);max-height:88dvh;overflow:auto;box-sizing:border-box;border-radius:16px;border:2px solid #84aac0;background:white;color:#1d354a;padding:clamp(1rem,2.5vw,1.8rem);box-shadow:0 16px 75px #0a244670}
+.banca-method-dialog::backdrop{background:rgba(13,29,45,.65)}
+.banca-presenter .banca-method-dialog-close,.banca-method-dialog-close{float:right;min-width:44px;min-height:44px;border-radius:9px;border:1px solid #8aaabf;background:#eef5fa;color:#1f4b68;font-weight:700}
+.banca-method-dialog-kicker{color:#476e84;font-size:.82rem;font-weight:700;letter-spacing:.055em;margin:.2rem 0}
+.banca-method-dialog h3{font-size:clamp(1.3rem,2vw,1.9rem);margin:.2rem 0 .7rem}
+.banca-method-dialog-lead{font-size:1.06rem;line-height:1.6}
+.banca-method-dialog-refs{background:#e8f2f7;border-left:4px solid #6192ac;padding:.65rem .85rem;font-weight:700;line-height:1.4}
+.banca-method-dialog-table{max-width:100%;overflow-x:auto}
+.banca-method-dialog-table table{border-collapse:collapse;width:100%;min-width:550px;font-size:.92rem}
+.banca-method-dialog-table th,.banca-method-dialog-table td{padding:.55rem .63rem;border:1px solid #c9d7e0;text-align:left;vertical-align:top;line-height:1.48}
+.banca-method-dialog-table th{background:#eaf3f7;font-weight:800;color:#1e506a}
+.banca-method-dialog-table tr:nth-child(even){background:#f7fafc}
+.banca-method-dialog-limit{font-size:.93rem;line-height:1.5;background:#f4f8fa;border-left:3px solid #b18b52;padding:.7rem .9rem}
+.banca-method-dialog-source{color:#596d7c;font-size:.78rem;line-height:1.45}
+@media(max-width:950px){
+ .banca-presenter .banca-stage-content.is-interactive.is-interactive-expanded{display:flex!important;flex-direction:column!important}
+ .banca-method-orbit{height:500px}
+ .banca-presenter .banca-method-bubble{width:33%;padding:.55rem;min-height:23%}
+ .banca-method-core{left:34%;width:32%}
+ .banca-method-orbit .movs-five,.banca-cases-orbit .case-compare{left:34%;width:32%}
+}
+@media(max-width:620px){
+ .banca-method-orbit{height:570px}
+ .banca-method-bubble strong{font-size:.78rem}
+ .banca-method-bubble span{font-size:.7rem}
+ .banca-method-bubble small{font-size:.62rem}
+ .banca-presenter .banca-method-bubble{width:42%;min-height:20%;padding:.4rem}
+ .banca-method-orbit .axes-epi,.banca-method-orbit .movs-one{top:14%;left:0}
+ .banca-method-orbit .axes-onto,.banca-method-orbit .movs-two{bottom:12%;left:0}
+ .banca-method-orbit .axes-ped,.banca-method-orbit .movs-three{top:14%;right:0}
+ .banca-method-orbit .axes-evidence,.banca-method-orbit .movs-four{bottom:12%;right:0}
+ .banca-method-core{left:29%;top:41%;width:42%;font-size:.78rem;padding:.3rem;min-height:19%}
+ .banca-method-orbit .movs-five,.banca-cases-orbit .case-compare{left:29%;width:42%;min-height:14%;top:1%}
+ .banca-cases-orbit .case-soares{left:0}.banca-cases-orbit .case-bueno{right:0}
+ .banca-cases-orbit .case-choice{left:0}.banca-cases-orbit .case-curriculum{right:0}
+ .banca-method-dialog-table table{font-size:.85rem}
+}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
-<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Nove movimentos precedidos por uma prancha de abertura interativa com os objetivos da pesquisa; roteiro e notas de fala disponíveis. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
+<main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Oito movimentos precedidos por uma prancha de abertura interativa com os objetivos da pesquisa; roteiro e notas de fala disponíveis. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
 <div class="banca-presenter" id="banca-presenter" role="dialog" aria-modal="true" aria-labelledby="banca-view-title" tabindex="-1" hidden>
   <div class="banca-screen">
    <header class="banca-header"><div class="banca-identity"><strong>Banca de qualificação</strong><span>UDESC · FAED · 17 de novembro de 2026</span></div>
@@ -765,7 +859,7 @@ html,body{background:#f5f7fa}
   <div class="banca-clock-display"><span class="banca-clock-caption">TEMPO DECORRIDO</span><span id="banca-clock-elapsed" class="banca-clock-digits" role="timer" aria-label="Tempo decorrido">00:00</span><span id="banca-clock-remaining" class="banca-clock-remaining">20:00 restantes</span></div>
   <div class="banca-clock-actions"><button type="button" id="banca-clock-pause" aria-label="Pausar cronômetro" title="Pausar ou retomar cronômetro">Pausar</button><button type="button" id="banca-clock-reset" title="Reiniciar cronômetro a partir de zero">Reiniciar</button></div>
   <span id="banca-clock-status" class="a11y-visually-hidden" role="status" aria-live="polite"></span>
- </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 10</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
+ </div><span id="banca-progress-text" role="status" aria-live="polite">1 de 9</span><button type="button" id="banca-standalone-rou" title="Abrir o roteiro detalhado em outra janela">Roteiro de apoio ↗</button><button type="button" id="banca-exit">Encerrar apresentação ×</button></div></header>
    <div class="banca-progress" id="banca-progress" aria-hidden="true"></div>
    <div class="banca-stage-content">
     <div id="banca-cover-mount" hidden>
@@ -862,6 +956,67 @@ html,body{background:#f5f7fa}
   </div>
  </div>
 
+
+<template id="banca-interactive-matrix">
+ <figure class="banca-method-figure" aria-label="Matriz Analítica Tripartida interativa">
+  <div class="banca-method-toolbar"><div><p class="banca-method-kicker">CAPÍTULO 4 · MATRIZ ANALÍTICA TRIPARTIDA</p><h4>Uma unidade de análise, perguntas articuladas e cinco movimentos</h4></div>
+  <div class="banca-method-tabs" role="group" aria-label="Escolha o esquema da matriz">
+   <button type="button" data-method-view="axes" aria-pressed="true">Três eixos</button>
+   <button type="button" data-method-view="movements" aria-pressed="false">Cinco movimentos</button>
+  </div></div>
+  <section class="banca-method-orbit" data-method-panel="axes" aria-label="Dimensões analíticas e lógica interna do documento">
+  <svg class="banca-link-routes" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><marker id="arrow-axes" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8Z" fill="#477897"/></marker></defs><ellipse cx="500" cy="280" rx="328" ry="215" fill="none" stroke="#d9e9f5" stroke-width="4"/><path d="M310 170 Q405 210 480 280" marker-start="url(#arrow-axes)" marker-end="url(#arrow-axes)" fill="none" stroke="#477897" stroke-width="3"/><path d="M310 397 Q405 350 480 310" marker-start="url(#arrow-axes)" marker-end="url(#arrow-axes)" fill="none" stroke="#477897" stroke-width="3"/><path d="M690 170 Q595 213 520 280" marker-start="url(#arrow-axes)" marker-end="url(#arrow-axes)" fill="none" stroke="#477897" stroke-width="3"/><path d="M690 397 Q590 355 520 310" marker-start="url(#arrow-axes)" marker-end="url(#arrow-axes)" fill="none" stroke="#477897" stroke-width="3"/></svg>
+  <button type="button" class="banca-method-bubble axes-epi" data-method-key="epi" aria-haspopup="dialog"><strong>1 · Como conhecemos?</strong><span>Epistemológico-metodológica</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble axes-onto" data-method-key="onto" aria-haspopup="dialog"><strong>2 · O que é explicado?</strong><span>Ontológico-psicológica</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble axes-ped" data-method-key="ped" aria-haspopup="dialog"><strong>3 · Qual a função da escola?</strong><span>Pedagógico-político-educacional</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble axes-evidence" data-method-key="evidence" aria-haspopup="dialog"><strong>Evidências e decisões</strong><span>E, M, I, NI, A e T · registro documental</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-core" data-method-key="core" aria-haspopup="dialog">LÓGICA INTERNA <span>da explicação de cada produção</span><small>Abrir unidade de análise ↗</small></button>
+  </section>
+  <section class="banca-method-orbit" data-method-panel="movements" aria-label="Cinco movimentos articulados com retornos críticos" hidden>
+  <svg class="banca-link-routes" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><marker id="arrow-movs" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8Z" fill="#477897"/></marker></defs><ellipse cx="500" cy="280" rx="328" ry="215" fill="none" stroke="#d9e9f5" stroke-width="4"/><path d="M310 116 Q410 175 483 266" marker-start="url(#arrow-movs)" marker-end="url(#arrow-movs)" fill="none" stroke="#477897" stroke-width="3"/><path d="M310 440 Q420 358 483 315" marker-start="url(#arrow-movs)" marker-end="url(#arrow-movs)" fill="none" stroke="#477897" stroke-width="3"/><path d="M690 116 Q585 175 518 266" marker-start="url(#arrow-movs)" marker-end="url(#arrow-movs)" fill="none" stroke="#477897" stroke-width="3"/><path d="M690 440 Q585 358 518 315" marker-start="url(#arrow-movs)" marker-end="url(#arrow-movs)" fill="none" stroke="#477897" stroke-width="3"/><path d="M500 125 L500 231" marker-start="url(#arrow-movs)" marker-end="url(#arrow-movs)" fill="none" stroke="#477897" stroke-width="3"/></svg>
+  <button type="button" class="banca-method-bubble movs-one" data-method-key="m1" aria-haspopup="dialog"><strong>I · Reconstrução interna</strong><span>Compreender o estudo em seus termos</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble movs-two" data-method-key="m2" aria-haspopup="dialog"><strong>II · Interrogação analítica</strong><span>Questões pertinentes ao objeto</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble movs-three" data-method-key="m3" aria-haspopup="dialog"><strong>III · Registro das mediações</strong><span>Excertos, páginas e estados</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble movs-four" data-method-key="m4" aria-haspopup="dialog"><strong>IV · Confronto crítico</strong><span>Coerência e alcance das inferências</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-bubble movs-five" data-method-key="m5" aria-haspopup="dialog"><strong>V · Síntese provisória</strong><span>Unidade da explicação e limites</span><small>Abrir detalhes ↗</small></button>
+  <button type="button" class="banca-method-core" data-method-key="core" aria-haspopup="dialog">RECONSTRUIR ↔ INTERROGAR <span>↔ REGISTRAR ↔ CONFRONTAR ↔ SINTETIZAR</span><small>Com possibilidade de retorno</small></button>
+  </section>
+  <figcaption class="banca-method-caption" data-method-caption="axes">As três dimensões interrogam a lógica interna de cada produção. **A pertinência precede o registro dos estados.** Quadro 5 (p. 191) e Figura 14 (p. 192).</figcaption>
+  <figcaption class="banca-method-caption" data-method-caption="movements" hidden>Os cinco movimentos são articulados e revisáveis, não etapas estanques. Quadro 3 (pp. 186–187) e seções 4.5.2–4.5.6 (pp. 187–203).</figcaption>
+  <p class="banca-method-foot">Clique em qualquer balão para consultar a explicação e a reconstituição dos quadros da dissertação. As fichas são material de apoio à qualificação, não substituem a leitura das fontes.</p>
+ </figure>
+</template>
+
+<template id="banca-interactive-cases">
+ <figure class="banca-method-figure banca-cases-figure" aria-label="Teste exploratório com Soares e Bueno: relações entre evidências, mediações e limites">
+ <div class="banca-method-toolbar"><div><p class="banca-method-kicker">CAPÍTULO 5 · TESTE EXPLORATÓRIO</p><h4>Soares (2018) ↔ Bueno (2018)</h4></div><span class="banca-cases-tag">Mesmas perguntas · objetos distintos</span></div>
+ <section class="banca-method-orbit banca-cases-orbit" aria-label="Relação entre os dois exercícios documentais">
+ <svg class="banca-link-routes" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+ <ellipse cx="500" cy="280" rx="340" ry="210" fill="none" stroke="#e5e7ee" stroke-width="4"/>
+ <path d="M315 158 Q404 219 464 265 M685 158 Q592 219 536 265 M300 419 Q398 345 464 302 M700 419 Q599 345 536 302" fill="none" stroke="#7a8fa6" stroke-width="4" stroke-dasharray="8 6"/>
+ </svg>
+ <button type="button" class="banca-method-bubble case-soares" data-method-key="case-soares" aria-haspopup="dialog"><strong>SOARES · 2018</strong><span>Escolha profissional e alternativas institucionais</span><small>Abrir detalhes ↗</small></button>
+ <button type="button" class="banca-method-bubble case-bueno" data-method-key="case-bueno" aria-haspopup="dialog"><strong>BUENO · 2018</strong><span>Papo Jovem e organização escolar</span><small>Abrir detalhes ↗</small></button>
+ <button type="button" class="banca-method-bubble case-choice" data-method-key="case-choice" aria-haspopup="dialog"><strong>Oferta de cursos</strong><span>32 de 54: mudança hipotética de preferência</span><small>Abrir detalhes ↗</small></button>
+ <button type="button" class="banca-method-bubble case-curriculum" data-method-key="case-curriculum" aria-haspopup="dialog"><strong>Currículo e tempo</strong><span>Grade e material: condições de institucionalização</span><small>Abrir detalhes ↗</small></button>
+ <button type="button" class="banca-method-bubble case-compare" data-method-key="case-compare" aria-haspopup="dialog"><strong>Quadro 14</strong><span>Os cinco movimentos nos dois estudos</span><small>Abrir detalhes ↗</small></button>
+ <button type="button" class="banca-method-core" data-method-key="case-core" aria-haspopup="dialog">CONFRONTO RELACIONAL <span>evidência → mediação → limite</span><small>Sínteses individualizadas, sem tendências nacionais</small></button>
+ </section>
+ <figcaption class="banca-method-caption">As condições escolares desempenham funções diferentes: alternativas de escolha em Soares; constituição de uma prática educativa em Bueno. Os registros não demonstram causalidade isolada nem desenvolvimento psíquico mensurado.</figcaption>
+ <p class="banca-method-foot">Abra os balões para consultar os dados, limites e o Quadro 14 (pp. 236–237), reproduzido como tabela navegável.</p>
+ </figure>
+</template>
+
+<dialog id="banca-method-dialog" class="banca-method-dialog" aria-labelledby="banca-method-dialog-title" aria-describedby="banca-method-dialog-explanation">
+ <button type="button" id="banca-method-dialog-close" class="banca-method-dialog-close" aria-label="Fechar detalhes da matriz">Fechar ×</button>
+ <p id="banca-method-dialog-kicker" class="banca-method-dialog-kicker"></p>
+ <h3 id="banca-method-dialog-title"></h3>
+ <p id="banca-method-dialog-explanation" class="banca-method-dialog-lead"></p>
+ <p id="banca-method-dialog-refs" class="banca-method-dialog-refs"></p>
+ <div id="banca-method-dialog-table" class="banca-method-dialog-table"></div>
+ <p id="banca-method-dialog-limit" class="banca-method-dialog-limit"></p>
+ <p class="banca-method-dialog-source">Fonte: TELLES (2026), dissertação submetida à qualificação. Quadros reconstituídos em HTML para consulta durante a apresentação; a legenda identifica quadro e páginas.</p>
+</dialog>
 <dialog id="banca-objective-dialog" class="banca-objective-dialog" aria-labelledby="banca-objective-dialog-title" aria-describedby="banca-objective-dialog-full">
   <button id="banca-objective-dialog-close" class="banca-dialog-close" type="button" aria-label="Fechar detalhes do objetivo">Fechar ×</button>
   <p id="banca-objective-dialog-code" class="banca-dialog-kicker"></p>
@@ -1127,20 +1282,13 @@ const slides=[
  quote:"",quoteSource:"",
  notes:"BDTD · estratégias de busca [p. 171] → deduplicação [p. 173] → Tabela 2 · recortes [p. 175] → triagem/elegibilidade [pp. 177–179] → atualização de 2026 [p. 168]",
  transition:"recuperação documental [pp. 170–175] → explicações [p. 181]"},
- {title:"Matriz Tripartida: perguntas e cinco movimentos",min:3,plate:14,alternate:15,lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis, sem atribuir notas a autores.",
+ {title:"Matriz Tripartida: perguntas e cinco movimentos",min:4,plate:14,interactive:"matrix",lead:"A matriz foi construída para reconstruir relações explicativas, registrar evidências e permitir interpretações revisáveis, sem atribuir notas a autores.",
  points:["Dimensões: epistemológico-metodológica; ontológico-psicológica; pedagógico-político-educacional.","Movimentos: reconstruir, interrogar, registrar, confrontar e sintetizar, com retornos às fontes.","Estados E/M/I/NI/A e marcador transversal T: condições de registro documental, não escala hierárquica; a não aplicação é distinta da ausência."],
  source:"TELLES (2026), cap. 4, seção 4.5; Quadros 3–6 e Figuras 13–14; pranchas 14–15.",
  quote:"",quoteSource:"",
  notes:"MARX · método [p. 182] → TELLO · Epistemologías de la política educativa [p. 184] → SÁNCHEZ GAMBOA · Pesquisa em educação [p. 184] → três dimensões [p. 191] → cinco movimentos [pp. 186–202] → E/M/I/NI/A/T [p. 194]",
  transition:"matriz [p. 205] → testes [p. 214]"},
- {title:"Zoom metodológico: como a matriz foi construída",min:1,plate:"metodologico",zoom:true,
- lead:"O problema da pesquisa orienta três perguntas articuladas, operações documentais e interpretações fundamentadas.",
- points:[],
- source:"TELLES (2026), seção 4.5 e exercício exploratório do capítulo 5; prancha explicativa da autora.",
- quote:"",quoteSource:"",
- notes:"problema [p. 27] → dimensões [p. 191] → reconstrução [p. 187] → interrogação [p. 190] → registro [p. 193] → confronto [p. 197] → síntese [p. 201]",
- transition:"matriz [p. 181] → SOARES/BUENO [pp. 217; 223]"},
- {title:"Soares e Bueno: o exercício exploratório",min:3,plate:16,lead:"Dois estudos de 2018, com objetos diferentes, permitem testar a sensibilidade das perguntas; não autorizam tendências nacionais.",
+ {title:"Soares e Bueno: o exercício exploratório",min:3,plate:16,interactive:"cases",lead:"Dois estudos de 2018, com objetos diferentes, permitem testar a sensibilidade das perguntas; não autorizam tendências nacionais.",
  points:["Soares: escolhas profissionais, motivos, alternativas e condições institucionais de estudantes.","Bueno: constituição de uma prática de educação sexual, organização curricular e intencionalidade educativa.","A comparação preserva as singularidades e distingue argumentos dos autores de inferências analíticas."],
  source:"SOARES (2018); BUENO (2018). TELLES (2026), cap. 5, seções 5.2–5.5.",
  quote:"",quoteSource:"",
@@ -1523,7 +1671,7 @@ const notesButton=document.getElementById("banca-standalone-rou");
 let notesWin=null;
 function share(){
  if(!notesWin||notesWin.closed)return;
- const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 10";
+ const progress=document.getElementById("banca-progress-text")?.textContent||"1 de 9";
  const index=Math.max(0,(parseInt(progress,10)||1)-1);
  const state={index,elapsed:document.getElementById("banca-clock-elapsed")?.textContent||"00:00",remaining:document.getElementById("banca-clock-remaining")?.textContent||"",presenting:!document.getElementById("banca-presenter").hidden};
  try{notesWin.gvShowState?.(state);}catch(e){}
