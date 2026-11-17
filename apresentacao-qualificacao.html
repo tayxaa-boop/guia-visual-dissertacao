@@ -882,12 +882,12 @@ html,body{background:#f5f7fa}
 .banca-corpus-funnel{display:flex;align-items:center;gap:clamp(.6rem,2vw,1.8rem);justify-content:center;max-width:1200px;margin:.6rem auto}
 .banca-corpus-funnel-art{flex:0 1 61%;min-width:0;text-align:center}
 .banca-corpus-funnel-art a{display:inline-block;max-width:100%}
-.banca-corpus-funnel-art img{display:block;height:min(57dvh,650px);max-width:100%;width:auto;object-fit:contain}
+.banca-corpus-funnel-art svg{display:block;max-height:min(61dvh,700px);max-width:100%;width:100%;height:auto;object-fit:contain}
 .banca-corpus-note{flex:1 1 33%;max-width:38ch;color:#23465e;line-height:1.48;font-size:clamp(.86rem,1vw,1.08rem);background:#f1f6fa;padding:.85rem;border-left:3px solid #487d9d;border-radius:5px}
 .banca-corpus-note p{margin:.5rem 0}
 .banca-corpus-note strong{display:block;margin-bottom:.4rem}
 .banca-corpus-figure figcaption{font-size:.86rem;line-height:1.5;color:#38566e;padding:.6rem .25rem;border-top:1px solid #d4e0e9}
-@media(max-width:750px){.banca-corpus-funnel{flex-direction:column}.banca-corpus-funnel-art{flex:0 1 auto}.banca-corpus-funnel-art img{height:min(50dvh,480px)}.banca-corpus-note{max-width:none}.banca-corpus-hit::after{top:0;right:0}}
+@media(max-width:750px){.banca-corpus-funnel{flex-direction:column}.banca-corpus-funnel-art{flex:0 1 auto}.banca-corpus-funnel-art svg{max-height:min(54dvh,520px)}.banca-corpus-note{max-width:none}.banca-corpus-hit::after{top:0;right:0}}
 
 /* Pranchas 3, 4 e 8: reconstruções vetoriais com botões reais, tipografia Arial e sem fundo amarelado. */
 .banca-study-figure{width:100%;margin:0;font-family:Arial,Helvetica,sans-serif;color:#1c3851;min-width:0}
@@ -946,7 +946,18 @@ html,body{background:#f5f7fa}
 .banca-presenter.banca-read-contrast .banca-study-grid .banca-study-center :is(strong,span,small){color:#fff!important}
 .banca-presenter.banca-read-contrast .banca-study-caption{background:#fff!important;color:#000!important}
 .banca-study-switch button:focus-visible{outline:3px solid #d99829;outline-offset:3px}
-</style><link rel="stylesheet" href="tipografia-arial.css">
+.banca-corpus-funnel-art{display:flex;justify-content:center;align-items:center;background:transparent!important}
+.banca-corpus-funnel-art .banca-inline-funnel{background:none!important;overflow:visible}
+.banca-presenter .banca-corpus-enlarge{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .75rem;border-radius:9px;border:1px solid #7ba1b6;background:#fff;color:#1e4b68;font-weight:800;margin:.3rem 0}
+.banca-corpus-zoom-dialog{border:2px solid #83a8bc;border-radius:16px;padding:clamp(.7rem,1.5vw,1.2rem);width:min(1280px,97vw);max-width:97vw;max-height:94dvh;overflow:auto;box-shadow:0 15px 80px #12263c55;background:#f7f9fc;color:#1b354b}
+.banca-corpus-zoom-dialog::backdrop{background:#102234ad}
+.banca-corpus-zoom-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid #c7d7e2;padding:.4rem .2rem}
+.banca-corpus-zoom-header h3{font-size:clamp(1.2rem,2.3vw,1.85rem);margin:0}
+.banca-corpus-zoom-header button{min-height:44px;border-radius:9px;border:1px solid #7fa4b7;background:#eaf3f8;padding:.5rem .8rem;color:#1e4863;font-weight:800}
+.banca-corpus-zoom-content{display:flex;justify-content:center;padding:.2rem 0}
+.banca-corpus-zoom-content svg{display:block;width:100%;max-height:76dvh;height:auto;object-fit:contain}
+.banca-corpus-zoom-note{font-size:.84rem;color:#415b70;line-height:1.45;margin:.1rem .35rem .5rem}
+.banca-corpus-enlarge:focus-visible,.banca-corpus-zoom-header button:focus-visible{outline:3px solid #bd872c;outline-offset:3px}</style><link rel="stylesheet" href="tipografia-arial.css">
 </head>
 <body>
 <main class="banca-entry" id="banca-entry"><p>Guia Visual da Pesquisa · UDESC/FAED · 2026</p><h1>Apresentação de qualificação</h1><p>Oito movimentos precedidos por uma prancha de abertura interativa com os objetivos da pesquisa; roteiro e notas de fala disponíveis. Este material é complementar à dissertação, não uma publicação acadêmica autônoma.</p><button type="button" id="banca-start" class="banca-start">Iniciar apresentação</button><a href="banca-apoio.html">Consultar roteiro detalhado</a><p><a class="banca-offline-download" href="apresentacao-qualificacao-offline.html" download="apresentacao-qualificacao-offline.html">↓ Salvar cópia offline da apresentação (.html)</a></p><p class="banca-offline-tip">Guarde no Mac e teste antes da banca. A apresentação, o cronômetro, os diagramas e as janelas são locais; páginas e PDFs externos ainda exigem internet.</p><p><a href="index.html#dialetica">Voltar ao Guia Visual</a></p></main>
@@ -1065,12 +1076,12 @@ html,body{background:#f5f7fa}
  <figure class="banca-method-figure banca-corpus-figure" aria-label="Esquema interativo de constituição do corpus documental">
   <div class="banca-method-toolbar"><div><p class="banca-method-kicker">CAPÍTULO 4 · TABELAS 1–2 · FIGURA 12</p><h4>Corpus: operações, evidências e limites</h4></div>
    <div class="banca-method-tabs" role="group" aria-label="Visualização do corpus">
-    <button type="button" data-corpus-view="map" aria-pressed="true">Esquema relacional</button>
-    <button type="button" data-corpus-view="funnel" aria-pressed="false">Funil documental</button>
+    <button type="button" data-corpus-view="map" aria-pressed="false">Esquema relacional</button>
+    <button type="button" data-corpus-view="funnel" aria-pressed="true">Funil documental</button>
     <button type="button" data-method-key="corpus-core" aria-haspopup="dialog">Auditabilidade e critérios</button>
    </div>
   </div>
-  <section data-corpus-panel="map" aria-label="Cinco balões clicáveis">
+  <section data-corpus-panel="map" aria-label="Cinco balões clicáveis" hidden>
    <div class="banca-corpus-map" role="group" aria-label="Clique nos balões para abrir evidências da dissertação">
     <button type="button" class="banca-corpus-hit hit-search" data-method-key="corpus-search" aria-haspopup="dialog" aria-label="Evidências da busca BDTD: seis estratégias"></button>
     <button type="button" class="banca-corpus-hit hit-dedup" data-method-key="corpus-dedup" aria-haspopup="dialog" aria-label="Evidências da deduplicação e identificadores"></button>
@@ -1081,12 +1092,55 @@ html,body{background:#f5f7fa}
    <p class="banca-corpus-instruction">Cada balão abre uma janela com síntese, dados e remissões ao capítulo 4. Acesse também por Tab e Enter.</p>
    <figcaption>Busca, deduplicação, recorte e atualização não equivalem à elegibilidade integral confirmada. Fonte: TELLES (2026), seções 4.1–4.4, Tabelas 1–2 e Figura 12.</figcaption>
   </section>
-  <section data-corpus-panel="funnel" aria-label="Funil documental" hidden>
+  <section data-corpus-panel="funnel" aria-label="Funil documental">
    <div class="banca-corpus-funnel">
-    <div class="banca-corpus-funnel-art"><a href="funil-documental-qualificacao.svg" target="_blank" rel="noopener noreferrer" title="Abrir funil em tamanho integral"><img src="funil-documental-qualificacao.svg" width="1200" height="1220" alt="Funil documental em Arial: 1.543 ocorrências originais 2017–2025; 875 documentos únicos 2018–2025; 563 encaminhados à avaliação integral; 2 dissertações no exercício exploratório."></a></div>
+    <div class="banca-corpus-funnel-art"><svg class="banca-inline-funnel" xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="banca-funnel-title banca-funnel-desc">
+<title id="banca-funnel-title">Funil documental — dados e percurso de triagem</title>
+<desc id="banca-funnel-desc">Representação visual do fluxo documental: 1.543 ocorrências brutas do levantamento 2017 a 2025; 875 documentos únicos do subconjunto 2018 a 2025; 563 encaminhados à avaliação integral; duas dissertações usadas exclusivamente para o exercício exploratório. Os quantitativos pertencem a unidades e recortes diferentes; o teste com duas dissertações não é uma quarta fase de elegibilidade. Fundo transparente, desenho vetorial e tipografia Arial.</desc>
+<defs>
+<linearGradient id="banca-funnel-blue" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#4b667e"/><stop offset=".5" stop-color="#223f5e"/><stop offset="1" stop-color="#102b47"/></linearGradient>
+<linearGradient id="banca-funnel-light" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#93a6b6" stop-opacity=".65"/><stop offset="1" stop-color="#233c59" stop-opacity=".25"/></linearGradient>
+<filter id="banca-funnel-shadow" x="-15%" y="-20%" width="135%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#142d46" flood-opacity=".18"/></filter>
+</defs>
+<!-- Somente o infográfico, sem a moldura, sem o título impresso e sem retângulo de fundo. -->
+<g transform="translate(0,-275)">
+<g filter="url(#banca-funnel-shadow)" stroke="#14314b" stroke-width="4" stroke-linejoin="round">
+<path d="M95 322Q420 280 745 322L678 505Q656 533 153 505Z" fill="url(#banca-funnel-blue)"/>
+<ellipse cx="420" cy="322" rx="325" ry="36" fill="url(#banca-funnel-light)" opacity=".86"/>
+<path d="M145 326L235 326 310 510 245 510Z" fill="#b2c4d0" opacity=".20" stroke="none"/>
+<path d="M666 326L727 326 655 511 611 511Z" fill="#ced9e2" opacity=".20" stroke="none"/>
+<ellipse cx="416" cy="509" rx="263" ry="31" fill="#486b87" opacity=".24" stroke="#183650" stroke-width="2"/>
+<path d="M185 525Q432 494 679 525L614 723Q592 752 267 723Z" fill="url(#banca-funnel-blue)"/>
+<ellipse cx="432" cy="525" rx="247" ry="31" fill="url(#banca-funnel-light)" opacity=".74"/>
+<path d="M233 530L294 527 344 725 303 725Z" fill="#c2d1dc" opacity=".19" stroke="none"/>
+<path d="M630 525L663 527 596 730 570 730Z" fill="#c8d6df" opacity=".20" stroke="none"/>
+<ellipse cx="440" cy="721" rx="172" ry="27" fill="#466989" opacity=".20" stroke="#183650" stroke-width="2"/>
+<path d="M277 740Q431 717 586 740L532 933Q512 948 359 933Z" fill="url(#banca-funnel-blue)"/>
+<ellipse cx="431" cy="740" rx="154" ry="23" fill="url(#banca-funnel-light)" opacity=".75"/>
+<path d="M316 743L351 741 397 935 375 935Z" fill="#c3d3de" opacity=".19" stroke="none"/>
+<path d="M553 740L577 740 520 934 501 934Z" fill="#cddbe4" opacity=".19" stroke="none"/>
+<ellipse cx="443" cy="935" rx="85" ry="18" fill="#476583" opacity=".28" stroke="#183650" stroke-width="2"/>
+<path d="M366 947Q450 924 530 947L451 1150Z" fill="url(#banca-funnel-blue)"/>
+<ellipse cx="448" cy="947" rx="82" ry="18" fill="url(#banca-funnel-light)" opacity=".68"/>
+<path d="M392 948L415 945 453 1120 451 1150Z" fill="#cfdae1" opacity=".2" stroke="none"/>
+</g>
+<g fill="#fff" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle" stroke="#233b53" stroke-opacity=".33" stroke-width="3" paint-order="stroke">
+<text x="427" y="457" font-size="119">1.543</text>
+<text x="437" y="672" font-size="112">875</text>
+<text x="439" y="865" font-size="98">563</text>
+<text x="450" y="1060" font-size="91">2</text>
+</g>
+<g font-family="Arial, sans-serif" fill="#111" font-size="32">
+<text x="760" y="358" font-size="40" font-weight="700">Ocorrências</text><text x="760" y="400" font-size="40" font-weight="700">Brutas</text><text x="760" y="444">(Busca inicial).</text>
+<text x="720" y="575" font-size="40" font-weight="700">Documentos</text><text x="720" y="617" font-size="40" font-weight="700">Únicos</text><text x="720" y="659">(Recorte 2018–2025).</text>
+<text x="621" y="772" font-size="39" font-weight="700">Triagem por</text><text x="621" y="814" font-size="39" font-weight="700">Título/Resumo</text><text x="621" y="854">(Encaminhados para</text><text x="621" y="892">avaliação).</text>
+<text x="550" y="990" font-size="39" font-weight="700">Dissertações Selecionadas</text><text x="550" y="1034">(Para o teste exploratório).</text>
+</g>
+</g>
+</svg></div>
     <div class="banca-corpus-note"><strong>Leitura metodológica do funil</strong><p><b>1.543:</b> ocorrências nas consultas originais (2017–2025).</p><p><b>875 e 563:</b> documentos únicos e encaminhamentos à avaliação integral no recorte 2018–2025.</p><p><b>2:</b> obras de Soares e Bueno, apenas no teste exploratório da matriz.</p>
      <button type="button" data-method-key="corpus-funnel" aria-haspopup="dialog">Ver Tabela 2 e ressalvas</button>
-     <p><small>Clique na figura para ampliá-la. Recriação vetorial do modelo fornecido, com tipografia Arial.</small></p>
+     <button type="button" class="banca-corpus-enlarge" data-corpus-zoom="true" aria-haspopup="dialog">Ampliar o funil ↗</button><p><small>Desenho vetorial com fundo transparente, sem moldura, tipografia Arial e dados preservados do original.</small></p>
     </div>
    </div>
    <figcaption>Os números pertencem a unidades de contagem diferentes, não a quatro filtros sucessivos de elegibilidade. Fonte: TELLES (2026), Tabelas 1–2 e Capítulo 5.</figcaption>
@@ -1252,6 +1306,11 @@ html,body{background:#f5f7fa}
  <figcaption data-method-caption="concrete" class="banca-study-caption" hidden>Natureza, História, Organismo e Sociedade constituem relações de uma unidade concreta — não quatro causas isoladas. Síntese visual a partir dos fundamentos dos capítulos 2 e 3.</figcaption>
 </figure>
 </template>
+<dialog id="banca-corpus-zoom-dialog" class="banca-corpus-zoom-dialog" aria-labelledby="banca-corpus-zoom-heading">
+<div class="banca-corpus-zoom-header"><h3 id="banca-corpus-zoom-heading">Funil documental · versão vetorial ampliada</h3><button type="button" id="banca-corpus-zoom-close">Fechar ×</button></div>
+<div id="banca-corpus-zoom-content" class="banca-corpus-zoom-content"></div>
+<p class="banca-corpus-zoom-note">1.543 ocorrências das buscas originais (2017–2025); 875 documentos únicos e 563 encaminhamentos à avaliação integral no subconjunto 2018–2025; duas dissertações no teste exploratório. São recortes e unidades de contagem distintos.</p>
+</dialog>
 <dialog id="banca-method-dialog" class="banca-method-dialog" aria-labelledby="banca-method-dialog-title" aria-describedby="banca-method-dialog-explanation">
  <button type="button" id="banca-method-dialog-close" class="banca-method-dialog-close" aria-label="Fechar detalhes da matriz">Fechar ×</button>
  <p id="banca-method-dialog-kicker" class="banca-method-dialog-kicker"></p>
@@ -1622,7 +1681,7 @@ slides.forEach((item,index)=>{
  link.addEventListener("click",event=>{
    event.preventDefault();
    stopSpeech();
-   if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();
+   if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(corpusZoomDialog.open)corpusZoomDialog.close();
    current=index;figureAlternate=false;figureFocus=false;interactiveExpanded=false;
    showPanel("nav",false);render();root.scrollTop=0;
  });
@@ -1800,9 +1859,39 @@ function displayMethodDetail(key,opener){
  methodDialog.showModal();
 }
 const stageFigure=el("banca-stage-figure");
+const corpusZoomDialog=el("banca-corpus-zoom-dialog");
+const corpusZoomContent=el("banca-corpus-zoom-content");
+let corpusZoomOpener=null;
+el("banca-corpus-zoom-close").addEventListener("click",()=>corpusZoomDialog.close());
+corpusZoomDialog.addEventListener("close",()=>{if(corpusZoomOpener&&document.contains(corpusZoomOpener))corpusZoomOpener.focus();corpusZoomOpener=null;});
+function showCorpusVector(opener){
+ const original=stageFigure.querySelector(".banca-inline-funnel");
+ if(!original)return;
+ const cloned=original.cloneNode(true);
+ const idMap=new Map();
+ for(const node of cloned.querySelectorAll("[id]")){
+  const before=node.id,after=before+"-enlarged";idMap.set(before,after);node.id=after;
+ }
+ for(const node of [cloned,...cloned.querySelectorAll("*")]){
+  for(const attr of ["aria-labelledby","aria-describedby","filter","fill","stroke","clip-path","href","xlink:href"]){
+   const value=node.getAttribute(attr);if(!value)continue;
+   let updated=value;
+   for(const [before,after] of idMap){
+    updated=updated.replaceAll("url(#"+before+")","url(#"+after+")");
+    if(attr==="aria-labelledby"||attr==="aria-describedby")updated=updated.replaceAll(before,after);
+    if((attr==="href"||attr==="xlink:href")&&updated==="#"+before)updated="#"+after;
+   }
+   if(updated!==value)node.setAttribute(attr,updated);
+  }
+ }
+ corpusZoomContent.replaceChildren(cloned);
+ corpusZoomOpener=opener;
+ corpusZoomDialog.showModal();
+}
 stageFigure.addEventListener("click",event=>{
  const target=event.target.closest("button");if(!target)return;
  if(target.dataset.methodKey){displayMethodDetail(target.dataset.methodKey,target);return;}
+ if(target.dataset.corpusZoom){showCorpusVector(target);return;}
  if(target.dataset.corpusView){
   const view=target.dataset.corpusView,host=stageFigure.querySelector(".banca-corpus-figure");
   if(!host)return;
@@ -1990,17 +2079,17 @@ function render(){
 }
 function close(){
  stopSpeech();stopTicker();clockRunning=false;paintClock();
- if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
+ if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(corpusZoomDialog.open)corpusZoomDialog.close();root.hidden=true;document.body.classList.remove("banca-is-presenting");window.removeEventListener("keydown",keys);
  if(priorFocus&&typeof priorFocus.focus==="function")priorFocus.focus();
 }
 function open(){
  priorFocus=document.activeElement;current=0;figureAlternate=false;figureFocus=false;
  root.hidden=false;document.body.classList.add("banca-is-presenting");render();restartClock();exit.focus();window.addEventListener("keydown",keys);
 }
-function next(){stopSpeech();if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}
-function prev(){if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(current>0){stopSpeech();current--;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}}
+function next(){stopSpeech();if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(corpusZoomDialog.open)corpusZoomDialog.close();current=(current+1)%slides.length;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}
+function prev(){if(dialog.open)dialog.close();if(methodDialog.open)methodDialog.close();if(corpusZoomDialog.open)corpusZoomDialog.close();if(current>0){stopSpeech();current--;figureAlternate=false;figureFocus=false;interactiveExpanded=false;render();}}
 function keys(e){if(root.hidden)return;
- if(dialog.open||methodDialog.open)return;
+ if(dialog.open||methodDialog.open||corpusZoomDialog.open)return;
  if(e.key==="Escape"){
   e.preventDefault();
   if(!readPanel.hidden){showPanel("read",false);return;}
