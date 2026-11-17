@@ -30,7 +30,7 @@ small{font-size:.85rem}
 @media print{header{position:static}.controller{display:none}details{break-inside:avoid}}
 </style><link rel="stylesheet" href="tipografia-arial.css">
 </head><body>
-<header><p>GUIA VISUAL DA PESQUISA · APOIO PESSOAL</p><h1>Roteiro de defesa — 10 movimentos</h1><p id="position">Movimento 1 de 10</p><p id="clock" aria-label="Tempo decorrido e restante"></p></header>
+<header><p>GUIA VISUAL DA PESQUISA · APOIO PESSOAL</p><h1>Roteiro de defesa — abertura + 9 movimentos</h1><p id="position">Movimento 1 de 10</p><p id="clock" aria-label="Tempo decorrido e restante"></p></header>
 <main><p class="alert"><strong>Privacidade da apresentação:</strong> mantenha esta janela fora do compartilhamento. No Teams, compartilhe somente a aba ou janela do Guia. Se compartilhar a tela inteira, as notas poderão aparecer para a banca.</p>
 <nav class="controller" aria-label="Controles do roteiro"><button id="prev" type="button">← Anterior</button><button id="next" type="button">Próximo →</button></nav>
 <p id="mode" class="muted" role="status" aria-live="polite">Roteiro para estudo e apresentação.</p>
@@ -62,7 +62,7 @@ const originalText={prev:el("prev").textContent,next:el("next").textContent};
 function write(id,txt){el(id).textContent=txt||"";}
 function render(){
  const x=cues[index];
- write("position","Movimento "+(index+1)+" de "+cues.length+" · "+x.minutes+" sugeridos");
+ write("position",index===0?"Abertura · "+x.minutes+" sugeridos":"Movimento "+index+" de "+(cues.length-1)+" · "+x.minutes+" sugeridos");
  write("heading",x.title);
  write("note-decision",x.decision);
  write("note-relation",x.relation);
