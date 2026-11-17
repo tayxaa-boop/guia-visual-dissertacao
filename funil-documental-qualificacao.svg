@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1220" viewBox="0 0 1200 1220" role="img" aria-labelledby="titulo descricao">
+<title id="titulo">O Funil Documental e a Inovação Metodológica</title>
+<desc id="descricao">Representação visual do fluxo documental: 1.543 ocorrências brutas do levantamento 2017 a 2025; 875 documentos únicos do subconjunto 2018 a 2025; 563 encaminhados à avaliação integral; duas dissertações usadas exclusivamente para o exercício exploratório. Os quantitativos pertencem a unidades e recortes diferentes.</desc>
+<defs>
+<linearGradient id="azul" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#4b667e"/><stop offset=".5" stop-color="#223f5e"/><stop offset="1" stop-color="#102b47"/></linearGradient>
+<linearGradient id="luz" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#93a6b6" stop-opacity=".65"/><stop offset="1" stop-color="#233c59" stop-opacity=".25"/></linearGradient>
+<filter id="sombra" x="-15%" y="-20%" width="135%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#142d46" flood-opacity=".18"/></filter>
+</defs>
+<rect width="1200" height="1220" fill="#fffdf9"/>
+<path d="M0 53L75 0M0 23H1220" fill="none" stroke="#14344e" stroke-width="3"/>
+<path d="M0 70H235L300 0" fill="none" stroke="#a59480" stroke-width="3"/>
+<text x="54" y="130" font-family="Arial, sans-serif" font-size="67" font-weight="400" fill="#111">O Funil Documental e a</text>
+<text x="54" y="204" font-family="Arial, sans-serif" font-size="67" font-weight="400" fill="#111">Inovação Metodológica</text>
+<g filter="url(#sombra)" stroke="#14314b" stroke-width="4" stroke-linejoin="round">
+<path d="M95 322Q420 280 745 322L678 505Q656 533 153 505Z" fill="url(#azul)"/>
+<ellipse cx="420" cy="322" rx="325" ry="36" fill="url(#luz)" opacity=".86"/>
+<path d="M145 326L235 326 310 510 245 510Z" fill="#b2c4d0" opacity=".20" stroke="none"/>
+<path d="M666 326L727 326 655 511 611 511Z" fill="#ced9e2" opacity=".20" stroke="none"/>
+<ellipse cx="416" cy="509" rx="263" ry="31" fill="#486b87" opacity=".24" stroke="#183650" stroke-width="2"/>
+<path d="M185 525Q432 494 679 525L614 723Q592 752 267 723Z" fill="url(#azul)"/>
+<ellipse cx="432" cy="525" rx="247" ry="31" fill="url(#luz)" opacity=".74"/>
+<path d="M233 530L294 527 344 725 303 725Z" fill="#c2d1dc" opacity=".19" stroke="none"/>
+<path d="M630 525L663 527 596 730 570 730Z" fill="#c8d6df" opacity=".20" stroke="none"/>
+<ellipse cx="440" cy="721" rx="172" ry="27" fill="#466989" opacity=".20" stroke="#183650" stroke-width="2"/>
+<path d="M277 740Q431 717 586 740L532 933Q512 948 359 933Z" fill="url(#azul)"/>
+<ellipse cx="431" cy="740" rx="154" ry="23" fill="url(#luz)" opacity=".75"/>
+<path d="M316 743L351 741 397 935 375 935Z" fill="#c3d3de" opacity=".19" stroke="none"/>
+<path d="M553 740L577 740 520 934 501 934Z" fill="#cddbe4" opacity=".19" stroke="none"/>
+<ellipse cx="443" cy="935" rx="85" ry="18" fill="#476583" opacity=".28" stroke="#183650" stroke-width="2"/>
+<path d="M366 947Q450 924 530 947L451 1150Z" fill="url(#azul)"/>
+<ellipse cx="448" cy="947" rx="82" ry="18" fill="url(#luz)" opacity=".68"/>
+<path d="M392 948L415 945 453 1120 451 1150Z" fill="#cfdae1" opacity=".2" stroke="none"/>
+</g>
+<g fill="#fff" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle" stroke="#233b53" stroke-opacity=".33" stroke-width="3" paint-order="stroke">
+<text x="427" y="457" font-size="119">1.543</text>
+<text x="437" y="672" font-size="112">875</text>
+<text x="439" y="865" font-size="98">563</text>
+<text x="450" y="1060" font-size="91">2</text>
+</g>
+<g font-family="Arial, sans-serif" fill="#111" font-size="32">
+<text x="760" y="358" font-size="40" font-weight="700">Ocorrências</text><text x="760" y="400" font-size="40" font-weight="700">Brutas</text><text x="760" y="444">(Busca inicial).</text>
+<text x="720" y="575" font-size="40" font-weight="700">Documentos</text><text x="720" y="617" font-size="40" font-weight="700">Únicos</text><text x="720" y="659">(Recorte 2018–2025).</text>
+<text x="621" y="772" font-size="39" font-weight="700">Triagem por</text><text x="621" y="814" font-size="39" font-weight="700">Título/Resumo</text><text x="621" y="854">(Encaminhados para</text><text x="621" y="892">avaliação).</text>
+<text x="550" y="990" font-size="39" font-weight="700">Dissertações Selecionadas</text><text x="550" y="1034">(Para o teste exploratório).</text>
+</g>
+</svg>
